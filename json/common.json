@@ -1,0 +1,218 @@
+{    
+    "portfolio":{
+        "Tensors":{
+            "ico":"img/ico_project/ico_wip.png",
+            "filter":"OpenCV",
+            "href":"https://github.com/RealVincentBerthet/Tensor_directed_stylization",
+            "title":"NA",
+            "description":"NA",
+            "skills":"OpenCV Python"
+        },
+        "HDR":{
+            "ico":"img/ico_project/ico_wip.png",
+            "filter":"OpenCV",
+            "href":"https://github.com/RealVincentBerthet/HDR",
+            "title":"NA",
+            "description":"NA",
+            "skills":"OpenCV Python"
+        },
+        "Askelys":{
+            "ico":"img/ico_project/ico_askelys.png",
+            "filter":"Pro",
+            "href":"request.html?type=Download&alert=Askelys",
+            "title":"NA",
+            "description":"NA",
+            "skills":"Unity WebGL C# Javascript"
+        },
+        "Kubic":{
+            "ico":"img/ico_project/ico_kubic.png",
+            "filter":"3D Csharp Game",
+            "href":"Kubic",
+            "webgl":true,
+            "title":"NA",
+            "description":"NA" ,
+            "skills":"Unity C#"
+        },
+        "game_jam_2019":{
+            "ico":"img/ico_project/ico_gameJam2k19.png",
+            "filter":"Management",
+            "href":"Isati Game Jam 2K19",
+            "player":true,
+            "title":"NA",
+            "description":"NA",
+            "skills":"Management"
+        },
+        "GOL":{
+            "ico":"img/ico_project/ico_gol.png",
+            "filter":"Cpp Game",
+            "href":"https://github.com/RealVincentBerthet/GoL",
+            "title":"NA",
+            "wip":false,
+            "description":"NA" ,
+            "skills":"Qt C++ GUI"
+        },
+        "website_v1":{
+            "ico":"img/ico_project/ico_website_v1.png",
+            "filter":"Javascript Web",
+            "href":"project/vberthet_1_6",
+            "title":"NA",
+            "description":"NA" ,
+            "skills":"Javascript HTML5 CSS3 PHP JQuery"
+        },
+        "TA":{
+            "ico":"img/ico_project/ico_TA.png",
+            "filter":"Javascript Game",
+            "href":"https://towerattackproject.firebaseapp.com/",
+            "mobile":true,
+            "wip":false,
+            "title":"NA",
+            "description":"NA",
+            "skills":"Javascript"
+        },
+        "orium":{
+            "ico":"img/ico_project/ico_orium.png",
+            "filter":"3D Game",
+            "href":"Orium",
+            "player":true,
+            "title":"NA",
+            "description":"NA",
+            "skills":"UE4"
+        },
+        "auld":{
+            "ico":"img/ico_project/ico_auld.png",
+            "filter":"Management 3D Game",
+            "href":"http://projectauldue4.blogspot.com/",
+            "title":"NA",
+            "description":"NA",
+            "skills":"UE4"
+        },
+        "scogue":{
+            "ico":"img/ico_project/ico_scogue.png",
+            "filter":"Javascript Game",
+            "href":"project/scogue",
+            "title":"NA",
+            "description":"NA",
+            "skills":"Javascript"
+        },
+        "blog":{
+            "ico":"img/ico_project/ico_blog.png",
+            "filter":"Web",
+            "href":"http://uwsblog.yo.fr/UWS_Blog/",
+            "title":"NA",
+            "description":"NA",
+            "skills":"WordPress"
+        },     
+        "mutest":{
+            "ico":"img/ico_project/ico_mutest.png",
+            "filter":"Pro",
+            "href":"request.html?type=Download&alert=Mutest",
+            "title":"NA",
+            "description":"NA",
+            "skills":"Java"
+        },       
+        "pacman":{
+            "ico":"img/ico_project/ico_pacman.png",
+            "filter":"Csharp Game",
+            "href":"request.html?type=Download&alert=Pacman",
+            "title":"NA",
+            "description":"NA",
+            "skills":"C#"
+        },      
+        "monitoring":{
+            "ico":"img/ico_project/ico_monitoring.png",
+            "filter":"Web",
+            "href":"https://uwsblog.yo.fr/",
+            "title":"NA",
+            "description":"NA",
+            "skills":"PHP SQL JQuery"
+        }
+    },
+    "skills":{
+        "programming":{
+            "ico":"fas fa-code-branch fa-2x color-8",
+            "title":"NA",
+            "list":"C++, C, C#, Qt, Java, Python"
+        },
+        "web":{
+            "ico":"fas fa-code fa-2x color-7",
+            "title":"NA",
+            "list":"Javascript, PHP, JQuery, HTML5, CSS3"
+        },
+        "database":{
+            "ico":"fas fa-database fa-2x color-6",
+            "title":"NA",
+            "list":"SQLite, MySQL, PHPMyAdmin, FireBase"
+        },
+        "shell":{
+            "ico":"fas fa-terminal fa-2x",
+            "title":"NA",
+            "list":"Bash, Docker, Git"
+        },
+        "software":{
+            "ico":"fas fa-desktop fa-2x color-5",
+            "title":"NA",
+            "list":"Visual Studio, Unity, IntelliJ, Photoshop, Illustrator, After Effects, Unreal Engine 4"
+        },
+            "other":{
+            "ico":"fab fa-connectdevelop fa-2x color-3",
+            "title":"NA",
+            "list":"NA"
+        }       
+    },
+    "contact":{
+        "info":{
+                    "mail_button":{
+                        "class":"fas fa-envelope fa-2x",
+                        "href":"mailto:vincent.berthet.pro@gmail.com",
+                        "title":"NA",
+                        "text":"vincent.berthet.pro@gmail.com"
+                    },
+                    "resume":{
+                        "class":"fas fa-download fa-2x color-4",
+                        "href":"project/documents/FR_CV_BERTHET_Vincent_min.pdf",
+                        "title":"NA",
+                        "text":"NA"
+                    },
+                    "phone_button":{
+                        "class":"fas fa-phone fa-2x",
+                        "href":"tel:+33658659033",
+                        "title":"NA",
+                        "text":"06 58 65 90 33",
+                        "country_code":"+33",
+                        "country_flag":"img/vberthet/fr_flag_16px.png"
+                    }
+        },
+        "social":{
+                    "LKD":{
+                        "class":"linkedin",
+                        "title":"NA",
+                        "href":"https://uk.linkedin.com/in/vincent-berthet",
+                        "class_ico":"fab fa-linkedin"
+                    },   
+                    "TWI":{
+                        "class":"twitter",
+                        "title":"NA",
+                        "href":"https://twitter.com/_Sissouu",
+                        "class_ico":"fab fa-twitter"
+                    },      
+                    "YT":{
+                        "class":"youtube",
+                        "title":"NA",
+                        "href":"https://www.youtube.com/channel/UC1zTh8-gfUpfaW8xvRnYHXw",
+                        "class_ico":"fab fa-youtube"
+                    },        
+                    "INSTA":{
+                        "class":"instagram",
+                        "title":"NA",
+                        "href":"https://www.instagram.com/vincent_berthet/",
+                        "class_ico":"fab fa-instagram"
+                    },
+                    "GITHUB":{
+                        "class":"github",
+                        "title":"NA",
+                        "href":"https://github.com/RealVincentBerthet",
+                        "class_ico":"fab fa-github"
+                    }
+                }
+    }
+}

@@ -1,0 +1,36 @@
+canvas {
+	display : block;   
+	margin : auto;
+}
+
+body {
+	margin-top:2%;
+	margin-bottom:2%;
+	background-color: #000;
+}
+
+p {
+	padding-top:20px;
+	text-align:center;
+	color:white;
+}
+
+h1{
+	padding-top:20px;
+	text-align:center;
+	color:white;
+}
+
+a {
+  color: #B6DBAF;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+img{
+	padding-top:40px;
+    display: block;
+    margin: 0 auto;
+}
+

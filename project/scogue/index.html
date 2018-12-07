@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Scogue</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+    <!-- Theme CSS -->
+    <link href="css/grayscale.css" rel="stylesheet">
+	<link rel="icon" type="image/png" href="img/logo.png" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+					<div>
+						<img src="img/logo.png" height="30" width="30"><span class="light">Scogue</span>
+					</div>
+				</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="nav-play">
+                        <a class="page-scroll" href="play/last" target="_blank">Play</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#project">Project</a>
+                    </li>
+					<li>
+                        <a class="page-scroll" href="#mechanics">Mechanics</a>
+                    </li>
+					<li>
+                        <a class="page-scroll" href="#patch">Patch Notes</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#commands">Console Commands</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+						<a href="play/last"><img src="img/screen_scogue.png" width="854" height="480"></a>
+						<!--
+						<iframe width="854" height="480" src="https://www.youtube.com/embed/9ZfN87gSjvI" frameborder="0" allowfullscreen></iframe>
+						<div style="color:red">/!\ video isn't available yet !</div>
+						-->
+						<p><br/><a href="play/last"  target="_blank" class="btn btn-default btn-lg" title="Try Scogue">Play Scogue</a></p>		
+                        <p>
+							<a href="#project" class="btn btn-circle page-scroll">
+								<i class="fa fa-angle-double-down animated"></i>
+							</a>
+						</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Project Section -->
+    <section id="project" class="container content-section text-center">
+        <div class="row brown">
+            <div class="col-lg-8 col-lg-offset-2">
+				<br/>
+                <h2>Project</h2>
+				
+				<p>
+					<p>This game was designed for the HTML5 & JavaScript Game Programming module of the University of West of Scotland (UWS).</p>
+					<p>The aim of this course was to create a basic playable browser game. However, this game must include few gameplay mechanics in order to discover and understand how a javascript game is working.</p>
+					<p>As it was only a 2 months project, all student used a free library framework '<a href='https://phaser.io'>Phaser</a>' to help him to design his game.</p>
+					<p>Being a great amateur of Rogue-Like game (as <a href="http://www.cellardoorgames.com/roguelegacy/">Rogue Legacy</a>, <a href="http://bindingofisaac.com/">The Binding of Isaac</a>,...), I decided to design a Rogue-Like game for this project : <b>Scogue</b>, my scottish rogue ! .
+				</p>
+			</div>
+		</div>
+    </section>
+
+	<!-- Mechanics Section -->
+    <section id="mechanics" class="container content-section text-center">
+        <div class="row grey">
+            <div class="col-lg-8 col-lg-offset-2">
+				<br/>
+			   <h2>Mechanics</h2>
+			   <p>
+					In this part I will introduce the main gameplay mechanics.
+			   </p>
+				<p>
+					<b>HealthPoint :</b> This features able to know if the player is alive or not. 
+						</br> It is based on 2 points, the <u>maximum HealthPoint Pool</u> and the <u>current life</u> (which obviously can't be more important than the maximum HealthPoint pool)
+						<p>
+							When the HealthPoint of the player reach 0, you lose the life and also all of your progression...
+							<br/>However, as the main design of the game is based on 'Rogue Like' you will be able to use the collected resources (coins, score) to upgrade your current stats for the next life ! Be carrefull to spend the maximum of your resources, because you will lose of all it by starting a new life.
+						
+						</p>
+				</p>
+				</br>
+				<p>
+					<b>Damage :</b> This features correspond to the based amount of damage you will inflict to your opponents
+					</br>This value will be changing in function of the weapon used, there are <u>4 differents weapons gameplay available</u> (hammer, bow, axe, sword). The direction of you attack is depending of the player direction.
+				</p>
+				<p>
+					<b>Armor :</b> The player have an amount of armor. This armor is used to calculate a percentage of armor reduction (logarithmic function) which will be able to prevent the player against important damage.
+				</p>
+				<p>
+					<b>Coins :</b>  Is a resource of the game using to buy new stuff providing more amor, damage, hp.. but also to acquire some spells (as double jump, dash..). You will gather it from monsters and interactive object of the game (as chest...)
+				</p>
+				<p>
+					<b>Speed :</b> Define the movement speed of the player, this can be modificated when the player is walking on some kind of ground (as for example ice, mud, ...) 
+				</p>
+				<p>
+					<b>Invulnerability :</b> Is used to prevent the player and the monsters to take to much damage in a short time. The sprite will be blinking if the character is actually invulnerable.
+				</p>
+				<p>
+					<b>Jump :</b> Is based on 2 main points. Firstly the <u>Height</u> of the jump, in order to limit the direct access to some platform. And the <u>Delay</u> which fix the time between 2 jumps. It can be modificated with items
+				</p>
+				<p>
+					<b>Score / Time elapsed :</b> Both of this mechanics are working together. During your life, you will improve your score by killing your opponents. Whereas the time elapsed is just depending of the time played. When you are die, you will receive an amount of <u>"Glory"</u> depending of the score realised and the time elapsed (less you have played more it will be important).
+					</br>The Glory is used as the resouces to upgrade your main characteristic (HealthPoint, Armor...), and it will be reset when you are starting a new life.
+				</p>
+			</div>
+        </div>
+    </section>
+	
+	<!-- Patch Notes Section -->
+    <section id="patch" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <br/>
+				<h2>Patch Notes</h2>
+				<div style="text-align:left;">
+					<br/><b>V1.8 :</b> Included audio feature in the game.
+					<br/><b>V1.9 :</b> Upgraded the UI to adapt the width of the different component of the UI in function of their value and the size window.
+					<br/><b>V1.10:</b> Fixed UI features and rework the display of the main menu. 
+					<br/><b>V1.11:</b> Reworked the physics used in the game. 
+					<br/><b>V1.12:</b> Added the feature of armor/armor reduction.
+					<br/><b>V1.13:</b> Fixed spawn bug.
+					<br/><b>V1.14:</b> Rework of the character object in order to be used for player and monsters object. 
+					<br/><b>V1.15:</b> Added entry security on the setter of character objects. Console information have been updated to be more revelant.
+					<br/><b>V1.16:</b> Added in the menu an option to choose the size of the frame which the game is displayed in.
+					<br/><b>V1.17:</b> Updated monster object.
+					<br/><b>V1.18:</b> Updated many character object method.
+					<br/><b>V1.19:</b> Fixed a bug du to the Hp setter of the character object. Added current life display above character sprite.
+					<br/><b>V.1.20:</b> Added a time of frame invulnerability for character which taken damage.
+					<br/><b>V.1.21:</b> Added invulnerability animation and hammer weapon.
+					<br/><b>V.1.22:</b> FPS are now displayed in the UI. Weapon feature have been created in the player object.
+					<br/><b>V.1.23:</b> Added sword weapon.
+					<br/><b>V.1.24:</b> Cleared different javascript files.
+					<br/><b>V.1.25:</b> Added axe weapon.
+					<br/><b>V.1.26:</b> Added music effect on weapon. Controls used by the player have been modificated.
+					<br/><b>V.1.27:</b> Added level content in order to show gameplay mechanics. 
+					<br/><b>V.1.28:</b> Multiple bug fix.
+					<br/><b>V.1.29:</b> Added weapon factor which will impact the current damage of the player in function of the weapon used.
+					<br/><b>V.1.30:</b> Added tutorial.
+					<br/><b>V.1.31:</b> Added upgrade menu.
+				</div>
+			</div>
+        </div>
+    </section>
+
+	<!-- commande Section -->
+	
+    <section id="commands" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Console Commands</h2>
+				<p>
+				If you want are interested to do some trick/cheat in the game, you can use the few of the command available below.
+				</p>
+				<div style="color:green;">
+					To enter this commands go on the game and open the inspection tools of you browser (Ctrl+Shift+I, or right click -> Inspect). Then go on the 'Console Tab' and insert the commands and enjoy !
+				</div>
+				<br/>
+				<br/><h4>Stats</h4>
+				<p>
+					<div class="commands">player.setHpMax(200)</div>
+					Set the maximum HealthPoint pool of the player at 200
+				</p>
+				<p>
+					<div class="commands">player.setHp(10)</div>
+					Set the current Hp of the player at 10
+				</p>
+				<p>
+					<div class="commands">player.setDamage(20)</div>
+					Set the damage of the player at 20, it is corresponding to the damage you will inflict if you hit your oppponents. Moreover the current damage are depending of the weapon used.
+				</p>
+				<p>
+					<div class="commands">player.setArmor(20)</div>
+					Set the armor of the player at 20. The armor able to set your current armor reduction (this amount is inserted into a logarithmic function...)to reduce the received damage
+				</p>
+				<p>
+					<div class="commands">player.setSpeed(300)</div>
+					Set the movement speed of the player at 300
+				</p>
+				<p>
+					<div class="commands">player.setCoins(222)</div>
+					Set the current coins of the player at 222
+				</p>
+				<br/><h4>More Stats</h4>
+				<p>
+					<div class="commands">player.setJumpHeight()</div>
+					Set the height of the jump
+				</p>
+				<p>
+					<div class="commands">player.setJumpTime()</div>
+					Set the delay between 2 jumps
+				</p>
+				<p>
+					<div class="commands">player.setScore(99999)</div>
+					Set the score of the player for this life
+				</p>
+				<p>
+				<div class="commands">player.setTimeElapsed(1,20,5)</div>
+					Set the time of the current life played at 1h20min05s
+				</p>
+				<br/><h4>Other</h4>
+				<p>
+					<div class="commands">player.setInvulnerabilityTime(2000)</div>
+					Set the time (in miliseconds) of invulnerability. Invulnerability state is used to prevent you against damage during a short time
+				</p>
+				<p>
+					<div class="commands">player.setInvulnerability(1000)</div>
+					Set  the player invulnerable during 1s (when the player is invulnerable the sprite is blinking)
+				</p>
+				<p>
+					<div class="commands">player.setGravityAllowed(false)</div>
+					Enable or disable the gravity on the player
+				</p>
+				<p>
+					<div class="commands">player.respawn()</div>
+					If you want to restart this life at the start position
+				</p>
+				<p>
+					<div class="commands">player.setKeyboard("AZERTY")</div>
+					Set the keyboard used by the player (by default "QWERTY") : "AZERTY" or "QWERTY"
+				</p>
+				<p>
+				...............
+				</p>
+			</div>
+        </div>
+    </section>
+	
+
+    <!-- Footer -->
+    <footer style="background:black;color:white;">
+			<div class="container text-center">
+				<p>&copy; 2016 <a href="">Scogue</a> V1.0 | Developed by <a href="../">Vincent Berthet</a> </p>
+			</div>
+    </footer>
+
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/grayscale.min.js"></script>
+
+</body>
+
+</html>
