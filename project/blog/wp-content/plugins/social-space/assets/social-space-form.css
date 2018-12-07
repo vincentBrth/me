@@ -1,0 +1,25 @@
+.default-icon input[type=radio],
+.rollover-icon input[type=radio],
+.icon-shape input[type=radio]{
+    margin-top: -10px !important;
+}
+.default-icon label,
+.rollover-icon label,
+.icon-shape label{
+    margin-right: 20px !important;
+}
+.default-icon legend,
+.rollover-icon legend,
+.icon-shape legend{
+    margin-bottom: 5px !important;
+}
+.icon-curve{
+    -webkit-border-radius: 25%;
+    -moz-border-radius: 25%;
+    border-radius: 25%;
+}
+.icon-circle{
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}

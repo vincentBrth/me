@@ -1,0 +1,161 @@
+{
+    "preview":{
+            "title":"Etudiant",
+            "quote":"<i>\"Only those who dare to fail greatly, can ever achieve greatly\"</i> - RFK<br/><br/>"
+    }, 
+    "navigation":{
+         "bio":{
+            "menu":"Bio",
+            "title":"A propos de moi",
+             "content":{
+                  "part_1":"<p>Hey ! Je me présente Vincent, étudiant français de ",
+                  "part_2":" ans. Actuellement en Game Development Bachelor's Degree au sein de l'University West of Scotland (UWS), je vous souhaite la bienvenue sur mon Portfolio !</p><p>Depuis plus de ",
+                  "part_3":" ans, la programation ainsi que l'univers du média et l'électronique ont pris une place de plus en plus importante dans mon quotidien. En effet, depuis mes années lycéennes j'ai commencé petit à petit à développer, mener divers projets personnels dans mon coin, qui m'ont permis de decouvrir ainsi que de comprendre les bases de l'informatique.</p><p>C'est grace à cette experience et mon cursus au Lycée (Baccalauréat Science de l'ingénieur) que j'ai alors décidé dans un premiers temps de poursuivre mes études en DUT Génie Electrique & Informatique Industrielle (GEII) afin d'explorer également d'autres domaines attisant ma curiosité tel l'automatisme, l'electronique, les systèmes embarqués et bien d'autres.</p><p>Suite à la validation de mon DUT, j'ai pris l'initiative de réaliser une année à l'étranger dont le but étant de réflechir plus précisement à mon projet de poursuite d'étude ainsi que de développer encore plus mon niveau d'anglais, langue omniprésente de nos jours et encore plus dans le domaine où j'exerce.</p><p>De plus, cette opportunité représente pour moi une incroyable éxperience humaine, en s'introduisant dans un milieu totalement étranger disposant d'une nouvelle culture, un autre mode de vie, où tout est à réapprendre ainsi qu'à reconstruire. Tous ces challenges m'ont permis d'enrichir ma personne et de comprendre encore d'avantage les aspects de la communication, autre compétence fondamentale.</p><p>Grace à cette éxperience unique qui m'a beaucoup changé, je vais pouvoir établir un projet d'étude me correspondant au maximum !</p><p>Cheers</p>"
+             }
+         },
+         "projects":{
+            "menu":"Projets",
+            "title":"Mes Projets"
+         },
+        "skills":{
+            "menu":"Compétences",
+            "title":"Mes Compétences"
+         },       
+         "networks":{
+            "menu":"Réseaux",
+            "title":"Mes Réseaux",
+            "subtitle":"N'hésites pas à <a href='mailto:contact@vberthet.net' title='contact@vberthet.net'>me contacter</a>, ainsi que de me rejoindre sur mes différents réseaux sociaux !"
+         }
+     },
+    "lang":{
+            "flag":"<img src='img/fr_flag_16px.png' height='16' width='16' title='Français séléctionné' onclick='updateLanguage()'>",
+            "selected":"Français séléctionné"
+    },
+    "projects":{
+        "scogue_rework":{
+            "ico":"img/ico_project/ico_scogue_rework.png",
+            "href":"../scogue_rework",
+            "mobile":true,
+            "wip":true,
+            "title":"Scogue Rework",
+            "description":"WIP~2018 - Rework de Scogue",
+            "skills":{
+                "skill_1":"Javascript"
+            }
+        },
+        "TA":{
+            "ico":"img/ico_project/ico_TA.png",
+            "href":"https://towerattackproject.firebaseapp.com/",
+            "mobile":true,
+            "wip":false,
+            "title":"Tower Attack",
+            "description":"2017 - Programmation avancées pour support mobile (JS)",
+            "skills":{
+                "skill_1":"Javascript"
+            }
+        },
+        "orium":{
+            "ico":"img/ico_project/ico_orium.png",
+            "href":"https://youtu.be/ksHjCFvTFxA",
+            "title":"Orium",
+            "description":"2017 - Conception de niveaux 3D sous Unreal Engine 4",
+            "skills":{
+                "skill_1":"UE4",
+                "skill_2":"Maya"
+            }
+        },
+        "auld":{
+            "ico":"img/ico_project/ico_auld.png",
+            "href":"http://projectauldue4.blogspot.com/",
+            "title":"Auld",
+            "description":"2017 - RTS developpé sous Unreal Engine 4",
+            "skills":{
+                "skill_1":"UE4"
+            }
+        },
+        "scogue":{
+            "ico":"img/ico_project/ico_scogue.png",
+            "href":"../scogue",
+            "title":"Scogue",
+            "description":"2016 - Jeu web développé avec le framework Phaser",
+            "skills":{
+                "skill_1":"Javascript"
+            }
+        },
+        "blog":{
+            "ico":"img/ico_project/ico_blog.png",
+            "href":"../blog",
+            "title":"Creative Industries Blog",
+            "description":"2016 - Blog WordPress Creative Industries",
+            "skills":{
+                "skill_1":"WordPress"
+            }
+        },     
+        "mutest":{
+            "ico":"img/ico_project/ico_mutest.png",
+            "href":"../documents/muTest/MuTest_2016.pdf",
+            "title":"Mu-Test (4 mois de stage)",
+            "description":"2016 -Rapport de stage au sein de l'entreprise Mu-Test exerçant dans le domaine de l'ATE (Automated Test Equipment). Développement de GUI (Java) au sein de la suite, test unitaire, bug fixing.",
+            "skills":{
+                "skill_1":"Java"
+            }
+        },       
+        "pacman":{
+            "ico":"img/ico_project/ico_pacman.png",
+            "href":"../documents/pacman/Pacman.pdf",
+            "title":"Pac Man XNA",
+            "description":"2016 - Développé avec le framework XNA",
+            "skills":{
+                "skill_1":"C#"
+            }
+        },      
+        "monitoring":{
+            "ico":"img/ico_project/ico_monitoring.png",
+            "href":"../monitoring",
+            "title":"Monitoring",
+            "description":"2016 - Projet de DUT",
+            "skills":{
+                "skill_1":"PHP",
+                "skill_2":"SQL",
+                "skill_3":"JQuery"
+            }
+        }
+    }, 
+ "networks":{
+        "LKD":{
+            "name":"Linkedin",
+            "title":"Connectons nous",
+            "href":"https://uk.linkedin.com/in/vincent-berthet",
+            "class_ico":"fa-linkedin"
+        },
+        "FB":{
+            "name":"Facebook",
+            "title":"Curieux",
+            "href":"https://www.facebook.com/BerthetVincent",
+            "class_ico":"fa-facebook"
+        },    
+        "TWI":{
+            "name":"Twitter",
+            "title":"Follow me",
+            "href":"https://twitter.com/_Sissouu",
+            "class_ico":"fa-twitter"
+        },      
+        "YT":{
+            "name":"Youtube",
+            "title":"Mon channel",
+            "href":"https://www.youtube.com/channel/UC1zTh8-gfUpfaW8xvRnYHXw",
+            "class_ico":"fa-youtube"
+        },        
+        "INSTA":{
+            "name":"Instagram",
+            "title":"Découvre mes photos",
+            "href":"https://www.instagram.com/vincent_berthet/",
+            "class_ico":"fa-instagram"
+        }
+    },
+    "alert":{
+            "mobile":"Ce projet à été conçu pour être utilisé sur un mobile ! \n\nMerci d'utiliser sur la page qui va s'ouvrir en nouvel onglet, l'inspecteur de votre navigateur internet si vous utilisez un ordinateur : \n \n - Clique droit sur cette page -> \"Inspecter\" (Ctrl+Shift+I) \n - Selectionner l'affichage mobile (Ctrl+Shift+M) \n - Choisir une résolution pour mobile\n \n Rafraichir la page et profiter !",
+            "wip":"Mes excuses, mais ce projet est encore en développement, revenez plus tard ? \n\nJe vais essayer de le mettre en ligne au plus vite dès la fin du projet ! \n\nMerci de votre compréhension"
+    },
+  "footer":"Developpé par"
+}

@@ -1,0 +1,186 @@
+{    
+    "portfolio":{
+        "CA":{
+            "ico":"img/ico_project/ico_CA.png",
+            "filter":"wip 2018",
+            "href":"project/CA",
+            "title":"NA",
+            "wip":true,
+            "description":"NA" ,
+            "skills":"Javascript HTML5 CSS3 PHP SQL JQuery"
+        },
+        "website_v1":{
+            "ico":"img/ico_project/ico_website_v1.png",
+            "filter":"2018",
+            "href":"project/vberthet_1_6",
+            "title":"NA",
+            "description":"NA" ,
+            "skills":"Javascript HTML5 CSS3 PHP JQuery"
+        },
+        "scogue_rework":{
+            "ico":"img/ico_project/ico_scogue_rework.png",
+            "filter":"wip 2018",
+            "href":"project/scogue_rework",
+            "mobile":true,
+            "wip":true,
+            "title":"NA",
+            "description":"NA" ,
+            "skills":"Javascript"
+        },
+        "TA":{
+            "ico":"img/ico_project/ico_TA.png",
+            "filter":"2017",
+            "href":"https://towerattackproject.firebaseapp.com/",
+            "mobile":true,
+            "wip":false,
+            "title":"NA",
+            "description":"NA",
+            "skills":"Javascript"
+        },
+        "orium":{
+            "ico":"img/ico_project/ico_orium.png",
+            "filter":"2017",
+            "href":"Orium",
+            "player":true,
+            "title":"NA",
+            "description":"NA",
+            "skills":"UE4 Maya"
+        },
+        "auld":{
+            "ico":"img/ico_project/ico_auld.png",
+            "filter":"2017",
+            "href":"http://projectauldue4.blogspot.com/",
+            "title":"NA",
+            "description":"NA",
+            "skills":"UE4"
+        },
+        "scogue":{
+            "ico":"img/ico_project/ico_scogue.png",
+            "filter":"2016",
+            "href":"project/scogue",
+            "title":"NA",
+            "description":"NA",
+            "skills":"Javascript"
+        },
+        "blog":{
+            "ico":"img/ico_project/ico_blog.png",
+            "filter":"2016",
+            "href":"project/blog",
+            "title":"NA",
+            "description":"NA",
+            "skills":"WordPress"
+        },     
+        "mutest":{
+            "ico":"img/ico_project/ico_mutest.png",
+            "filter":"2016",
+            "href":"project/documents/muTest/MuTest_2016.pdf",
+            "title":"NA",
+            "description":"NA",
+            "skills":"Java"
+        },       
+        "pacman":{
+            "ico":"img/ico_project/ico_pacman.png",
+            "filter":"2016",
+            "href":"project/documents/pacman/Pacman.pdf",
+            "title":"NA",
+            "description":"NA",
+            "skills":"C#"
+        },      
+        "monitoring":{
+            "ico":"img/ico_project/ico_monitoring.png",
+            "filter":"2016",
+            "href":"project/monitoring",
+            "title":"NA",
+            "description":"NA",
+            "skills":"PHP SQL JQuery"
+        }
+    },
+    "skills":{
+        "programming":{
+            "ico":"fas fa-code-branch fa-2x color-8",
+            "title":"NA",
+            "list":"C++, C#, Java, C"
+        },
+        "web":{
+            "ico":"fas fa-code fa-2x color-7",
+            "title":"NA",
+            "list":"Javascript, PHP, JQuery, HTML5, CSS3"
+        },
+        "database":{
+            "ico":"fas fa-database fa-2x color-6",
+            "title":"NA",
+            "list":"SQLite, MySQL, PHPMyAdmin, FireBase"
+        },
+        "shell":{
+            "ico":"fas fa-terminal fa-2x",
+            "title":"NA",
+            "list":"Bash"
+        },
+        "software":{
+            "ico":"fas fa-desktop fa-2x color-5",
+            "title":"NA",
+            "list":"NetBeans, Visual Studio, Eclipse, Photoshop, Illustrator, After Effects, Unreal Engine 4"
+        },
+            "other":{
+            "ico":"fab fa-connectdevelop fa-2x color-3",
+            "title":"NA",
+            "list":"NA"
+        }       
+    },
+    "contact":{
+        "info":{
+                    "mail_button":{
+                        "class":"fas fa-envelope fa-2x",
+                        "href":"mailto:contact@vberthet.net",
+                        "title":"NA",
+                        "text":"contact@vberthet.net"
+                    },
+                    "resume":{
+                        "class":"fas fa-download fa-2x color-4",
+                        "href":"project/documents/FR_CV_BERTHET_Vincent_min.pdf",
+                        "title":"NA",
+                        "text":"NA"
+                    },
+                    "phone_button":{
+                        "class":"fas fa-phone fa-2x",
+                        "href":"tel:+33658659033",
+                        "title":"NA",
+                        "text":"06 58 65 90 33",
+                        "country_code":"+33",
+                        "country_flag":"img/vberthet/fr_flag_16px.png"
+                    }
+        },
+        "social":{
+                    "LKD":{
+                        "class":"linkedin",
+                        "title":"NA",
+                        "href":"https://uk.linkedin.com/in/vincent-berthet",
+                        "class_ico":"fab fa-linkedin"
+                    },
+                    "FB":{
+                        "class":"facebook",
+                        "title":"NA",
+                        "href":"https://www.facebook.com/BerthetVincent",
+                        "class_ico":"fab fa-facebook"
+                    },    
+                    "TWI":{
+                        "class":"twitter",
+                        "title":"NA",
+                        "href":"https://twitter.com/_Sissouu",
+                        "class_ico":"fab fa-twitter"
+                    },      
+                    "YT":{
+                        "class":"youtube",
+                        "title":"NA",
+                        "href":"https://www.youtube.com/channel/UC1zTh8-gfUpfaW8xvRnYHXw",
+                        "class_ico":"fab fa-youtube"
+                    },        
+                    "INSTA":{
+                        "class":"instagram",
+                        "title":"NA",
+                        "href":"https://www.instagram.com/vincent_berthet/",
+                        "class_ico":"fab fa-instagram"
+                    }
+                }
+    }
+}

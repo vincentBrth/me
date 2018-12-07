@@ -1,0 +1,21 @@
+V1.8 : included audio and UI resizability
+V1.11: Fix UI bug & Menu bug + introduce ninja physics 
+V1.12: Added takeDamage() to the player and reduction feature
+V1.13:  Fixed spawn bug
+V1.14: Player is now extended of object of newCharacter + setter securty entry added+console.log are more precise
+V1.15: Updated rezibility of the UI + new setter securty (character)
+V1.16: Added choice of the size of the frame  in main menu
+V1.18: Added Monster.js, update many character method
+V1.19: fix setHp + added current life display above character sprite
+V.1.20: added a time of invulnerability for character which taken damage + invulnerability animation
+V.1.21: Test hammer !!!!!!!!!
+V.1.22: Weapon included to player + UI display FPS
+V.1.23: Added sword weapon	
+V.1.24: reorganize var of all js
+V.1.25: Added axe weapon + update sword
+V.1.26: Added music effect + update controls
+V.1.27: Added level content + upgrade screen + update main menu + Level1 content + multiple fix  -- released on website OK
+V.1.28: Added revive with stats
+V.1.29: Added weapon factor
+V.1.30: Added tutorial
+V.1.31: Upgrade menu is working correctly

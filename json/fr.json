@@ -1,0 +1,127 @@
+{    
+    "preview":{
+            "text":"Hey ! Ici Vincent Berthet",
+            "typed":["Je suis étudiant.", "Bienvenue sur mon site.", "Je vous souhaite une bonne visite."]
+    }, 
+    "navigation":{
+         "bio":{
+            "menu":"Bio",
+            "title":"Qui suis-je ?",
+            "content":"<p>&nbsp;&nbsp;&nbsp;&nbsp; Hey ! Je me présente Vincent, étudiant français de <span id='bio_age'></span> ans. Actuellement étudiant en 2nd année de cycle ingénieur Technologie de l'Information spécialité Imagerie Numérique au sein de l'Ecole Supérieur d’Ingénieurs de Rennes (ESIR - Rennes 1), je vous souhaite la bienvenue sur mon Portfolio !</p><p>Depuis plus de <span id='bio_duration'></span> ans, la programmation ainsi que l'univers du média et l'électronique ont pris une place de plus en plus importante dans mon quotidien. En effet, depuis mes années lycéennes j'ai commencé petit à petit à mener divers projets personnels, qui m'ont permis de découvrir les bases de l'informatique.</p><p>C'est grâce à cette expérience et mon cursus au Lycée (Baccalauréat Sciences de l'Ingénieur) que j'ai alors décidé dans un premiers temps de poursuivre mes études en DUT Génie Electrique & Informatique Industrielle (GEII) afin d'explorer également d'autres domaines attisant ma curiosité telle l'automatisme, l'électronique, les systèmes embarqués.</p><p>Suite à la validation de mon DUT, j'ai pris l'initiative de réaliser une année à l'étranger en Game Development Bachelor's Degree au sein de l'University West of Scotland (UWS) de Glasgow. Cela m’a permis de découvrir cette spécialité ainsi que de développer mes qualités humaines et mon niveau d'anglais, langue omniprésente de nos jours et encore plus dans le domaine où j'exerce.</p><p>Tous ces challenges m'ont permis de m'enrichir et de comprendre mieux les aspects de la communication, autre compétence fondamentale.</p><p>Cheers</p>"
+         },
+         "portfolio":{
+            "menu":"Portfolio",
+            "title":"Mon Portfolio"
+         },
+        "skills":{
+            "menu":"Compétences",
+            "title":"Mes Compétences"
+         },       
+         "contact":{
+            "menu":"Contact",
+            "title":"Contact"
+         }
+     },
+    "lang":"<img src='img/vberthet/fr_flag_16px.png' title='Cliquer pour passer en anglais' onclick='language.switch()'>",
+    "portfolio":{
+        "CA":{
+            "title":"CA Compte Manageur",
+            "description":"Un outil pour faire ses comptes automatiquement via import CSV" 
+        },
+        "website_v1":{
+            "title":"Ancien site",
+            "description":"Ancienne version de ce site (1.6)" 
+        },
+        "scogue_rework":{
+            "title":"Scogue Rework",
+            "description":"WIP~2018 - Rework de Scogue"
+        },
+        "TA":{
+            "title":"Tower Attack",
+            "description":"2017 - Programmation avancées pour support mobile (JS)"
+        },
+        "orium":{
+            "title":"Orium",
+            "description":"2017 - Conception de niveaux 3D sous Unreal Engine 4"
+        },
+        "auld":{
+            "title":"Auld",
+            "description":"2017 - RTS developpé sous Unreal Engine 4"
+        },
+        "scogue":{
+
+            "title":"Scogue",
+            "description":"2016 - Jeu web développé avec le framework Phaser"
+        },
+        "blog":{
+            "title":"Blog",
+            "description":"2016 - Blog WordPress Creative Industries"
+        },     
+        "mutest":{
+            "title":"Mu-Test",
+            "description":"2016 -Rapport de stage au sein de l'entreprise Mu-Test exerçant dans le domaine de l'ATE (Automated Test Equipment). Développement de GUI (Java) au sein de la suite, test unitaire, bug fixing."
+        },       
+        "pacman":{
+            "title":"Pac Man XNA",
+            "description":"2016 - Développé avec le framework XNA"
+        },      
+        "monitoring":{
+            "title":"Monitoring",
+            "description":"2016 - Projet de DUT"
+        }
+    },
+    "skills":{
+        "programming":{
+            "title":"Programmation"
+        },
+        "web":{
+            "title":"Web"
+        },
+        "database":{
+            "title":"Base de données"
+        },
+        "shell":{
+            "title":"Shell"
+        },
+        "software":{
+            "title":"Logiciels"
+        },
+            "other":{
+            "title":"Autre",
+            "list":"Scrum"
+        }       
+    },
+    "contact":{
+        "info":{
+                    "mail_button":{
+                        "title":"Envoyer moi un mail"
+                    },
+                    "resume":{
+                        "href":"project/documents/FR_CV_BERTHET_Vincent_optim.pdf",
+                        "title":"Télécharger mon CV",
+                        "text":"CV"
+                    },
+                    "phone_button":{
+                        "title":"Appeler moi"
+                    }
+        },
+        "social":{
+                    "LKD":{
+                        "title":"On se connecte ?"
+                    },
+                    "FB":{
+                        "title":"Curieux"
+                    },    
+                    "TWI":{
+                        "title":"Follow me"
+                    },      
+                    "YT":{
+                        "title":"Ma chaîne"
+                    },        
+                    "INSTA":{
+                        "title":"Découvrer mes photos"
+                    }
+                }
+    },
+  "footer":"Developpé par"
+}

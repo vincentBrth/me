@@ -1,0 +1,161 @@
+{
+    "preview":{
+            "title":"Student",
+            "quote":"<i>\"Only those who dare to fail greatly, can ever achieve greatly\"</i> - RFK<br/><br/>"
+    }, 
+    "navigation":{
+         "bio":{
+            "menu":"Bio",
+            "title":"About Me",
+             "content":{
+                  "part_1":"<p>Hey, my name is Vincent, I am a ",
+                  "part_2":" years old french student. I am currently studying Game Development in the University of the West of Scotland (UWS), and I wish you the welcome on my Portfolio !</p><p> For ",
+                  "part_3":" years, computing and electronic  have taken an important part on my free time. First of all, I have started as a self-educated and I did many projects to discover deeper both fields.</p><p>That’s why, I have decided to continue my studies in a first time in Electrical Engineering & Industrial Computing during 2 years, in order to discover fields like automation, electronic, embeded computing which were fields that interested myself.</p><p>Finaly, I decided to forward in the computing. Instead of chose directly an engineering school, I have prefered to take the chance to study a year in a foreign country, in order to improve my english which is a very important skill in this professional field as well in the daily life !</p><p>Moreover, I believe that this human experience to discover deeper myself, an other culture, international people, way of work, lifestyle, and also one of the specifities of computing (Game Development) is a great opportunity for me. </p> <p>Furthermore, I am sure about that this experience will help me in my project of study after this year.</p><p>Cheers</p>"
+             }
+         },
+         "projects":{
+            "menu":"Projects",
+            "title":"My Projects"
+         },
+        "skills":{
+            "menu":"Skills",
+            "title":"My Skills"
+         },       
+         "networks":{
+            "menu":"Networks",
+            "title":"My Networks",
+            "subtitle":"Feel free to <a href='mailto:contact@vberthet.net' title='contact@vberthet.net'>contact me</a> and join me on my social networks !"
+         }
+     },
+    "lang":{
+            "flag":"<img src='img/uk_flag_16px.png' height='16' width='16' title='English selected' onclick='updateLanguage()'>",
+            "selected":"English selected"
+    },
+    "projects":{
+        "scogue_rework":{
+            "ico":"img/ico_project/ico_scogue_rework.png",
+            "href":"../scogue_rework",
+            "mobile":true,
+            "wip":true,
+            "title":"Scogue Rework",
+            "description":"WIP~2018 (Javascript, Phaser) - Mobile Rework<p>Rework of Scogue</p>" ,
+            "skills":{
+                "skill_1":"Javascript"
+            }
+        },
+        "TA":{
+            "ico":"img/ico_project/ico_TA.png",
+            "href":"https://towerattackproject.firebaseapp.com/",
+            "mobile":true,
+            "wip":false,
+            "title":"Tower Attack",
+            "description":"2017 (Javascript, Phaser) - Advanced Mobile Programming<p>Tower Attack Game, implementing advanced features like queues, stacks and pathways</p>",
+            "skills":{
+                "skill_1":"Javascript"
+            }
+        },
+        "orium":{
+            "ico":"img/ico_project/ico_orium.png",
+            "href":"https://youtu.be/ksHjCFvTFxA",
+            "title":"Orium",
+            "description":"2017 (Unreal Engine 4, Maya) - 3D Level Design<p>A game based on the time that the player will make to finish the game</p>",
+            "skills":{
+                "skill_1":"UE4",
+                "skill_2":"Maya"
+            }
+        },
+        "auld":{
+            "ico":"img/ico_project/ico_auld.png",
+            "href":"http://projectauldue4.blogspot.com/",
+            "title":"Auld",
+            "description":"2017 (Unreal Engine 4) - Game Design<p>RTS game</p>",
+            "skills":{
+                "skill_1":"UE4"
+            }
+        },
+        "scogue":{
+            "ico":"img/ico_project/ico_scogue.png",
+            "href":"../scogue",
+            "title":"Scogue",
+            "description":"2016 (Javascript, Phaser) - Web game <p>A Rogue like game</p>",
+            "skills":{
+                "skill_1":"Javascript"
+            }
+        },
+        "blog":{
+            "ico":"img/ico_project/ico_blog.png",
+            "href":"../blog",
+            "title":"Blog",
+            "description":"2016 (WordPress) - Creative Industries Blog<p>A blog to deal with subject of the creative industries</p>",
+            "skills":{
+                "skill_1":"WordPress"
+            }
+        },     
+        "mutest":{
+            "ico":"img/ico_project/ico_mutest.png",
+            "href":"../documents/muTest/MuTest_2016.pdf",
+            "title":"Mu-Test",
+            "description":"2016 (Java) - Internship<p>Report of my 4 months internship at Mu-Test, a company working in the Automated Test Equipement (ATE)</p>",
+            "skills":{
+                "skill_1":"Java"
+            }
+        },       
+        "pacman":{
+            "ico":"img/ico_project/ico_pacman.png",
+            "href":"../documents/pacman/Pacman.pdf",
+            "title":"Pac Man XNA",
+            "description":"2016 (C#) - C# Project<p>Development of the PacMan with the XNA framework</p>",
+            "skills":{
+                "skill_1":"C#"
+            }
+        },      
+        "monitoring":{
+            "ico":"img/ico_project/ico_monitoring.png",
+            "href":"../monitoring",
+            "title":"Monitoring",
+            "description":"2016 (PHP, SQL, JQuery) - UTD Project<p>HMI to provide data of a batteries monitoring system to the user</p>",
+            "skills":{
+                "skill_1":"PHP",
+                "skill_2":"SQL",
+                "skill_3":"JQuery"
+            }
+        }
+    }, 
+    "networks":{
+        "LKD":{
+            "name":"Linkedin",
+            "title":"Let us connect",
+            "href":"https://uk.linkedin.com/in/vincent-berthet",
+            "class_ico":"fa-linkedin"
+        },
+        "FB":{
+            "name":"Facebook",
+            "title":"Curious",
+            "href":"https://www.facebook.com/BerthetVincent",
+            "class_ico":"fa-facebook"
+        },    
+        "TWI":{
+            "name":"Twitter",
+            "title":"Follow me",
+            "href":"https://twitter.com/_Sissouu",
+            "class_ico":"fa-twitter"
+        },      
+        "YT":{
+            "name":"Youtube",
+            "title":"My channel",
+            "href":"https://www.youtube.com/channel/UC1zTh8-gfUpfaW8xvRnYHXw",
+            "class_ico":"fa-youtube"
+        },        
+        "INSTA":{
+            "name":"Instagram",
+            "title":"Discovers my photos",
+            "href":"https://www.instagram.com/vincent_berthet/",
+            "class_ico":"fa-instagram"
+        }
+    },
+    "alert":{
+            "mobile":"This project has been designed for Mobile Platform ! \n\nPlease if you are using a computer use the inspection tool of your browser on the page in the new tab which will open : \n \n - Right click on this page -> \"Inspect\" (Ctrl+Shift+I) \n - Select \"Toogle device toolbar\" (Ctrl+Shift+M) \n - Choose a mobile resolution \n \n Refresh the page & enjoy !",
+            "wip":"I apologize but this project is still in development, come back & check it later ? \n\nI will try to put it online as soon as possible the project done ! \n\nThank you for your cooperation"
+    },
+  "footer":"Developed by"
+}

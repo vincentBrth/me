@@ -1,0 +1,173 @@
+
+.icon-curve{
+    -webkit-border-radius: 25%;
+    -moz-border-radius: 25%;
+    border-radius: 25%;
+}
+.icon-circle{
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+.social > a{
+    display: inline-block;
+}
+.social div{
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 5px;
+}
+.social #Facebook,
+.social #Twitter,
+.social #RSS,
+.social #YouTube,
+.social #Vimeo,
+.social #LinkedIn,
+.social #GooglePlus,
+.social #Pinterest,
+.social #Flickr,
+.social #Skype,
+.social #Dribble{
+    height: 30px;
+    width: 30px;
+    background: url('./social.png') no-repeat;
+    background-size: 330px 90px;
+}
+
+/* Icon Type 1 */
+.social .t11 #Facebook, .social .t12 #Facebook, .social .t13 #Facebook,
+.social .t11 #Facebook:hover, .social .t21 #Facebook:hover, .social .t31 #Facebook:hover{
+    background-position: 0 0;
+}
+.social .t11 #Flickr, .social .t12 #Flickr, .social .t13 #Flickr,
+.social .t11 #Flickr:hover, .social .t21 #Flickr:hover, .social .t31 #Flickr:hover{
+    background-position: -30px 0;
+}
+.social .t11 #Dribble, .social .t12 #Dribble, .social .t13 #Dribble,
+.social .t11 #Dribble:hover, .social .t21 #Dribble:hover, .social .t31 #Dribble:hover{
+    background-position: -60px 0;
+}
+.social .t11 #GooglePlus, .social .t12 #GooglePlus, .social .t13 #GooglePlus,
+.social .t11 #GooglePlus:hover, .social .t21 #GooglePlus:hover, .social .t31 #GooglePlus:hover{
+    background-position: -90px 0;
+}
+.social .t11 #LinkedIn, .social .t12 #LinkedIn, .social .t13 #LinkedIn,
+.social .t11 #LinkedIn:hover, .social .t21 #LinkedIn:hover, .social .t31 #LinkedIn:hover{
+    background-position: -120px 0;
+}
+.social .t11 #Pinterest, .social .t12 #Pinterest, .social .t13 #Pinterest,
+.social .t11 #Pinterest:hover, .social .t21 #Pinterest:hover, .social .t31 #Pinterest:hover{
+    background-position: -150px 0;
+}
+.social .t11 #RSS, .social .t12 #RSS, .social .t13 #RSS,
+.social .t11 #RSS:hover, .social .t21 #RSS:hover, .social .t31 #RSS:hover{
+    background-position: -180px 0;
+}
+.social .t11 #Skype, .social .t12 #Skype, .social .t13 #Skype,
+.social .t11 #Skype:hover, .social .t21 #Skype:hover, .social .t31 #Skype:hover{
+    background-position: -210px 0;
+}
+.social .t11 #Twitter, .social .t12 #Twitter, .social .t13 #Twitter,
+.social .t11 #Twitter:hover, .social .t21 #Twitter:hover, .social .t31 #Twitter:hover{
+    background-position: -240px 0;
+}
+.social .t11 #Vimeo, .social .t12 #Vimeo, .social .t13 #Vimeo,
+.social .t11 #Vimeo:hover, .social .t21 #Vimeo:hover, .social .t31 #Vimeo:hover{
+    background-position: -270px 0;
+}
+.social .t11 #YouTube, .social .t12 #YouTube, .social .t13 #YouTube,
+.social .t11 #YouTube:hover, .social .t21 #YouTube:hover, .social .t31 #YouTube:hover{
+    background-position: -300px 0;
+}
+
+/* Icon Type 2 */
+.social .t21 #Facebook, .social .t22 #Facebook, .social .t23 #Facebook,
+.social .t12 #Facebook:hover, .social .t22 #Facebook:hover, .social .t32 #Facebook:hover{
+    background-position: 0 -30px;
+}
+.social .t21 #Flickr, .social .t22 #Flickr, .social .t23 #Flickr,
+.social .t12 #Flickr:hover, .social .t22 #Flickr:hover, .social .t32 #Flickr:hover{
+    background-position: -30px -30px;
+}
+.social .t21 #Dribble, .social .t22 #Dribble, .social .t23 #Dribble,
+.social .t12 #Dribble:hover, .social .t22 #Dribble:hover, .social .t32 #Dribble:hover{
+    background-position: -60px -30px;
+}
+.social .t21 #GooglePlus, .social .t22 #GooglePlus, .social .t23 #GooglePlus,
+.social .t12 #GooglePlus:hover, .social .t22 #GooglePlus:hover, .social .t32 #GooglePlus:hover{
+    background-position: -90px -30px;
+}
+.social .t21 #LinkedIn, .social .t22 #LinkedIn, .social .t23 #LinkedIn,
+.social .t12 #LinkedIn:hover, .social .t22 #LinkedIn:hover, .social .t32 #LinkedIn:hover{
+    background-position: -120px -30px;
+}
+.social .t21 #Pinterest, .social .t22 #Pinterest, .social .t23 #Pinterest,
+.social .t12 #Pinterest:hover, .social .t22 #Pinterest:hover, .social .t32 #Pinterest:hover{
+    background-position: -150px -30px;
+}
+.social .t21 #RSS, .social .t22 #RSS, .social .t23 #RSS,
+.social .t12 #RSS:hover, .social .t22 #RSS:hover, .social .t32 #RSS:hover{
+    background-position: -180px -30px;
+}
+.social .t21 #Skype, .social .t22 #Skype, .social .t23 #Skype,
+.social .t12 #Skype:hover, .social .t22 #Skype:hover, .social .t32 #Skype:hover{
+    background-position: -210px -30px;
+}
+.social .t21 #Twitter, .social .t22 #Twitter, .social .t23 #Twitter,
+.social .t12 #Twitter:hover, .social .t22 #Twitter:hover, .social .t32 #Twitter:hover{
+    background-position: -240px -30px;
+}
+.social .t21 #Vimeo, .social .t22 #Vimeo, .social .t23 #Vimeo,
+.social .t12 #Vimeo:hover, .social .t22 #Vimeo:hover, .social .t32 #Vimeo:hover{
+    background-position: -270px -30px;
+}
+.social .t21 #YouTube, .social .t22 #YouTube, .social .t23 #YouTube,
+.social .t12 #YouTube:hover, .social .t22 #YouTube:hover, .social .t32 #YouTube:hover{
+    background-position: -300px -30px;
+}
+
+/* Icon Type 3 */
+.social .t31 #Facebook, .social .t32 #Facebook, .social .t33 #Facebook,
+.social .t13 #Facebook:hover, .social .t23 #Facebook:hover, .social .t33 #Facebook:hover{
+    background-position: 0 -60px;
+}
+.social .t31 #Flickr, .social .t32 #Flickr, .social .t33 #Flickr,
+.social .t13 #Flickr:hover, .social .t23 #Flickr:hover, .social .t33 #Flickr:hover{
+    background-position: -30px -60px;
+}
+.social .t31 #Dribble, .social .t32 #Dribble, .social .t33 #Dribble,
+.social .t13 #Dribble:hover, .social .t23 #Dribble:hover, .social .t33 #Dribble:hover{
+    background-position: -60px -60px;
+}
+.social .t31 #GooglePlus, .social .t32 #GooglePlus, .social .t33 #GooglePlus,
+.social .t13 #GooglePlus:hover, .social .t23 #GooglePlus:hover, .social .t33 #GooglePlus:hover{
+    background-position: -90px -60px;
+}
+.social .t31 #LinkedIn, .social .t32 #LinkedIn, .social .t33 #LinkedIn,
+.social .t13 #LinkedIn:hover, .social .t23 #LinkedIn:hover, .social .t33 #LinkedIn:hover{
+    background-position: -120px -60px;
+}
+.social .t31 #Pinterest, .social .t32 #Pinterest, .social .t33 #Pinterest,
+.social .t13 #Pinterest:hover, .social .t23 #Pinterest:hover, .social .t33 #Pinterest:hover{
+    background-position: -150px -60px;
+}
+.social .t31 #RSS, .social .t32 #RSS, .social .t33 #RSS,
+.social .t13 #RSS:hover, .social .t23 #RSS:hover, .social .t33 #RSS:hover{
+    background-position: -180px -60px;
+}
+.social .t31 #Skype, .social .t32 #Skype, .social .t33 #Skype,
+.social .t13 #Skype:hover, .social .t23 #Skype:hover, .social .t33 #Skype:hover{
+    background-position: -210px -60px;
+}
+.social .t31 #Twitter, .social .t32 #Twitter, .social .t33 #Twitter,
+.social .t13 #Twitter:hover, .social .t23 #Twitter:hover, .social .t33 #Twitter:hover{
+    background-position: -240px -60px;
+}
+.social .t31 #Vimeo, .social .t32 #Vimeo, .social .t33 #Vimeo,
+.social .t13 #Vimeo:hover, .social .t23 #Vimeo:hover, .social .t33 #Vimeo:hover{
+    background-position: -270px -60px;
+}
+.social .t31 #YouTube, .social .t32 #YouTube, .social .t33 #YouTube,
+.social .t13 #YouTube:hover, .social .t23 #YouTube:hover, .social .t33 #YouTube:hover{
+    background-position: -300px -60px;
+}
