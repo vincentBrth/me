@@ -67,18 +67,7 @@
 		  $('html, body').animate({scrollTop : 0},800);
 		  return false;
 	    });
-		
-        
-        /* Parallax Background */
 
-        $(window).stellar({
-            responsive: true,
-            horizontalScrolling: false,
-            hideDistantElements: false,
-            horizontalOffset: 0,
-            verticalOffset: 0,
-        });
-
-        });
+    });
 
    })(jQuery);

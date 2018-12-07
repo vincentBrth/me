@@ -5,6 +5,7 @@
     1.Init
     2.Build content
     3.Make section
+    4.Effects
 */
 
 /*
@@ -13,7 +14,7 @@
     ******************************************************************************************* 
 */
 window.onload = init;
-
+     
 /*
     Create a Language object and redefine the update and make method of this object
 */
@@ -265,3 +266,21 @@ function makeContact(data,data_c){
     $('#contact_info_content').html(contact_info_html);
     $('#contact_social_content').html(contact_social_html);
 }
+
+/*
+    ******************************************************************************************* 
+                                        4.Effects
+    ******************************************************************************************* 
+*/
+
+    /* Parallax Background - stellar.js
+    *  provides parallax scrolling effects to any scrolling element.
+    */
+
+    $(window).stellar({
+        responsive: true,
+        horizontalScrolling: false,
+        hideDistantElements: false,
+        horizontalOffset: 0,
+        verticalOffset: 0,
+    });

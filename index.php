@@ -66,7 +66,7 @@
                                             </li>
                                             <li>
                                                 <a><div id='nav_flag_ico_content' class='flag'></div></a>
-                                        </li>
+                                       		</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -89,7 +89,7 @@
                                             <a href='#bio' class='btn btn-circle smoth-scroll'>
                                                 <i class='fa fa-angle-double-down animated'></i>
                                             </a>
-                                    </div>
+                                    	</div>
                                     </div>
                                 </div>
                             </div>
@@ -176,15 +176,15 @@
         </footer>
             
         <!-- Javascript Plugins  -->
-        <script type='text/javascript' src='plugin/jquery.min.js'></script>
-        <script type='text/javascript' src='plugin/bootstrap/js/bootstrap.min.js'></script>
-        <script type='text/javascript' src='plugin/stellar.min.js'></script>
-        <script type='text/javascript' src='plugin/typed.min.js'></script>
-        <script type='text/javascript' src='plugin/mixitup.min.js'></script>
-        <script type='text/javascript' src='plugin/gAnalitycs.js'></script>
+        <script src='plugin/jquery.min.js'></script>
+        <script src='plugin/bootstrap/js/bootstrap.min.js'></script>
+        <script src='plugin/stellar.min.js'></script>
+        <script src='plugin/typed.min.js'></script>
+        <script src='plugin/mixitup.min.js'></script>
+        <script src='plugin/gAnalitycs.js'></script>
         <!-- Main Javascript File  -->
-        <script type='text/javascript' src='js/effects.js'></script>
-        <script type='text/javascript' src='js/common_content.js'></script>
-        <script type='text/javascript' src='js/home_content.js'></script>
+        <script src='js/effects.js'></script>
+        <script src='js/common_content.js'></script>
+        <script src='js/home_content.js'></script>
     </body>
 </html>

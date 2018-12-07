@@ -18,7 +18,7 @@ function init(type,alert,to,from,host){
     if(from=="") this.from=host;
     this.host=host;
     
-    this.waitTime=10000;
+    this.waitTime=10;
     this.x;
     make();
 }

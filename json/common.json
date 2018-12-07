@@ -131,9 +131,9 @@
         "info":{
                     "mail_button":{
                         "class":"fas fa-envelope fa-2x",
-                        "href":"mailto:contact@vberthet.net",
+                        "href":"mailto:contact@vberthet.me",
                         "title":"NA",
-                        "text":"contact@vberthet.net"
+                        "text":"contact@vberthet.me"
                     },
                     "resume":{
                         "class":"fas fa-download fa-2x color-4",

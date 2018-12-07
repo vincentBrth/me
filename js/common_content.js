@@ -188,7 +188,7 @@ function getAge(dt,format) {
 function makeRelease(){
     current_release='X';
     var json=$.getJSON('json/request.json');
-
+    //var json=$.getJSON('/json/request.json'); //#WEB
     json.done(function(data) {
         for(var i in data.notes){
             current_release=data.notes[i].id;
@@ -209,98 +209,3 @@ function makeFooter(data){
     $('#footerContent').html(content);
     makeRelease();
 }
-
-
-/*
-    ******************************************************************************************* 
-                                        4.Project 
-    ******************************************************************************************* 
-*/
-
-
-function Project(name,data_c,data){
-    this.name=name;
-    this.ico;
-    this.href;
-    this.mobile=false;
-    this.wip=false;
-    this.skills;
-    this.description;
-    this.title;
-
-    for(key in data_c){
-        if(key=='ico') this.ico = data_c[key];
-        if(key=='href') this.href = data_c[key];
-        if(key=='mobile') this.mobile = data_c[key];
-        if(key=='wip') this.wip = data_c[key];
-        if(key=='skills') this.skills = data_c[key];
-        if(key=='title') this.title = data_c[key];
-        if(key=='description') this.description = data_c[key];
-    }
-    for(key in data){
-        if(key=='title') this.title = data[key];
-        if(key=='description') this.description = data[key];
-    }
-}
-
-function ProjectList(data_c,data){
-    this.list = new Array();
-
-    //Check key from data_c
-    var portfolio_c;
-    for(key in data_c){
-        if(key=='portfolio'){
-            portfolio_c=data_c[key];
-        }
-    }
-   
-    //Check key from data
-    var portfolio;
-    for(key in data){
-        if(key=='portfolio'){
-            portfolio=data[key];
-        }
-    }
-
-    //Merge content
-    for(key in portfolio_c){
-        for(key2 in portfolio){
-            if(key==key2){
-                //Same keys
-                this.list.push(new Project(key,portfolio_c[key],portfolio[key2]));
-                break;
-            }
-        }
-    }
-}
-
-//Get a project
-ProjectList.prototype.get = function(name){
-    for(key in this.list){
-        if(this.list[key].name==name) {
-            return (this.list[key]);
-        }
-    }
-}
-
-Project.prototype.getAttribute = function(attr){
-    if(attr=='name') return this.name;
-    if(attr=='ico') return this.ico;
-    if(attr=='href') return this.href;
-    if(attr=='mobile') return this.mobile;
-    if(attr=='wip') return this.wip;
-    if(attr=='skills') return this.skills;
-    if(attr=='title') return this.title;
-    if(attr=='description') return this.description;
-    return 'NA_attributes';
-}
-
-
-/*
-    ******************************************************************************************* 
-                                        5.Request Design 
-    ******************************************************************************************* 
-*/
-
-//categorie request dans json
-//object requestList pour les error, etc....

@@ -10,9 +10,9 @@
 		$mysqlpassword='';
 		*/
 		//WEB
-		$mysqldsn='mysql:host=db701348581.db.1and1.com;dbname=db701348581;charset=utf8';
-		$mysqluser='dbo701348581';
-		$mysqlpassword='Justaniceberg1';
+		$mysqldsn='mysql:host=db764166981.hosting-data.io;dbname=db764166981;charset=utf8';
+		$mysqluser='dbo764166981';
+		$mysqlpassword='Notmypassword1&';
 		
 	
 		//LOCAL
