@@ -7,7 +7,7 @@
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
         <!-- SEO -->
         <meta name='description' content='Welcome on the website of Vincent Berthet a french student. Open it !'>
-        <meta name=”keywords” content='Vincent,Berthet,Vincent Berthet,Berthet Vincent,etudiant,student,info,informatique,computing,ingenieur,engineer,dev,junior,portfolio,website,site,Rennes,France,Saint-Etienne,UJM,UWS,ESIR'>
+        <meta name=”keywords” content='job,Vincent,Berthet,Vincent Berthet,Berthet Vincent,etudiant,student,info,informatique,computing,ingenieur,engineer,dev,junior,portfolio,website,site,Rennes,France,Saint-Etienne,UJM,UWS,ESIR'>
         <meta name='author' content='Vincent Berthet'>
         <meta name='url' content='https://www.vberthet.net'>
         <meta name='copyright' content='vincent berthet'>
