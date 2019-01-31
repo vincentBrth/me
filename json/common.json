@@ -1,13 +1,13 @@
 {    
     "portfolio":{
-        "CA":{
-            "ico":"img/ico_project/ico_CA.png",
-            "filter":"wip 2018",
-            "href":"project/CA",
+        "GOL":{
+            "ico":"img/ico_project/ico_gol.png",
+            "filter":"2018",
+            "href":"https://gitlab.com/Kyross/game_of_life/tree/master/deployment",
             "title":"NA",
-            "wip":true,
+            "wip":false,
             "description":"NA" ,
-            "skills":"Javascript HTML5 CSS3 PHP SQL JQuery"
+            "skills":"Qt C++ GUI"
         },
         "website_v1":{
             "ico":"img/ico_project/ico_website_v1.png",

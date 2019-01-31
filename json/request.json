@@ -65,6 +65,11 @@
         }
     },
     "notes":{
+        "v2.5":{
+            "id":"2.5",
+            "text":"Added Game of Life project to portfolio",
+            "released":"01/31/2019"
+        },
         "v2.4":{
             "id":"2.4",
             "text":"New hosting, check W3C validator, <a href='../card.html' title='save it !'>contact card</a> added",

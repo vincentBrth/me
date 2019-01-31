@@ -24,13 +24,13 @@
      },
     "lang":"<img src='img/vberthet/uk_flag_16px.png' title='Click to switch to French' onclick='language.switch()'>",
     "portfolio":{
-        "CA":{
-            "title":"CA Bank Account Manager",
-            "description":"A tool to do automaticaly your account from a CSV of the Credit Agricole"
+        "GOL":{
+            "title":"Game of Life",
+            "description":"2018 (Qt, C++) - GUI designed in order to understand ergonomic concerns of an application for different level of users" 
         },
         "website_v1":{
             "title":"Old website",
-            "description":"Last release of this website (1.6)"
+            "description":"2018 - Last release of this website (1.6)"
         },
         "scogue_rework":{
             "title":"Scogue Rework",
