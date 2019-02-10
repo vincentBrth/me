@@ -65,6 +65,11 @@
         }
     },
     "notes":{
+        "v2.6":{
+            "id":"2.6",
+            "text":"Update CV",
+            "released":"02/10/2019"
+        },
         "v2.5":{
             "id":"2.5",
             "text":"Added Game of Life project to portfolio",
