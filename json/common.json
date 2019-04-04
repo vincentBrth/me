@@ -1,5 +1,14 @@
 {    
     "portfolio":{
+        "Ninja":{
+            "ico":"img/ico_project/ico_ninja.png",
+            "filter":"wip 2019",
+            "href":"project/ninja",
+            "wip":true,
+            "title":"NA",
+            "description":"NA" ,
+            "skills":"Unity C#"
+        },
         "GOL":{
             "ico":"img/ico_project/ico_gol.png",
             "filter":"2018",
@@ -99,7 +108,7 @@
         "programming":{
             "ico":"fas fa-code-branch fa-2x color-8",
             "title":"NA",
-            "list":"C++, C#, Java, C"
+            "list":"C++, C, C#, Qt, Java, Python"
         },
         "web":{
             "ico":"fas fa-code fa-2x color-7",
@@ -114,12 +123,12 @@
         "shell":{
             "ico":"fas fa-terminal fa-2x",
             "title":"NA",
-            "list":"Bash"
+            "list":"Bash, Docker, Git"
         },
         "software":{
             "ico":"fas fa-desktop fa-2x color-5",
             "title":"NA",
-            "list":"NetBeans, Visual Studio, Eclipse, Photoshop, Illustrator, After Effects, Unreal Engine 4"
+            "list":"Visual Studio, Unity, IntelliJ, Photoshop, Illustrator, After Effects, Unreal Engine 4"
         },
             "other":{
             "ico":"fab fa-connectdevelop fa-2x color-3",

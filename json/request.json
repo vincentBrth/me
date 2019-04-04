@@ -65,6 +65,11 @@
         }
     },
     "notes":{
+        "v2.7":{
+            "id":"2.7",
+            "text":"Add Ninja Warrior project link",
+            "released":"04/04/2019"
+        },
         "v2.6":{
             "id":"2.6",
             "text":"Update CV",
@@ -72,7 +77,7 @@
         },
         "v2.5":{
             "id":"2.5",
-            "text":"Added Game of Life project to portfolio",
+            "text":"Add Game of Life project to portfolio",
             "released":"01/31/2019"
         },
         "v2.4":{
@@ -127,7 +132,7 @@
         },
         "V1.1":{
             "id":"1.1",
-            "text":"Added Scogue Project",
+            "text":"Add Scogue Project",
             "released":"03/02/2017"
         },
         "V1.0":{

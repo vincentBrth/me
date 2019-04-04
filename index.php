@@ -124,6 +124,7 @@
                     <ul class='portfolio'>
                         <li class='filter' data-filter='all'>All</li>
                         <li class='filter' data-filter='.wip'>WIP</li>
+                        <li class='filter' data-filter='.2019'>2019</li>
                         <li class='filter' data-filter='.2018'>2018</li>
                         <li class='filter' data-filter='.2017'>2017</li>
                         <li class='filter' data-filter='.2016'>2016</li>

@@ -24,6 +24,10 @@
      },
     "lang":"<img src='img/vberthet/fr_flag_16px.png' title='Cliquer pour passer en anglais' onclick='language.switch()'>",
     "portfolio":{
+        "Ninja":{
+            "title":"Ninja Warrior Unity",
+            "description":"WIP~2019 (Unity, C#) - Projet Unity"
+        },
         "GOL":{
             "title":"Game of Life",
             "description":"2018 (Qt, C++) - Application visant à évaluer l'ergonomie d'un logiciel vis à vis d'utilisateurs de niveaux d'expertises différents" 
