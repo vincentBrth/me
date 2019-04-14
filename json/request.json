@@ -61,7 +61,12 @@
         "Orium":{
             "name":"Orium",
             "href":"https://www.youtube.com/embed/ksHjCFvTFxA",
-            "description":"description"
+            "description":"description todo"
+        },
+        "Isati Game Jam 2K19":{
+            "name":"Isati Game Jam 2K19",
+            "href":"https://www.youtube.com/embed/Q5fmX5Q7btM",
+            "description":"<p>Trailer of the first <a href='https://esir.univ-rennes1.fr/actualites/la-1ere-game-jam-lesir' >Game Jam of ESIR</a> in partnership with OAB</p><p>Winner : <a href='https://www.youtube.com/watch?v=E_g47fFlD-E'>Game Jam of Thrones</a></p><p>Trailer made by Vincent Berthet</p>"
         }
     },
     "notes":{

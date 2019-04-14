@@ -173,11 +173,12 @@ img {
 }
 
 a {
+    color: #17954c;
     text-decoration: none;
 }
 
 a:hover {
-    color: #fff;
+    color: #24b662;
     text-decoration: none;
 }
 

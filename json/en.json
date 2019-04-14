@@ -28,6 +28,10 @@
             "title":"Ninja Warrior Unity",
             "description":"WIP~2019 (Unity, C#) - Unity development project"
         },
+        "game_jam_2019":{
+            "title":"Isati Game Jam 2019",
+            "description":"2019 - Organization of the event"
+        },
         "GOL":{
             "title":"Game of Life",
             "description":"2018 (Qt, C++) - GUI designed in order to understand ergonomic concerns of an application for different level of users" 

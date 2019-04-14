@@ -9,6 +9,15 @@
             "description":"NA" ,
             "skills":"Unity C#"
         },
+        "game_jam_2019":{
+            "ico":"img/ico_project/ico_gameJam2k19.png",
+            "filter":"2019",
+            "href":"Isati Game Jam 2K19",
+            "player":true,
+            "title":"NA",
+            "description":"NA",
+            "skills":"Management"
+        },
         "GOL":{
             "ico":"img/ico_project/ico_gol.png",
             "filter":"2018",
