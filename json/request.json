@@ -149,10 +149,9 @@
     "todo":{
             "1":"Fix some responsive dimensions (request.php - footer)",
             "2":"Multiple filters (year+skills)",
-            "3":"Youtube embeded responsive (request.php)",
-            "4":"Update all logo",
-            "5":"Display skills label at the bottom of project",
-            "6":"Fix me class with min height",
-            "7":"Download page"
+            "3":"Update all logo",
+            "4":"Display skills label at the bottom of project",
+            "5":"Fix me class with min height",
+            "6":"Download page"
      }
 }

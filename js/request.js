@@ -80,7 +80,7 @@ function makePlayer(data){
             main_html=[
                 "<div class='align-center'>",
                     "<h1>"+data.player[key].name+"</h1>",
-                        "<div class='col-md-12'>",
+                        "<div class='col-md-12 video-container'>",
                             "<iframe width='854' height='480' src='"+data.player[key].href+"' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>",
                         "</div>",
                     "<p>"+data.player[key].description+"</p>",
