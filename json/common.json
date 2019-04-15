@@ -21,7 +21,7 @@
         "GOL":{
             "ico":"img/ico_project/ico_gol.png",
             "filter":"2018",
-            "href":"https://gitlab.com/Kyross/game_of_life/tree/master/deployment",
+            "href":"https://github.com/Kyross/GoL/tree/master/deployment",
             "title":"NA",
             "wip":false,
             "description":"NA" ,
