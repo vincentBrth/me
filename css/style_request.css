@@ -467,7 +467,7 @@ body.loaded #preloader{
     top: 0;
     width: 100%;
     background: #000;
-    z-index: 9999;
+    z-index: 99;
     -webkit-transition: all 0.4s ease-out;
     transition: all 0.4s ease-out;
 }
