@@ -149,8 +149,7 @@
     "todo":{
             "1":"Fix some responsive dimensions (request.php - footer)",
             "2":"Multiple filters (year+skills)",
-            "3":"Update all logo",
-            "4":"Fix me class with min height",
-            "5":"Download page"
+            "3":"Fix me class with min height",
+            "4":"Download page"
      }
 }
