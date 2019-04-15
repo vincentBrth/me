@@ -144,6 +144,7 @@ function makePortfolio(data,data_c){
             var ico=c_content[i].ico;
             var title=c_content[i].title;
             var description=c_content[i].description;
+            var skills=c_content[i].skills;
             if(typeof content[i].ico != 'undefined') ico=content[i].ico;
             if(typeof content[i].title != 'undefined') title=content[i].title;
             if(typeof content[i].description != 'undefined') description=content[i].description;
@@ -159,6 +160,7 @@ function makePortfolio(data,data_c){
                                                     "<a href='"+request+"'  target='_blank'><i class='fas fa-external-link-alt'></i></a>",
                                                 "</div>",
                                                 "<h2>"+title+"</h2>",
+                                                "<p>"+filter+" - "+skills+"</p>",
                                                 "<p>"+description+"</p>",
                                             "</div>",
                                             "</figcaption>",		

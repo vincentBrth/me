@@ -2,7 +2,7 @@
     "portfolio":{
         "Ninja":{
             "ico":"img/ico_project/ico_ninja.png",
-            "filter":"wip 2019",
+            "filter":"WIP 2019",
             "href":"project/ninja",
             "wip":true,
             "title":"NA",
@@ -37,7 +37,7 @@
         },
         "scogue_rework":{
             "ico":"img/ico_project/ico_scogue_rework.png",
-            "filter":"wip 2018",
+            "filter":"WIP 2018",
             "href":"project/scogue_rework",
             "mobile":true,
             "wip":true,
@@ -62,7 +62,7 @@
             "player":true,
             "title":"NA",
             "description":"NA",
-            "skills":"UE4 Maya"
+            "skills":"UE4"
         },
         "auld":{
             "ico":"img/ico_project/ico_auld.png",

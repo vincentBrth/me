@@ -26,15 +26,15 @@
     "portfolio":{
         "Ninja":{
             "title":"Ninja Warrior Unity",
-            "description":"WIP~2019 (Unity, C#) - Projet Unity"
+            "description":"Projet Unity"
         },
         "game_jam_2019":{
             "title":"Isati Game Jam 2019",
-            "description":"2019 - Membre organisateur de l'évenement"
+            "description":"Membre organisateur de l'évenement"
         },
         "GOL":{
             "title":"Game of Life",
-            "description":"2018 (Qt, C++) - Application visant à évaluer l'ergonomie d'un logiciel vis à vis d'utilisateurs de niveaux d'expertises différents" 
+            "description":"Application visant à évaluer l'ergonomie d'un logiciel vis à vis d'utilisateurs de niveaux d'expertises différents" 
         },
         "website_v1":{
             "title":"Ancien site",
@@ -42,40 +42,40 @@
         },
         "scogue_rework":{
             "title":"Scogue Rework",
-            "description":"WIP~2018 (Javascript, Phaser) - Rework de Scogue"
+            "description":"Rework de Scogue"
         },
         "TA":{
             "title":"Tower Attack",
-            "description":"2017 (Javascript, Phaser) - Programmation avancées pour support mobile (JS)"
+            "description":"Programmation avancées pour support mobile (JS)"
         },
         "orium":{
             "title":"Orium",
-            "description":"2017 (Unreal Engine 4, Maya) - Conception de niveaux 3D sous Unreal Engine 4"
+            "description":"Conception de niveaux 3D sous Unreal Engine 4"
         },
         "auld":{
             "title":"Auld",
-            "description":"2017 (Unreal Engine 4) - RTS developpé sous Unreal Engine 4"
+            "description":"RTS developpé sous Unreal Engine 4"
         },
         "scogue":{
 
             "title":"Scogue",
-            "description":"2016 (Javascript, Phaser) - Jeu web développé avec le framework Phaser"
+            "description":"Jeu web développé avec le framework Phaser"
         },
         "blog":{
             "title":"Blog",
-            "description":"2016 (WordPress) - Blog WordPress Creative Industries"
+            "description":"Blog WordPress Creative Industries"
         },     
         "mutest":{
             "title":"Mu-Test",
-            "description":"2016 (Java) - Rapport de stage au sein de l'entreprise Mu-Test exerçant dans le domaine de l'ATE (Automated Test Equipment). Développement de GUI (Java) au sein de la suite, test unitaire, bug fixing."
+            "description":"Rapport de stage au sein de l'entreprise Mu-Test exerçant dans le domaine de l'ATE (Automated Test Equipment). Développement de GUI (Java) au sein de la suite, test unitaire, bug fixing."
         },       
         "pacman":{
             "title":"Pac Man XNA",
-            "description":"2016 (C#) - Développé avec le framework XNA"
+            "description":"Développé avec le framework XNA"
         },      
         "monitoring":{
             "title":"Monitoring",
-            "description":"2016 (PHP, SQL, JQuery)  - Projet de DUT"
+            "description":"Projet de DUT"
         }
     },
     "skills":{

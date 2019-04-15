@@ -26,55 +26,55 @@
     "portfolio":{
         "Ninja":{
             "title":"Ninja Warrior Unity",
-            "description":"WIP~2019 (Unity, C#) - Unity development project"
+            "description":"Unity development project"
         },
         "game_jam_2019":{
             "title":"Isati Game Jam 2019",
-            "description":"2019 - Organization of the event"
+            "description":"Organization of the event"
         },
         "GOL":{
             "title":"Game of Life",
-            "description":"2018 (Qt, C++) - GUI designed in order to understand ergonomic concerns of an application for different level of users" 
+            "description":"GUI<br/> designed in order to understand ergonomic concerns of an application for different level of users" 
         },
         "website_v1":{
             "title":"Old website",
-            "description":"2018 - Old release of this website (1.6)"
+            "description":"Old release of this website (1.6)"
         },
         "scogue_rework":{
             "title":"Scogue Rework",
-            "description":"WIP~2018 (Javascript, Phaser) - Mobile Rework<p>Rework of Scogue</p>"
+            "description":"Mobile Rework<br/>Rework of Scogue"
         },
         "TA":{
             "title":"Tower Attack",
-            "description":"2017 (Javascript, Phaser) - Advanced Mobile Programming<p>Tower Attack Game, implementing advanced features like queues, stacks and pathways</p>"
+            "description":"Advanced Mobile Programming<br/>Tower Attack Game, implementing advanced features like queues, stacks and pathways"
         },
         "orium":{
             "title":"Orium",
-            "description":"2017 (Unreal Engine 4, Maya) - 3D Level Design<p>A game based on the time that the player will make to finish the game</p>"
+            "description":"3D Level Design<br/>A game based on the time that the player will make to finish the game"
         },
         "auld":{
             "title":"Auld",
-            "description":"2017 (Unreal Engine 4) - Game Design<p>RTS game</p>"
+            "description":"Game Design<br/>RTS game"
         },
         "scogue":{
             "title":"Scogue",
-            "description":"2016 (Javascript, Phaser) - Web game <p>A Rogue like game</p>"
+            "description":"Web game <br/>A Rogue like game"
         },
         "blog":{
             "title":"Blog",
-            "description":"2016 (WordPress) - Creative Industries Blog<p>A blog to deal with subject of the creative industries</p>"
+            "description":"Creative Industries Blog<br/>A blog to deal with subject of the creative industries"
         },     
         "mutest":{
             "title":"Mu-Test",
-            "description":"2016 (Java) - Internship<p>Report of my 4 months internship at Mu-Test, a company working in the Automated Test Equipement (ATE)</p>"
+            "description":"Internship<br/>Report of my 4 months internship at Mu-Test, a company working in the Automated Test Equipement (ATE)"
         },       
         "pacman":{
             "title":"Pac Man XNA",
-            "description":"2016 (C#) - C# Project<p>Development of the PacMan with the XNA framework</p>"
+            "description":"C# Project<br/>Development of the PacMan with the XNA framework"
         },      
         "monitoring":{
             "title":"Monitoring",
-            "description":"2016 (PHP, SQL, JQuery) - UTD Project<p>HMI to provide data of a batteries monitoring system to the user</p>"
+            "description":"UTD Project<br/>HMI to provide data of a batteries monitoring system to the user"
         }
     },
     "skills":{
