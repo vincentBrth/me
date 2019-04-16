@@ -69,7 +69,20 @@
             "description":"<p>Trailer of the first <a href='https://esir.univ-rennes1.fr/actualites/la-1ere-game-jam-lesir' >Game Jam of ESIR</a> in partnership with OAB</p><p>Winner : <a href='https://www.youtube.com/watch?v=E_g47fFlD-E'>Game Jam of Thrones</a></p><p>Trailer made by Vincent Berthet</p>"
         }
     },
+    "download":{
+        "pacman":{
+            "name":"Pacman",
+            "href":"project/documents/pacman/Pacman.pdf",
+            "type":".pdf",
+            "description":"Presentation file"
+        }
+    },
     "notes":{
+        "v2.8":{
+            "id":"2.8",
+            "text":"Add Download page, rework video page and fix of home content preloading",
+            "released":"04/17/2019"
+        },
         "v2.7":{
             "id":"2.7",
             "text":"Add Ninja Warrior project link",
@@ -147,9 +160,8 @@
         }
     },
     "todo":{
-            "1":"Fix some responsive dimensions (request.php - footer)",
+            "1":"More projects :)",
             "2":"Multiple filters (year+skills)",
-            "3":"Fix me class with min height",
-            "4":"Download page"
+            "3":"Fix me class with min height"
      }
 }

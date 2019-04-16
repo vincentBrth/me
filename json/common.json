@@ -99,7 +99,7 @@
         "pacman":{
             "ico":"img/ico_project/ico_pacman.png",
             "filter":"2016",
-            "href":"project/documents/pacman/Pacman.pdf",
+            "href":"request.php?type=Download&alert=Pacman",
             "title":"NA",
             "description":"NA",
             "skills":"C#"

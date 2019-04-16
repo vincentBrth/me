@@ -40,6 +40,11 @@ function make(){
             makePlayer(data);  
             makeRelease();
         })
+    }else if(this.type=="Download"){
+        $.getJSON(this.json, function(data) {
+            makeDownload(data);  
+            makeRelease();
+        })
     }else{
         $.getJSON(this.json, function(data) {
             makeRequest(data);   
@@ -69,11 +74,53 @@ function count() {
 }
 
 /**
+ * Download page
+ * @param {request.json content} data 
+ */
+function makeDownload(data){
+    var main_html="";
+    for(var key in data.download){
+        if(data.download[key].name==this.alert){
+            main_html += [
+                    "<div class='request col-md-12'>",
+                        "<div class='request-alert'>",
+                            "<img src='img/vberthet/vb_white_bg_512.png' height='200px' alt='logo_ico'/>Download",
+                        "</div>",
+                        "<div class='request-player-color'>",
+                            "<h1>"+data.download[key].name+"</h1>",
+                        "</div>",
+                        "<p><h4><i>"+data.download[key].description+"</i></h4><p>",
+                        "<div class='request-player-color'>",
+                            "<a class='button button-style button-style-dark' href='"+data.download[key].href+"'><i class='far fa-arrow-alt-circle-down'></i> "+data.download[key].type+"</a>",
+                        "</div>",
+                    "</div>"
+                    ].join('');
+                    $('#main_content').html(main_html);
+                    break;
+        }
+    }
+
+
+
+    
+    //if there is content for this alert main_html shouldn't be empty
+    if(main_html!=""){
+        $('#main_content').html(main_html)
+        makeHeader('request-player-color',this.type,this.host);
+        makeFooter('request-player-color',this.host);
+    }else{
+        console.error(this.type+" content error");
+        this.type="download_error";
+        make();
+    }
+}
+
+
+/**
  * Make an embeded player and description
  * @param {request.json content} data 
  */
 function makePlayer(data){
-    console.log(data);
     var main_html="";
     for(var key in data.player){
         if(data.player[key].name==this.alert){
