@@ -198,6 +198,12 @@
                         "title":"NA",
                         "href":"https://www.instagram.com/vincent_berthet/",
                         "class_ico":"fab fa-instagram"
+                    },
+                    "GITHUB":{
+                        "class":"github",
+                        "title":"NA",
+                        "href":"https://github.com/Kyross?tab=repositories",
+                        "class_ico":"fab fa-github"
                     }
                 }
     }

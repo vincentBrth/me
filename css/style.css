@@ -985,10 +985,12 @@ ul.portfolio li.active:hover {
 }
     
 .github {
-   background-color: #333333;
+    background-color: #000;
 }
-
-
+ 
+.github:hover {
+    background-color: #0000006b;
+}
 
 
 /* Footer */

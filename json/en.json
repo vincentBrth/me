@@ -127,6 +127,9 @@
                     },        
                     "INSTA":{
                         "title":"Discovers my photos"
+                    },
+                    "GITHUB":{
+                        "title":"Discovers my projects"
                     }
                 }
     },
