@@ -21,7 +21,7 @@
         "GOL":{
             "ico":"img/ico_project/ico_gol.png",
             "filter":"2018",
-            "href":"https://github.com/Kyross/GoL/tree/master/deployment",
+            "href":"https://github.com/RealVincentBerthet/GoL/tree/master/deployment",
             "title":"NA",
             "wip":false,
             "description":"NA" ,
@@ -174,13 +174,7 @@
                         "title":"NA",
                         "href":"https://uk.linkedin.com/in/vincent-berthet",
                         "class_ico":"fab fa-linkedin"
-                    },
-                    "FB":{
-                        "class":"facebook",
-                        "title":"NA",
-                        "href":"https://www.facebook.com/BerthetVincent",
-                        "class_ico":"fab fa-facebook"
-                    },    
+                    },   
                     "TWI":{
                         "class":"twitter",
                         "title":"NA",
@@ -202,7 +196,7 @@
                     "GITHUB":{
                         "class":"github",
                         "title":"NA",
-                        "href":"https://github.com/Kyross?tab=repositories",
+                        "href":"https://github.com/RealVincentBerthet",
                         "class_ico":"fab fa-github"
                     }
                 }
