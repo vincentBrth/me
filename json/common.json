@@ -2,7 +2,7 @@
     "portfolio":{
         "Kubic":{
             "ico":"img/ico_project/ico_kubic.png",
-            "filter":"2019",
+            "filter":"3D Csharp Game",
             "href":"Kubic",
             "webgl":true,
             "title":"NA",
@@ -11,7 +11,7 @@
         },
         "game_jam_2019":{
             "ico":"img/ico_project/ico_gameJam2k19.png",
-            "filter":"2019",
+            "filter":"Management",
             "href":"Isati Game Jam 2K19",
             "player":true,
             "title":"NA",
@@ -20,7 +20,7 @@
         },
         "GOL":{
             "ico":"img/ico_project/ico_gol.png",
-            "filter":"2018",
+            "filter":"Cpp Game",
             "href":"https://github.com/RealVincentBerthet/GoL/tree/master/deployment",
             "title":"NA",
             "wip":false,
@@ -29,7 +29,7 @@
         },
         "website_v1":{
             "ico":"img/ico_project/ico_website_v1.png",
-            "filter":"2018",
+            "filter":"Javascript Web",
             "href":"project/vberthet_1_6",
             "title":"NA",
             "description":"NA" ,
@@ -37,7 +37,7 @@
         },
         "scogue_rework":{
             "ico":"img/ico_project/ico_scogue_rework.png",
-            "filter":"WIP 2018",
+            "filter":"Javascript Game",
             "href":"project/scogue_rework",
             "mobile":true,
             "wip":true,
@@ -47,7 +47,7 @@
         },
         "TA":{
             "ico":"img/ico_project/ico_TA.png",
-            "filter":"2017",
+            "filter":"Javascript Game",
             "href":"https://towerattackproject.firebaseapp.com/",
             "mobile":true,
             "wip":false,
@@ -57,7 +57,7 @@
         },
         "orium":{
             "ico":"img/ico_project/ico_orium.png",
-            "filter":"2017",
+            "filter":"3D Game",
             "href":"Orium",
             "player":true,
             "title":"NA",
@@ -66,7 +66,7 @@
         },
         "auld":{
             "ico":"img/ico_project/ico_auld.png",
-            "filter":"2017",
+            "filter":"Management 3D Game",
             "href":"http://projectauldue4.blogspot.com/",
             "title":"NA",
             "description":"NA",
@@ -74,7 +74,7 @@
         },
         "scogue":{
             "ico":"img/ico_project/ico_scogue.png",
-            "filter":"2016",
+            "filter":"Javascript Game",
             "href":"project/scogue",
             "title":"NA",
             "description":"NA",
@@ -82,7 +82,7 @@
         },
         "blog":{
             "ico":"img/ico_project/ico_blog.png",
-            "filter":"2016",
+            "filter":"Web",
             "href":"project/blog",
             "title":"NA",
             "description":"NA",
@@ -90,7 +90,7 @@
         },     
         "mutest":{
             "ico":"img/ico_project/ico_mutest.png",
-            "filter":"2016",
+            "filter":"Pro",
             "href":"project/documents/muTest/MuTest_2016.pdf",
             "title":"NA",
             "description":"NA",
@@ -98,7 +98,7 @@
         },       
         "pacman":{
             "ico":"img/ico_project/ico_pacman.png",
-            "filter":"2016",
+            "filter":"Csharp Game",
             "href":"request.php?type=Download&alert=Pacman",
             "title":"NA",
             "description":"NA",
@@ -106,7 +106,7 @@
         },      
         "monitoring":{
             "ico":"img/ico_project/ico_monitoring.png",
-            "filter":"2016",
+            "filter":"Web",
             "href":"project/monitoring",
             "title":"NA",
             "description":"NA",

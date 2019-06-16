@@ -14,15 +14,15 @@
     ******************************************************************************************* 
 */
 window.onload = init;
-     
+var onWeb="";     
 /*
     Create a Language object and redefine the update and make method of this object
 */
 function init(){
     var available_lang = new Map();
-    available_lang.set('en','json/en.json');
-    available_lang.set('fr','json/fr.json');
-    available_lang.set('.common','json/common.json');
+    available_lang.set('en',onWeb+'json/en.json');
+    available_lang.set('fr',onWeb+'json/fr.json');
+    available_lang.set('.common',onWeb+'json/common.json');
     this.language = new Language(available_lang,'en');
     this.language.update = function(){update();}
     this.language.make = function(){make();}

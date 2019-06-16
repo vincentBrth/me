@@ -123,11 +123,14 @@
                 <div class='row'>
                     <ul class='portfolio'>
                         <li class='filter' data-filter='all'>All</li>
-                        <li class='filter' data-filter='.WIP'>WIP</li>
-                        <li class='filter' data-filter='.2019'>2019</li>
-                        <li class='filter' data-filter='.2018'>2018</li>
-                        <li class='filter' data-filter='.2017'>2017</li>
-                        <li class='filter' data-filter='.2016'>2016</li>
+                        <li class='filter' data-filter='.Pro'>Pro</li>
+                        <li class='filter' data-filter='.3D'>3D</li>
+                        <li class='filter' data-filter='.Csharp'>C#</li>
+                        <li class='filter' data-filter='.Cpp'>C++</li>
+                        <li class='filter' data-filter='.Javascript'>Javascript</li>
+                        <li class='filter' data-filter='.Web'>Web</li>
+                        <li class='filter' data-filter='.Management'>Management</li>
+                        <li class='filter' data-filter='.Game'>Game</li>
                     </ul>
                 </div>
                 

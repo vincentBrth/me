@@ -13,7 +13,7 @@ console.info("Hi there ! You are welcome to examine the code");
                                         1.Language 
     ******************************************************************************************* 
 */
-
+var onWeb="";
 /*
     Language object
     @param string lang : the name of the language [en,fr,..]
@@ -187,7 +187,7 @@ function getAge(dt,format) {
 */
 function makeRelease(){
     current_release='X';
-    var json=$.getJSON('json/request.json');
+    var json=$.getJSON(onWeb+'/json/request.json');
     //var json=$.getJSON('/json/request.json'); //#WEB
     json.done(function(data) {
         for(var i in data.notes){

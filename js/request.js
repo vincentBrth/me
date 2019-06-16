@@ -6,11 +6,12 @@
  * @param {main domain link} host 
  */
 
+ var onWeb="";
  /**
   * Initialize request.php depending of the request selected
   */
 function init(type,alert,to,from,host){
-    this.json='json/request.json';
+    this.json=onWeb+'json/request.json';
     this.type=type;
     this.alert=alert;
     this.to=to;
@@ -89,7 +90,7 @@ function makeDownload(data){
             main_html += [
                     "<div class='request col-md-12'>",
                         "<div class='request-alert'>",
-                            "<img src='img/vberthet/vb_white_bg_512.png' height='200px' alt='logo_ico'/>Download",
+                            "<img src='"+onWeb+"img/vberthet/vb_white_bg_512.png' height='200px' alt='logo_ico'/>Download",
                         "</div>",
                         "<div class='request-player-color'>",
                             "<h1>"+data.download[key].name+"</h1>",
@@ -283,7 +284,7 @@ function makeContent(alert,color,title,text,button,to,from){
     content_html += [
                     "<div class='request col-md-12'>",
                         "<div class='request-alert'>",
-                            "<img src='img/vberthet/vb_white_bg_512.png' height='200px' alt='logo_ico'/>"+alert+"",
+                            "<img src='"+onWeb+"img/vberthet/vb_white_bg_512.png' height='200px' alt='logo_ico'/>"+alert+"",
                         "</div>",
                         "<div class='"+color+"'>",
                             "<h1>"+title+"</h1>",
@@ -311,7 +312,7 @@ function makeHeader(color,type,from){
                     "<div class='col-sm-4'>",
                         "<div class='logo "+color+"'>",
                             "<a class='smoth-scroll' href='"+from+"'>",
-                                "<img src='img/vberthet/vb_white_bg_512.png' alt='logo_ico'>Vincent <bold>Berthet</bold>",
+                                "<img src='"+onWeb+"img/vberthet/vb_white_bg_512.png' alt='logo_ico'>Vincent <bold>Berthet</bold>",
                             "</a>",
                         "</div>",
                     "</div>",
