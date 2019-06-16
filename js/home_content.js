@@ -135,6 +135,9 @@ function makePortfolio(data,data_c){
            }else if(typeof c_content[i].player != 'undefined' && c_content[i].player==true){
                     //Player case 
                     request="request.php?type=Player&alert="+request;
+           }else if(typeof c_content[i].webgl != 'undefined' && c_content[i].webgl==true){
+                    //WebGL case 
+                    request="request.php?type=WebGL&alert="+request;
            }else if(typeof c_content[i].wip != 'undefined' && c_content[i].wip==true){
                     //WIP project case
                     request="request.php?type=Redirect&alert=WIP&to="+request;

@@ -45,6 +45,11 @@ function make(){
             makeDownload(data);  
             makeRelease();
         })
+   }else if(this.type=="WebGL"){
+        $.getJSON(this.json, function(data) {
+            makeWebGL(data);  
+            makeRelease();
+        })
     }else{
         $.getJSON(this.json, function(data) {
             makeRequest(data);   
@@ -149,6 +154,36 @@ function makePlayer(data){
     }
 }
 
+/**
+ * Make an embeded  web gl player with Unity default template
+ * @param {request.json content} data 
+ */
+function makeWebGL(data){
+    var main_html="";
+    for(var key in data.player){
+        if(data.player[key].name==this.alert){
+            main_html=[
+                "<div class='align-center'>",
+                    "<h1>"+data.player[key].name+"</h1>",
+                        "<iframe width='960' height='643' src='"+data.player[key].href+"' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>", 
+                    "<p>"+data.player[key].description+"</p>",
+                "</div>"
+            ].join('');
+            break;
+        }
+    }
+
+    //if there is content for this alert main_html shouldn't be empty
+    if(main_html!=""){
+        $('#main_content').html(main_html)
+        makeHeader('request-player-color',this.type,this.host);
+        makeFooter('request-player-color',this.host);
+    }else{
+        console.error(this.type+" content error");
+        this.type="player_error";
+        make();
+    }
+}
 
 function makeNotes(data){
     var updates_html=[  "<div class='col-sm-6'>",

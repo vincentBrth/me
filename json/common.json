@@ -1,10 +1,10 @@
 {    
     "portfolio":{
-        "Ninja":{
-            "ico":"img/ico_project/ico_ninja.png",
-            "filter":"WIP 2019",
-            "href":"project/ninja",
-            "wip":true,
+        "Kubic":{
+            "ico":"img/ico_project/ico_kubic.png",
+            "filter":"2019",
+            "href":"Kubic",
+            "webgl":true,
             "title":"NA",
             "description":"NA" ,
             "skills":"Unity C#"

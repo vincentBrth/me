@@ -61,12 +61,17 @@
         "Orium":{
             "name":"Orium",
             "href":"https://www.youtube.com/embed/ksHjCFvTFxA",
-            "description":"description todo"
+            "description":"Orium project game design, made on Unreal Engine"
         },
         "Isati Game Jam 2K19":{
             "name":"Isati Game Jam 2K19",
             "href":"https://www.youtube.com/embed/Q5fmX5Q7btM",
-            "description":"<p>Trailer of the first <a href='https://esir.univ-rennes1.fr/actualites/la-1ere-game-jam-lesir' >Game Jam of ESIR</a> in partnership with OAB</p><p>Winner : <a href='https://www.youtube.com/watch?v=E_g47fFlD-E'>Game Jam of Thrones</a></p><p>Trailer made by Vincent Berthet</p>"
+            "description":"<p>Trailer of the first <a href='https://esir.univ-rennes1.fr/actualites/la-1ere-game-jam-lesir' target='_blank' >Game Jam of ESIR</a> in partnership with <a href='https://www.orange-business.com/en' target='_blank'>Orange Applications for Business</a></p><p>Winner : <a href='https://www.youtube.com/watch?v=E_g47fFlD-E'>Game Jam of Thrones</a></p><p>Trailer made by Vincent Berthet</p>"
+        },
+        "Kubic":{
+            "name":"Kubic",
+            "href":"https://nassafy.github.io/MedievalXtremPartyTournament2019/index.html",
+            "description":"<p><a href='https://docs.unity3d.com/ScriptReference/Application-streamingAssetsPath.html' target='_blank'>No file access is available on WebGL with Unity</a>.<br/>As this game has been developed for OS, use <a href='https://github.com/antoinefraboul/NinjaWarrior/blob/master/NinjaWarrior/Windows/Kubic.zip'>Windows executable</a> to have access to options and sounds and others features in the game</p>"
         }
     },
     "download":{
@@ -78,6 +83,11 @@
         }
     },
     "notes":{
+        "v2.9":{
+            "id":"2.9",
+            "text":"Add Kubic project and WebGL embed",
+            "released":"06/16/2019"
+        },
         "v2.8":{
             "id":"2.8",
             "text":"Add Download page, rework video page and fix of home content preloading",

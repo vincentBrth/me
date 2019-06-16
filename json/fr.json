@@ -24,9 +24,9 @@
      },
     "lang":"<img src='img/vberthet/fr_flag_16px.png' title='Cliquer pour passer en anglais' onclick='language.switch()'>",
     "portfolio":{
-        "Ninja":{
-            "title":"Ninja Warrior Unity",
-            "description":"Projet Unity"
+        "Kubic":{
+            "title":"Kubic Unity",
+            "description":"Projet Unity, l'objectif de ce projet était d'utiliser le navmesh"
         },
         "game_jam_2019":{
             "title":"Isati Game Jam 2019",
