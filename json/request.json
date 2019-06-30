@@ -70,8 +70,8 @@
         },
         "Kubic":{
             "name":"Kubic",
-            "href":"https://nassafy.github.io/MedievalXtremPartyTournament2019/index.html",
-            "description":"<p><a href='https://docs.unity3d.com/ScriptReference/Application-streamingAssetsPath.html' target='_blank'>No file access is available on WebGL with Unity</a>.<br/>As this game has been developed for OS, use <a href='https://github.com/antoinefraboul/NinjaWarrior/blob/master/NinjaWarrior/Windows/Kubic.zip' target='_blank'>Windows executable</a> to have access to options and sounds and others features in the game</p>"
+            "href":"https://realvincentberthet.github.io/Kubic/Kubic/WebGL/index.html",
+            "description":"<p><a href='https://docs.unity3d.com/ScriptReference/Application-streamingAssetsPath.html' target='_blank'>No streaming access is available on WebGL with Unity</a>.<br/>As this game has been developed for OS, use <a href='https://github.com/RealVincentBerthet/Kubic/blob/master/Kubic/Windows/Kubic.zip' target='_blank'>Windows executable</a> to have access to options and sounds and others features in the game</p>"
         }
     },
     "download":{

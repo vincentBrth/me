@@ -1,7 +1,0 @@
-version :
-	common_content->function makeRelease()
-request :
-	add '/' to all src of :
-		 js -> "/js/..."
-		 fav icon
-		 css
