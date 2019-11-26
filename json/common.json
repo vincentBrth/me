@@ -3,7 +3,7 @@
         "Kubic":{
             "ico":"img/ico_project/ico_kubic.png",
             "filter":"3D Csharp Game",
-            "href":"²",
+            "href":"",
             "webgl":true,
             "title":"NA",
             "description":"NA" ,
@@ -91,7 +91,7 @@
         "mutest":{
             "ico":"img/ico_project/ico_mutest.png",
             "filter":"Pro",
-            "href":"project/documents/muTest/MuTest_2016.pdf",
+            "href":"request.html?type=Download&alert=Pacman",
             "title":"NA",
             "description":"NA",
             "skills":"Java"
@@ -99,7 +99,7 @@
         "pacman":{
             "ico":"img/ico_project/ico_pacman.png",
             "filter":"Csharp Game",
-            "href":"request.php?type=Download&alert=Pacman",
+            "href":"request.html?type=Download&alert=Pacman",
             "title":"NA",
             "description":"NA",
             "skills":"C#"

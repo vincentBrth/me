@@ -51,22 +51,9 @@
     <script type="text/javascript" src="js/common_content.js"></script>
     <script type="text/javascript" src="js/request.js"></script>
 
-    <?php
-      $type="";
-      $alert="";
-      $to="";
-      
-      $host='http://' . $_SERVER['SERVER_NAME'];
-        if(isset($_GET["from"])){
-            $from=htmlspecialchars($_GET["from"]);
-        }else{
-            $from=$host;
-        }
-        if(isset($_GET["type"]))    $type   =   htmlspecialchars($_GET["type"]);
-        if(isset($_GET["alert"]))   $alert  =   htmlspecialchars($_GET["alert"]);
-        if(isset($_GET["to"]))      $to     =   htmlspecialchars($_GET["to"]);
-        $host   =   'http://' . $_SERVER['SERVER_NAME']; 
-        echo '<script>init("' . $type . '","' . $alert . '","' . $to . '","' . $from . '","' . $host . '");</script>';
-      ?>
+    <script>
+        let url = new URL(window.location.href);
+        init(url.searchParams.get("type"),url.searchParams.get("alert"),url.searchParams.get("to"),url.searchParams.get("from"),url.searchParams.get("host"))
+    </script>';
   </body>
 </html>

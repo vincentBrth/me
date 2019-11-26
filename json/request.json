@@ -75,6 +75,12 @@
         }
     },
     "download":{
+        "mutest":{
+            "name":"mutest",
+            "href":"project/documents/muTest/MuTest_2016.pdf",
+            "type":".pdf",
+            "description":"Presentation file"
+        },  
         "pacman":{
             "name":"Pacman",
             "href":"project/documents/pacman/Pacman.pdf",

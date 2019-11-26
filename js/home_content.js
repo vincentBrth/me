@@ -13,16 +13,15 @@
                                         1.Init 
     ******************************************************************************************* 
 */
-window.onload = init;
-var onWeb="";     
+window.onload = init;    
 /*
     Create a Language object and redefine the update and make method of this object
 */
 function init(){
     var available_lang = new Map();
-    available_lang.set('en',onWeb+'json/en.json');
-    available_lang.set('fr',onWeb+'json/fr.json');
-    available_lang.set('.common',onWeb+'json/common.json');
+    available_lang.set('en','json/en.json');
+    available_lang.set('fr','json/fr.json');
+    available_lang.set('.common','json/common.json');
     this.language = new Language(available_lang,'en');
     this.language.update = function(){update();}
     this.language.make = function(){make();}
@@ -121,28 +120,28 @@ function makePortfolio(data,data_c){
     var portfolio_html="";
     for(var i in c_content){ 
        if(typeof c_content[i].hide == 'undefined' || c_content[i].hide==false){
-            var request=c_content[i].href;
             if(typeof content[i].href != 'undefined') request=content[i].href;
-
+            
+           var request=c_content[i].href;
            if(typeof c_content[i].mobile != 'undefined' && c_content[i].mobile==true){
                if(typeof c_content[i].wip != 'undefined' && c_content[i].wip==true){
                    //WIP+mobile project case
-                   request="request.php?type=Redirect&alert=WIP_Mobile&to="+request;
+                   request="request.html?type=Redirect&alert=WIP_Mobile&to="+request;
                }else{
                    //Mobile project case 
-                   request="request.php?type=Redirect&alert=Mobile&to="+request;
+                   request="request.html?type=Redirect&alert=Mobile&to="+request;
                }     
            }else if(typeof c_content[i].player != 'undefined' && c_content[i].player==true){
                     //Player case 
-                    request="request.php?type=Player&alert="+request;
+                    request="request.html?type=Player&alert="+request;
            }else if(typeof c_content[i].webgl != 'undefined' && c_content[i].webgl==true){
                     //WebGL case 
-                    request="request.php?type=WebGL&alert="+request;
+                    request="request.html?type=WebGL&alert="+request;
            }else if(typeof c_content[i].wip != 'undefined' && c_content[i].wip==true){
                     //WIP project case
-                    request="request.php?type=Redirect&alert=WIP&to="+request;
+                    request="request.html?type=Redirect&alert=WIP&to="+request;
             } 
-           
+        
             var filter=c_content[i].filter;
             var ico=c_content[i].ico;
             var title=c_content[i].title;
@@ -160,7 +159,7 @@ function makePortfolio(data,data_c){
                                             "<figcaption>",
                                             "<div>", 
                                                 "<div class='icon-links'>",
-                                                    "<a href='"+request+"'  target='_blank'><i class='fas fa-external-link-alt'></i></a>",
+                                                    "<a href='"+request+"' target='_blank'><i class='fas fa-external-link-alt'></i></a>",
                                                 "</div>",
                                                 "<h2>"+title+"</h2>",
                                                 "<p>"+filter+" - "+skills+"</p>",

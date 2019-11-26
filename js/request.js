@@ -6,18 +6,20 @@
  * @param {main domain link} host 
  */
 
- var onWeb="";
+
  /**
-  * Initialize request.php depending of the request selected
+  * Initialize request.html depending of the request selected
   */
 function init(type,alert,to,from,host){
-    this.json=onWeb+'json/request.json';
+    this.json='json/request.json';
     this.type=type;
     this.alert=alert;
     this.to=to;
+
+    this.host=host
+    if(host=="" || host==null) this.host="./";
     this.from=from;
-    if(from=="") this.from=host;
-    this.host=host;
+    if(from=="" || from==null) this.from=host;
     
     this.waitTime=10;
     this.x;
@@ -90,7 +92,7 @@ function makeDownload(data){
             main_html += [
                     "<div class='request col-md-12'>",
                         "<div class='request-alert'>",
-                            "<img src='"+onWeb+"img/vberthet/vb_white_bg_512.png' height='200px' alt='logo_ico'/>Download",
+                            "<img src='img/vberthet/vb_white_bg_512.png' height='200px' alt='logo_ico'/>Download",
                         "</div>",
                         "<div class='request-player-color'>",
                             "<h1>"+data.download[key].name+"</h1>",
@@ -235,7 +237,7 @@ function makeRequest(data){
             this.to=this.from;
         }else if(this.type=='Redirect'){
             data=data.redirect;
-            if(this.alert=='WIP_Mobile') this.to='request.php?type=Redirect&alert=Mobile&to='+this.to;   
+            if(this.alert=='WIP_Mobile') this.to='request.html?type=Redirect&alert=Mobile&to='+this.to;   
         }
     }else{
         //Not enough data to launch a valid request
@@ -284,7 +286,7 @@ function makeContent(alert,color,title,text,button,to,from){
     content_html += [
                     "<div class='request col-md-12'>",
                         "<div class='request-alert'>",
-                            "<img src='"+onWeb+"img/vberthet/vb_white_bg_512.png' height='200px' alt='logo_ico'/>"+alert+"",
+                            "<img src='img/vberthet/vb_white_bg_512.png' height='200px' alt='logo_ico'/>"+alert+"",
                         "</div>",
                         "<div class='"+color+"'>",
                             "<h1>"+title+"</h1>",
@@ -312,7 +314,7 @@ function makeHeader(color,type,from){
                     "<div class='col-sm-4'>",
                         "<div class='logo "+color+"'>",
                             "<a class='smoth-scroll' href='"+from+"'>",
-                                "<img src='"+onWeb+"img/vberthet/vb_white_bg_512.png' alt='logo_ico'>Vincent <bold>Berthet</bold>",
+                                "<img src='img/vberthet/vb_white_bg_512.png' alt='logo_ico'>Vincent <bold>Berthet</bold>",
                             "</a>",
                         "</div>",
                     "</div>",
@@ -349,7 +351,7 @@ function makeFooter(color,from){
     var footer_html="";
     footer_html += [
                 "<div class='container text-center "+color+"'>",
-                    "&copy; "+new Date().getFullYear()+"<a href='"+from+"'> Vincent Berthet's Website</a> - <a href='request.php?type=Notes' >V<span id='release'></span></a> | Developed by <a href='"+from+"'> Vincent Berthet</a>",
+                    "&copy; "+new Date().getFullYear()+"<a href='"+from+"'> Vincent Berthet's Website</a> - <a href='request.html?type=Notes' >V<span id='release'></span></a> | Developed by <a href='"+from+"'> Vincent Berthet</a>",
                 "</div>"
         ].join('');
     $('#footer_content').html(footer_html);
