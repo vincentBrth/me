@@ -48,7 +48,7 @@ Language.prototype.getLang = function(){
     @return the name of each language available
 */
 Language.prototype.getLangAvailable = function(){
-    var result=[];
+    let result=[];
     this.available_lang.forEach(function(value,key){
         result.push(key);
     });
@@ -101,13 +101,13 @@ Language.prototype.switch = function(){
 	@return a date 
 */
 function checkDate(date) {
-  var yMin=1850; 
-  var yMax=2500; 
-  var separator="/";
-  var d=(date.substring(0,2));
-  var m=(date.substring(3,5));
-  var y=(date.substring(6));
-  var ok=1;
+  let yMin=1850; 
+  let yMax=2500; 
+  let separator="/";
+  let d=(date.substring(0,2));
+  let m=(date.substring(3,5));
+  let y=(date.substring(6));
+  let ok=1;
 
   if ( ((isNaN(d))||(d<1)||(d>31)) && (ok==1) ) {
      console.error("Invalid day"); ok=0;
@@ -122,7 +122,7 @@ function checkDate(date) {
       console.error("Invalid "+separator); ok=0;
   }
   if (ok==1) {
-    var date2=new Date(y,m-1,d);
+    let date2=new Date(y,m-1,d);
     d2=date2.getDate();
     m2=date2.getMonth()+1;
     y2=date2.getYear();
@@ -143,9 +143,11 @@ function checkDate(date) {
 	@return a string with age information
 */
 function getAge(dt,format) {
-  var date=checkDate(dt)
-  var m=new Date()
-  var age=""; var age_y=0;var age_m=0;
+  let date=checkDate(dt)
+  let m=new Date()
+  let age="";
+  let age_y=0;
+  let age_m=0;
   if (date!=0) {
     if (date.getTime()>m.getTime()) {
       age="NA";
@@ -186,10 +188,9 @@ function getAge(dt,format) {
 */
 function makeRelease(){
     current_release='X';
-    var json=$.getJSON('/json/request.json');
-    //var json=$.getJSON('/json/request.json'); //#WEB
+    let json=$.getJSON('/json/request.json');
     json.done(function(data) {
-        for(var i in data.notes){
+        for(let i in data.notes){
             current_release=data.notes[i].id;
             $('#release').html(current_release);
             break;
@@ -202,7 +203,7 @@ function makeRelease(){
     @param  string array data : the data of the *lang*.json
 */
 function makeFooter(data){ 
-    var content=data.footer;
+    let content=data.footer;
      
     $('#year').html((new Date()).getFullYear());
     $('#footerContent').html(content);

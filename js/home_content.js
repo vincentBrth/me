@@ -18,7 +18,7 @@ window.onload = init;
     Create a Language object and redefine the update and make method of this object
 */
 function init(){
-    var available_lang = new Map();
+    let available_lang = new Map();
     available_lang.set('en','json/en.json');
     available_lang.set('fr','json/fr.json');
     available_lang.set('.common','json/common.json');
@@ -54,8 +54,8 @@ function update(){
 	Make the different section of the page with the current language
 */
 function make(){
-    var common = $.getJSON(this.language.getJsonPath('.common'));
-    var lang_selected = $.getJSON(this.language.getJsonPath());
+    let common = $.getJSON(this.language.getJsonPath('.common'));
+    let lang_selected = $.getJSON(this.language.getJsonPath());
 
     common.done(function(data_c){
         lang_selected.done(function(data){
@@ -115,14 +115,14 @@ function makeBio(data){
     @param string array data_c : the content of common.json
 */
 function makePortfolio(data,data_c){
-    var content=data.portfolio;
-    var c_content=data_c.portfolio;
-    var portfolio_html="";
-    for(var i in c_content){ 
+    let content=data.portfolio;
+    let c_content=data_c.portfolio;
+    let portfolio_html="";
+    for(let i in c_content){ 
        if(typeof c_content[i].hide == 'undefined' || c_content[i].hide==false){
             if(typeof content[i].href != 'undefined') request=content[i].href;
             
-           var request=c_content[i].href;
+           let request=c_content[i].href;
            if(typeof c_content[i].mobile != 'undefined' && c_content[i].mobile==true){
                if(typeof c_content[i].wip != 'undefined' && c_content[i].wip==true){
                    //WIP+mobile project case
@@ -142,11 +142,11 @@ function makePortfolio(data,data_c){
                     request="request.html?type=Redirect&alert=WIP&to="+request;
             } 
         
-            var filter=c_content[i].filter;
-            var ico=c_content[i].ico;
-            var title=c_content[i].title;
-            var description=c_content[i].description;
-            var skills=c_content[i].skills;
+            let filter=c_content[i].filter;
+            let ico=c_content[i].ico;
+            let title=c_content[i].title;
+            let description=c_content[i].description;
+            let skills=c_content[i].skills;
             if(typeof content[i].ico != 'undefined') ico=content[i].ico;
             if(typeof content[i].title != 'undefined') title=content[i].title;
             if(typeof content[i].description != 'undefined') description=content[i].description;
@@ -183,14 +183,14 @@ function makePortfolio(data,data_c){
     @param string array data : the content of the *lang*.json used 
 */
 function makeSkills(data,data_c){
-    var content=data.skills;
-    var c_content=data_c.skills;
-    var skills_html="";                
+    let content=data.skills;
+    let c_content=data_c.skills;
+    let skills_html="";                
      
-    for(var i in c_content){ 
-        var ico = c_content[i].ico;
-        var title=c_content[i].title;
-        var list=c_content[i].list;
+    for(let i in c_content){ 
+        let ico = c_content[i].ico;
+        let title=c_content[i].title;
+        let list=c_content[i].list;
 
         if(typeof content[i].title != 'undefined') title=content[i].title;
         if(typeof content[i].list != 'undefined') list=content[i].list;
@@ -217,19 +217,19 @@ function makeSkills(data,data_c){
     @pram string array data common : the content of the common.json
 */
 function makeContact(data,data_c){
-    var social_content=data.contact.social;
-    var c_social_content=data_c.contact.social;
-    var info_content=data.contact.info;
-    var c_info_content=data_c.contact.info;
+    let social_content=data.contact.social;
+    let c_social_content=data_c.contact.social;
+    let info_content=data.contact.info;
+    let c_info_content=data_c.contact.info;
 
-    var contact_social_html="";
-    var contact_info_html="";
+    let contact_social_html="";
+    let contact_info_html="";
     //contact info
-    for(var i in c_info_content){
-        var class_css=c_info_content[i].class;
-        var href=c_info_content[i].href;
-        var title=c_info_content[i].title;
-        var text=c_info_content[i].text;
+    for(let i in c_info_content){
+        let class_css=c_info_content[i].class;
+        let href=c_info_content[i].href;
+        let title=c_info_content[i].title;
+        let text=c_info_content[i].text;
 
         if(typeof info_content[i].href != 'undefined') href=info_content[i].href;
         if(typeof info_content[i].title != 'undefined') title=info_content[i].title;
@@ -252,11 +252,11 @@ function makeContact(data,data_c){
     }
     
     //social icons
-     for(var i in c_social_content){ 
-        var href =c_social_content[i].href;
-        var class_css=c_social_content[i].class;
-        var title=c_social_content[i].title;
-        var class_ico=c_social_content[i].class_ico;
+     for(let i in c_social_content){ 
+        let href =c_social_content[i].href;
+        let class_css=c_social_content[i].class;
+        let title=c_social_content[i].title;
+        let class_ico=c_social_content[i].class_ico;
         if(typeof social_content[i].title != 'undefined') title=social_content[i].title;
 
         contact_social_html += [

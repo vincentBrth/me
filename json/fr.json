@@ -40,10 +40,6 @@
             "title":"Ancien site",
             "description":"2018 - Ancienne version de ce site (1.6)" 
         },
-        "scogue_rework":{
-            "title":"Scogue Rework",
-            "description":"Rework de Scogue"
-        },
         "TA":{
             "title":"Tower Attack",
             "description":"Programmation avancées pour support mobile (JS)"
@@ -57,7 +53,6 @@
             "description":"RTS developpé sous Unreal Engine 4"
         },
         "scogue":{
-
             "title":"Scogue",
             "description":"Jeu web développé avec le framework Phaser"
         },

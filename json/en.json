@@ -40,10 +40,6 @@
             "title":"Old website",
             "description":"Old release of this website (1.6)"
         },
-        "scogue_rework":{
-            "title":"Scogue Rework",
-            "description":"Mobile Rework<br/>Rework of Scogue"
-        },
         "TA":{
             "title":"Tower Attack",
             "description":"Advanced Mobile Programming<br/>Tower Attack Game, implementing advanced features like queues, stacks and pathways"

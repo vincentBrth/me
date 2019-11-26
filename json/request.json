@@ -76,7 +76,7 @@
     },
     "download":{
         "mutest":{
-            "name":"mutest",
+            "name":"Mutest",
             "href":"project/documents/muTest/MuTest_2016.pdf",
             "type":".pdf",
             "description":"Presentation file"

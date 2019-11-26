@@ -3,7 +3,7 @@
         "Kubic":{
             "ico":"img/ico_project/ico_kubic.png",
             "filter":"3D Csharp Game",
-            "href":"",
+            "href":"Kubic",
             "webgl":true,
             "title":"NA",
             "description":"NA" ,
@@ -21,7 +21,7 @@
         "GOL":{
             "ico":"img/ico_project/ico_gol.png",
             "filter":"Cpp Game",
-            "href":"https://github.com/RealVincentBerthet/GoL/tree/master/deployment",
+            "href":"https://github.com/RealVincentBerthet/GoL",
             "title":"NA",
             "wip":false,
             "description":"NA" ,
@@ -34,16 +34,6 @@
             "title":"NA",
             "description":"NA" ,
             "skills":"Javascript HTML5 CSS3 PHP JQuery"
-        },
-        "scogue_rework":{
-            "ico":"img/ico_project/ico_scogue_rework.png",
-            "filter":"Javascript Game",
-            "href":"project/scogue_rework",
-            "mobile":true,
-            "wip":true,
-            "title":"NA",
-            "description":"NA" ,
-            "skills":"Javascript"
         },
         "TA":{
             "ico":"img/ico_project/ico_TA.png",
@@ -91,7 +81,7 @@
         "mutest":{
             "ico":"img/ico_project/ico_mutest.png",
             "filter":"Pro",
-            "href":"request.html?type=Download&alert=Pacman",
+            "href":"request.html?type=Download&alert=Mutest",
             "title":"NA",
             "description":"NA",
             "skills":"Java"
@@ -149,9 +139,9 @@
         "info":{
                     "mail_button":{
                         "class":"fas fa-envelope fa-2x",
-                        "href":"mailto:contact@vberthet.me",
+                        "href":"mailto:vincent.berthet.pro@gmail.com",
                         "title":"NA",
-                        "text":"contact@vberthet.me"
+                        "text":"vincent.berthet.pro@gmail.com"
                     },
                     "resume":{
                         "class":"fas fa-download fa-2x color-4",

@@ -19,11 +19,11 @@ function init(type,alert,to,from,host){
     this.host=host
     if(host=="" || host==null) this.host="./";
     this.from=from;
-    if(from=="" || from==null) this.from=host;
-    
+    if(from=="" || from==null) this.from=this.host;
     this.waitTime=10;
     this.x;
     make();
+    document.title = this.alert;
 }
 
 //CHECK FUNCTION to determine if unknown
@@ -86,8 +86,8 @@ function count() {
  * @param {request.json content} data 
  */
 function makeDownload(data){
-    var main_html="";
-    for(var key in data.download){
+    let main_html="";
+    for(let key in data.download){
         if(data.download[key].name==this.alert){
             main_html += [
                     "<div class='request col-md-12'>",
@@ -129,8 +129,8 @@ function makeDownload(data){
  * @param {request.json content} data 
  */
 function makePlayer(data){
-    var main_html="";
-    for(var key in data.player){
+    let main_html="";
+    for(let key in data.player){
         if(data.player[key].name==this.alert){
             main_html=[
                 "<div class='align-center'>",
@@ -162,8 +162,8 @@ function makePlayer(data){
  * @param {request.json content} data 
  */
 function makeWebGL(data){
-    var main_html="";
-    for(var key in data.player){
+    let main_html="";
+    for(let key in data.player){
         if(data.player[key].name==this.alert){
             main_html=[
                 "<div class='align-center'>",
@@ -182,23 +182,23 @@ function makeWebGL(data){
         makeHeader('request-player-color',this.type,this.host);
         makeFooter('request-player-color',this.host);
     }else{
-        console.error(this.type+" content error");
+        console.error("type : "+this.type+" content error for alert : "+this.alert);
         this.type="player_error";
         make();
     }
 }
 
 function makeNotes(data){
-    var updates_html=[  "<div class='col-sm-6'>",
+    let updates_html=[  "<div class='col-sm-6'>",
                         "<h1>Updates</h1><br/>",
                         "<ul>"        
     ].join(''); 
-    var todo_html=[  "<div class='col-sm-6'>",
+    let todo_html=[  "<div class='col-sm-6'>",
                         "<h1>To Do</h1><br/>",
                         "<ul>"        
     ].join('');            
    
-    for(var key in data.notes){        
+    for(let key in data.notes){        
         updates_html += [
             "<li>",
                 "<p>",
@@ -209,7 +209,7 @@ function makeNotes(data){
         ].join('');     
     }
     updates_html +="</ul></div>";
-    for(var key in data.todo){
+    for(let key in data.todo){
 
         todo_html += [
             "<li>",
@@ -225,11 +225,11 @@ function makeNotes(data){
 } 
 
 function makeRequest(data){    
-    var alert="";
-    var color="";
-    var title="";
-    var text="";
-    var button="";
+    let alert="";
+    let color="";
+    let title="";
+    let text="";
+    let button="";
     
     if((this.type=='Redirect' && checkRequest(data.redirect) && this.to !="") || (this.type=='Error' && checkRequest(data.error))){
          if(this.type=='Error'){
@@ -241,7 +241,7 @@ function makeRequest(data){
         }
     }else{
         //Not enough data to launch a valid request
-        console.error(this.type+" content error");
+        console.warn("unknown request");
         data=data.unknown;
         this.alert='unknown';
         this.type="Unknown";
@@ -249,11 +249,11 @@ function makeRequest(data){
     }
 
     //Execute request
-    for(var key in data){
+    for(let key in data){
         if(key=='button')   button=data[key];
         if(key=='color')    color=data[key];
         if(key=='details'){
-            for(var key2 in data[key]){
+            for(let key2 in data[key]){
                 if(key2==this.alert){
                     alert=data[key][key2].alert;
                     title=data[key][key2].title;
@@ -272,7 +272,7 @@ function makeRequest(data){
 
 function checkRequest(data){
     //Check if the data are valid  
-    for(var key in data.details){
+    for(let key in data.details){
         if(key==this.alert) return true;
     }
     return false;
@@ -282,7 +282,7 @@ function checkRequest(data){
 
 
 function makeContent(alert,color,title,text,button,to,from){
-    var content_html="";
+    let content_html="";
     content_html += [
                     "<div class='request col-md-12'>",
                         "<div class='request-alert'>",
@@ -305,7 +305,7 @@ function makeContent(alert,color,title,text,button,to,from){
     
 }
 function makeHeader(color,type,from){
-    var header_html="";
+    let header_html="";
     header_html += [
         "<div class='header-top-area'>",
             "<div class='container'>",
@@ -348,7 +348,7 @@ function makeHeader(color,type,from){
 }
 
 function makeFooter(color,from){
-    var footer_html="";
+    let footer_html="";
     footer_html += [
                 "<div class='container text-center "+color+"'>",
                     "&copy; "+new Date().getFullYear()+"<a href='"+from+"'> Vincent Berthet's Website</a> - <a href='request.html?type=Notes' >V<span id='release'></span></a> | Developed by <a href='"+from+"'> Vincent Berthet</a>",
