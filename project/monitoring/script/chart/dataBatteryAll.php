@@ -1,7 +1,7 @@
 <?php
 	
 	header("Content-type: text/json");
-	include_once('../connectBattery.php');
+	include_once('../connect.php');
 	include_once('../countLine.php');
 	include_once('../getBattery.php');
 

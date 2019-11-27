@@ -1,5 +1,5 @@
 <?php
-	include_once('connectComment.php');
+	include_once('connect.php');
 
 	//Formulaire pour ajouter un commentaire avec comme parametre : la batterie concerner, le messga de la box par defaut et le message du button par defaut	
 	function add_comment($num_battery,$text_msg,$text_button)

@@ -1,5 +1,5 @@
 <?php
-	include_once('connectBattery.php');
+	include_once('connect.php');
 	include_once('getId.php');
 
 	//TEST si l'ID est définit dans le formulaire

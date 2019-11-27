@@ -1,5 +1,5 @@
 <?php
-	include_once('connectBattery.php');
+	include_once('connect.php');
 
 	
 	//Execution de la requete apres validation dans deleteValue.php

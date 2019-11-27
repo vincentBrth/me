@@ -1,6 +1,6 @@
 <?php
 
-	include_once('connectBattery.php');
+	include_once('connect.php');
 	include_once('getBattery.php');
 	include_once('countLine.php');
 	//verifie s'il y a assez de valeur pour effectuer les bonnes requetes SQL

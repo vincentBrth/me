@@ -1,5 +1,5 @@
 <?php
-	include_once('connectBattery.php');
+	include_once('connect.php');
 
 	
 	$report=0;

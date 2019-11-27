@@ -1,5 +1,5 @@
 <?php
-	include_once('connectComment.php');
+	include_once('connect.php');
 	//header('Location:index.php');	
 	
 	//Appeler si addComment.php valide le formulaire

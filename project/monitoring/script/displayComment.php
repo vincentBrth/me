@@ -1,5 +1,5 @@
 <?php
-	include_once('connectComment.php');
+	include_once('connect.php');
 	
 		
 		

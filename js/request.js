@@ -24,6 +24,7 @@ function init(type,alert,to,from,host){
     this.x;
     make();
     document.title = this.alert;
+    if(document.title=="null") document.title=this.type;
 }
 
 //CHECK FUNCTION to determine if unknown

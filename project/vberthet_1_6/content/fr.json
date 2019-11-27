@@ -84,7 +84,7 @@
         },
         "blog":{
             "ico":"img/ico_project/ico_blog.png",
-            "href":"../blog",
+            "href":"http://uwsblog.yo.fr/UWS_Blog/",
             "title":"Creative Industries Blog",
             "description":"2016 - Blog WordPress Creative Industries",
             "skills":{
@@ -111,7 +111,7 @@
         },      
         "monitoring":{
             "ico":"img/ico_project/ico_monitoring.png",
-            "href":"../monitoring",
+            "href":"https://uwsblog.yo.fr/",
             "title":"Monitoring",
             "description":"2016 - Projet de DUT",
             "skills":{

@@ -84,7 +84,7 @@
         },
         "blog":{
             "ico":"img/ico_project/ico_blog.png",
-            "href":"../blog",
+            "href":"http://uwsblog.yo.fr/UWS_Blog/",
             "title":"Blog",
             "description":"2016 (WordPress) - Creative Industries Blog<p>A blog to deal with subject of the creative industries</p>",
             "skills":{
@@ -111,7 +111,7 @@
         },      
         "monitoring":{
             "ico":"img/ico_project/ico_monitoring.png",
-            "href":"../monitoring",
+            "href":"https://uwsblog.yo.fr/",
             "title":"Monitoring",
             "description":"2016 (PHP, SQL, JQuery) - UTD Project<p>HMI to provide data of a batteries monitoring system to the user</p>",
             "skills":{

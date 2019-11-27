@@ -1,6 +1,5 @@
 <?php
-	include_once('connectBattery.php');
-	
+	include_once('connect.php');
 	//fct permetant de compter le nombre de ligne par battery afin d'éviter des erreurs lors des requets SQL
 	function get_nb_line_battery($num_battery)
 	{

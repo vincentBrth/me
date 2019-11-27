@@ -1,6 +1,6 @@
 <?php
 	//Get date min
-	include_once('script/connectBattery.php');
+	include_once('script/connect.php');
 	$request = $db->query("SELECT MIN(date_mesure) FROM batteries WHERE batterie=3");
 	$data = $request->fetch();
 	$request->closeCursor();

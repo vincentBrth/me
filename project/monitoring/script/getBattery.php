@@ -1,7 +1,7 @@
 <?php
 	
 	//Connexion
-	include_once('connectBattery.php');
+	include_once('connect.php');
 	//Recupere toute les lignes avec toutes les informations correspondante à la batterie
 	function get_battery($num_battery,$offset, $limit)
 	{

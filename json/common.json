@@ -73,7 +73,7 @@
         "blog":{
             "ico":"img/ico_project/ico_blog.png",
             "filter":"Web",
-            "href":"project/blog",
+            "href":"http://uwsblog.yo.fr/UWS_Blog/",
             "title":"NA",
             "description":"NA",
             "skills":"WordPress"
@@ -97,7 +97,7 @@
         "monitoring":{
             "ico":"img/ico_project/ico_monitoring.png",
             "filter":"Web",
-            "href":"project/monitoring",
+            "href":"https://uwsblog.yo.fr/",
             "title":"NA",
             "description":"NA",
             "skills":"PHP SQL JQuery"

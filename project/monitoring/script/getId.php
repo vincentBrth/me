@@ -1,7 +1,7 @@
 <?php
 	
 	//Connexion
-	include_once('connectBattery.php');
+	include_once('connect.php');
 	
 	//Selectionner la ligne correspondant à l'ID
 	function get_battery_id($id)

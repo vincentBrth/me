@@ -1,6 +1,6 @@
 <?php
 	//Ce fichier contient les variables permettant de faire varier les valeur du dashboard.
-	include_once('connectBattery.php');
+	include_once('connect.php');
 	include_once('circle.php');
 	include_once('arrow.php');
 	include_once('voltage.php');
