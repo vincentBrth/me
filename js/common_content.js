@@ -190,12 +190,14 @@ function makeRelease(){
     current_release='X';
     let json=$.getJSON('/json/request.json');
     json.done(function(data) {
+        console.log(data.notes)
         for(let i in data.notes){
             current_release=data.notes[i].id;
             $('#release').html(current_release);
             break;
         } 
     });
+    console.log("makerelease : "+current_release);
 }
 
 /*
