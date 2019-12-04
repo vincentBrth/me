@@ -75,20 +75,31 @@
         }
     },
     "download":{
+        "Askelys":{
+            "name":"Askelys",
+            "href":"project/documents/askelys/Rapport_BERTHET_Vincent_Askelys_2019.pdf",
+            "type":".pdf",
+            "description":"Report file (French)"
+        }, 
         "mutest":{
             "name":"Mutest",
             "href":"project/documents/muTest/MuTest_2016.pdf",
             "type":".pdf",
-            "description":"Presentation file"
+            "description":"Report file (French)"
         },  
         "pacman":{
             "name":"Pacman",
             "href":"project/documents/pacman/Pacman.pdf",
             "type":".pdf",
-            "description":"Presentation file"
+            "description":"Presentation file (French)"
         }
     },
     "notes":{
+        "v2.10":{
+            "id":"2.10",
+            "text":"Move website hosting from personal server to github page",
+            "released":"11/03/2019"
+        },
         "v2.9":{
             "id":"2.9",
             "text":"Add Kubic project and WebGL embed",
@@ -176,8 +187,6 @@
         }
     },
     "todo":{
-            "1":"More projects :)",
-            "2":"Multiple filters (year+skills)",
-            "3":"Fix me class with min height"
+            "1":"More projects :)"
      }
 }

@@ -24,6 +24,18 @@
      },
     "lang":"<img src='img/vberthet/fr_flag_16px.png' title='Cliquer pour passer en anglais' onclick='language.switch()'>",
     "portfolio":{
+        "Tensors":{
+            "title":"Tensor directed stylization",
+            "description":"@TODO"
+        },
+        "HDR":{
+            "title":"HDR",
+            "description":"@TODO"
+        },
+        "Askelys":{
+            "title":"Askelys Rapport",
+            "description":"Rapport de stage au sein de l'entreprise <a href='http://askelys.com/' target='_blank'>Askelys</a> exerçant dans le domaine du Web Sémantique. Développement de d'un prototype WebGL sous Unity."
+        },
         "Kubic":{
             "title":"Kubic Unity",
             "description":"Projet Unity, l'objectif de ce projet était d'utiliser le navmesh"
@@ -61,8 +73,8 @@
             "description":"Blog WordPress Creative Industries"
         },     
         "mutest":{
-            "title":"Mu-Test",
-            "description":"Rapport de stage au sein de l'entreprise Mu-Test exerçant dans le domaine de l'ATE (Automated Test Equipment). Développement de GUI (Java) au sein de la suite, test unitaire, bug fixing."
+            "title":"Mu-Test Rapport",
+            "description":"Rapport de stage au sein de l'entreprise <a href='http://www.mu-test.com/' target='_blank'>Mu-Test</a> exerçant dans le domaine de l'ATE (Automated Test Equipment). Développement de GUI (Java) au sein de la suite, test unitaire, bug fixing."
         },       
         "pacman":{
             "title":"Pac Man XNA",

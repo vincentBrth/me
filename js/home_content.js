@@ -162,7 +162,7 @@ function makePortfolio(data,data_c){
                                                     "<a href='"+request+"' target='_blank'><i class='fas fa-external-link-alt'></i></a>",
                                                 "</div>",
                                                 "<h2>"+title+"</h2>",
-                                                "<p>"+filter+" - "+skills+"</p>",
+                                                "<p>"+skills+"</p>",
                                                 "<p>"+description+"</p>",
                                             "</div>",
                                             "</figcaption>",		

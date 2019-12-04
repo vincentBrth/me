@@ -1,5 +1,29 @@
 {    
     "portfolio":{
+        "Tensors":{
+            "ico":"img/ico_project/ico_wip.png",
+            "filter":"OpenCV",
+            "href":"https://github.com/RealVincentBerthet/Tensor_directed_stylization",
+            "title":"NA",
+            "description":"NA",
+            "skills":"OpenCV Python"
+        },
+        "HDR":{
+            "ico":"img/ico_project/ico_wip.png",
+            "filter":"OpenCV",
+            "href":"https://github.com/RealVincentBerthet/HDR",
+            "title":"NA",
+            "description":"NA",
+            "skills":"OpenCV Python"
+        },
+        "Askelys":{
+            "ico":"img/ico_project/ico_askelys.png",
+            "filter":"Pro",
+            "href":"request.html?type=Download&alert=Askelys",
+            "title":"NA",
+            "description":"NA",
+            "skills":"Unity WebGL C# Javascript"
+        },
         "Kubic":{
             "ico":"img/ico_project/ico_kubic.png",
             "filter":"3D Csharp Game",

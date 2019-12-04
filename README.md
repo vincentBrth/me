@@ -1,13 +1,9 @@
 # vberthet
 
 Welcome on my portfolio !
+Feel free to discover my profile, projects and [contact me](mailto:vincent.berthet.pro@gmail.com)
 
 ## TODO
-### text
-* ReadMe for all projects
-* More project description
-* Add last project
-* Add askelys report
-### code
 * Rework skills section
-* green bg of request button
+* Green bg of request button
+* Footer of request page
