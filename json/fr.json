@@ -24,6 +24,14 @@
      },
     "lang":"<img src='img/vberthet/fr_flag_16px.png' title='Cliquer pour passer en anglais' onclick='language.switch()'>",
     "portfolio":{
+        "AsymetrieICP":{
+            "title":"NA",
+            "description":"@TODO"
+        },
+        "LunaAndHelios":{
+            "title":"NA",
+            "description":"@TODO"
+        },
         "Tensors":{
             "title":"Tensor directed stylization",
             "description":"@TODO"

@@ -115,64 +115,56 @@ function makeBio(data){
     @param string array data_c : the content of common.json
 */
 function makePortfolio(data,data_c){
-    let content=data.portfolio;
-    let c_content=data_c.portfolio;
     let portfolio_html="";
-    for(let i in c_content){ 
-       if(typeof c_content[i].hide == 'undefined' || c_content[i].hide==false){
-            if(typeof content[i].href != 'undefined') request=content[i].href;
-            
-           let request=c_content[i].href;
-           if(typeof c_content[i].mobile != 'undefined' && c_content[i].mobile==true){
-               if(typeof c_content[i].wip != 'undefined' && c_content[i].wip==true){
-                   //WIP+mobile project case
-                   request="request.html?type=Redirect&alert=WIP_Mobile&to="+request;
-               }else{
-                   //Mobile project case 
-                   request="request.html?type=Redirect&alert=Mobile&to="+request;
-               }     
-           }else if(typeof c_content[i].player != 'undefined' && c_content[i].player==true){
-                    //Player case 
-                    request="request.html?type=Player&alert="+request;
-           }else if(typeof c_content[i].webgl != 'undefined' && c_content[i].webgl==true){
-                    //WebGL case 
-                    request="request.html?type=WebGL&alert="+request;
-           }else if(typeof c_content[i].wip != 'undefined' && c_content[i].wip==true){
-                    //WIP project case
-                    request="request.html?type=Redirect&alert=WIP&to="+request;
-            } 
-        
-            let filter=c_content[i].filter;
-            let ico=c_content[i].ico;
-            let title=c_content[i].title;
-            let description=c_content[i].description;
-            let skills=c_content[i].skills;
-            if(typeof content[i].ico != 'undefined') ico=content[i].ico;
-            if(typeof content[i].title != 'undefined') title=content[i].title;
-            if(typeof content[i].description != 'undefined') description=content[i].description;
+
+    for(let key in data_c.portfolio){
+        let c=data_c.portfolio[key];
+
+        if(c.hide == undefined || c.hide==false){
+            //common    
+            let filter=c.filter != undefined ? c.filter : "";
+            let ico=c.ico != undefined ? c.ico : "";
+            let skills=c.skills != undefined ? c.skills : "";
+            let title=c.title != undefined ? c.title : "";
+            let description=c.description != undefined ? c.description : "";
+            let href=c.href != undefined ? c.href : "";
+            //lang
+            let lang=data.portfolio[key];
+            if(lang !=undefined){
+                title=lang.title != undefined ? lang.title : title;
+                description=lang.description != undefined ? lang.description : description;
+            }
+            //request
+            let page="request.html"
+            let url="";
+
+            if(c.wip != undefined && c.wip==true) url+=page+"?type=Redirect&alert=WIP&to=";
+            if(c.mobile != undefined && c.mobile==true) url= url.length >0 ? page+"?type=Redirect&alert=WIP_Mobile&to=" : page+"?type=Redirect&alert=Mobile&to=";
+            if(c.player != undefined && c.player==true) url+=page+"?type=Player&alert=";
+            if(c.webgl != undefined && c.webgl==true) url+=page+"?type=WebGL&alert=";
+            url+=href;
 
             portfolio_html += [
-                                "<div class='col-md-4 col-sm-6 col-xs-12 mix "+filter+"'>",
-                                    "<div class='item'>",
-                                        "<figure class='effect-project'>",
-                                            "<img src='"+ico+"' alt='"+title+"'>",
-                                            "<figcaption>",
-                                            "<div>", 
-                                                "<div class='icon-links'>",
-                                                    "<a href='"+request+"' target='_blank'><i class='fas fa-external-link-alt'></i></a>",
-                                                "</div>",
-                                                "<h2>"+title+"</h2>",
-                                                "<p>"+skills+"</p>",
-                                                "<p>"+description+"</p>",
-                                            "</div>",
-                                            "</figcaption>",		
-                                        "</figure>",
-                                    "</div>",
-                                "</div>"
-                ].join('');    
-       }
-    }    
-    
+                "<div class='col-md-4 col-sm-6 col-xs-12 mix "+filter+"'>",
+                    "<div class='item'>",
+                        "<figure class='effect-project'>",
+                            "<img src='"+ico+"' alt='"+title+"'>",
+                            "<figcaption>",
+                            "<div>", 
+                                "<div class='icon-links'>",
+                                    "<a href='"+url+"' target='_blank'><i class='fas fa-external-link-alt'></i></a>",
+                                "</div>",
+                                "<h2>"+title+"</h2>",
+                                "<p>"+skills+"</p>",
+                                "<p>"+description+"</p>",
+                            "</div>",
+                            "</figcaption>",		
+                        "</figure>",
+                    "</div>",
+                "</div>"
+            ].join('');  
+        }
+    }
     $('#portfolio_title_content').html("<h2>"+data.navigation.portfolio.title+"</h2>");
     $('#portfolio_content').html(portfolio_html);
     $('#portfolio_content').mixItUp();
@@ -183,17 +175,19 @@ function makePortfolio(data,data_c){
     @param string array data : the content of the *lang*.json used 
 */
 function makeSkills(data,data_c){
-    let content=data.skills;
-    let c_content=data_c.skills;
     let skills_html="";                
      
-    for(let i in c_content){ 
-        let ico = c_content[i].ico;
-        let title=c_content[i].title;
-        let list=c_content[i].list;
+    for(let key in data_c.skills){ 
+        let c=data_c.skills[key];
+        let ico = c.ico;
+        let title=c.title;
+        let list=c.list;
 
-        if(typeof content[i].title != 'undefined') title=content[i].title;
-        if(typeof content[i].list != 'undefined') list=content[i].list;
+        let lang=data.skills[key];
+        if(lang!=undefined){
+            title=lang.title != undefined ? lang.title : title;
+            list=lang.list != undefined ? lang.list : list;
+        }
 
         skills_html += [
                     "<div class='col-md-4 col-sm-6'>",
@@ -217,27 +211,26 @@ function makeSkills(data,data_c){
     @pram string array data common : the content of the common.json
 */
 function makeContact(data,data_c){
-    let social_content=data.contact.social;
-    let c_social_content=data_c.contact.social;
-    let info_content=data.contact.info;
-    let c_info_content=data_c.contact.info;
-
     let contact_social_html="";
     let contact_info_html="";
     //contact info
-    for(let i in c_info_content){
-        let class_css=c_info_content[i].class;
-        let href=c_info_content[i].href;
-        let title=c_info_content[i].title;
-        let text=c_info_content[i].text;
+    for(let key in data_c.contact.info){
+        let c=data_c.contact.info[key];
+        let class_css=c.class;
+        let href=c.href;
+        let title=c.title;
+        let text=c.text;
 
-        if(typeof info_content[i].href != 'undefined') href=info_content[i].href;
-        if(typeof info_content[i].title != 'undefined') title=info_content[i].title;
-        if(typeof info_content[i].text != 'undefined') text=info_content[i].text;
-     
-        if(typeof c_info_content[i].country_code != 'undefined' && typeof c_info_content[i].country_flag != 'undefined'){
+        let lang=data.contact.info[key];
+        if(lang!=undefined){
+            href=lang.href != undefined ? lang.href : href;
+            title=lang.title != undefined ? lang.title : title;
+            text=lang.text != undefined ? lang.text : text;
+        }
+
+        if(c.country_code != undefined && c.country_flag != undefined){
             //add flag and phone code
-           text="<img src='"+c_info_content[i].country_flag+"' title='"+c_info_content[i].country_code+"'>  "+text;
+           text="<img src='"+c.country_flag+"' title='"+c.country_code+"'>  "+text;
         }
 
         contact_info_html += [
@@ -252,13 +245,18 @@ function makeContact(data,data_c){
     }
     
     //social icons
-     for(let i in c_social_content){ 
-        let href =c_social_content[i].href;
-        let class_css=c_social_content[i].class;
-        let title=c_social_content[i].title;
-        let class_ico=c_social_content[i].class_ico;
-        if(typeof social_content[i].title != 'undefined') title=social_content[i].title;
-
+     for(let key in data_c.contact.social){ 
+        let c=data_c.contact.social[key];
+        let href =c.href;
+        let class_css=c.class;
+        let title=c.title;
+        let class_ico=c.class_ico;
+        
+        let lang=data.contact.social[key];
+        if(lang != undefined){
+            title=lang.title != undefined ? lang.title : title;
+        }
+        
         contact_social_html += [
             "<li>",
                 "<a href='"+href+"' target='_socblank' class='"+class_css+"' title='"+title+"'><i class='"+class_ico+"'></i>",

@@ -1,27 +1,33 @@
 {    
     "portfolio":{
+        "AsymetrieICP":{
+            "ico":"img/ico_project/ico_asymetrieICP.png",
+            "filter":"OpenCV",
+            "href":"https://github.com/RealVincentBerthet/AsymetrieICP",
+            "skills":"OpenCV Python"
+        },
+        "LunaAndHelios":{
+            "ico":"img/ico_project/ico_luna_and_helios.jpg",
+            "filter":"Unity C#",
+            "href":"https://github.com/RealVincentBerthet/LunaAndHelios",
+            "skills":"Unity C#"
+        },
         "Tensors":{
-            "ico":"img/ico_project/ico_wip.png",
+            "ico":"img/ico_project/ico_tensors.png",
             "filter":"OpenCV",
             "href":"https://github.com/RealVincentBerthet/Tensor_directed_stylization",
-            "title":"NA",
-            "description":"NA",
             "skills":"OpenCV Python"
         },
         "HDR":{
-            "ico":"img/ico_project/ico_wip.png",
+            "ico":"img/ico_project/ico_hdr.jpg",
             "filter":"OpenCV",
             "href":"https://github.com/RealVincentBerthet/HDR",
-            "title":"NA",
-            "description":"NA",
             "skills":"OpenCV Python"
         },
         "Askelys":{
             "ico":"img/ico_project/ico_askelys.png",
             "filter":"Pro",
             "href":"request.html?type=Download&alert=Askelys",
-            "title":"NA",
-            "description":"NA",
             "skills":"Unity WebGL C# Javascript"
         },
         "Kubic":{
@@ -29,8 +35,6 @@
             "filter":"3D Csharp Game",
             "href":"Kubic",
             "webgl":true,
-            "title":"NA",
-            "description":"NA" ,
             "skills":"Unity C#"
         },
         "game_jam_2019":{
@@ -38,25 +42,19 @@
             "filter":"Management",
             "href":"Isati Game Jam 2K19",
             "player":true,
-            "title":"NA",
-            "description":"NA",
             "skills":"Management"
         },
         "GOL":{
             "ico":"img/ico_project/ico_gol.png",
             "filter":"Cpp Game",
             "href":"https://github.com/RealVincentBerthet/GoL",
-            "title":"NA",
             "wip":false,
-            "description":"NA" ,
             "skills":"Qt C++ GUI"
         },
         "website_v1":{
             "ico":"img/ico_project/ico_website_v1.png",
             "filter":"Javascript Web",
             "href":"project/vberthet_1_6",
-            "title":"NA",
-            "description":"NA" ,
             "skills":"Javascript HTML5 CSS3 PHP JQuery"
         },
         "TA":{
@@ -65,8 +63,6 @@
             "href":"https://towerattackproject.firebaseapp.com/",
             "mobile":true,
             "wip":false,
-            "title":"NA",
-            "description":"NA",
             "skills":"Javascript"
         },
         "orium":{
@@ -74,56 +70,42 @@
             "filter":"3D Game",
             "href":"Orium",
             "player":true,
-            "title":"NA",
-            "description":"NA",
             "skills":"UE4"
         },
         "auld":{
             "ico":"img/ico_project/ico_auld.png",
             "filter":"Management 3D Game",
             "href":"http://projectauldue4.blogspot.com/",
-            "title":"NA",
-            "description":"NA",
             "skills":"UE4"
         },
         "scogue":{
             "ico":"img/ico_project/ico_scogue.png",
             "filter":"Javascript Game",
             "href":"project/scogue",
-            "title":"NA",
-            "description":"NA",
             "skills":"Javascript"
         },
         "blog":{
             "ico":"img/ico_project/ico_blog.png",
             "filter":"Web",
             "href":"http://uwsblog.yo.fr/UWS_Blog/",
-            "title":"NA",
-            "description":"NA",
             "skills":"WordPress"
         },     
         "mutest":{
             "ico":"img/ico_project/ico_mutest.png",
             "filter":"Pro",
             "href":"request.html?type=Download&alert=Mutest",
-            "title":"NA",
-            "description":"NA",
             "skills":"Java"
         },       
         "pacman":{
             "ico":"img/ico_project/ico_pacman.png",
             "filter":"Csharp Game",
             "href":"request.html?type=Download&alert=Pacman",
-            "title":"NA",
-            "description":"NA",
             "skills":"C#"
         },      
         "monitoring":{
             "ico":"img/ico_project/ico_monitoring.png",
             "filter":"Web",
             "href":"https://uwsblog.yo.fr/",
-            "title":"NA",
-            "description":"NA",
             "skills":"PHP SQL JQuery"
         }
     },
