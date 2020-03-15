@@ -75,8 +75,10 @@
         },
         "LunaAndHelios":{
             "name":"A Story of Luna & Helios",
+            "width":"1365",
+            "height":"810",
             "href":"https://realvincentberthet.github.io/LunaAndHelios/WebGL/index.html",
-            "description":"<p>This game has been released during the Orange Game Jam 2020. The aim of this event was to build a video game in 35 hours on the subject : <bold>Safe in the dark</bold></p><p><a href='https://github.com/RealVincentBerthet/LunaAndHelios' target='_blank'>Github</a></p>"
+            "description":"<p>This game has been released during the Orange Game Jam 2020. The aim of this event was to build a video game in 35 hours on the subject : <b>Safe in the dark</b></p><p><a href='https://github.com/RealVincentBerthet/LunaAndHelios' target='_blank'>Github source</a></p>"
         }
     },
     "download":{

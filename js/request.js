@@ -20,7 +20,7 @@ function init(type,alert,to,from,host){
     if(host=="" || host==null) this.host="./";
     this.from=from;
     if(from=="" || from==null) this.from=this.host;
-    this.waitTime=10;
+    this.waitTime=100;
     this.x;
     make();
     document.title = this.alert;
@@ -164,13 +164,21 @@ function makePlayer(data){
  */
 function makeWebGL(data){
     let main_html="";
+    let width='960';
+    let height='643';
+
     for(let key in data.player){
-        if(data.player[key].name==this.alert){
+        let o=data.player[key];
+        if(key==this.alert){
+            width=o.width != undefined ? o.width : width;
+            height=o.height != undefined ? o.height : height;
             main_html=[
-                "<div class='align-center'>",
-                    "<h1>"+data.player[key].name+"</h1>",
-                        "<iframe width='960' height='643' src='"+data.player[key].href+"' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>", 
-                    "<p>"+data.player[key].description+"</p>",
+                "<div>",
+                    "<h1>"+o.name+"</h1>",
+                    "<p>"+o.description+"</p>",
+                    "<div class='align-center'>",
+                        "<iframe width='"+width+"' height='"+height+"' src='"+o.href+"' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>", 
+                    "</div>",
                 "</div>"
             ].join('');
             break;
@@ -309,7 +317,7 @@ function makeHeader(color,type,from){
     let header_html="";
     header_html += [
         "<div class='header-top-area'>",
-            "<div class='container'>",
+            "<div style='margin-left:20px'>",
                 "<div class='row'>",
                 
                     "<div class='col-sm-4'>",
@@ -331,7 +339,7 @@ function makeHeader(color,type,from){
                                         "<span class='icon-bar'></span>",
                                     "</button>",
                                 "</div>",
-                                "<div class='navbar-collapse collapse'>",
+                                "<div style='margin-right:50px' class='navbar-collapse collapse'>",
                                     "<ul class='nav navbar-nav navbar-right "+color+"'>",
                                         "<li>",
                                             "<a class='smoth-scroll' href='#home'>"+type+"</a>",
