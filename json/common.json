@@ -4,12 +4,13 @@
             "ico":"img/ico_project/ico_asymetrieICP.png",
             "filter":"OpenCV",
             "href":"https://github.com/RealVincentBerthet/AsymetrieICP",
-            "skills":"OpenCV Python"
+            "skills":"OpenCV Python ICP"
         },
         "LunaAndHelios":{
             "ico":"img/ico_project/ico_luna_and_helios.jpg",
-            "filter":"Unity C#",
-            "href":"https://github.com/RealVincentBerthet/LunaAndHelios",
+            "filter":"Game Csharp",
+            "href":"LunaAndHelios",
+            "webgl":true,
             "skills":"Unity C#"
         },
         "Tensors":{
@@ -36,6 +37,12 @@
             "href":"Kubic",
             "webgl":true,
             "skills":"Unity C#"
+        },
+        "Ray":{
+            "ico":"img/ico_project/ico_ray.png",
+            "filter":"C++",
+            "href":"https://github.com/RealVincentBerthet/Ray",
+            "skills":"C++ RayTracing"
         },
         "game_jam_2019":{
             "ico":"img/ico_project/ico_gameJam2k19.png",

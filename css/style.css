@@ -646,6 +646,7 @@ ul.portfolio li.active:hover {
 }
 .portfolio .item {
     margin-top: 30px;
+    margin-bottom: 20px;
     position: relative;
 }
 

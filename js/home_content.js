@@ -146,7 +146,7 @@ function makePortfolio(data,data_c){
 
             portfolio_html += [
                 "<div class='col-md-4 col-sm-6 col-xs-12 mix "+filter+"'>",
-                    "<div class='item'>",
+                    "<div class=''>",
                         "<figure class='effect-project'>",
                             "<img src='"+ico+"' alt='"+title+"'>",
                             "<figcaption>",

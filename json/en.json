@@ -1,7 +1,7 @@
 {    
     "preview":{
             "text":"Hey ! This is Vincent Berthet",
-            "typed":["I am a Student.", "Welcome on my website.", "Hope you will like it."]
+            "typed":["I am an IT Digital Imaging engineer.", "Welcome on my website.", "Hope you will like it.","May we could meet one day :D."]
     }, 
     "navigation":{
          "bio":{
@@ -25,20 +25,20 @@
     "lang":"<img src='img/vberthet/uk_flag_16px.png' title='Click to switch to French' onclick='language.switch()'>",
     "portfolio":{
         "AsymetrieICP":{
-            "title":"NA",
-            "description":"@TODO"
+            "title":"Asymetrie ICP",
+            "description":"This project rely on “An algorithm to map asymmetries of bilateral objects in point clouds” - Benoît Combès & al.<br/>This algorithm able to automatically quantify the local asymmetries of bilateral structures in a point cloud by using Iterative Closest Point (ICP)"
         },
         "LunaAndHelios":{
-            "title":"NA",
-            "description":"@TODO"
+            "title":"A Story of Luna & Helios",
+            "description":"This game has been released during the Game Jam 2020.<br/>The aim of this event was to build a video game in 35 hours on the subject : “Safe in the dark”"
         },
         "Tensors":{
             "title":"Tensor directed stylization",
-            "description":"@TODO"
+            "description":"This project rely on “Tensors-directed simulation of strokes for image stylization with hatching and contours” - David TSCHUMPERLE<br/>Its describe an algorithm to generate sketches from color images directed by an image-dependent tensor-valued geometry"
         },
         "HDR":{
             "title":"HDR",
-            "description":"@TODO"
+            "description":"Experimentation of features related to High Dynamic Range (HDR) with OpenCV library"
         },
         "Askelys":{
             "title":"Askelys Report",
@@ -47,6 +47,10 @@
         "Kubic":{
             "title":"Kubic Unity",
             "description":"Unity development project, aim of the project was to use navmesh"
+        },
+        "Ray":{
+            "title":"Pathtracing",
+            "description":"The aim of this project was to implement features of a Raytracing engine and optimisation structures related to it<br/>Then in a second part Global Illumination and Pathtracing have been added to this project."
         },
         "game_jam_2019":{
             "title":"Isati Game Jam 2019",
