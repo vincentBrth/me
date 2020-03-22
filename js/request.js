@@ -22,9 +22,9 @@ function init(type,alert,to,from,host){
     if(from=="" || from==null) this.from=this.host;
     this.waitTime=10;
     this.x;
-    make();
     document.title = this.alert;
     if(document.title=="null") document.title=this.type;
+    make();
 }
 
 //CHECK FUNCTION to determine if unknown
@@ -88,19 +88,23 @@ function count() {
  */
 function makeDownload(data){
     let main_html="";
+    
     for(let key in data.download){
-        if(data.download[key].name==this.alert){
+        if(key==this.alert){
+            if(data.download[key].title!=undefined) document.title=data.download[key].title;
             main_html += [
-                    "<div class='request col-md-12'>",
-                        "<div class='request-alert'>",
-                            "<img src='img/vberthet/vb_white_bg_512.png' height='200px' alt='logo_ico'/>Download",
-                        "</div>",
-                        "<div class='request-player-color'>",
-                            "<h1>"+data.download[key].name+"</h1>",
-                        "</div>",
-                        "<p><h4><i>"+data.download[key].description+"</i></h4><p>",
-                        "<div class='request-player-color'>",
-                            "<a class='button button-style button-style-dark' href='"+data.download[key].href+"'><i class='far fa-arrow-alt-circle-down'></i> "+data.download[key].type+"</a>",
+                    "<div class='container'>",
+                        "<div class='request col-md-12'>",
+                            "<div class='request-alert'>",
+                                "<img src='img/vberthet/vb_white_bg_512.png' height='200px' alt='logo_ico'/>Download",
+                            "</div>",
+                            "<div class='request-player-color'>",
+                                "<h1>"+data.download[key].name+"</h1>",
+                            "</div>",
+                            "<p><h4><i>"+data.download[key].description+"</i></h4><p>",
+                            "<div class='request-player-color'>",
+                                "<a class='button button-style button-style-dark' href='"+data.download[key].href+"'><i class='far fa-arrow-alt-circle-down'></i> "+data.download[key].type+"</a>",
+                            "</div>",
                         "</div>",
                     "</div>"
                     ].join('');
@@ -132,14 +136,17 @@ function makeDownload(data){
 function makePlayer(data){
     let main_html="";
     for(let key in data.player){
-        if(data.player[key].name==this.alert){
+        if(key==this.alert){
+            if(data.player[key].title!=undefined) document.title=data.player[key].title;
             main_html=[
-                "<div class='align-center'>",
-                    "<h1>"+data.player[key].name+"</h1>",
-                        "<div class='col-md-12 video-container'>",
-                            "<iframe width='854' height='480' src='"+data.player[key].href+"' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>",
-                        "</div>",
-                    "<p>"+data.player[key].description+"</p>",
+                "<div class='container'>",
+                    "<div class='align-center'>",
+                        "<h1>"+data.player[key].name+"</h1>",
+                            "<div class='col-md-12 video-container'>",
+                                "<iframe width='854' height='480' src='"+data.player[key].href+"' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>",
+                            "</div>",
+                        "<p>"+data.player[key].description+"</p>",
+                    "</div>",
                 "</div>"
             ].join('');
             break;
@@ -164,13 +171,20 @@ function makePlayer(data){
  */
 function makeWebGL(data){
     let main_html="";
+    let width='960';
+    let height='643';
+
     for(let key in data.player){
-        if(data.player[key].name==this.alert){
+        let o=data.player[key];
+        if(key==this.alert){
+            if(data.player[key].title!=undefined) document.title=data.player[key].title;
+            width=o.width != undefined ? o.width : width;
+            height=o.height != undefined ? o.height : height;
             main_html=[
-                "<div class='align-center'>",
-                    "<h1>"+data.player[key].name+"</h1>",
-                        "<iframe width='960' height='643' src='"+data.player[key].href+"' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>", 
-                    "<p>"+data.player[key].description+"</p>",
+                "<div>",
+                    "<h1>"+o.name+"</h1>",
+                    "<p>"+o.description+"</p>",
+                    "<iframe width='"+width+"' height='"+height+"' src='"+o.href+"' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>", 
                 "</div>"
             ].join('');
             break;
@@ -199,11 +213,13 @@ function makeNotes(data){
                         "<ul>"        
     ].join('');            
    
-    for(let key in data.notes){        
+    for(let key in data.notes){   
+        let id=data.notes[key].id;
+        if(data.notes[key].github==true) id="<span class='request-notes-color'><a href='https://github.com/RealVincentBerthet/vberthet/releases/tag/"+id+"' target='_blank'>"+id+"</a>";  
         updates_html += [
             "<li>",
                 "<p>",
-                "<b><u>Version "+data.notes[key].id+" :</b></u> "+data.notes[key].released+"<br/>",
+                "<b><u>Version "+id+" :</b></u> "+data.notes[key].released+"<br/>",
                 data.notes[key].text,
                 "</p>",
             "</li>"
@@ -220,7 +236,7 @@ function makeNotes(data){
     }
     todo_html+="</ul></div>";
     
-    $('#main_content').html(updates_html+todo_html);
+    $('#main_content').html("<div class='container'>"+updates_html+todo_html+"</div>");
     makeHeader('request-notes-color',this.type,this.host);
     makeFooter('request-notes-color',this.host);
 } 
@@ -285,21 +301,23 @@ function checkRequest(data){
 function makeContent(alert,color,title,text,button,to,from){
     let content_html="";
     content_html += [
-                    "<div class='request col-md-12'>",
-                        "<div class='request-alert'>",
-                            "<img src='img/vberthet/vb_white_bg_512.png' height='200px' alt='logo_ico'/>"+alert+"",
-                        "</div>",
-                        "<div class='"+color+"'>",
-                            "<h1>"+title+"</h1>",
-                        "</div>",
-                        "<p><h4><i>"+text+"</i></h4><p>",
-
-                        "<div class='counter'>",
-                            "<p>You will be automatically redirected in <span id='counter'>x</span> s</p>",
-                        "</div>",
-                            "<div class='"+color+"'>",
-                                "<a class='button button-style button-style-dark' href='"+to+"'>"+button+"</a>",
+                    "<div class='container'>",
+                        "<div class='request col-md-12'>",
+                            "<div class='request-alert'>",
+                                "<img src='img/vberthet/vb_white_bg_512.png' height='200px' alt='logo_ico'/>"+alert+"",
                             "</div>",
+                            "<div class='"+color+"'>",
+                                "<h1>"+title+"</h1>",
+                            "</div>",
+                            "<p><h4><i>"+text+"</i></h4><p>",
+
+                            "<div class='counter'>",
+                                "<p>You will be automatically redirected in <span id='counter'>x</span> s</p>",
+                            "</div>",
+                                "<div class='"+color+"'>",
+                                    "<a class='button button-style button-style-dark' href='"+to+"'>"+button+"</a>",
+                                "</div>",
+                        "</div>",
                     "</div>"
                     ].join('');
     $('#main_content').html(content_html);
@@ -309,7 +327,7 @@ function makeHeader(color,type,from){
     let header_html="";
     header_html += [
         "<div class='header-top-area'>",
-            "<div class='container'>",
+            "<div style='margin-left:20px'>",
                 "<div class='row'>",
                 
                     "<div class='col-sm-4'>",
@@ -331,7 +349,7 @@ function makeHeader(color,type,from){
                                         "<span class='icon-bar'></span>",
                                     "</button>",
                                 "</div>",
-                                "<div class='navbar-collapse collapse'>",
+                                "<div style='margin-right:50px' class='navbar-collapse collapse'>",
                                     "<ul class='nav navbar-nav navbar-right "+color+"'>",
                                         "<li>",
                                             "<a class='smoth-scroll' href='#home'>"+type+"</a>",
