@@ -20,7 +20,7 @@ function init(type,alert,to,from,host){
     if(host=="" || host==null) this.host="./";
     this.from=from;
     if(from=="" || from==null) this.from=this.host;
-    this.waitTime=100;
+    this.waitTime=10;
     this.x;
     make();
     document.title = this.alert;
@@ -91,16 +91,18 @@ function makeDownload(data){
     for(let key in data.download){
         if(data.download[key].name==this.alert){
             main_html += [
-                    "<div class='request col-md-12'>",
-                        "<div class='request-alert'>",
-                            "<img src='img/vberthet/vb_white_bg_512.png' height='200px' alt='logo_ico'/>Download",
-                        "</div>",
-                        "<div class='request-player-color'>",
-                            "<h1>"+data.download[key].name+"</h1>",
-                        "</div>",
-                        "<p><h4><i>"+data.download[key].description+"</i></h4><p>",
-                        "<div class='request-player-color'>",
-                            "<a class='button button-style button-style-dark' href='"+data.download[key].href+"'><i class='far fa-arrow-alt-circle-down'></i> "+data.download[key].type+"</a>",
+                    "<div class='container'>",
+                        "<div class='request col-md-12'>",
+                            "<div class='request-alert'>",
+                                "<img src='img/vberthet/vb_white_bg_512.png' height='200px' alt='logo_ico'/>Download",
+                            "</div>",
+                            "<div class='request-player-color'>",
+                                "<h1>"+data.download[key].name+"</h1>",
+                            "</div>",
+                            "<p><h4><i>"+data.download[key].description+"</i></h4><p>",
+                            "<div class='request-player-color'>",
+                                "<a class='button button-style button-style-dark' href='"+data.download[key].href+"'><i class='far fa-arrow-alt-circle-down'></i> "+data.download[key].type+"</a>",
+                            "</div>",
                         "</div>",
                     "</div>"
                     ].join('');
@@ -134,12 +136,14 @@ function makePlayer(data){
     for(let key in data.player){
         if(data.player[key].name==this.alert){
             main_html=[
-                "<div class='align-center'>",
-                    "<h1>"+data.player[key].name+"</h1>",
-                        "<div class='col-md-12 video-container'>",
-                            "<iframe width='854' height='480' src='"+data.player[key].href+"' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>",
-                        "</div>",
-                    "<p>"+data.player[key].description+"</p>",
+                "<div class='container'>",
+                    "<div class='align-center'>",
+                        "<h1>"+data.player[key].name+"</h1>",
+                            "<div class='col-md-12 video-container'>",
+                                "<iframe width='854' height='480' src='"+data.player[key].href+"' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>",
+                            "</div>",
+                        "<p>"+data.player[key].description+"</p>",
+                    "</div>",
                 "</div>"
             ].join('');
             break;
@@ -176,9 +180,7 @@ function makeWebGL(data){
                 "<div>",
                     "<h1>"+o.name+"</h1>",
                     "<p>"+o.description+"</p>",
-                    "<div class='align-center'>",
-                        "<iframe width='"+width+"' height='"+height+"' src='"+o.href+"' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>", 
-                    "</div>",
+                    "<iframe width='"+width+"' height='"+height+"' src='"+o.href+"' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>", 
                 "</div>"
             ].join('');
             break;
@@ -228,7 +230,7 @@ function makeNotes(data){
     }
     todo_html+="</ul></div>";
     
-    $('#main_content').html(updates_html+todo_html);
+    $('#main_content').html("<div class='container'>"+updates_html+todo_html+"</div>");
     makeHeader('request-notes-color',this.type,this.host);
     makeFooter('request-notes-color',this.host);
 } 
@@ -293,21 +295,23 @@ function checkRequest(data){
 function makeContent(alert,color,title,text,button,to,from){
     let content_html="";
     content_html += [
-                    "<div class='request col-md-12'>",
-                        "<div class='request-alert'>",
-                            "<img src='img/vberthet/vb_white_bg_512.png' height='200px' alt='logo_ico'/>"+alert+"",
-                        "</div>",
-                        "<div class='"+color+"'>",
-                            "<h1>"+title+"</h1>",
-                        "</div>",
-                        "<p><h4><i>"+text+"</i></h4><p>",
-
-                        "<div class='counter'>",
-                            "<p>You will be automatically redirected in <span id='counter'>x</span> s</p>",
-                        "</div>",
-                            "<div class='"+color+"'>",
-                                "<a class='button button-style button-style-dark' href='"+to+"'>"+button+"</a>",
+                    "<div class='container'>",
+                        "<div class='request col-md-12'>",
+                            "<div class='request-alert'>",
+                                "<img src='img/vberthet/vb_white_bg_512.png' height='200px' alt='logo_ico'/>"+alert+"",
                             "</div>",
+                            "<div class='"+color+"'>",
+                                "<h1>"+title+"</h1>",
+                            "</div>",
+                            "<p><h4><i>"+text+"</i></h4><p>",
+
+                            "<div class='counter'>",
+                                "<p>You will be automatically redirected in <span id='counter'>x</span> s</p>",
+                            "</div>",
+                                "<div class='"+color+"'>",
+                                    "<a class='button button-style button-style-dark' href='"+to+"'>"+button+"</a>",
+                                "</div>",
+                        "</div>",
                     "</div>"
                     ].join('');
     $('#main_content').html(content_html);
