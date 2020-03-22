@@ -565,6 +565,7 @@ body.loaded #preloader{
     color: #f8f8f8;
     font-size: 10px;
     position: absolute;
+    margin-top: 70px;
 }
 
 .footer-section a {
