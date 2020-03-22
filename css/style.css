@@ -646,6 +646,7 @@ ul.portfolio li.active:hover {
 }
 .portfolio .item {
     margin-top: 30px;
+    margin-bottom: 20px;
     position: relative;
 }
 
@@ -965,7 +966,7 @@ ul.portfolio li.active:hover {
 }
 
 .instagram:hover {
-   background-color: #464545;
+   background-color: #C23289;
 }
 
 .linkedin {
@@ -1013,6 +1014,13 @@ ul.portfolio li.active:hover {
 
 
 /* Responsive */
+@media only screen and (min-width:1680px) and (max-width: 1922px) {
+    .bio-section p {
+           line-height: 30px;
+           font-size: 18px;
+    }
+}
+
 @media only screen and (min-width:1366px) and (max-width: 1680px) {
      .bio-section p {
             line-height: 25px;
@@ -1022,8 +1030,9 @@ ul.portfolio li.active:hover {
 
 @media only screen and (min-width:991px) and (max-width: 1366px) {
      .bio-section p {
-            line-height: 16px;
-            font-size: 15px;
+        padding-top: 10px;
+            line-height: 18px;
+            font-size: 14px;
      }
 }
 

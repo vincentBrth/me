@@ -1,7 +1,7 @@
 {    
     "preview":{
             "text":"Hey ! Ici Vincent Berthet",
-            "typed":["Je suis étudiant.", "Bienvenue sur mon site.", "Je vous souhaite une bonne visite."]
+            "typed":["Je suis ingénieur en Imagerie Numérique.", "Bienvenue sur mon site.", "J'ose éspérer que tu l'apprécieras.","Peut-être nous nous rencontrerons un jour :D."]
     }, 
     "navigation":{
          "bio":{
@@ -24,13 +24,21 @@
      },
     "lang":"<img src='img/vberthet/fr_flag_16px.png' title='Cliquer pour passer en anglais' onclick='language.switch()'>",
     "portfolio":{
+        "AsymetrieICP":{
+            "title":"Asymétrie ICP",
+            "description":"Ce projet repose sur le papier “An algorithm to map asymmetries of bilateral objects in point clouds” - Benoît Combès & al.<br/>Cet algorithme permet de quantifier automatiquement les asymétries d'une structure bilateral dans un nuage de point par Iterative Closest Point (ICP)"
+        },
+        "LunaAndHelios":{
+            "title":"A Story of Luna & Helios",
+            "description":"Jeu réalisé lors de la Game Jam 2020 d'Orange.<br/>L'objectif de cet évenement était de créer un jeu vidéo en 35 heures, sur le sujet : Safe in the dark"
+        },
         "Tensors":{
             "title":"Tensor directed stylization",
-            "description":"@TODO"
+            "description":"This project rely on \"Tensors-directed simulation of strokes for image stylization with hatching and contours\" - David TSCHUMPERLE in September 2011 \n Its describe an algorithm to generate sketches from color images directed by an image-dependent tensor-valued geometry"
         },
         "HDR":{
             "title":"HDR",
-            "description":"@TODO"
+            "description":"Expérimentation de l'imagerie à grande gamme dynamique (HDR) avec la librairie OpenCV"
         },
         "Askelys":{
             "title":"Askelys Rapport",
@@ -39,6 +47,11 @@
         "Kubic":{
             "title":"Kubic Unity",
             "description":"Projet Unity, l'objectif de ce projet était d'utiliser le navmesh"
+        },
+        "Ray":{
+            "title":"Pathtracing",
+            "description":"L'objectif de ce projet était d'implémenter les fonctionalités d'un moteur de lancé de rayons et des structures d'optimisation associés<br/>Dans un second temps, la gestion de l'illumination globale a été ajouté"
+
         },
         "game_jam_2019":{
             "title":"Isati Game Jam 2019",
@@ -50,7 +63,7 @@
         },
         "website_v1":{
             "title":"Ancien site",
-            "description":"2018 - Ancienne version de ce site (1.6)" 
+            "description":"Ancienne version de ce site (1.6)" 
         },
         "TA":{
             "title":"Tower Attack",
@@ -112,7 +125,7 @@
                         "title":"Envoyer moi un mail"
                     },
                     "resume":{
-                        "href":"project/documents/FR_CV_BERTHET_Vincent.pdf",
+                        "href":"request.html?type=Download&alert=CV_FR",
                         "title":"Télécharger mon CV",
                         "text":"CV"
                     },

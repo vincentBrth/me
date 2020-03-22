@@ -105,7 +105,6 @@
 .video-container {
     position: relative;
     padding-bottom: 56.25%; /* 56.25 for 16:9 */ 
-    left: 10%;
     overflow: hidden;
 }
 
@@ -113,9 +112,10 @@
 .video-container object,
 .video-container embed {
     position: absolute;
+    padding-bottom: 20px;
     left: 0;
-    height: 80%;
-    width: 80%;
+    height: 100%;
+    width: 100%;
 }
 
 
@@ -174,12 +174,10 @@ img {
 }
 
 a {
-    color: #17954c;
     text-decoration: none;
 }
 
 a:hover {
-    color: #24b662;
     text-decoration: none;
 }
 
@@ -287,11 +285,13 @@ fieldset {
 	overflow: hidden;
 }
 
-.button-style:hover,
-.button-style:active,
+.button-style:hover{
+    color: #ffffff !important;
+}
+.button-style:active
 .button-style:focus {
-	background: #24b662;
-	color: #ffffff !important;
+    color: #000 !important;
+    outline: none;
 }
 
 .button-style:before {
@@ -417,8 +417,8 @@ body.loaded #preloader{
 /* Home Section and Navigation Menu */
 .home-section{
     margin-top: 75px;
-    margin-bottom: 190px;
     margin-left: 5%;
+    padding-bottom: 90px;
 }
 
 .home-section-background h2 {
@@ -467,15 +467,11 @@ body.loaded #preloader{
     top: 0;
     width: 100%;
     background: #000;
-    z-index: 99;
-    -webkit-transition: all 0.4s ease-out;
-    transition: all 0.4s ease-out;
+    z-index: 99;;
 }
 
 .logo {
     padding-top: 10px;
-    -webkit-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out;
 }
 
 .logo img{
@@ -519,8 +515,6 @@ body.loaded #preloader{
 .navigation-menu .navbar-nav li a:hover {
     background: none;
     color: #000;
-    -webkit-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out;
 }
 
 
@@ -547,7 +541,6 @@ body.loaded #preloader{
 }
 
 .navigation-background .logo {
-    padding-top: 12px;
     -webkit-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
 }
@@ -567,12 +560,11 @@ body.loaded #preloader{
 /* Footer */
 
 .footer-section {
-    bottom: 0;
     width: 100%;
     background: #000;
-    padding: 0px 0px;
     color: #f8f8f8;
     font-size: 10px;
+    position: absolute;
 }
 
 .footer-section a {
