@@ -184,7 +184,9 @@ function makeWebGL(data){
                 "<div>",
                     "<h1>"+o.name+"</h1>",
                     "<p>"+o.description+"</p>",
-                    "<iframe width='"+width+"' height='"+height+"' src='"+o.href+"' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>", 
+                    "<div style='text-align:center'>",
+                        "<iframe width='"+width+"' height='"+height+"' src='"+o.href+"' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>", 
+                    "</div>",
                 "</div>"
             ].join('');
             break;

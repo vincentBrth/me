@@ -124,7 +124,7 @@
         "v2.11.0":{
             "id":"2.11.0",
             "github":true,
-            "text":"Update project and fix request",
+            "text":"Update project,card and fix request",
             "released":"03/22/2020"
         },
         "v2.10.0":{
