@@ -135,26 +135,31 @@
         },
         "v2.9.0":{
             "id":"2.9.0",
-            "text":"Add Kubic project and WebGL embed",
+            "github":true,
+            "text":"Add Kubic WebGL embed",
             "released":"06/16/2019"
         },
         "v2.8.0":{
             "id":"2.8.0",
+            "github":true,
             "text":"Add Download page, rework video page and fix of home content preloading",
             "released":"04/17/2019"
         },
         "v2.7.0":{
             "id":"2.7.0",
-            "text":"Add Ninja Warrior project link",
+            "github":true,
+            "text":"Add Kubic project link",
             "released":"04/04/2019"
         },
         "v2.6.0":{
             "id":"2.6.0",
+            "github":true,
             "text":"Update CV",
             "released":"02/10/2019"
         },
         "v2.5.0":{
             "id":"2.5.0",
+            "github":true,
             "text":"Add Game of Life project to portfolio",
             "released":"01/31/2019"
         },
