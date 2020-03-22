@@ -125,7 +125,7 @@
                         "title":"Envoyer moi un mail"
                     },
                     "resume":{
-                        "href":"project/documents/FR_CV_BERTHET_Vincent.pdf",
+                        "href":"request.html?type=Download&alert=CV_FR",
                         "title":"Télécharger mon CV",
                         "text":"CV"
                     },

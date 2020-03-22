@@ -22,9 +22,9 @@ function init(type,alert,to,from,host){
     if(from=="" || from==null) this.from=this.host;
     this.waitTime=10;
     this.x;
-    make();
     document.title = this.alert;
     if(document.title=="null") document.title=this.type;
+    make();
 }
 
 //CHECK FUNCTION to determine if unknown
@@ -88,8 +88,10 @@ function count() {
  */
 function makeDownload(data){
     let main_html="";
+    
     for(let key in data.download){
-        if(data.download[key].name==this.alert){
+        if(key==this.alert){
+            if(data.download[key].title!=undefined) document.title=data.download[key].title;
             main_html += [
                     "<div class='container'>",
                         "<div class='request col-md-12'>",
@@ -134,7 +136,8 @@ function makeDownload(data){
 function makePlayer(data){
     let main_html="";
     for(let key in data.player){
-        if(data.player[key].name==this.alert){
+        if(key==this.alert){
+            if(data.player[key].title!=undefined) document.title=data.player[key].title;
             main_html=[
                 "<div class='container'>",
                     "<div class='align-center'>",
@@ -174,6 +177,7 @@ function makeWebGL(data){
     for(let key in data.player){
         let o=data.player[key];
         if(key==this.alert){
+            if(data.player[key].title!=undefined) document.title=data.player[key].title;
             width=o.width != undefined ? o.width : width;
             height=o.height != undefined ? o.height : height;
             main_html=[
@@ -209,11 +213,13 @@ function makeNotes(data){
                         "<ul>"        
     ].join('');            
    
-    for(let key in data.notes){        
+    for(let key in data.notes){   
+        let id=data.notes[key].id;
+        if(data.notes[key].github==true) id="<span class='request-notes-color'><a href='https://github.com/RealVincentBerthet/vberthet/releases/tag/"+id+"' target='_blank'>"+id+"</a>";  
         updates_html += [
             "<li>",
                 "<p>",
-                "<b><u>Version "+data.notes[key].id+" :</b></u> "+data.notes[key].released+"<br/>",
+                "<b><u>Version "+id+" :</b></u> "+data.notes[key].released+"<br/>",
                 data.notes[key].text,
                 "</p>",
             "</li>"

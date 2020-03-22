@@ -236,7 +236,7 @@ function makeContact(data,data_c){
         contact_info_html += [
             "<div class='col-md-4 col-sm-4'>",
                 "<div class='contact-detail flag'>",  
-                    "<a href='"+href+"' title='"+title+"'>",
+                    "<a href='"+href+"' target='_blank' title='"+title+"'>",
                       "<i class='"+class_css+"'></i><p>"+text+"</p>",
                     "</a>",
                 "</div>",

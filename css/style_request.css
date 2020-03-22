@@ -174,12 +174,10 @@ img {
 }
 
 a {
-    color: #17954c;
     text-decoration: none;
 }
 
 a:hover {
-    color: #24b662;
     text-decoration: none;
 }
 
@@ -287,11 +285,13 @@ fieldset {
 	overflow: hidden;
 }
 
-.button-style:hover,
-.button-style:active,
+.button-style:hover{
+    color: #ffffff !important;
+}
+.button-style:active
 .button-style:focus {
-	background: #24b662;
-	color: #ffffff !important;
+    color: #000 !important;
+    outline: none;
 }
 
 .button-style:before {

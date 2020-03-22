@@ -124,7 +124,7 @@
                         "title":"Send me a mail"
                     },
                     "resume":{
-                        "href":"project/documents/EN_CV_BERTHET_Vincent.pdf",
+                        "href":"request.html?type=Download&alert=CV_EN",
                         "title":"Download my resume",
                         "text":"Resume"
                     },

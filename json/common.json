@@ -8,7 +8,7 @@
         },
         "LunaAndHelios":{
             "ico":"img/ico_project/ico_luna_and_helios.jpg",
-            "filter":"Game Csharp",
+            "filter":"Game CSharp",
             "href":"LunaAndHelios",
             "webgl":true,
             "skills":"Unity C#"
@@ -27,20 +27,20 @@
         },
         "Askelys":{
             "ico":"img/ico_project/ico_askelys.png",
-            "filter":"Pro",
+            "filter":"Pro CSharp",
             "href":"request.html?type=Download&alert=Askelys",
             "skills":"Unity WebGL C# Javascript"
         },
         "Kubic":{
             "ico":"img/ico_project/ico_kubic.png",
-            "filter":"3D Csharp Game",
+            "filter":"3D CSharp Game",
             "href":"Kubic",
             "webgl":true,
             "skills":"Unity C#"
         },
         "Ray":{
             "ico":"img/ico_project/ico_ray.png",
-            "filter":"C++",
+            "filter":"Cpp",
             "href":"https://github.com/RealVincentBerthet/Ray",
             "skills":"C++ RayTracing"
         },
@@ -105,7 +105,7 @@
         },       
         "pacman":{
             "ico":"img/ico_project/ico_pacman.png",
-            "filter":"Csharp Game",
+            "filter":"CSharp Game",
             "href":"request.html?type=Download&alert=Pacman",
             "skills":"C#"
         },      
@@ -158,7 +158,7 @@
                     },
                     "resume":{
                         "class":"fas fa-download fa-2x color-4",
-                        "href":"project/documents/FR_CV_BERTHET_Vincent_min.pdf",
+                        "href":"request.html?type=Download&alert=CV_EN",
                         "title":"NA",
                         "text":"NA"
                     },
