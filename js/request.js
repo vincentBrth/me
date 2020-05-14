@@ -103,7 +103,7 @@ function makeDownload(data){
                             "</div>",
                             "<p><h4><i>"+data.download[key].description+"</i></h4><p>",
                             "<div class='request-player-color'>",
-                                "<a class='button button-style button-style-dark' href='"+data.download[key].href+"'><i class='far fa-arrow-alt-circle-down'></i> "+data.download[key].type+"</a>",
+                                "<a class='button button-style button-style-dark' href='"+this.myPublic+data.download[key].href+"'><i class='far fa-arrow-alt-circle-down'></i> "+data.download[key].type+"</a>",
                             "</div>",
                         "</div>",
                     "</div>"

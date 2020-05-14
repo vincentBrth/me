@@ -87,40 +87,46 @@
         "Askelys":{
             "title":"Askelys Report",
             "name":"Rapport_BERTHET_Vincent_Askelys_2019.pdf",
-            "href":"project/documents/askelys/Rapport_BERTHET_Vincent_Askelys_2019.pdf",
+            "href":"Report/Rapport_BERTHET_Vincent_Askelys_2019.pdf",
             "type":".pdf",
             "description":"Report file (French)"
         }, 
-        "mutest":{
+        "Mutest":{
             "title":"MuTest Report",
             "name":"MuTest_2016.pdf",
-            "href":"project/documents/muTest/MuTest_2016.pdf",
+            "href":"Report/MuTest_2016.pdf",
             "type":".pdf",
             "description":"Report file (French)"
         },  
-        "pacman":{
+        "Pacman":{
             "title":"Pacman",
             "name":"Pacman.pdf",
-            "href":"project/documents/pacman/Pacman.pdf",
+            "href":"Project/Pacman.pdf",
             "type":".pdf",
             "description":"Presentation file (French)"
         },
         "CV_EN":{
             "title":"CV",
             "name":"EN_CV_BERTHET_Vincent.pdf",
-            "href":"project/documents/EN_CV_BERTHET_Vincent.pdf",
+            "href":"CV/EN_CV_BERTHET_Vincent.pdf",
             "type":".pdf",
             "description":"Curriculum Vitae (English)"
         },
         "CV_FR":{
             "title":"CV",
             "name":"FR_CV_BERTHET_Vincent.pdf",
-            "href":"project/documents/FR_CV_BERTHET_Vincent.pdf",
+            "href":"CV/FR_CV_BERTHET_Vincent.pdf",
             "type":".pdf",
             "description":"Curriculum Vitae (French)"
         }
     },
     "notes":{
+        "v2.12.0":{
+            "id":"2.12.0",
+            "github":true,
+            "text":"Sync documentation with my <a target='_blank' href=https://github.com/RealVincentBerthet/Vincent/tree/master/Public>Public</a> repository",
+            "released":"05/14/2020"
+        },
         "v2.11.0":{
             "id":"2.11.0",
             "github":true,
