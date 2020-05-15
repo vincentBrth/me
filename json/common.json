@@ -68,8 +68,9 @@
         "website_v1":{
             "ico":"img/ico_project/ico_website_v1.png",
             "filter":"Javascript Web",
-            "href":"project/vberthet_1_6",
+            "href":"vberthet_1.6.0",
             "github":true,
+            "githubPage":true,
             "skills":"Javascript HTML5 CSS3 PHP JQuery"
         },
         "TA":{
