@@ -71,14 +71,15 @@
         "Kubic":{
             "title":"Kubic (WebGL)",
             "name":"Kubic",
+            "height":"820",
             "href":"Kubic/Kubic/WebGL/index.html",
             "description":"<p><a href='https://docs.unity3d.com/ScriptReference/Application-streamingAssetsPath.html' target='_blank'>No streaming access is available on WebGL with Unity</a>.<br/>As this game has been developed for OS, use <a href='https://github.com/RealVincentBerthet/Kubic/blob/master/Kubic/Windows/Kubic.zip' target='_blank'>Windows executable</a> to have access to options and sounds and others features in the game</p>"
         },
         "LunaAndHelios":{
             "title":"Luna & Helios (WebGL)",
             "name":"A Story of Luna & Helios",
-            "width":"1365",
-            "height":"810",
+            "width":"1400",
+            "height":"820",
             "href":"LunaAndHelios/WebGL/index.html",
             "description":"<p>This game has been released during the Orange Game Jam 2020. The aim of this event was to build a video game in 35 hours on the subject : <b>Safe in the dark</b></p>"
         }
