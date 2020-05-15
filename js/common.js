@@ -1,11 +1,10 @@
 console.info("Hi there ! You are welcome to examine the code");
 
-this.myGithub="https://github.com/RealVincentBerthet/"
-this.myPublic=this.myGithub+"Vincent/raw/master/Public/";
 let available_lang = new Map();
 available_lang.set('en','json/en.json');
 available_lang.set('fr','json/fr.json');
 available_lang.set('.common','json/common.json');
+available_lang.set('.request','json/request.json');
 this.language = new Language(available_lang,'en');
 this.language.update = function(){update();}
 this.language.make = function(){make();}
@@ -25,59 +24,97 @@ this.language.make = function(){make();}
 */
 /*
     Language object
-    @param string lang : the name of the language [en,fr,..]
+    @param string current : the name of the language [en,fr,..]
 */
-function Language(available_lang,lang='en'){
-    this.lang=lang;
-    this.available_lang = available_lang;
+function Language(langs,current='en'){
+    this.current=current;
+    this.langs = langs;
+        
+    let promises=[];
+    for(let [key, path] of this.langs){
+        promises.push(new Promise((resolve) => {
+            resolve($.getJSON(path));
+        }))
+    }
+
+
+    this.data=Promise.all(promises).then((values) => {
+        let tmp= new Map();
+        let index=0;
+        for(let [key, path] of this.langs){
+            tmp.set(key,values[index]);
+            index++;
+        }    
+        return tmp;    
+    });
+
 }
 
 /*
     Check if the language is valid [en,fr,..] and set the right json file
-    @param string lang : the name of the language
+    @param string current : the name of the language
 */
-Language.prototype.set = function(lang){
-    if(typeof this.available_lang.get(lang) != 'undefined'){
-        this.lang=lang;
+Language.prototype.setLang = function(current){
+    if(typeof this.langs.get(current) != 'undefined'){
+        this.current=current;
     }else{
-        console.error('"'+lang+'"'+' is not a valid language of the map used : ['+this.getLangAvailable()+']');
+        console.error('"'+current+'"'+' is not a valid language of the map used : ');
+        console.error(this.langs);
     }
 }
 
 /*
     Get the name of the language used [en,fr,..]
-    @return the lang
+    @return the current
 */
 Language.prototype.getLang = function(){
-    return this.lang;
+    return this.current;
 }
 
-/*
-    Get url of my public directory
-    @return url
-*/
-Language.prototype.getPublic = function(){
-    return this.public;
-}
-
-/*
-    Get the list of the language available
-    @return the name of each language available
-*/
-Language.prototype.getLangAvailable = function(){
-    let result=[];
-    this.available_lang.forEach(function(value,key){
-        result.push(key);
-    });
-    return result;
-}
 
 /*
     Get the path of the json file associated 
     @return the path of the json
 */
-Language.prototype.getJsonPath = function(lang=this.getLang()){
-    return this.available_lang.get(lang);
+Language.prototype.getJsonPath = function(current=this.getLang()){
+    return this.langs.get(current);
+}
+
+Language.prototype.getData= async function(current=this.getLang()){
+    return await Promise.resolve((await this.data).get(current))
+}
+
+/*
+    Get Github name for my account depending on username in common.json
+*/
+Language.prototype.getGithubName=async function(){
+    return (await Promise.resolve((await this.data).get('.common')))['contact']['social']['GITHUB']['username'];
+}
+
+/*
+    Get Github URL for my account depending on username in common.json
+    @return https://github.com/RealVincentBerthet/
+*/
+Language.prototype.getGithubURL=async function(){
+    let url=await this.getGithubName();
+    return 'https://github.com/'+url+'/';
+}
+
+/*
+    Get Github page URL for my account depending on username in common.json
+    @return https://realvincentberthet.github.io/
+*/
+Language.prototype.getGithubPageURL=async function(){
+    let url=await this.getGithubName();
+    return 'https://'+url+'.github.io/';
+}
+
+/*
+    Get Github public directory for my account depending on username in common.json
+    @return https://github.com/RealVincentBerthet/Vincent/tree/master/Public
+*/
+Language.prototype.getGithubPublicURL=async function(){
+    return  await this.getGithubURL()+'Vincent/raw/master/Public/';
 }
 
 /*
@@ -99,13 +136,12 @@ Language.prototype.update = function(){
 */
 Language.prototype.switch = function(){
     if(this.getLang()=='en'){
-        this.set('fr');
+        this.setLang('fr');
     }else{
-        this.set('en');
+        this.setLang('en');
     }
     this.update();
 }
-
 /*
     ******************************************************************************************* 
                                         2.Date/Age 
@@ -219,7 +255,7 @@ function makeRelease(){
 
 /*
     Make the footer of the page
-    @param  string array data : the data of the *lang*.json
+    @param  string array data : the data of the *current*.json
 */
 function makeFooter(data){ 
     let content=data.footer;

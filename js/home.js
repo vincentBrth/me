@@ -17,7 +17,7 @@ window.onload = init;
 /*
     Create a Language object and redefine the update and make method of this object
 */
-function init(){
+async function init(){
     this.typed = new Typed('.typing', {   
         typeSpeed: 70,
         backSpeed: 50,
@@ -25,6 +25,7 @@ function init(){
         loop: true,
         backDelay:1000,
     });
+
     this.language.make();
 }
 
@@ -46,21 +47,17 @@ function update(){
 /*
 	Make the different section of the page with the current language
 */
-function make(){
-    let common = $.getJSON(this.language.getJsonPath('.common'));
-    let lang_selected = $.getJSON(this.language.getJsonPath());
-
-    common.done(function(data_c){
-        lang_selected.done(function(data){
-            makeNavigation(data);
-            makePreview(data);
-            makeBio(data);
-            makePortfolio(data,data_c);
-            makeSkills(data,data_c);
-            makeContact(data,data_c);
-            makeFooter(data);
-       });
-    }); 
+async function make(){
+    console.info('Language currently used : '+this.language.getLang());
+    let data_lang=await this.language.getData();
+    let data_common=await this.language.getData('.common');
+    
+    makeNavigation(data_lang);
+    makePreview(data_lang);
+    makeBio(data_lang);
+    makePortfolio(data_lang,data_common);
+    makeContact(data_lang,data_common);
+    makeFooter(data_lang);
 }
 
 /*
@@ -76,7 +73,6 @@ function make(){
 function makeNavigation(data){
     $('#nav_bio_content').html(data.navigation.bio.menu);
     $('#nav_portfolio_content').html(data.navigation.portfolio.menu);
-    $('#nav_skills_content').html(data.navigation.skills.menu);
     $('#nav_contact_content').html(data.navigation.contact.menu);
     $('#nav_flag_ico_content').html(data.lang);
 }
@@ -107,9 +103,8 @@ function makeBio(data){
     @param string array data : the content of the *lang*.json used 
     @param string array data_c : the content of common.json
 */
-function makePortfolio(data,data_c){
+async function makePortfolio(data,data_c){
     let portfolio_html="";
-
     for(let key in data_c.portfolio){
         let c=data_c.portfolio[key];
 
@@ -121,6 +116,13 @@ function makePortfolio(data,data_c){
             let title=c.title != undefined ? c.title : "";
             let description=c.description != undefined ? c.description : "";
             let href=c.href != undefined ? c.href : "";
+            let githubPage=c.githubPage != undefined ? c.githubPage : false;
+            let github=c.github != undefined ? c.github : false;
+            let webgl=c.webgl != undefined ? c.webgl : false;
+            let githubIco= github ==true ? "<i class='fab fa-github'></i>" :"";
+            if(githubPage) href=await this.language.getGithubPageURL()+href;
+            else if(github && !webgl) href=await this.language.getGithubURL()+href;
+            
             //lang
             let lang=data.portfolio[key];
             if(lang !=undefined){
@@ -131,10 +133,10 @@ function makePortfolio(data,data_c){
             let page="request.html"
             let url="";
 
-            if(c.wip != undefined && c.wip==true) url+=page+"?type=Redirect&alert=WIP&to=";
-            if(c.mobile != undefined && c.mobile==true) url= url.length >0 ? page+"?type=Redirect&alert=WIP_Mobile&to=" : page+"?type=Redirect&alert=Mobile&to=";
-            if(c.player != undefined && c.player==true) url+=page+"?type=Player&alert=";
-            if(c.webgl != undefined && c.webgl==true) url+=page+"?type=WebGL&alert=";
+            if(c.wip != undefined && c.wip==true) url+=page+"?type=Redirect&id=WIP&to=";
+            if(c.mobile != undefined && c.mobile==true) url= url.length >0 ? page+"?type=Redirect&id=WIP_Mobile&to=" : page+"?type=Redirect&id=Mobile&to=";
+            if(c.player != undefined && c.player==true) url+=page+"?type=Player&id=";
+            if(webgl) url+=page+"?type=WebGL&id=";
             url+=href;
 
             portfolio_html += [
@@ -147,7 +149,7 @@ function makePortfolio(data,data_c){
                                 "<div class='icon-links'>",
                                     "<a href='"+url+"' target='_blank'><i class='fas fa-external-link-alt'></i></a>",
                                 "</div>",
-                                "<h2>"+title+"</h2>",
+                                "<h2>"+githubIco+" "+title+"</h2>",
                                 "<p>"+skills+"</p>",
                                 "<p>"+description+"</p>",
                             "</div>",
@@ -161,41 +163,6 @@ function makePortfolio(data,data_c){
     $('#portfolio_title_content').html("<h2>"+data.navigation.portfolio.title+"</h2>");
     $('#portfolio_content').html(portfolio_html);
     $('#portfolio_content').mixItUp();
-}
-
-/*
-    Build the skills sections
-    @param string array data : the content of the *lang*.json used 
-*/
-function makeSkills(data,data_c){
-    let skills_html="";                
-     
-    for(let key in data_c.skills){ 
-        let c=data_c.skills[key];
-        let ico = c.ico;
-        let title=c.title;
-        let list=c.list;
-
-        let lang=data.skills[key];
-        if(lang!=undefined){
-            title=lang.title != undefined ? lang.title : title;
-            list=lang.list != undefined ? lang.list : list;
-        }
-
-        skills_html += [
-                    "<div class='col-md-4 col-sm-6'>",
-                        "<div class='skills-detail'>",
-                            "<i class='"+ico+"'></i>",
-                            "<h3>"+title+"</h3>",
-                            "<hr>",
-                            "<p>"+list+"</p>",
-                        "</div>",
-                    "</div>"
-             ].join(''); 
-    }
-    skills_html +="</div>";
-    $('#skills_title_content').html("<h2>"+data.navigation.skills.title+"</h2>");
-    $('#skills_list_content').html(skills_html);
 }
 
 /*
@@ -241,6 +208,7 @@ function makeContact(data,data_c){
      for(let key in data_c.contact.social){ 
         let c=data_c.contact.social[key];
         let href =c.href;
+        if(c.username != undefined) href+=c.username;
         let class_css=c.class;
         let title=c.title;
         let class_ico=c.class_ico;
@@ -252,7 +220,7 @@ function makeContact(data,data_c){
         
         contact_social_html += [
             "<li>",
-                "<a href='"+href+"' target='_socblank' class='"+class_css+"' title='"+title+"'><i class='"+class_ico+"'></i>",
+                "<a href='"+href+"' target='_blank' class='"+class_css+"' title='"+title+"'><i class='"+class_ico+"'></i>",
             "</li>"
         ].join('');
     }

@@ -12,11 +12,7 @@
          "portfolio":{
             "menu":"Portfolio",
             "title":"Mon Portfolio"
-         },
-        "skills":{
-            "menu":"Compétences",
-            "title":"Mes Compétences"
-         },       
+         },     
          "contact":{
             "menu":"Contact",
             "title":"Contact"
@@ -125,7 +121,7 @@
                         "title":"Envoyer moi un mail"
                     },
                     "resume":{
-                        "href":"request.html?type=Download&alert=CV_FR",
+                        "href":"request.html?type=Download&id=CV_FR",
                         "title":"Télécharger mon CV",
                         "text":"CV"
                     },
