@@ -12,10 +12,6 @@
          "portfolio":{
             "menu":"Portfolio",
             "title":"My Portfolio"
-         },
-        "skills":{
-            "menu":"Skills",
-            "title":"My Skills"
          },       
          "contact":{
             "menu":"Contact",
@@ -124,7 +120,7 @@
                         "title":"Send me a mail"
                     },
                     "resume":{
-                        "href":"request.html?type=Download&alert=CV_EN",
+                        "href":"request.html?type=Download&id=CV_EN",
                         "title":"Download my resume",
                         "text":"Resume"
                     },

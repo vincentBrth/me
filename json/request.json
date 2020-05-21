@@ -4,7 +4,7 @@
         "color":"request-unknown-color",
         "details":{
                 "unknown":{
-                    "alert":"Unknown",
+                    "id":"Unknown",
                     "title":"Missing data",
                     "text":"The data provided are not valid to load this page correctly" 
                 }
@@ -15,22 +15,22 @@
         "color":"request-error-color",
         "details":{
                 "400":{
-                    "alert":"400",
+                    "id":"400",
                     "title":"Bad Request",
                     "text":"The request cannot be fulfilled due to bad syntax" 
                 },
                 "401":{
-                    "alert":"401",
+                    "id":"401",
                     "title":"Unauthorized",
                     "text":"The request was a legal request, but the server is refusing to respond to it for use when authentication is possible but has failed or not yet been provided" 
                 },
                 "403":{
-                    "alert":"403",
+                    "id":"403",
                     "title":"Forbidden",
                     "text":"The request was a legal request, but the server is refusing to respond to it" 
                 },
                 "404":{
-                    "alert":"404",
+                    "id":"404",
                     "title":"Not found",
                     "text":"The requested page could not be found" 
                 }
@@ -41,17 +41,17 @@
         "button":"Go to the project",
         "details":{
                 "WIP":{
-                    "alert":"WIP",
+                    "id":"WIP",
                     "title":"This project is still in progress",
                     "text":"The following version will probably not work as expected<br/>Thank you for your cooperation" 
                 },
                 "Mobile":{
-                    "alert":"Mobile",
+                    "id":"Mobile",
                     "title":"This project has been designed for mobile platform",
                     "text":"If you are on a computer use the 'inspect tool'" 
                 },
                 "WIP_Mobile":{
-                    "alert":"WIP",
+                    "id":"WIP",
                     "title":"This project is still in progress",
                     "text":"The following version will probably not work as expected<br/>Thank you for your cooperation" 
                 }
@@ -71,56 +71,63 @@
         "Kubic":{
             "title":"Kubic (WebGL)",
             "name":"Kubic",
-            "href":"https://realvincentberthet.github.io/Kubic/Kubic/WebGL/index.html",
+            "height":"820",
+            "href":"Kubic/Kubic/WebGL/index.html",
             "description":"<p><a href='https://docs.unity3d.com/ScriptReference/Application-streamingAssetsPath.html' target='_blank'>No streaming access is available on WebGL with Unity</a>.<br/>As this game has been developed for OS, use <a href='https://github.com/RealVincentBerthet/Kubic/blob/master/Kubic/Windows/Kubic.zip' target='_blank'>Windows executable</a> to have access to options and sounds and others features in the game</p>"
         },
         "LunaAndHelios":{
             "title":"Luna & Helios (WebGL)",
             "name":"A Story of Luna & Helios",
-            "width":"1365",
-            "height":"810",
-            "href":"https://realvincentberthet.github.io/LunaAndHelios/WebGL/index.html",
-            "description":"<p>This game has been released during the Orange Game Jam 2020. The aim of this event was to build a video game in 35 hours on the subject : <b>Safe in the dark</b></p><p><a href='https://github.com/RealVincentBerthet/LunaAndHelios' target='_blank'>Github source</a></p>"
+            "width":"1400",
+            "height":"820",
+            "href":"LunaAndHelios/WebGL/index.html",
+            "description":"<p>This game has been released during the Orange Game Jam 2020. The aim of this event was to build a video game in 35 hours on the subject : <b>Safe in the dark</b></p>"
         }
     },
     "download":{
         "Askelys":{
             "title":"Askelys Report",
             "name":"Rapport_BERTHET_Vincent_Askelys_2019.pdf",
-            "href":"project/documents/askelys/Rapport_BERTHET_Vincent_Askelys_2019.pdf",
+            "href":"Report/Rapport_BERTHET_Vincent_Askelys_2019.pdf",
             "type":".pdf",
             "description":"Report file (French)"
         }, 
-        "mutest":{
+        "Mutest":{
             "title":"MuTest Report",
             "name":"MuTest_2016.pdf",
-            "href":"project/documents/muTest/MuTest_2016.pdf",
+            "href":"Report/MuTest_2016.pdf",
             "type":".pdf",
             "description":"Report file (French)"
         },  
-        "pacman":{
+        "Pacman":{
             "title":"Pacman",
             "name":"Pacman.pdf",
-            "href":"project/documents/pacman/Pacman.pdf",
+            "href":"Project/Pacman.pdf",
             "type":".pdf",
             "description":"Presentation file (French)"
         },
         "CV_EN":{
             "title":"CV",
             "name":"EN_CV_BERTHET_Vincent.pdf",
-            "href":"project/documents/EN_CV_BERTHET_Vincent.pdf",
+            "href":"CV/EN_CV_BERTHET_Vincent.pdf",
             "type":".pdf",
             "description":"Curriculum Vitae (English)"
         },
         "CV_FR":{
             "title":"CV",
             "name":"FR_CV_BERTHET_Vincent.pdf",
-            "href":"project/documents/FR_CV_BERTHET_Vincent.pdf",
+            "href":"CV/FR_CV_BERTHET_Vincent.pdf",
             "type":".pdf",
             "description":"Curriculum Vitae (French)"
         }
     },
     "notes":{
+        "v2.12.0":{
+            "id":"2.12.0",
+            "github":true,
+            "text":"Sync documentation with my <a target='_blank' href=https://github.com/RealVincentBerthet/Vincent/tree/master/Public>Public</a> repository<br/> Fix some mistakes and add dynamic linking to my Github",
+            "released":"05/15/2020"
+        },
         "v2.11.0":{
             "id":"2.11.0",
             "github":true,

@@ -7,9 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
     <!-- SEO -->
-    <meta name="description" content="AF">
+    <meta name="description" content="TODO">
     <meta name="author" content="Vincent Berthet">
-    <meta name="url" content="https://vberthet.net">
     <meta name="copyright" content="Vincent Berthet">
     
     <title>Request</title>
@@ -46,12 +45,12 @@
     <script type='text/javascript' src='plugin/bootstrap/js/bootstrap.min.js'></script>
     <!-- Main Javascript File  -->
     <script type="text/javascript" src="js/effects.js"></script>
-    <script type="text/javascript" src="js/common_content.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
     <script type="text/javascript" src="js/request.js"></script>
 
     <script>
         let url = new URL(window.location.href);
-        init(url.searchParams.get("type"),url.searchParams.get("alert"),url.searchParams.get("to"),url.searchParams.get("from"),url.searchParams.get("host"))
+        init(url.searchParams.get("type"),url.searchParams.get("id"),url.searchParams.get("to"),url.searchParams.get("from"),url.searchParams.get("host"))
     </script>';
   </body>
 </html>
