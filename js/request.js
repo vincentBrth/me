@@ -1,6 +1,6 @@
 /**
  * @param {Define the kind of the request [Redirect,Notes,Player,Error,Unknown]} type 
- * @param {Details of the request} alert 
+ * @param {Details of the request} id 
  * @param {link to go} to 
  * @param {source link} from 
  * @param {main domain link} host 
@@ -10,57 +10,47 @@
  /**
   * Initialize request.html depending of the request selected
   */
-function init(type,alert,to,from,host){
-    this.json='json/request.json';
+function init(type,id,to,from,host){
     this.type=type;
-    this.alert=alert;
+    this.id=id;
     this.to=to;
-
     this.host=host
     if(host=="" || host==null) this.host="./";
     this.from=from;
     if(from=="" || from==null) this.from=this.host;
     this.waitTime=10;
     this.x;
-    document.title = this.alert;
+    document.title = this.id;
     if(document.title=="null") document.title=this.type;
-    make();
+    this.language.setLang(".request");
+    this.language.make();
 }
-
-//CHECK FUNCTION to determine if unknown
 
 
 /**
  * Call after initalization to make the correct content of the page
  */
-function make(){
+async function make(){
+    console.info('Language currently used : '+this.language.getLang());
+    let data_lang=await this.language.getData();
+    
     if(this.type=="Notes"){
-        $.getJSON(this.json, function(data) {
-            makeNotes(data);  
+            makeNotes(data_lang);  
             makeRelease();
-        })
     }else if(this.type=="Player"){
-        $.getJSON(this.json, function(data) {
-            makePlayer(data);  
+            makePlayer(data_lang);  
             makeRelease();
-        })
     }else if(this.type=="Download"){
-        $.getJSON(this.json, function(data) {
-            makeDownload(data);  
+            makeDownload(data_lang);  
             makeRelease();
-        })
    }else if(this.type=="WebGL"){
-        $.getJSON(this.json, function(data) {
-            makeWebGL(data);  
+            makeWebGL(data_lang);  
             makeRelease();
-        })
     }else{
-        $.getJSON(this.json, function(data) {
-            makeRequest(data);   
+            makeRequest(data_lang);   
             makeRelease(); 
             makeCounter();      
-        })    
-    }
+    }   
 }
 
 /**
@@ -86,11 +76,11 @@ function count() {
  * Download page
  * @param {request.json content} data 
  */
-function makeDownload(data){
+async function makeDownload(data){
     let main_html="";
-    
+    let public=await this.language.getGithubPublicURL();
     for(let key in data.download){
-        if(key==this.alert){
+        if(key==this.id){
             if(data.download[key].title!=undefined) document.title=data.download[key].title;
             main_html += [
                     "<div class='container'>",
@@ -103,7 +93,7 @@ function makeDownload(data){
                             "</div>",
                             "<p><h4><i>"+data.download[key].description+"</i></h4><p>",
                             "<div class='request-player-color'>",
-                                "<a class='button button-style button-style-dark' href='"+data.download[key].href+"'><i class='far fa-arrow-alt-circle-down'></i> "+data.download[key].type+"</a>",
+                                "<a class='button button-style button-style-dark' href='"+public+data.download[key].href+"' onclick=''><i class='far fa-arrow-alt-circle-down'></i> "+data.download[key].type+"</a>",
                             "</div>",
                         "</div>",
                     "</div>"
@@ -116,7 +106,7 @@ function makeDownload(data){
 
 
     
-    //if there is content for this alert main_html shouldn't be empty
+    //if there is content for this id main_html shouldn't be empty
     if(main_html!=""){
         $('#main_content').html(main_html)
         makeHeader('request-player-color',this.type,this.host);
@@ -136,7 +126,8 @@ function makeDownload(data){
 function makePlayer(data){
     let main_html="";
     for(let key in data.player){
-        if(key==this.alert){
+        console.log(this.id);
+        if(key==this.id){
             if(data.player[key].title!=undefined) document.title=data.player[key].title;
             main_html=[
                 "<div class='container'>",
@@ -169,23 +160,28 @@ function makePlayer(data){
  * Make an embeded  web gl player with Unity default template
  * @param {request.json content} data 
  */
-function makeWebGL(data){
+async function makeWebGL(data){
     let main_html="";
     let width='960';
     let height='643';
-
+    let page=await this.language.getGithubPageURL();
+    let githubURL=await this.language.getGithubURL();
     for(let key in data.player){
         let o=data.player[key];
-        if(key==this.alert){
+        if(key==this.id){
             if(data.player[key].title!=undefined) document.title=data.player[key].title;
+            
+            href=page+o.href;
             width=o.width != undefined ? o.width : width;
             height=o.height != undefined ? o.height : height;
+        
             main_html=[
                 "<div>",
                     "<h1>"+o.name+"</h1>",
                     "<p>"+o.description+"</p>",
+                    "<p><a href='"+githubURL+o.href.split('/')[0]+"' target='_blank'><i class='fab fa-github'></i> Github source</a></p>",
                     "<div style='text-align:center'>",
-                        "<iframe width='"+width+"' height='"+height+"' src='"+o.href+"' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>", 
+                        "<iframe width='"+width+"' height='"+height+"' src='"+href+"' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>", 
                     "</div>",
                 "</div>"
             ].join('');
@@ -199,13 +195,13 @@ function makeWebGL(data){
         makeHeader('request-player-color',this.type,this.host);
         makeFooter('request-player-color',this.host);
     }else{
-        console.error("type : "+this.type+" content error for alert : "+this.alert);
+        console.error("type : "+this.type+" content error for id : "+this.id);
         this.type="player_error";
         make();
     }
 }
 
-function makeNotes(data){
+async function makeNotes(data){
     let updates_html=[  "<div class='col-sm-6'>",
                         "<h1>Updates</h1><br/>",
                         "<ul>"        
@@ -215,9 +211,10 @@ function makeNotes(data){
                         "<ul>"        
     ].join('');            
    
+    let url=await this.language.getGithubURL();
     for(let key in data.notes){   
         let id=data.notes[key].id;
-        if(data.notes[key].github==true) id="<span class='request-notes-color'><a href='https://github.com/RealVincentBerthet/vberthet/releases/tag/"+id+"' target='_blank'>"+id+"</a>";  
+        if(data.notes[key].github==true) id="<span class='request-notes-color'><a href='"+url+"vberthet/releases/tag/"+id+"' target='_blank'>"+id+"</a>";  
         updates_html += [
             "<li>",
                 "<p>",
@@ -244,7 +241,7 @@ function makeNotes(data){
 } 
 
 function makeRequest(data){    
-    let alert="";
+    let id="";
     let color="";
     let title="";
     let text="";
@@ -256,13 +253,13 @@ function makeRequest(data){
             this.to=this.from;
         }else if(this.type=='Redirect'){
             data=data.redirect;
-            if(this.alert=='WIP_Mobile') this.to='request.html?type=Redirect&alert=Mobile&to='+this.to;   
+            if(this.id=='WIP_Mobile') this.to='request.html?type=Redirect&id=Mobile&to='+this.to;   
         }
     }else{
         //Not enough data to launch a valid request
         console.warn("unknown request");
         data=data.unknown;
-        this.alert='unknown';
+        this.id='unknown';
         this.type="Unknown";
         this.to=this.from;
     }
@@ -273,8 +270,8 @@ function makeRequest(data){
         if(key=='color')    color=data[key];
         if(key=='details'){
             for(let key2 in data[key]){
-                if(key2==this.alert){
-                    alert=data[key][key2].alert;
+                if(key2==this.id){
+                    id=data[key][key2].id;
                     title=data[key][key2].title;
                     text=data[key][key2].text;
                 }
@@ -285,14 +282,14 @@ function makeRequest(data){
      
     makeHeader(color,this.type,this.host);
     makeFooter(color,this.host);
-    makeContent(alert,color,title,text,button,this.to,this.host);
+    makeContent(id,color,title,text,button,this.to,this.host);
 }
 
 
 function checkRequest(data){
     //Check if the data are valid  
     for(let key in data.details){
-        if(key==this.alert) return true;
+        if(key==this.id) return true;
     }
     return false;
 }
@@ -300,13 +297,13 @@ function checkRequest(data){
 
 
 
-function makeContent(alert,color,title,text,button,to,from){
+function makeContent(id,color,title,text,button,to,from){
     let content_html="";
     content_html += [
                     "<div class='container'>",
                         "<div class='request col-md-12'>",
                             "<div class='request-alert'>",
-                                "<img src='img/vberthet/vb_white_bg_512.png' height='200px' alt='logo_ico'/>"+alert+"",
+                                "<img src='img/vberthet/vb_white_bg_512.png' height='200px' alt='logo_ico'/>"+id+"",
                             "</div>",
                             "<div class='"+color+"'>",
                                 "<h1>"+title+"</h1>",

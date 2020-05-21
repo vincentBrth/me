@@ -3,32 +3,36 @@
         "AsymetrieICP":{
             "ico":"img/ico_project/ico_asymetrieICP.png",
             "filter":"OpenCV",
-            "href":"https://github.com/RealVincentBerthet/AsymetrieICP",
-            "skills":"OpenCV Python ICP"
+            "href":"AsymetrieICP",
+            "skills":"OpenCV Python ICP",
+            "github":true
         },
         "LunaAndHelios":{
             "ico":"img/ico_project/ico_luna_and_helios.jpg",
             "filter":"Game CSharp",
             "href":"LunaAndHelios",
             "webgl":true,
+            "github":true,
             "skills":"Unity C#"
         },
         "Tensors":{
             "ico":"img/ico_project/ico_tensors.png",
             "filter":"OpenCV",
-            "href":"https://github.com/RealVincentBerthet/Tensor_directed_stylization",
-            "skills":"OpenCV Python"
+            "href":"Tensor_directed_stylization",
+            "skills":"OpenCV Python",
+            "github":true
         },
         "HDR":{
             "ico":"img/ico_project/ico_hdr.jpg",
             "filter":"OpenCV",
-            "href":"https://github.com/RealVincentBerthet/HDR",
-            "skills":"OpenCV Python"
+            "href":"HDR",
+            "skills":"OpenCV Python",
+            "github":true
         },
         "Askelys":{
             "ico":"img/ico_project/ico_askelys.png",
             "filter":"Pro CSharp",
-            "href":"request.html?type=Download&alert=Askelys",
+            "href":"request.html?type=Download&id=Askelys",
             "skills":"Unity WebGL C# Javascript"
         },
         "Kubic":{
@@ -36,13 +40,15 @@
             "filter":"3D CSharp Game",
             "href":"Kubic",
             "webgl":true,
+            "github":true,
             "skills":"Unity C#"
         },
         "Ray":{
             "ico":"img/ico_project/ico_ray.png",
-            "filter":"Cpp",
-            "href":"https://github.com/RealVincentBerthet/Ray",
-            "skills":"C++ RayTracing"
+            "filter":"Cpp 3D",
+            "href":"Ray",
+            "skills":"C++ RayTracing PathTracing",
+            "github":true
         },
         "game_jam_2019":{
             "ico":"img/ico_project/ico_gameJam2k19.png",
@@ -54,14 +60,17 @@
         "GOL":{
             "ico":"img/ico_project/ico_gol.png",
             "filter":"Cpp Game",
-            "href":"https://github.com/RealVincentBerthet/GoL",
+            "href":"GoL",
             "wip":false,
+            "github":true,
             "skills":"Qt C++ GUI"
         },
         "website_v1":{
             "ico":"img/ico_project/ico_website_v1.png",
             "filter":"Javascript Web",
-            "href":"project/vberthet_1_6",
+            "href":"vberthet_1.6.0",
+            "github":true,
+            "githubPage":true,
             "skills":"Javascript HTML5 CSS3 PHP JQuery"
         },
         "TA":{
@@ -88,65 +97,35 @@
         "scogue":{
             "ico":"img/ico_project/ico_scogue.png",
             "filter":"Javascript Game",
-            "href":"project/scogue",
-            "skills":"Javascript"
+            "href":"Scogue/index.html",
+            "skills":"Javascript",
+            "github":true,
+            "githubPage":true
         },
         "blog":{
             "ico":"img/ico_project/ico_blog.png",
             "filter":"Web",
-            "href":"http://uwsblog.yo.fr/UWS_Blog/",
+            "href":"https://uws-blog.000webhostapp.com/",
             "skills":"WordPress"
         },     
         "mutest":{
             "ico":"img/ico_project/ico_mutest.png",
             "filter":"Pro",
-            "href":"request.html?type=Download&alert=Mutest",
+            "href":"request.html?type=Download&id=Mutest",
             "skills":"Java"
         },       
         "pacman":{
             "ico":"img/ico_project/ico_pacman.png",
             "filter":"CSharp Game",
-            "href":"request.html?type=Download&alert=Pacman",
+            "href":"request.html?type=Download&id=Pacman",
             "skills":"C#"
         },      
         "monitoring":{
             "ico":"img/ico_project/ico_monitoring.png",
             "filter":"Web",
-            "href":"https://uwsblog.yo.fr/",
+            "href":"https://monitoringiut.000webhostapp.com/",
             "skills":"PHP SQL JQuery"
         }
-    },
-    "skills":{
-        "programming":{
-            "ico":"fas fa-code-branch fa-2x color-8",
-            "title":"NA",
-            "list":"C++, C, C#, Qt, Java, Python"
-        },
-        "web":{
-            "ico":"fas fa-code fa-2x color-7",
-            "title":"NA",
-            "list":"Javascript, PHP, JQuery, HTML5, CSS3"
-        },
-        "database":{
-            "ico":"fas fa-database fa-2x color-6",
-            "title":"NA",
-            "list":"SQLite, MySQL, PHPMyAdmin, FireBase"
-        },
-        "shell":{
-            "ico":"fas fa-terminal fa-2x",
-            "title":"NA",
-            "list":"Bash, Docker, Git"
-        },
-        "software":{
-            "ico":"fas fa-desktop fa-2x color-5",
-            "title":"NA",
-            "list":"Visual Studio, Unity, IntelliJ, Photoshop, Illustrator, After Effects, Unreal Engine 4"
-        },
-            "other":{
-            "ico":"fab fa-connectdevelop fa-2x color-3",
-            "title":"NA",
-            "list":"NA"
-        }       
     },
     "contact":{
         "info":{
@@ -158,7 +137,7 @@
                     },
                     "resume":{
                         "class":"fas fa-download fa-2x color-4",
-                        "href":"request.html?type=Download&alert=CV_EN",
+                        "href":"request.html?type=Download&id=CV_EN",
                         "title":"NA",
                         "text":"NA"
                     },
@@ -175,31 +154,36 @@
                     "LKD":{
                         "class":"linkedin",
                         "title":"NA",
-                        "href":"https://uk.linkedin.com/in/vincent-berthet",
+                        "href":"https://uk.linkedin.com/in/",
+                        "username":"vincent-berthet",
                         "class_ico":"fab fa-linkedin"
                     },   
                     "TWI":{
                         "class":"twitter",
                         "title":"NA",
-                        "href":"https://twitter.com/_Sissouu",
+                        "href":"https://twitter.com/",
+                        "username":"_Sissouu",
                         "class_ico":"fab fa-twitter"
                     },      
                     "YT":{
                         "class":"youtube",
                         "title":"NA",
-                        "href":"https://www.youtube.com/channel/UC1zTh8-gfUpfaW8xvRnYHXw",
+                        "href":"https://www.youtube.com/channel/",
+                        "username":"UC1zTh8-gfUpfaW8xvRnYHXw",
                         "class_ico":"fab fa-youtube"
                     },        
                     "INSTA":{
                         "class":"instagram",
                         "title":"NA",
-                        "href":"https://www.instagram.com/vincent_berthet/",
+                        "href":"https://www.instagram.com/",
+                        "username":"vincent_berthet",
                         "class_ico":"fab fa-instagram"
                     },
                     "GITHUB":{
                         "class":"github",
                         "title":"NA",
-                        "href":"https://github.com/RealVincentBerthet",
+                        "href":"https://github.com/",
+                        "username":"RealVincentBerthet",
                         "class_ico":"fab fa-github"
                     }
                 }
