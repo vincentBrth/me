@@ -1,5 +1,12 @@
 {    
     "portfolio":{
+        "BCOM_integration":{
+            "ico":"img/ico_project/bcom_report_integration.jpg",
+            "filter":"Pro CSharp Cpp 3D",
+            "href":"request.html?type=Download&id=BCOM_integration",
+            "skills":"Unity C# C++ Qt 3D",
+            "github":false
+        },
         "AsymetrieICP":{
             "ico":"img/ico_project/ico_asymetrieICP.png",
             "filter":"OpenCV",
