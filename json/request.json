@@ -85,6 +85,13 @@
         }
     },
     "download":{
+        "BCOM_integration":{
+            "title":"BCOM integration Report",
+            "name":"BERTHET_Vincent_bcom_rapport_integration_2020.pdf",
+            "href":"Report/BERTHET_Vincent_bcom_rapport_integration_2020.pdf",
+            "type":".pdf",
+            "description":"Report file (French)"
+        }, 
         "Askelys":{
             "title":"Askelys Report",
             "name":"Rapport_BERTHET_Vincent_Askelys_2019.pdf",
@@ -122,6 +129,12 @@
         }
     },
     "notes":{
+        "v2.13.0":{
+            "id":"2.13.0",
+            "github":true,
+            "text":"Add b<>com integration report",
+            "released":"05/27/2020"
+        },
         "v2.12.0":{
             "id":"2.12.0",
             "github":true,
