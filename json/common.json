@@ -104,10 +104,10 @@
         "scogue":{
             "ico":"img/ico_project/ico_scogue.png",
             "filter":"Javascript Game",
-            "href":"Scogue/index.html",
+            "href":"Scogue",
             "skills":"Javascript",
             "github":true,
-            "githubPage":true
+            "githubPage":false
         },
         "blog":{
             "ico":"img/ico_project/ico_blog.png",
