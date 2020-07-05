@@ -192,6 +192,10 @@ figure.effect-project .icon-links a {
 	transform: translate3d(0,0,0);
 }
 
+a {
+    color: rgba(255, 255, 255, 0.507);
+    text-decoration: none;
+}
 
 figure.effect-project .icon-links a span::before {
 	display: inline-block;
