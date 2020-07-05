@@ -104,15 +104,15 @@
         "scogue":{
             "ico":"img/ico_project/ico_scogue.png",
             "filter":"Javascript Game",
-            "href":"Scogue/index.html",
+            "href":"Scogue",
             "skills":"Javascript",
             "github":true,
-            "githubPage":true
+            "githubPage":false
         },
         "blog":{
             "ico":"img/ico_project/ico_blog.png",
             "filter":"Web",
-            "href":"https://uws-blog.000webhostapp.com/",
+            "href":"https://uwsblog.yo.fr/UWS_Blog/",
             "skills":"WordPress"
         },     
         "mutest":{
@@ -130,7 +130,7 @@
         "monitoring":{
             "ico":"img/ico_project/ico_monitoring.png",
             "filter":"Web",
-            "href":"https://monitoringiut.000webhostapp.com/",
+            "href":"https://uwsblog.yo.fr/",
             "skills":"PHP SQL JQuery"
         }
     },
