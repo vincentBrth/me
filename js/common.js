@@ -114,7 +114,7 @@ Language.prototype.getGithubPageURL=async function(){
     @return https://github.com/RealVincentBerthet/Vincent/tree/master/Public
 */
 Language.prototype.getGithubPublicURL=async function(){
-    return  await this.getGithubURL()+'Vincent/raw/master/Public/';
+    return  await this.getGithubURL()+'Workspace/raw/master/Public/';
 }
 
 /*
