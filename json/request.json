@@ -73,7 +73,7 @@
             "name":"Kubic",
             "height":"820",
             "href":"Kubic/Kubic/WebGL/index.html",
-            "description":"<p><a href='https://docs.unity3d.com/ScriptReference/Application-streamingAssetsPath.html' target='_blank'>No streaming access is available on WebGL with Unity</a>.<br/>As this game has been developed for OS, use <a href='https://github.com/RealVincentBerthet/Kubic/blob/master/Kubic/Windows/Kubic.zip' target='_blank'>Windows executable</a> to have access to options and sounds and others features in the game</p>"
+            "description":"<p><a href='https://docs.unity3d.com/ScriptReference/Application-streamingAssetsPath.html' target='_blank'>No streaming access is available on WebGL with Unity</a>.<br/>As this game has been developed for OS, use <a href='https://github.com/RealVincentBerthet/Kubic/blob/master/Kubic/Windows/Kubic.zip' target='_blank'>Windows executable</a> to have access to options and sounds and others features in the game</p><p><b>More informations are available in the GitHub README</b></p>"
         },
         "LunaAndHelios":{
             "title":"Luna & Helios (WebGL)",
@@ -81,16 +81,16 @@
             "width":"1400",
             "height":"820",
             "href":"LunaAndHelios/WebGL/index.html",
-            "description":"<p>This game has been released during the Orange Game Jam 2020. The aim of this event was to build a video game in 35 hours on the subject : <b>Safe in the dark</b></p><a href='https://www.youtube.com/watch?v=EwTJOxKciyE&feature=youtu.be' target='_blank'><i class='fab fa-youtube'></i> Gameplay video</a>"
+            "description":"<p>This game has been released during the Orange Game Jam 2020. The aim of this event was to build a video game in 35 hours on the subject : <b>Safe in the dark</b></p><p><b>More informations are available in the GitHub README</b></p><a href='https://www.youtube.com/watch?v=EwTJOxKciyE&feature=youtu.be' target='_blank'><i class='fab fa-youtube'></i> Gameplay video</a>"
         }
     },
     "download":{
-        "BCOM_integration":{
-            "title":"BCOM integration Report",
-            "name":"BERTHET_Vincent_bcom_rapport_integration_2020.pdf",
-            "href":"Report/BERTHET_Vincent_bcom_rapport_integration_2020.pdf",
-            "type":".pdf",
-            "description":"Report file (French)"
+        "BCOM":{
+            "title":"BCOM professional training contract",
+            "name":"BERTHET_Vincent_bcom.zip",
+            "href":"Report/BERTHET_Vincent_bcom.zip",
+            "type":".zip",
+            "description":"Report and slides of my professional training contract at <a target='_blank' href=https://b-com.com/>b<>com</a>(French)"
         }, 
         "Askelys":{
             "title":"Askelys Report",
@@ -132,8 +132,8 @@
         "v2.13.0":{
             "id":"2.13.0",
             "github":true,
-            "text":"Add b<>com integration report",
-            "released":"05/27/2020"
+            "text":"Add b<>com report and slides",
+            "released":"09/08/2020"
         },
         "v2.12.0":{
             "id":"2.12.0",

@@ -20,9 +20,9 @@
      },
     "lang":"<img src='img/vberthet/uk_flag_16px.png' title='Click to switch to French' onclick='language.switch()'>",
     "portfolio":{
-        "BCOM_integration":{
-            "title":"b<>com integration report",
-            "description":"Study professional contract<br/>Report of my integration at <a href='https://b-com.com/fr' target='_blank'>IRT b<>com</a>"
+        "BCOM":{
+            "title":"b<>com training contract",
+            "description":"Professional training contract (2019-2020)<br/>Report and slides of my works at <a href='https://b-com.com/en' target='_blank'>IRT b<>com</a>"
         },
         "AsymetrieICP":{
             "title":"Asymetrie ICP",

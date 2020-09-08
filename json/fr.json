@@ -20,9 +20,9 @@
      },
     "lang":"<img src='img/vberthet/fr_flag_16px.png' title='Cliquer pour passer en anglais' onclick='language.switch()'>",
     "portfolio":{
-        "BCOM_integration":{
-            "title":"b<>com rapport intégration",
-            "description":"Contrat d'alternance<br/>Rapport de mon intégration durant mon alternance chez l'<a href='https://b-com.com/fr' target='_blank'>IRT b<>com</a>"
+        "BCOM":{
+            "title":"b<>com contrat d'alternance",
+            "description":"Contrat d'alternance (2019-2020)<br/>Rapport et slides de mes missions effectué durant mon alternance chez l'<a href='https://b-com.com/fr' target='_blank'>IRT b<>com</a>"
         },
         "AsymetrieICP":{
             "title":"Asymétrie ICP",

@@ -1,17 +1,17 @@
 {    
     "portfolio":{
-        "BCOM_integration":{
-            "ico":"img/ico_project/bcom_report_integration.jpg",
+        "BCOM":{
+            "ico":"img/ico_project/bcom.png",
             "filter":"Pro CSharp Cpp 3D",
-            "href":"request.html?type=Download&id=BCOM_integration",
-            "skills":"Unity C# C++ Qt 3D",
+            "href":"request.html?type=Download&id=BCOM",
+            "skills":"C++, Computer vision, Unity, C#, Qt, CI, 3D",
             "github":false
         },
         "AsymetrieICP":{
             "ico":"img/ico_project/ico_asymetrieICP.png",
             "filter":"OpenCV",
             "href":"AsymetrieICP",
-            "skills":"OpenCV Python ICP",
+            "skills":"OpenCV, Python, ICP",
             "github":true
         },
         "LunaAndHelios":{
@@ -20,27 +20,27 @@
             "href":"LunaAndHelios",
             "webgl":true,
             "github":true,
-            "skills":"Unity C#"
+            "skills":"Unity, C#"
         },
         "Tensors":{
             "ico":"img/ico_project/ico_tensors.png",
-            "filter":"OpenCV",
+            "filter":"OpenCV", 
             "href":"Tensor_directed_stylization",
-            "skills":"OpenCV Python",
+            "skills":"OpenCV, Python",
             "github":true
         },
         "HDR":{
             "ico":"img/ico_project/ico_hdr.jpg",
             "filter":"OpenCV",
             "href":"HDR",
-            "skills":"OpenCV Python",
+            "skills":"OpenCV, Python",
             "github":true
         },
         "Askelys":{
             "ico":"img/ico_project/ico_askelys.png",
             "filter":"Pro CSharp",
             "href":"request.html?type=Download&id=Askelys",
-            "skills":"Unity WebGL C# Javascript"
+            "skills":"Unity, C#, Javascript, WebGL"
         },
         "Kubic":{
             "ico":"img/ico_project/ico_kubic.png",
@@ -48,13 +48,13 @@
             "href":"Kubic",
             "webgl":true,
             "github":true,
-            "skills":"Unity C#"
+            "skills":"Unity, C#"
         },
         "Ray":{
             "ico":"img/ico_project/ico_ray.png",
             "filter":"Cpp 3D",
             "href":"Ray",
-            "skills":"C++ RayTracing PathTracing",
+            "skills":"C++, RayTracing, PathTracing",
             "github":true
         },
         "game_jam_2019":{
@@ -70,7 +70,7 @@
             "href":"GoL",
             "wip":false,
             "github":true,
-            "skills":"Qt C++ GUI"
+            "skills":"Qt, C++, GUI"
         },
         "website_v1":{
             "ico":"img/ico_project/ico_website_v1.png",
@@ -78,7 +78,7 @@
             "href":"vberthet_1.6.0",
             "github":true,
             "githubPage":true,
-            "skills":"Javascript HTML5 CSS3 PHP JQuery"
+            "skills":"Javascript, HTML5, CSS3, PHP, JQuery"
         },
         "TA":{
             "ico":"img/ico_project/ico_TA.png",
@@ -131,7 +131,7 @@
             "ico":"img/ico_project/ico_monitoring.png",
             "filter":"Web",
             "href":"https://uwsblog.yo.fr/",
-            "skills":"PHP SQL JQuery"
+            "skills":"PHP, SQL, JQuery"
         }
     },
     "contact":{
