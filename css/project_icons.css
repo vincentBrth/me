@@ -32,7 +32,7 @@
 	display: block;
 	min-height: 100%;
 	max-width: 100%;
-	opacity: 0.8;
+	opacity: 0.75;
 }
 
 .grid figure figcaption {
@@ -108,7 +108,7 @@ figure.effect-project img {
 }
 
 figure.effect-project:hover img {
-	opacity: 0.4;
+	opacity: 0.25;
 	-webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
 }
@@ -123,7 +123,7 @@ figure.effect-project h2 {
 	overflow: hidden;
     background: #000;
 	padding: 0.825em 0;
-    opacity: 0.7;
+    opacity: 0.8;
     -webkit-transform: translate3d(0,230%,0);
 	transform: translate3d(0,230%,0);
 }
