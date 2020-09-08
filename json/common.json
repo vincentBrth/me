@@ -1,4 +1,5 @@
-{    
+{   
+    "nightShift":"<i class='far fa-moon' title='Nighshift'></i>",
     "portfolio":{
         "BCOM":{
             "ico":"img/ico_project/bcom.png",

@@ -25,7 +25,7 @@ async function init(){
         loop: true,
         backDelay:1000,
     });
-
+    this.language.nightShift("light");
     this.language.make();
 }
 

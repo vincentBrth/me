@@ -18,7 +18,7 @@
             "title":"Contact"
          }
      },
-    "lang":"<img src='img/vberthet/uk_flag_16px.png' title='Click to switch to French' onclick='language.switch()'>",
+    "lang":"<img src='img/vberthet/uk_flag_16px.png' title='Click to switch to French'>",
     "portfolio":{
         "BCOM":{
             "title":"b<>com training contract",

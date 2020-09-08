@@ -142,6 +142,37 @@ Language.prototype.switch = function(){
     }
     this.update();
 }
+
+/*
+    Manage shift mode
+*/
+Language.prototype.nightShift=function(mode){
+    //Check theme
+    if(mode!=null){
+        document.documentElement.setAttribute('data-theme', mode);
+        console.info("Force data-theme : "+mode);
+    }
+    else if(document.documentElement.getAttribute('data-theme')=='light'){
+        document.documentElement.setAttribute('data-theme', 'dark');
+        console.info('data-theme : '+document.documentElement.getAttribute('data-theme'))
+    }else if(document.documentElement.getAttribute('data-theme')=='dark'){
+        document.documentElement.setAttribute('data-theme', 'light');
+        console.info('data-theme : '+document.documentElement.getAttribute('data-theme'))
+    }else{
+        document.documentElement.setAttribute('data-theme', 'light');
+        console.warn('No theme initialized, force data-theme : '+document.documentElement.getAttribute('data-theme'));
+    }
+
+    //Update nav icon
+    if(document.documentElement.getAttribute('data-theme')=='light'){
+        $('#nightShift').html("<i class='fas fa-sun'>");
+    }else if(document.documentElement.getAttribute('data-theme')=='dark'){
+        $('#nightShift').html("<i class='far fa-moon'>");
+    }else{
+        $('#nightShift').html("THEME_ICON");
+    }
+
+}
 /*
     ******************************************************************************************* 
                                         2.Date/Age 
@@ -264,3 +295,4 @@ function makeFooter(data){
     $('#footerContent').html(content);
     makeRelease();
 }
+

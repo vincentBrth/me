@@ -18,7 +18,7 @@
             "title":"Contact"
          }
      },
-    "lang":"<img src='img/vberthet/fr_flag_16px.png' title='Cliquer pour passer en anglais' onclick='language.switch()'>",
+    "lang":"<img src='img/vberthet/fr_flag_16px.png' title='Cliquer pour passer en anglais'>",
     "portfolio":{
         "BCOM":{
             "title":"b<>com contrat d'alternance",
