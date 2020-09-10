@@ -129,11 +129,17 @@
         }
     },
     "notes":{
+        "v2.14.0":{
+            "id":"2.14.0",
+            "github":true,
+            "text":"Add nightshift mode, update bio, HIRE ME",
+            "released":"20/11/2020"
+        },
         "v2.13.0":{
             "id":"2.13.0",
             "github":true,
             "text":"Add b<>com report and slides",
-            "released":"09/08/2020"
+            "released":"07/05/2020"
         },
         "v2.12.0":{
             "id":"2.12.0",

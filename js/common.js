@@ -144,35 +144,52 @@ Language.prototype.switch = function(){
 }
 
 /*
-    Manage shift mode
+    Initialize night shift mode
 */
-Language.prototype.nightShift=function(mode){
-    //Check theme
-    if(mode!=null){
-        document.documentElement.setAttribute('data-theme', mode);
-        console.info("Force data-theme : "+mode);
-    }
-    else if(document.documentElement.getAttribute('data-theme')=='light'){
-        document.documentElement.setAttribute('data-theme', 'dark');
-        console.info('data-theme : '+document.documentElement.getAttribute('data-theme'))
-    }else if(document.documentElement.getAttribute('data-theme')=='dark'){
-        document.documentElement.setAttribute('data-theme', 'light');
-        console.info('data-theme : '+document.documentElement.getAttribute('data-theme'))
-    }else{
-        document.documentElement.setAttribute('data-theme', 'light');
-        console.warn('No theme initialized, force data-theme : '+document.documentElement.getAttribute('data-theme'));
-    }
+Language.prototype.initNightShift=function(){
+    const currentTheme = localStorage.getItem("theme");
+    if (currentTheme == "dark") {
+        document.body.classList.toggle("dark-theme");
+    } else {
+        document.body.classList.toggle("light-theme");
+    } 
 
-    //Update nav icon
-    if(document.documentElement.getAttribute('data-theme')=='light'){
-        $('#nightShift').html("<i class='fas fa-sun'>");
-    }else if(document.documentElement.getAttribute('data-theme')=='dark'){
-        $('#nightShift').html("<i class='far fa-moon'>");
-    }else{
-        $('#nightShift').html("THEME_ICON");
-    }
-
+    this.updateNightShift();
 }
+
+/*
+    Update navigation icon
+*/
+Language.prototype.updateNightShift=function(){
+    let theme=localStorage.getItem("theme");
+
+    if(theme=='dark'){
+        $('#nightShift').html("<i class='far fa-moon'>");
+    }else {
+        $('#nightShift').html("<i class='fas fa-sun'>");
+    }
+}
+
+/*
+    Toggle night shift
+*/
+Language.prototype.nightShift=function(){
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    document.body.classList.toggle("light-theme");
+    var theme = document.body.classList.contains("light-theme")
+        ? "light"
+        : "dark";
+    } else {
+    document.body.classList.toggle("dark-theme");
+    var theme = document.body.classList.contains("dark-theme")
+        ? "dark"
+        : "light";
+    }
+    localStorage.setItem("theme", theme);
+
+    this.updateNightShift();
+}
+
 /*
     ******************************************************************************************* 
                                         2.Date/Age 
