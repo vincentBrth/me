@@ -33,9 +33,6 @@ function init(type,id,to,from,host){
  */
 async function make(){
     let data_lang=await this.language.getData();
-    
-    let color=checkColor(type);
-    document.documentElement.style.setProperty('--primary-color', color);
 
     if(this.type=="Notes"){
             makeNotes(data_lang);
@@ -50,6 +47,7 @@ async function make(){
             makeCounter();      
     }   
     makeFooter(await this.language.getData("en"));
+    document.documentElement.style.setProperty('--primary-color', checkColor(type));
 }
 
 /**
@@ -83,15 +81,15 @@ async function makeDownload(data){
             if(data.download[key].title!=undefined) document.title=data.download[key].title;
             main_html += [
                     "<div class='container'>",
-                        "<div class='request col-md-12'>",
-                            "<div class='request-alert'>",
-                                "<img src='img/vberthet/vb_white_bg_512.png' height='200px' alt='logo_ico'/>Download",
+                        "<div class='request-center col-md-12'>",
+                            "<div class='request-logo'>",
+                                "<img src='img/vberthet/vb_white_bg_512.png' alt='logo_ico'/>Download",
                             "</div>",
-                            "<div class='request-player-color'>",
-                                "<h1>"+data.download[key].name+"</h1>",
+                            "<div class='request-title'>",
+                                "<h3>"+data.download[key].name+"</h3>",
                             "</div>",
-                            "<p><h4><i>"+data.download[key].description+"</i></h4><p>",
-                            "<div class='request-player-color'>",
+                            "<p><h5><i>"+data.download[key].description+"</i></h5><p>",
+                            "<div>",
                                 "<a class='button button-style button-style-dark' href='"+public+data.download[key].href+"' onclick=''><i class='far fa-arrow-alt-circle-down'></i> "+data.download[key].type+"</a>",
                             "</div>",
                         "</div>",
@@ -101,8 +99,6 @@ async function makeDownload(data){
                     break;
         }
     }
-
-
 
     
     //if there is content for this id main_html shouldn't be empty
@@ -129,12 +125,10 @@ function makePlayer(data){
             if(data.player[key].title!=undefined) document.title=data.player[key].title;
             main_html=[
                 "<div class='container'>",
-                    "<div class='align-center'>",
-                        "<h1>"+data.player[key].name+"</h1>",
-                            "<div class='col-md-12 video-container'>",
-                                "<iframe width='854' height='480' src='"+data.player[key].href+"' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>",
-                            "</div>",
-                        "<p>"+data.player[key].description+"</p>",
+                    "<h1>"+data.player[key].name+"</h1>",
+                    "<p>"+data.player[key].description+"</p>",
+                    "<div class='col-md-12 request-center video-container'>",
+                        "<iframe width='854' height='480' src='"+data.player[key].href+"' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>",
                     "</div>",
                 "</div>"
             ].join('');
@@ -173,13 +167,11 @@ async function makeWebGL(data){
             height=o.height != undefined ? o.height : height;
         
             main_html=[
-                "<div>",
+                "<div class='container'>",
                     "<h1>"+o.name+"</h1>",
                     "<p>"+o.description+"</p>",
                     "<p><a href='"+githubURL+o.href.split('/')[0]+"' target='_blank'><i class='fab fa-github'></i> Github source</a></p>",
-                    "<div style='text-align:center'>",
-                        "<iframe width='"+width+"' height='"+height+"' src='"+href+"' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>", 
-                    "</div>",
+                    "<div class='request-center'><iframe width='"+width+"' height='"+height+"' src='"+href+"' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe><div>", 
                 "</div>"
             ].join('');
             break;
@@ -276,7 +268,7 @@ function makeRequest(data){
     }
      
     makeHeader(this.type);
-    makeContent(id,color,title,text,button,this.to,this.host);
+    makeContent(color,title,text,button,this.to,this.host);
 }
 
 
@@ -286,6 +278,36 @@ function checkRequest(data){
         if(key==this.id) return true;
     }
     return false;
+}
+
+function makeContent(color,title,text,button,to,from){
+    let content_html="";
+    content_html += [
+                    "<div class='container'>",
+                        "<div class='request-center col-md-12'>",
+                            "<div class='request-logo'>",
+                                "<img src='img/vberthet/vb_white_bg_512.png' alt='logo_ico'/>Download",
+                            "</div>",
+                            "<div class='request-title'>",
+                                "<h1>"+title+"</h1>",
+                            "</div>",
+                            "<p><h4><i>"+text+"</i></h4><p>",
+
+                            "<div class='counter'>",
+                                "<p>You will be automatically redirected in <span id='counter'>x</span> s</p>",
+                            "</div>",
+                                "<div>",
+                                    "<a class='button button-style button-style-dark' href='"+to+"'>"+button+"</a>",
+                                "</div>",
+                        "</div>",
+                    "</div>"
+                    ].join('');
+    $('#main_content').html(content_html);
+    
+}
+
+function makeHeader(type){
+    $('#request_nav').html(type);
 }
 
 function checkColor(type){
@@ -298,35 +320,4 @@ function checkColor(type){
     } 
 
     return color;
-}
-
-
-function makeContent(id,color,title,text,button,to,from){
-    let content_html="";
-    content_html += [
-                    "<div class='container'>",
-                        "<div class='request col-md-12'>",
-                            "<div class='request-alert'>",
-                                "<img src='img/vberthet/vb_white_bg_512.png' height='200px' alt='logo_ico'/>"+id+"",
-                            "</div>",
-                            "<div class='"+color+"'>",
-                                "<h1>"+title+"</h1>",
-                            "</div>",
-                            "<p><h4><i>"+text+"</i></h4><p>",
-
-                            "<div class='counter'>",
-                                "<p>You will be automatically redirected in <span id='counter'>x</span> s</p>",
-                            "</div>",
-                                "<div class='"+color+"'>",
-                                    "<a class='button button-style button-style-dark' href='"+to+"'>"+button+"</a>",
-                                "</div>",
-                        "</div>",
-                    "</div>"
-                    ].join('');
-    $('#main_content').html(content_html);
-    
-}
-
-function makeHeader(type){
-    $('#request_nav').html(type);
 }
