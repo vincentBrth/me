@@ -23,6 +23,7 @@ function init(type,id,to,from,host){
     document.title = this.id;
     if(document.title=="null") document.title=this.type;
     this.language.setLang(".request");
+    this.language.initNightShift();
     this.language.make();
 }
 
@@ -31,26 +32,24 @@ function init(type,id,to,from,host){
  * Call after initalization to make the correct content of the page
  */
 async function make(){
-    console.info('Language currently used : '+this.language.getLang());
     let data_lang=await this.language.getData();
     
+    let color=checkColor(type);
+    document.documentElement.style.setProperty('--primary-color', color);
+
     if(this.type=="Notes"){
-            makeNotes(data_lang);  
-            makeRelease();
+            makeNotes(data_lang);
     }else if(this.type=="Player"){
             makePlayer(data_lang);  
-            makeRelease();
     }else if(this.type=="Download"){
-            makeDownload(data_lang);  
-            makeRelease();
+            makeDownload(data_lang);
    }else if(this.type=="WebGL"){
-            makeWebGL(data_lang);  
-            makeRelease();
+            makeWebGL(data_lang);
     }else{
-            makeRequest(data_lang);   
-            makeRelease(); 
+            makeRequest(data_lang);
             makeCounter();      
     }   
+    makeFooter(await this.language.getData("en"));
 }
 
 /**
@@ -109,8 +108,7 @@ async function makeDownload(data){
     //if there is content for this id main_html shouldn't be empty
     if(main_html!=""){
         $('#main_content').html(main_html)
-        makeHeader('request-player-color',this.type,this.host);
-        makeFooter('request-player-color',this.host);
+        makeHeader(this.type);
     }else{
         console.error(this.type+" content error");
         this.type="download_error";
@@ -147,8 +145,7 @@ function makePlayer(data){
     //if there is content for this alert main_html shouldn't be empty
     if(main_html!=""){
         $('#main_content').html(main_html)
-        makeHeader('request-player-color',this.type,this.host);
-        makeFooter('request-player-color',this.host);
+        makeHeader(this.type);
     }else{
         console.error(this.type+" content error");
         this.type="player_error";
@@ -192,8 +189,7 @@ async function makeWebGL(data){
     //if there is content for this alert main_html shouldn't be empty
     if(main_html!=""){
         $('#main_content').html(main_html)
-        makeHeader('request-player-color',this.type,this.host);
-        makeFooter('request-player-color',this.host);
+        makeHeader(this.type);
     }else{
         console.error("type : "+this.type+" content error for id : "+this.id);
         this.type="player_error";
@@ -214,7 +210,7 @@ async function makeNotes(data){
     let url=await this.language.getGithubURL();
     for(let key in data.notes){   
         let id=data.notes[key].id;
-        if(data.notes[key].github==true) id="<span class='request-notes-color'><a href='"+url+"vberthet/releases/tag/"+id+"' target='_blank'>"+id+"</a>";  
+        if(data.notes[key].github==true) id="<a href='"+url+"vberthet/releases/tag/"+id+"' target='_blank'>"+id+"</a>";  
         updates_html += [
             "<li>",
                 "<p>",
@@ -236,8 +232,7 @@ async function makeNotes(data){
     todo_html+="</ul></div>";
     
     $('#main_content').html("<div class='container'>"+updates_html+todo_html+"</div>");
-    makeHeader('request-notes-color',this.type,this.host);
-    makeFooter('request-notes-color',this.host);
+    makeHeader(this.type);
 } 
 
 function makeRequest(data){    
@@ -280,8 +275,7 @@ function makeRequest(data){
       
     }
      
-    makeHeader(color,this.type,this.host);
-    makeFooter(color,this.host);
+    makeHeader(this.type);
     makeContent(id,color,title,text,button,this.to,this.host);
 }
 
@@ -294,7 +288,17 @@ function checkRequest(data){
     return false;
 }
 
+function checkColor(type){
+    var style = getComputedStyle(document.body);
+    let color=style.getPropertyValue('--'+type.toLocaleLowerCase()+'-color');
 
+    if(color==""){
+        console.error("Color not found use '--primary-color' instead");
+        color=style.getPropertyValue('--primary-color');
+    } 
+
+    return color;
+}
 
 
 function makeContent(id,color,title,text,button,to,from){
@@ -322,55 +326,7 @@ function makeContent(id,color,title,text,button,to,from){
     $('#main_content').html(content_html);
     
 }
-function makeHeader(color,type,from){
-    let header_html="";
-    header_html += [
-        "<div class='header-top-area'>",
-            "<div style='margin-left:20px'>",
-                "<div class='row'>",
-                
-                    "<div class='col-sm-4'>",
-                        "<div class='logo "+color+"'>",
-                            "<a class='smoth-scroll' href='"+from+"'>",
-                                "<img src='img/vberthet/vb_white_bg_512.png' alt='logo_ico'>Vincent <bold>Berthet</bold>",
-                            "</a>",
-                        "</div>",
-                    "</div>",
-                    
-                    "<div class='col-sm-8'>",
-                        "<div class='navigation-menu'>",
-                            "<div class='navbar'>",
-                                "<div class='navbar-header'>",
-                                    "<button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'>",
-                                        "<span class='sr-only'>Toggle navigation</span>",
-                                        "<span class='icon-bar'></span>",
-                                        "<span class='icon-bar'></span>",
-                                        "<span class='icon-bar'></span>",
-                                    "</button>",
-                                "</div>",
-                                "<div style='margin-right:50px' class='navbar-collapse collapse'>",
-                                    "<ul class='nav navbar-nav navbar-right "+color+"'>",
-                                        "<li>",
-                                            "<a class='smoth-scroll' href='#home'>"+type+"</a>",
-                                        "</li>",
-                                    "</ul>",
-                                "</div>",
-                            "</div>",
-                        "</div>",
-                    "</div>",
-                "</div>",
-            "</div>",
-        "</div>"
-    ].join('');
-    $('#header_content').html(header_html);
-}
 
-function makeFooter(color,from){
-    let footer_html="";
-    footer_html += [
-                "<div class='container text-center "+color+"'>",
-                    "&copy; "+new Date().getFullYear()+"<a href='"+from+"'> Vincent Berthet's Website</a> - <a href='request.html?type=Notes' >V<span id='release'></span></a> | Developed by <a href='"+from+"'> Vincent Berthet</a>",
-                "</div>"
-        ].join('');
-    $('#footer_content').html(footer_html);
+function makeHeader(type){
+    $('#request_nav').html(type);
 }

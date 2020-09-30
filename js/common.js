@@ -162,7 +162,6 @@ Language.prototype.initNightShift=function(){
 */
 Language.prototype.updateNightShift=function(){
     let theme=localStorage.getItem("theme");
-
     if(theme=='dark'){
         $('#nightShift').html("<i class='far fa-moon'>");
     }else {

@@ -144,7 +144,7 @@
                         "text":"vincent.berthet.pro@gmail.com"
                     },
                     "resume":{
-                        "class":"fas fa-download fa-2x color-4",
+                        "class":"fas fa-download fa-2x secondary-color",
                         "href":"request.html?type=Download&id=CV_EN",
                         "title":"NA",
                         "text":"NA"
