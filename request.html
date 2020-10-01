@@ -51,7 +51,7 @@
                                                 <a class='smoth-scroll' href='#main_content'><div id='request_nav'></div></a>
                                             </li>
                                             <li>
-                                                <a title='Night shift' onclick='language.nightShift()'><div id='nightShift' class='navicon'>NA</i></div></a>
+                                                <a title='Night shift' onclick='nightShift.toggle()'><div id='nightShift' class='navicon'>NA</i></div></a>
                                        		</li>
                                         </ul>
                                     </div>
@@ -75,9 +75,6 @@
         <!-- Javascript Plugins  -->
         <script type="text/javascript" src='plugin/jquery.min.js'></script>
         <script type="text/javascript" src='plugin/bootstrap/js/bootstrap.min.js'></script>
-        <script type="text/javascript" src='plugin/stellar.min.js'></script>
-        <script type="text/javascript" src='plugin/typed.min.js'></script>
-        <script type="text/javascript" src='plugin/mixitup.min.js'></script>
         <script type="text/javascript" src='plugin/gAnalitycs.js'></script>
         <!-- Main Javascript File  -->
         <script type="text/javascript" src='js/effects.js'></script>
@@ -86,7 +83,7 @@
 
         <script>
             let url = new URL(window.location.href);
-            init(url.searchParams.get("type"),url.searchParams.get("id"),url.searchParams.get("to"),url.searchParams.get("from"),url.searchParams.get("host"))
+            init(url.searchParams.get("type"),url.searchParams.get("id"),url.searchParams.get("to"))
         </script>
     </body>
 </html>

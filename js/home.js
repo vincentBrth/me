@@ -2,10 +2,10 @@
     ******************************************************************************************* 
                                         Table 
     ******************************************************************************************* 
-    1.Init
-    2.Build content
-    3.Make section
-    4.Effects
+    1. Init
+    2. Build content
+    3. Make section
+    4. Effects
 */
 
 /*
@@ -13,9 +13,10 @@
                                         1.Init 
     ******************************************************************************************* 
 */
-window.onload = init;    
-/*
-    Create a Language object and redefine the update and make method of this object
+window.onload = init;  
+
+/**
+*    Create a Language object and redefine the update and make method of this object
 */
 async function init(){
     this.typed = new Typed('.typing', {   
@@ -25,7 +26,7 @@ async function init(){
         loop: true,
         backDelay:1000,
     });
-    this.language.initNightShift();
+    this.nightShift.update();
     this.language.make();
 }
 
@@ -34,18 +35,17 @@ async function init(){
                                         2.Build content 
     ******************************************************************************************* 
 */
-
-/*
-    Update the content with the current language
-	@Warning the page must has been make at least once
+/**
+*   Update the content with the current language
+*   @Warning the page must has been make at least once
 */
 function update(){
     $('#portfolio_content').mixItUp('destroy');
     this.language.make();
 }
 
-/*
-	Make the different section of the page with the current language
+/**
+*	Make the different section of the page with the current language
 */
 async function make(){
     let data_lang=await this.language.getData();
@@ -64,10 +64,9 @@ async function make(){
                                         3.Make section 
     ******************************************************************************************* 
 */
-
-/*
-    Build the navigation menu items
-    @param string array data : the content of the *lang*.json used 
+/**
+*    Build the navigation menu items
+*    @param {string array} data The content of the *lang*.json used 
 */
 function makeNavigation(data){
     $('#nav_bio_content').html(data.navigation.bio.menu);
@@ -76,9 +75,9 @@ function makeNavigation(data){
     $('#nav_flag_ico_content').html(data.lang);
 }
 
-/*
-    Build the preview text of the header section
-    @param string array data : the content of the *lang*.json used 
+/**
+*    Build the preview text of the header section
+*    @param {string array} data The content of the *lang*.json used 
 */
 function makePreview(data){
     $('#preview_text_content').html(data.preview.text);
@@ -87,9 +86,9 @@ function makePreview(data){
     this.typed.reset();
 }
 
-/*
-    Build the Bio section
-    @param string array data : the content of the *lang*.json used 
+/**
+*    Build the Bio section
+*    @param {string array} data The content of the *lang*.json used 
 */
 function makeBio(data){
     $('#bio_content').html("<h2>"+data.navigation.bio.title+"</h2>"+data.navigation.bio.content);
@@ -97,10 +96,10 @@ function makeBio(data){
     $('#bio_duration').html(getAge("20/02/1996","year")-14);
 }
 
-/*
-    Build the Portfolio section
-    @param string array data : the content of the *lang*.json used 
-    @param string array data_c : the content of common.json
+/**
+*    Build the Portfolio section
+*    @param {string array} data The content of the *lang*.json used 
+*    @param {string array} data_c The content of common.json
 */
 async function makePortfolio(data,data_c){
     let portfolio_html="";
@@ -164,10 +163,10 @@ async function makePortfolio(data,data_c){
     $('#portfolio_content').mixItUp();
 }
 
-/*
-    Build the contact section
-    @param string array data : the content of the *lang*.json used 
-    @pram string array data common : the content of the common.json
+/**
+*    Build the contact section
+*    @param {string array} data The content of the *lang*.json used 
+*    @param {string array} data The content of the common.json
 */
 function makeContact(data,data_c){
     let contact_social_html="";
@@ -189,14 +188,19 @@ function makeContact(data,data_c){
 
         if(c.country_code != undefined && c.country_flag != undefined){
             //add flag and phone code
-           text="<img class='flag "+c.country_flag+"' title='"+c.country_code+"'>  "+text;
+           text="<img class='"+c.country_flag+"' title='"+c.country_code+"'>  "+text;
+        }
+
+        let style="";
+        if(key=="resume"){
+            style="style='color: var(--primary-color);;'";
         }
 
         contact_info_html += [
             "<div class='col-md-4 col-sm-4'>",
                 "<div class='contact-detail flag'>",  
                     "<a href='"+href+"' target='_blank' title='"+title+"'>",
-                      "<i class='"+class_css+"'></i><p>"+text+"</p>",
+                      "<i "+style+" class='"+class_css+"'></i><p>"+text+"</p>",
                     "</a>",
                 "</div>",
             "</div>"    
@@ -234,15 +238,14 @@ function makeContact(data,data_c){
                                         4.Effects
     ******************************************************************************************* 
 */
-
-    /* Parallax Background - stellar.js
-    *  provides parallax scrolling effects to any scrolling element.
-    */
-
-    $(window).stellar({
-        responsive: true,
-        horizontalScrolling: false,
-        hideDistantElements: false,
-        horizontalOffset: 0,
-        verticalOffset: 0,
-    });
+/**
+*   Parallax Background - stellar.js
+*   provides parallax scrolling effects to any scrolling element.
+*/
+$(window).stellar({
+    responsive: true,
+    horizontalScrolling: false,
+    hideDistantElements: false,
+    horizontalOffset: 0,
+    verticalOffset: 0,
+});

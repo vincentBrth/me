@@ -1,5 +1,6 @@
 console.info("Hi there ! You are welcome to examine the code");
 
+// Initialization
 let available_lang = new Map();
 available_lang.set('en','json/en.json');
 available_lang.set('fr','json/fr.json');
@@ -8,23 +9,26 @@ available_lang.set('.request','json/request.json');
 this.language = new Language(available_lang,'en');
 this.language.update = function(){update();}
 this.language.make = function(){make();}
+this.nightShift=new NightShift();
 
 /*
     ******************************************************************************************* 
                                         Table 
     ******************************************************************************************* 
-    1.Language
-    2.Date/Age
-    3.Footer
+    1. Language
+    2. Nightshift
+    3. Date/Age
+    4. Footer
 */
 /*
     ******************************************************************************************* 
-                                        1.Language 
+                                        1. Language 
     ******************************************************************************************* 
 */
-/*
-    Language object
-    @param string current : the name of the language [en,fr,..]
+/**
+*    Language object
+*    @param {map} langs Mapping of language and his json
+*    @param {string} current The name of the language [en,fr,..]
 */
 function Language(langs,current='en'){
     this.current=current;
@@ -37,7 +41,6 @@ function Language(langs,current='en'){
         }))
     }
 
-
     this.data=Promise.all(promises).then((values) => {
         let tmp= new Map();
         let index=0;
@@ -47,12 +50,11 @@ function Language(langs,current='en'){
         }    
         return tmp;    
     });
-
 }
 
-/*
-    Check if the language is valid [en,fr,..] and set the right json file
-    @param string current : the name of the language
+/**
+*    Check if the language is valid [en,fr,..] and set the right json file
+*    @param {string} current The name of the language
 */
 Language.prototype.setLang = function(current){
     if(typeof this.langs.get(current) != 'undefined'){
@@ -63,76 +65,80 @@ Language.prototype.setLang = function(current){
     }
 }
 
-/*
-    Get the name of the language used [en,fr,..]
-    @return the current
+/**
+*    Get the name of the language used [en,fr,..]
+*    @return {string}
 */
 Language.prototype.getLang = function(){
     return this.current;
 }
 
-
-/*
-    Get the path of the json file associated 
-    @return the path of the json
+/**
+*    Get the path of the json file associated 
+*    @return {string}
 */
 Language.prototype.getJsonPath = function(current=this.getLang()){
     return this.langs.get(current);
 }
 
-Language.prototype.getData= async function(current=this.getLang()){
+/**
+*    Get data from json file
+*    @param {string}
+*/
+Language.prototype.getData = async function(current=this.getLang()){
     return await Promise.resolve((await this.data).get(current))
 }
 
-/*
-    Get Github name for my account depending on username in common.json
+/**
+*   Get Github name for my account depending on username in common.json
+*   @return {string}
 */
 Language.prototype.getGithubName=async function(){
     return (await Promise.resolve((await this.data).get('.common')))['contact']['social']['Github']['username'];
 }
 
-/*
-    Get Github URL for my account depending on username in common.json
-    @return https://github.com/RealVincentBerthet/
+/**
+*    Get Github URL for my account depending on username in common.json
+*    @return {string}
 */
 Language.prototype.getGithubURL=async function(){
     let url=await this.getGithubName();
     return 'https://github.com/'+url+'/';
 }
 
-/*
-    Get Github page URL for my account depending on username in common.json
-    @return https://realvincentberthet.github.io/
+/**
+*    Get Github page URL for my account depending on username in common.json
+*    @return {string}
 */
 Language.prototype.getGithubPageURL=async function(){
     let url=await this.getGithubName();
     return 'https://'+url+'.github.io/';
 }
 
-/*
-    Get Github public directory for my account depending on username in common.json
-    @return https://github.com/RealVincentBerthet/Vincent/tree/master/Public
+/**
+*   Get Github public directory for my account depending on username in common.json
+*   @return {string}
 */
 Language.prototype.getGithubPublicURL=async function(){
     return  await this.getGithubURL()+'Workspace/raw/master/Public/';
 }
 
-/*
-    Declare the make function
+/**
+*     Declare the make function
 */
 Language.prototype.make = function(){
     console.error('make is not implemented');
 }
 
-/*
-    Declare the update function
+/**
+*    Declare the update function
 */
 Language.prototype.update = function(){
     console.error('update is not implemented');
 }
 
-/*
-    Switch to the language and then update the content
+/**
+*    Switch to the language and then update the content
 */
 Language.prototype.switch = function(){
     if(this.getLang()=='en'){
@@ -144,23 +150,26 @@ Language.prototype.switch = function(){
 }
 
 /*
-    Initialize night shift mode
+    ******************************************************************************************* 
+                                        2. NightShift
+    ******************************************************************************************* 
 */
-Language.prototype.initNightShift=function(){
+/**
+*    NightShift class
+*/
+function NightShift(){
     const currentTheme = localStorage.getItem("theme");
     if (currentTheme == "dark") {
         document.body.classList.toggle("dark-theme");
     } else {
         document.body.classList.toggle("light-theme");
     } 
-
-    this.updateNightShift();
 }
 
-/*
-    Update navigation icon
+/**
+*    Update NightShift icon
 */
-Language.prototype.updateNightShift=function(){
+NightShift.prototype.update = function(){
     let theme=localStorage.getItem("theme");
     if(theme=='dark'){
         $('#nightShift').html("<i class='far fa-moon'>");
@@ -169,10 +178,10 @@ Language.prototype.updateNightShift=function(){
     }
 }
 
-/*
-    Toggle night shift
+/**
+*    Toggle NighShift mode
 */
-Language.prototype.nightShift=function(){
+NightShift.prototype.toggle=function(){
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
     document.body.classList.toggle("light-theme");
     var theme = document.body.classList.contains("light-theme")
@@ -186,19 +195,18 @@ Language.prototype.nightShift=function(){
     }
     localStorage.setItem("theme", theme);
 
-    this.updateNightShift();
+    this.update();
 }
 
 /*
     ******************************************************************************************* 
-                                        2.Date/Age 
+                                        3. Date/Age 
     ******************************************************************************************* 
 */
-
-/*
-	Check if a date exist and put it in a standard format
-	@param string date : the date checked
-	@return a date 
+/**
+*	Check if a date exist and put it in a standard format
+*	@param {string} date The date checked
+*	@return {string} 
 */
 function checkDate(date) {
   let yMin=1850; 
@@ -236,11 +244,11 @@ function checkDate(date) {
  return ok;
 }
 
-/*
-	Get an age in function of a date inserted
-	@param string dt : the date of birth used
-	@param string format : used to customize the string returned
-	@return a string with age information
+/**
+*	Get an age in function of a date inserted
+*	@param {string} dt The date of birth used
+*	@param {string} format Used to customize the string returned
+*	@return {string}
 */
 function getAge(dt,format) {
   let date=checkDate(dt)
@@ -280,11 +288,11 @@ function getAge(dt,format) {
 
 /*
     ******************************************************************************************* 
-                                        3. Footer
+                                        4. Footer
     ******************************************************************************************* 
 */
-/*
-    Build the release with the latest update wrote in the request.json
+/**
+*    Build the release with the latest update wrote in the request.json
 */
 function makeRelease(){
     current_release='X';
@@ -300,9 +308,9 @@ function makeRelease(){
     });
 }
 
-/*
-    Make the footer of the page
-    @param  string array data : the data of the *current*.json
+/**
+*    Make the footer of the page
+*    @param {string} data The data of the *current*.json
 */
 function makeFooter(data){ 
     let content=data.footer;
@@ -311,4 +319,3 @@ function makeFooter(data){
     $('#footerContent').html(content);
     makeRelease();
 }
-

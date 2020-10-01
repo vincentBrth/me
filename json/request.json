@@ -1,61 +1,36 @@
 {
+    "page":{
+        "Sample":{
+            "type":"Sample",
+            "title":"title sample",
+            "text":"text sample"
+        }
+    },
     "unknown":{
         "button":"Back",
-        "color":"request-unknown-color",
-        "details":{
-                "unknown":{
-                    "id":"Unknown",
-                    "title":"Missing data",
-                    "text":"The data provided are not valid to load this page correctly" 
-                }
-            }
-    },
-    "error":{
-        "button":"Back",
-        "color":"request-error-color",
-        "details":{
-                "400":{
-                    "id":"400",
-                    "title":"Bad Request",
-                    "text":"The request cannot be fulfilled due to bad syntax" 
-                },
-                "401":{
-                    "id":"401",
-                    "title":"Unauthorized",
-                    "text":"The request was a legal request, but the server is refusing to respond to it for use when authentication is possible but has failed or not yet been provided" 
-                },
-                "403":{
-                    "id":"403",
-                    "title":"Forbidden",
-                    "text":"The request was a legal request, but the server is refusing to respond to it" 
-                },
-                "404":{
-                    "id":"404",
-                    "title":"Not found",
-                    "text":"The requested page could not be found" 
-                }
-        }
+        "id":"Unknown",
+        "title":"Missing data",
+        "text":"The data provided are not valid to load this page correctly" 
     }, 
     "redirect":{
-        "color":"request-redirect-color",
-        "button":"Go to the project",
-        "details":{
-                "WIP":{
-                    "id":"WIP",
-                    "title":"This project is still in progress",
-                    "text":"The following version will probably not work as expected<br/>Thank you for your cooperation" 
-                },
-                "Mobile":{
-                    "id":"Mobile",
-                    "title":"This project has been designed for mobile platform",
-                    "text":"If you are on a computer use the 'inspect tool'" 
-                },
-                "WIP_Mobile":{
-                    "id":"WIP",
-                    "title":"This project is still in progress",
-                    "text":"The following version will probably not work as expected<br/>Thank you for your cooperation" 
-                }
-        }
+        "WIP":{
+            "id":"WIP",
+            "title":"This project is still in progress",
+            "text":"The following version will probably not work as expected<br/>Thank you for your cooperation",
+            "button":"Go to the project" 
+        },
+        "Mobile":{
+            "id":"Mobile",
+            "title":"This project has been designed for mobile platform",
+            "text":"If you are on a computer use the 'inspect tool'",
+            "button":"Go to the project" 
+        },
+        "WIP_Mobile":{
+            "id":"WIP",
+            "title":"This project is still in progress",
+            "text":"The following version will probably not work as expected<br/>Thank you for your cooperation",
+            "button":"Go to the project" 
+        } 
     },
     "player":{
         "Orium":{
@@ -67,6 +42,16 @@
             "name":"Isati Game Jam 2K19",
             "href":"https://www.youtube.com/embed/Q5fmX5Q7btM",
             "description":"<p>Trailer of the first <a href='https://esir.univ-rennes1.fr/actualites/la-1ere-game-jam-lesir' target='_blank' >Game Jam of ESIR</a> in partnership with <a href='https://www.orange-business.com/en' target='_blank'>Orange Applications for Business</a></p><p>Winner : <a href='https://www.youtube.com/watch?v=E_g47fFlD-E'>Game Jam of Thrones</a></p><p>Trailer made by Vincent Berthet</p>"
+        }
+    },
+    "webgl":{
+        "LunaAndHelios":{
+            "title":"Luna & Helios (WebGL)",
+            "name":"A Story of Luna & Helios",
+            "width":"1370",
+            "height":"820",
+            "href":"LunaAndHelios/WebGL/index.html",
+            "description":"<p>This game has been released during the Orange Game Jam 2020. The aim of this event was to build a video game in 35 hours on the subject : <b>Safe in the dark</b></p><p><b>More informations are available in the GitHub README</b></p><a href='https://www.youtube.com/watch?v=EwTJOxKciyE&feature=youtu.be' target='_blank'><i class='fab fa-youtube'></i> Gameplay video</a>"
         },
         "Kubic":{
             "title":"Kubic (WebGL)",
@@ -75,14 +60,6 @@
             "height":"650",
             "href":"Kubic/Kubic/WebGL/index.html",
             "description":"<p><a href='https://docs.unity3d.com/ScriptReference/Application-streamingAssetsPath.html' target='_blank'>No streaming access is available on WebGL with Unity</a>.<br/>As this game has been developed for OS, use <a href='https://github.com/RealVincentBerthet/Kubic/blob/master/Kubic/Windows/Kubic.zip' target='_blank'>Windows executable</a> to have access to options and sounds and others features in the game</p><p><b>More informations are available in the GitHub README</b></p>"
-        },
-        "LunaAndHelios":{
-            "title":"Luna & Helios (WebGL)",
-            "name":"A Story of Luna & Helios",
-            "width":"1365",
-            "height":"820",
-            "href":"LunaAndHelios/WebGL/index.html",
-            "description":"<p>This game has been released during the Orange Game Jam 2020. The aim of this event was to build a video game in 35 hours on the subject : <b>Safe in the dark</b></p><p><b>More informations are available in the GitHub README</b></p><a href='https://www.youtube.com/watch?v=EwTJOxKciyE&feature=youtu.be' target='_blank'><i class='fab fa-youtube'></i> Gameplay video</a>"
         }
     },
     "download":{
