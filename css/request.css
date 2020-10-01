@@ -67,3 +67,8 @@
     --error-color:#7F0000;
     --download-color:#794261;
 }
+
+.container a:hover{
+    opacity: 0.6;
+    color:var(--primary-color);
+}

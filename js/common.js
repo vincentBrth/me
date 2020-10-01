@@ -141,11 +141,29 @@ Language.prototype.update = function(){
 *    Switch to the language and then update the content
 */
 Language.prototype.switch = function(){
-    if(this.getLang()=='en'){
-        this.setLang('fr');
+
+    let lang=Array.from(this.langs.keys()).filter(e => e[0] !== '.');
+
+    if(lang.length>1){
+        let start=lang.indexOf(this.getLang());
+        let index;
+        while(index==undefined){
+            if(start<lang.length){
+                if(lang[start][0]!='.'){
+                    if(lang[start]!=this.getLang()){
+                        index=start; 
+                    }
+                }
+                start=start+1;
+            }else{
+                start=0;
+            }
+        }
+        this.setLang(lang[index]);
     }else{
-        this.setLang('en');
+        console.error("Cannot change langue as only one langue is avalaible :"+lang);
     }
+
     this.update();
 }
 

@@ -815,6 +815,7 @@ ul.portfolio li.active:hover {
     padding: 0px 0px;
     color: #f8f8f8;
     font-size: 10px;
+    width: 100%;
 }
 
 .footer-section a {
@@ -822,7 +823,7 @@ ul.portfolio li.active:hover {
 }
 
 .footer-section a:hover {
-    opacity: 0.8;
+    opacity: 0.6;
 }
 
 /* 10. Theme */

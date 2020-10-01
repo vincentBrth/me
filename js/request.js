@@ -210,8 +210,8 @@ async function makeWebGL(data){
             "<h1>"+data.name+"</h1>",
             "<p>"+data.description+"</p>",
             "<p><a href='"+githubURL+data.href.split('/')[0]+"' target='_blank'><i class='fab fa-github'></i> Github source</a></p>",
-            "<div class='request-center'><iframe width='"+width+"' height='"+height+"' src='"+href+"' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe><div>", 
-        "</div>"
+        "</div>",
+        "<div class='request-center'><iframe width='"+width+"' height='"+height+"' src='"+href+"' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe></div>", 
     ].join('');
     $('#main_content').html(main_html)
 }
