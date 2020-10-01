@@ -48,7 +48,6 @@ function update(){
 	Make the different section of the page with the current language
 */
 async function make(){
-    console.info('Language currently used : '+this.language.getLang());
     let data_lang=await this.language.getData();
     let data_common=await this.language.getData('.common');
     
@@ -190,7 +189,7 @@ function makeContact(data,data_c){
 
         if(c.country_code != undefined && c.country_flag != undefined){
             //add flag and phone code
-           text="<img src='"+c.country_flag+"' title='"+c.country_code+"'>  "+text;
+           text="<img class='flag "+c.country_flag+"' title='"+c.country_code+"'>  "+text;
         }
 
         contact_info_html += [

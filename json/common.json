@@ -1,8 +1,9 @@
 {   
-    "nightShift":"<i class='far fa-moon' title='Nighshift'></i>",
     "portfolio":{
         "BCOM":{
-            "ico":"img/ico_project/bcom.png",
+            "ico":"img/ico_project/ico_bcom.png",
+            "title":"NA",
+            "description":"NA",
             "filter":"Pro CSharp Cpp 3D",
             "href":"request.html?type=Download&id=BCOM",
             "skills":"C++, Computer vision, Unity, C#, Qt, CI, 3D",
@@ -10,13 +11,17 @@
         },
         "AsymetrieICP":{
             "ico":"img/ico_project/ico_asymetrieICP.png",
+            "title":"NA",
+            "description":"NA",
             "filter":"OpenCV",
             "href":"AsymetrieICP",
             "skills":"OpenCV, Python, ICP",
             "github":true
         },
         "LunaAndHelios":{
-            "ico":"img/ico_project/ico_luna_and_helios.jpg",
+            "ico":"img/ico_project/ico_luna_and_helios.png",
+            "title":"NA",
+            "description":"NA",
             "filter":"Game CSharp",
             "href":"LunaAndHelios",
             "webgl":true,
@@ -25,13 +30,17 @@
         },
         "Tensors":{
             "ico":"img/ico_project/ico_tensors.png",
+            "title":"NA",
+            "description":"NA",
             "filter":"OpenCV", 
             "href":"Tensor_directed_stylization",
             "skills":"OpenCV, Python",
             "github":true
         },
         "HDR":{
-            "ico":"img/ico_project/ico_hdr.jpg",
+            "ico":"img/ico_project/ico_hdr.png",
+            "title":"NA",
+            "description":"NA",
             "filter":"OpenCV",
             "href":"HDR",
             "skills":"OpenCV, Python",
@@ -39,12 +48,16 @@
         },
         "Askelys":{
             "ico":"img/ico_project/ico_askelys.png",
+            "title":"NA",
+            "description":"NA",
             "filter":"Pro CSharp",
             "href":"request.html?type=Download&id=Askelys",
             "skills":"Unity, C#, Javascript, WebGL"
         },
         "Kubic":{
             "ico":"img/ico_project/ico_kubic.png",
+            "title":"NA",
+            "description":"NA",
             "filter":"3D CSharp Game",
             "href":"Kubic",
             "webgl":true,
@@ -53,13 +66,17 @@
         },
         "Ray":{
             "ico":"img/ico_project/ico_ray.png",
+            "title":"NA",
+            "description":"NA",
             "filter":"Cpp 3D",
             "href":"Ray",
             "skills":"C++, RayTracing, PathTracing",
             "github":true
         },
-        "game_jam_2019":{
+        "GameJam2019":{
             "ico":"img/ico_project/ico_gameJam2k19.png",
+            "title":"NA",
+            "description":"NA",
             "filter":"Management",
             "href":"Isati Game Jam 2K19",
             "player":true,
@@ -67,14 +84,18 @@
         },
         "GOL":{
             "ico":"img/ico_project/ico_gol.png",
+            "title":"NA",
+            "description":"NA",
             "filter":"Cpp Game",
             "href":"GoL",
             "wip":false,
             "github":true,
             "skills":"Qt, C++, GUI"
         },
-        "website_v1":{
+        "WebsiteV1":{
             "ico":"img/ico_project/ico_website_v1.png",
+            "title":"NA",
+            "description":"NA",
             "filter":"Javascript Web",
             "href":"vberthet_1.6.0",
             "github":true,
@@ -83,53 +104,69 @@
         },
         "TA":{
             "ico":"img/ico_project/ico_TA.png",
+            "title":"NA",
+            "description":"NA",
             "filter":"Javascript Game",
             "href":"https://towerattackproject.firebaseapp.com/",
             "mobile":true,
             "wip":false,
             "skills":"Javascript"
         },
-        "orium":{
+        "Orium":{
             "ico":"img/ico_project/ico_orium.png",
+            "title":"NA",
+            "description":"NA",
             "filter":"3D Game",
             "href":"Orium",
             "player":true,
             "skills":"UE4"
         },
-        "auld":{
+        "Auld":{
             "ico":"img/ico_project/ico_auld.png",
+            "title":"NA",
+            "description":"NA",
             "filter":"Management 3D Game",
             "href":"http://projectauldue4.blogspot.com/",
             "skills":"UE4"
         },
-        "scogue":{
+        "Scogue":{
             "ico":"img/ico_project/ico_scogue.png",
+            "title":"NA",
+            "description":"NA",
             "filter":"Javascript Game",
             "href":"Scogue",
             "skills":"Javascript",
             "github":true,
             "githubPage":false
         },
-        "blog":{
+        "Blog":{
             "ico":"img/ico_project/ico_blog.png",
+            "title":"NA",
+            "description":"NA",
             "filter":"Web",
             "href":"https://uwsblog.yo.fr/UWS_Blog/",
             "skills":"WordPress"
         },     
-        "mutest":{
+        "Mutest":{
             "ico":"img/ico_project/ico_mutest.png",
+            "title":"NA",
+            "description":"NA",
             "filter":"Pro",
             "href":"request.html?type=Download&id=Mutest",
             "skills":"Java"
         },       
-        "pacman":{
+        "Pacman":{
             "ico":"img/ico_project/ico_pacman.png",
+            "title":"NA",
+            "description":"NA",
             "filter":"CSharp Game",
             "href":"request.html?type=Download&id=Pacman",
             "skills":"C#"
         },      
-        "monitoring":{
+        "Monitoring":{
             "ico":"img/ico_project/ico_monitoring.png",
+            "title":"NA",
+            "description":"NA",
             "filter":"Web",
             "href":"https://uwsblog.yo.fr/",
             "skills":"PHP, SQL, JQuery"
@@ -137,57 +174,57 @@
     },
     "contact":{
         "info":{
-                    "mail_button":{
+                    "mail":{
                         "class":"fas fa-envelope fa-2x",
                         "href":"mailto:vincent.berthet.pro@gmail.com",
                         "title":"NA",
                         "text":"vincent.berthet.pro@gmail.com"
                     },
                     "resume":{
-                        "class":"fas fa-download fa-2x secondary-color",
+                        "class":"fas fa-download fa-2x color-4",
                         "href":"request.html?type=Download&id=CV_EN",
                         "title":"NA",
                         "text":"NA"
                     },
-                    "phone_button":{
+                    "phone":{
                         "class":"fas fa-phone fa-2x",
                         "href":"tel:+33658659033",
                         "title":"NA",
                         "text":"06 58 65 90 33",
                         "country_code":"+33",
-                        "country_flag":"img/vberthet/fr_flag_16px.png"
+                        "country_flag":"flag-fr"
                     }
         },
         "social":{
-                    "LKD":{
+                    "Linkedin":{
                         "class":"linkedin",
                         "title":"NA",
                         "href":"https://uk.linkedin.com/in/",
                         "username":"vincent-berthet",
                         "class_ico":"fab fa-linkedin"
                     },   
-                    "TWI":{
+                    "Twitter":{
                         "class":"twitter",
                         "title":"NA",
                         "href":"https://twitter.com/",
                         "username":"_Sissouu",
                         "class_ico":"fab fa-twitter"
                     },      
-                    "YT":{
+                    "YouTube":{
                         "class":"youtube",
                         "title":"NA",
                         "href":"https://www.youtube.com/channel/",
                         "username":"UC1zTh8-gfUpfaW8xvRnYHXw",
                         "class_ico":"fab fa-youtube"
                     },        
-                    "INSTA":{
+                    "Instagram":{
                         "class":"instagram",
                         "title":"NA",
                         "href":"https://www.instagram.com/",
                         "username":"vincent_berthet",
                         "class_ico":"fab fa-instagram"
                     },
-                    "GITHUB":{
+                    "Github":{
                         "class":"github",
                         "title":"NA",
                         "href":"https://github.com/",

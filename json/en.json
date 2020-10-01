@@ -18,7 +18,7 @@
             "title":"Contact"
          }
      },
-    "lang":"<img src='img/vberthet/uk_flag_16px.png' title='Click to switch to French'>",
+    "lang":"<img class='flag-uk' title='Click to switch to French'>",
     "portfolio":{
         "BCOM":{
             "title":"b<>com training contract",
@@ -52,7 +52,7 @@
             "title":"Pathtracing",
             "description":"The aim of this project was to implement features of a Raytracing engine and optimisation structures related to it<br/>Then in a second part Global Illumination and Pathtracing have been added to this project."
         },
-        "game_jam_2019":{
+        "GameJam2019":{
             "title":"Isati Game Jam 2019",
             "description":"Organization of the event"
         },
@@ -60,7 +60,7 @@
             "title":"Game of Life",
             "description":"GUI<br/> designed in order to understand ergonomic concerns of an application for different level of users" 
         },
-        "website_v1":{
+        "WebsiteV1":{
             "title":"Old website",
             "description":"Old release of this website (1.6)"
         },
@@ -68,59 +68,38 @@
             "title":"Tower Attack",
             "description":"Advanced Mobile Programming<br/>Tower Attack Game, implementing advanced features like queues, stacks and pathways"
         },
-        "orium":{
+        "Orium":{
             "title":"Orium",
             "description":"3D Level Design<br/>A game based on the time that the player will make to finish the game"
         },
-        "auld":{
+        "Auld":{
             "title":"Auld",
             "description":"Game Design<br/>RTS game"
         },
-        "scogue":{
+        "Scogue":{
             "title":"Scogue",
             "description":"Web game <br/>A Rogue like game"
         },
-        "blog":{
+        "Blog":{
             "title":"Blog",
             "description":"Creative Industries Blog<br/>A blog to deal with subject of the creative industries"
         },     
-        "mutest":{
+        "Mutest":{
             "title":"Mu-Test Report",
             "description":"Internship<br/>Report of my 4 months internship at <a href='http://www.mu-test.com/' target='_blank'>Mu-Test</a>, a company working in the Automated Test Equipement (ATE)"
         },       
-        "pacman":{
+        "Pacman":{
             "title":"Pac Man XNA",
             "description":"C# Project<br/>Development of the PacMan with the XNA framework"
         },      
-        "monitoring":{
+        "Monitoring":{
             "title":"Monitoring",
             "description":"UTD Project<br/>HMI to provide data of a batteries monitoring system to the user"
         }
     },
-    "skills":{
-        "programming":{
-            "title":"Programming"
-        },
-        "web":{
-            "title":"Web"
-        },
-        "database":{
-            "title":"DataBase"
-        },
-        "shell":{
-            "title":"Shell"
-        },
-        "software":{
-            "title":"Software"
-        },
-        "other":{
-            "title":"Other",
-            "list":"Scrum"
-        }       
-    },
     "contact":{
         "info":{
-                    "mail_button":{
+                    "mail":{
                         "title":"Send me a mail"
                     },
                     "resume":{
@@ -128,24 +107,24 @@
                         "title":"Download my resume",
                         "text":"Resume"
                     },
-                    "phone_button":{
+                    "phone":{
                         "title":"Call me"
                     }
         },
         "social":{
-                    "LKD":{
+                    "Linkedin":{
                         "title":"Let us connect"
                     },  
-                    "TWI":{
+                    "Twitter":{
                         "title":"Follow me"
                     },      
-                    "YT":{
+                    "YouTube":{
                         "title":"My channel"
                     },        
-                    "INSTA":{
+                    "Instagram":{
                         "title":"Discovers my photos"
                     },
-                    "GITHUB":{
+                    "Github":{
                         "title":"Discovers my projects"
                     }
                 }

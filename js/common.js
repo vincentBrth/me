@@ -88,7 +88,7 @@ Language.prototype.getData= async function(current=this.getLang()){
     Get Github name for my account depending on username in common.json
 */
 Language.prototype.getGithubName=async function(){
-    return (await Promise.resolve((await this.data).get('.common')))['contact']['social']['GITHUB']['username'];
+    return (await Promise.resolve((await this.data).get('.common')))['contact']['social']['Github']['username'];
 }
 
 /*
