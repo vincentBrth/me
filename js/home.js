@@ -188,7 +188,7 @@ function makeContact(data,data_c){
 
         if(c.country_code != undefined && c.country_flag != undefined){
             //add flag and phone code
-           text="<img class='"+c.country_flag+"' title='"+c.country_code+"'>  "+text;
+           text="<img src='"+c.country_flag+"' title='"+c.country_code+"'>  "+text;
         }
 
         let style="";

@@ -401,15 +401,7 @@ body.loaded #preloader{
 .logo img{
     margin-right: 10px;
     width: 30px;
-    height: 30px;  
-}
-
-.vb-black{
-    content:url(../img/vberthet/vb_black.png);
-}
-
-.vb-white{
-    content:url(../img/vberthet/vb_white.png);
+    height: 30px;
 }
 
 .logo a {
@@ -420,7 +412,6 @@ body.loaded #preloader{
     font-weight: 400;
     font-size: 16px;
 }
-
 
 .logo bold{
     font-weight: 900;
@@ -435,14 +426,6 @@ body.loaded #preloader{
     height: 16px;  
 }
 
-.flag-fr {
-    content:url(../img/vberthet/france-flag-round-xs.png);
-}
-
-.flag-uk {
-    content:url(../img/vberthet/united-kingdom-flag-round-xs.png);
-}
- 
 .navigation-menu .navbar-nav li a {
     color: #fff;
     text-transform: uppercase;
