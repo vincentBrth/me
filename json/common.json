@@ -169,7 +169,11 @@
             "description":"NA",
             "filter":"Web",
             "href":"https://uwsblog.yo.fr/",
+<<<<<<< HEAD
             "skills":"PHP, SQL, JQuery"
+=======
+            "skills":"PHP SQL JQuery"
+>>>>>>> master
         }
     },
     "contact":{
