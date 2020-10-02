@@ -21,7 +21,7 @@
         },
         "Mobile":{
             "id":"Mobile",
-            "title":"This project has been designed for mobile platform",
+            "title":"This project has been designed for the mobile platform",
             "text":"If you are on a computer use the 'inspect tool'",
             "button":"Go to the project" 
         },
@@ -130,7 +130,7 @@
         "v2.10.0":{
             "id":"2.10.0",
             "github":true,
-            "text":"Move website hosting from personal server to github page",
+            "text":"Move website hosting from personal server to GitHub page",
             "released":"11/03/2019"
         },
         "v2.9.0":{
