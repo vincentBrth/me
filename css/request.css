@@ -61,11 +61,11 @@
 :root {
     --notes-color: #CDC1C5; 
     --redirect-color:#794261;
-    --player-color:#7B7B7B;
-    --webgl-color:#7B7B7B;
+    --player-color:#839192;
+    --webgl-color:#5499C7;
     --unknown-color:#B26A2E;
     --error-color:#7F0000;
-    --download-color:#794261;
+    --download-color:#A1887F;
 }
 
 .container a:hover{
