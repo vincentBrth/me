@@ -157,7 +157,7 @@ async function makeDownload(data){
                         "Download",
                     "</div>",
                     "<div class='request-title'>",
-                        "<h3>"+data.name+"</h3>",
+                        "<h4>"+data.name+"</h4>",
                     "</div>",
                     "<p><h5><i>"+data.description+"</i></h5><p>",
                     "<div>",
@@ -211,7 +211,7 @@ async function makeWebGL(data){
             "<p>"+data.description+"</p>",
             "<p><a href='"+githubURL+data.href.split('/')[0]+"' target='_blank'><i class='fab fa-github'></i> Github source</a></p>",
         "</div>",
-        "<div class='request-center'><iframe width='"+width+"' height='"+height+"' src='"+href+"' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe></div>", 
+        "<div class='request-center video-container'><iframe src='"+href+"' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe></div>", 
     ].join('');
     $('#main_content').html(main_html)
 }

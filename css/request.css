@@ -53,7 +53,7 @@
 .video-container embed {
     position: absolute;
     left: 0;
-    height: 100%;
+    height: 90%;
     width: 100%;
 }
 
@@ -71,4 +71,11 @@
 .container a:hover{
     opacity: 0.6;
     color:var(--primary-color);
+}
+
+/* Responsive */
+@media only screen and (max-width: 991px) {
+    .request-logo {
+        font-size: 50px;
+    }
 }
