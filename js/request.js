@@ -11,6 +11,7 @@
   * Initialize request.html depending of the request selected
   */
 function init(type,id,to){
+    if(type==undefined) type="";
     this.type=type.toLocaleLowerCase();
     this.id=id;
     this.to=to;
