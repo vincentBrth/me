@@ -1,3 +1,6 @@
+/**
+ * @author Vincent Berthet <vincent.berthet42@gmail.com>
+ */
 console.info("Hi there ! You are welcome to examine the code");
 
 // Initialization

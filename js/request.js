@@ -1,11 +1,13 @@
 /**
+ * @author Vincent Berthet <vincent.berthet42@gmail.com>
+ */
+/**
  * @param {Define the kind of the request [Redirect,Notes,Player,Error,Unknown]} type 
  * @param {Details of the request} id 
  * @param {link to go} to 
  * @param {source link} from 
  * @param {main domain link} host 
  */
-
 
  /**
   * Initialize request.html depending of the request selected
@@ -47,7 +49,7 @@ function checkColor(type){
     let color=style.getPropertyValue('--'+type.toLocaleLowerCase()+'-color');
 
     if(color==""){
-        console.error("Color not found use '--primary-color' instead");
+        console.warn("Color not found use '--primary-color' instead");
         color=style.getPropertyValue('--primary-color');
     } 
 
