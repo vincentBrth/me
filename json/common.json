@@ -1,5 +1,11 @@
 {   
     "portfolio":{
+        "GithubAPI":{
+            "title":"Github API",
+            "description":"Use Github REST API to automatically generate portfolio with Github's project and keep update website and my repositories",
+            "href":"/github-api/index.html?id=RealVincentBerthet",
+            "wip":true
+        },
         "BCOM":{
             "ico":"img/ico_project/ico_bcom.png",
             "title":"NA",

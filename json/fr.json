@@ -3,22 +3,37 @@
             "text":"Hey ! Ici Vincent Berthet",
             "typed":["Je suis ingénieur en Imagerie Numérique.", "Bienvenue sur mon site.", "J'ose éspérer que tu l'apprécieras.","Peut-être nous nous rencontrerons un jour :D."]
     }, 
-    "navigation":{
-         "bio":{
-            "menu":"Bio",
-            "title":"Qui suis-je ?",
-            "content":"<p>&nbsp;&nbsp;&nbsp;&nbsp; Hey ! Je me présente Vincent, étudiant français de <span id='bio_age'></span> ans. Actuellement étudiant en 2nd année de cycle ingénieur Technologie de l'Information spécialité Imagerie Numérique au sein de l'Ecole Supérieur d’Ingénieurs de Rennes (ESIR - Rennes 1), je vous souhaite la bienvenue sur mon Portfolio !</p><p>Depuis plus de <span id='bio_duration'></span> ans, la programmation ainsi que l'univers du média et de l'électronique ont pris une place de plus en plus importante dans mon quotidien. En effet, depuis mes années lycéennes j'ai commencé petit à petit à mener divers projets personnels, qui m'ont donné l'opportunité de découvrir les bases de l'informatique.</p><p>C'est grâce à cette expérience et à mon cursus au Lycée (Baccalauréat Sciences de l'Ingénieur) que j'ai alors décidé dans un premier temps de poursuivre mes études en DUT Génie Electrique & Informatique Industrielle (GEII) afin d'explorer également d'autres domaines attisant ma curiosité telle l'automatisme, l'électronique, les systèmes embarqués.</p><p>Suite à la validation de mon DUT, j'ai pris l'initiative de réaliser une année à l'étranger en Game Development Bachelor's Degree au sein de l'University West of Scotland (UWS) de Glasgow. Cela m’a permis de découvrir cette spécialité ainsi que de développer mes qualités humaines et mon niveau d'anglais, langue omniprésente de nos jours et encore plus dans le domaine où j'exerce.</p><p>Tous ces challenges m'ont permis de m'enrichir et de comprendre mieux les aspects de la communication, autre compétence fondamentale.</p><p>Cheers</p>"
-         },
-         "portfolio":{
-            "menu":"Portfolio",
-            "title":"Mon Portfolio"
-         },     
-         "contact":{
-            "menu":"Contact",
-            "title":"Contact"
-         }
-     },
-    "lang":"<img src='img/vberthet/france-flag-round-xs.png' title='Cliquer pour passer en anglais'>",
+    "header":{
+        "bio":{
+            "anchor":"bio",
+            "anchorText":"bio",
+            "sectionTitle":"Qui suis-je ?"
+        },
+        "portfolio":{
+            "anchor":"portfolio",
+            "anchorText":"portfolio",
+            "sectionTitle":"Mon Portfolio"
+        },
+        "contact":{
+            "anchor":"contact",
+            "anchorText":"contact",
+            "sectionTitle":"Contact"
+        },
+        "nightshift":{
+            "onClick":"nightShift.toggle()",
+            "anchorText":"<div id='nightShift' class='navicon'>nightshift</i></div>"
+        },
+        "flag":{
+            "onClick":"language.switch()",
+            "aclass":"flag",
+            "anchorText":"<div class='navicon flag'><img src='img/vberthet/france-flag-round-xs.png' title='Cliquer pour passer en anglais'></div>"
+        }
+    },
+    "bio":{
+        "right":{
+            "text":"<p>&nbsp;&nbsp;&nbsp;&nbsp; Hey ! Je me présente Vincent, étudiant français de <span id='bio_age'></span> ans. Actuellement étudiant en 2nd année de cycle ingénieur Technologie de l'Information spécialité Imagerie Numérique au sein de l'Ecole Supérieur d’Ingénieurs de Rennes (ESIR - Rennes 1), je vous souhaite la bienvenue sur mon Portfolio !</p><p>Depuis plus de <span id='bio_duration'></span> ans, la programmation ainsi que l'univers du média et de l'électronique ont pris une place de plus en plus importante dans mon quotidien. En effet, depuis mes années lycéennes j'ai commencé petit à petit à mener divers projets personnels, qui m'ont donné l'opportunité de découvrir les bases de l'informatique.</p><p>C'est grâce à cette expérience et à mon cursus au Lycée (Baccalauréat Sciences de l'Ingénieur) que j'ai alors décidé dans un premier temps de poursuivre mes études en DUT Génie Electrique & Informatique Industrielle (GEII) afin d'explorer également d'autres domaines attisant ma curiosité telle l'automatisme, l'électronique, les systèmes embarqués.</p><p>Suite à la validation de mon DUT, j'ai pris l'initiative de réaliser une année à l'étranger en Game Development Bachelor's Degree au sein de l'University West of Scotland (UWS) de Glasgow. Cela m’a permis de découvrir cette spécialité ainsi que de développer mes qualités humaines et mon niveau d'anglais, langue omniprésente de nos jours et encore plus dans le domaine où j'exerce.</p><p>Tous ces challenges m'ont permis de m'enrichir et de comprendre mieux les aspects de la communication, autre compétence fondamentale.</p><p>Cheers</p>"
+        }
+    },
     "portfolio":{
         "BCOM":{
             "title":"b<>com contrat d'alternance",

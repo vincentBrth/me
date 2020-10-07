@@ -1,4 +1,4 @@
-@import url("style.css");
+@import url("/css/style.css");
 
 /* Navbar */
 .request-header-top-area {
@@ -24,6 +24,7 @@
 .request-center {
     text-align: center;
 }
+
 .request-logo {
     font-size: 80px;
     color:var(--subText-color);  
@@ -41,16 +42,16 @@
     color:var(--primary-color);
 }
 
-/* Video */
-.video-container {
+/* Iframe */
+.iframe-container {
     position: relative;
     padding-bottom: 56.25%; 
     overflow: hidden;
 }
 
-.video-container iframe,
-.video-container object,
-.video-container embed {
+.iframe-container iframe,
+.iframe-container object,
+.iframe-container embed {
     position: absolute;
     left: 0;
     height: 90%;

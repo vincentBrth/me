@@ -1,28 +1,23 @@
 /**
  * @author Vincent Berthet <vincent.berthet42@gmail.com>
  */
-/**
- * @param {Define the kind of the request [Redirect,Notes,Player,Error,Unknown]} type 
- * @param {Details of the request} id 
- * @param {link to go} to 
- * @param {source link} from 
- * @param {main domain link} host 
- */
 
- /**
-  * Initialize request.html depending of the request selected
-  */
+/**
+ * Initialize request.html depending of the request selected
+ * @param {string} type Define the kind of the request 
+ * @param {string} id Id requested 
+ * @param {string} to If there is a redirection
+ */
 function init(type,id,to){
-    if(type==undefined) type="";
-    this.type=type.toLocaleLowerCase();
+    if(type==undefined) type=``;
+    this.type=type;
     this.id=id;
     this.to=to;
     this.waitTime=10;
     this.x;
     document.title = this.id;
-    if(document.title=="null") document.title=this.type;
-    this.language.setLang(".request");
-    this.nightShift.update();
+    if(document.title==`null`) document.title=this.type;
+    this.language.setLang(`.request`);
     this.language.make();
 }
 
@@ -48,8 +43,8 @@ function checkColor(type){
     var style = getComputedStyle(document.body);
     let color=style.getPropertyValue('--'+type.toLocaleLowerCase()+'-color');
 
-    if(color==""){
-        console.warn("Color not found use '--primary-color' instead");
+    if(color==``){
+        console.warn(`Color not found use '--primary-color' instead`);
         color=style.getPropertyValue('--primary-color');
     } 
 
@@ -57,49 +52,59 @@ function checkColor(type){
 }
 
 /**
- * Make header of the page according to the type of the content to display
- * @param {string} type Type of the page 
- */
-function makeHeader(type){
-    $('#request_nav').html(type);
-}
-
-/**
  * Call after initalization to make the correct content of the page
  */
 async function make(){
+    const typeLowerCase=this.type.toLocaleLowerCase();
     let data=await this.language.getData();
-    let content=checkRequest(data[this.type],this.id);
+    let content=checkRequest(data[typeLowerCase],this.id);
 
-    if(this.type=="notes"){
+    if(typeLowerCase==`notes`){
         makeNotes(data);
     }else{
         if(!content){
             //Request invalid
-            console.error('Request invalid : {type}'+this.type,' - {id}'+this.id);
+            console.error('Request invalid : {type}'+typeLowerCase,' - {id}'+this.id);
             this.type='Unknown'
             makeUnknown(data['unknown']);
             makeCounter(); 
         }
 
-        if(this.type=="download"){
+        if(typeLowerCase==`download`){
             makeDownload(content);
-        }else if(this.type=="player"){
+        }else if(typeLowerCase==`player`){
             makePlayer(content);  
-        }else if(this.type=="webgl"){
+        }else if(typeLowerCase==`webgl`){
             makeWebGL(content);
-        }else if(this.type=="redirect"){
+        }else if(typeLowerCase==`redirect`){
             makeRedirect(content);
-            makeCounter();      
-        }else if(this.type=="page"){
+            makeCounter(this.to);      
+        }else if(typeLowerCase==`page`){
             makePage(content);
         }else {
             makeUnknown(data['unknown']);
             makeCounter(); 
         }
     }
-    makeHeader(this.type);
-    makeFooter(await this.language.getData("en"));
+
+    let header=(`
+                {
+                    "header":{
+                        "${this.type}":{
+                            "anchor":"home",
+                            "anchorText":"${this.type}",
+                            "liclass":"margin-right-30 active"
+                        },
+                        "nightshift":{
+                            "onClick":"nightShift.toggle()",
+                            "anchorText":"<div id='nightShift' class='navicon'>nightshift</i></div>"
+                        }
+                    }
+                }
+            `);
+
+    makeHeader(JSON.parse(header),true);
+    makeFooter(await this.language.getData(`en`));
     document.documentElement.style.setProperty('--primary-color', checkColor(type));
 }
 
@@ -108,40 +113,42 @@ async function make(){
  * @param {string array} data JSON file loaded
  */
 async function makeNotes(data){
-    let updates_html=[  "<div class='col-sm-6'>",
-                        "<h1>Updates</h1><br/>",
-                        "<ul>"        
-    ].join(''); 
-    let todo_html=[  "<div class='col-sm-6'>",
-                        "<h1>To Do</h1><br/>",
-                        "<ul>"        
-    ].join('');            
+    let updates_html=(`
+        <div class='col-sm-6'>
+            <h1>Updates</h1><br/>
+            <ul>  
+    `); 
+    let todo_html=(`
+        <div class='col-sm-6'>
+            <h1>To Do</h1><br/>
+            <ul>   
+    `);               
    
     let url=await this.language.getGithubURL();
     for(let key in data.notes){   
         let id=data.notes[key].id;
-        if(data.notes[key].github==true) id="<a href='"+url+"vberthet/releases/tag/"+id+"' target='_blank'>"+id+"</a>";  
-        updates_html += [
-            "<li>",
-                "<p>",
-                "<b><u>Version "+id+" :</b></u> "+data.notes[key].released+"<br/>",
-                data.notes[key].text,
-                "</p>",
-            "</li>"
-        ].join('');     
+        if(data.notes[key].github==true) id=`<a href='${url}vberthet/releases/tag/${id}' target='_blank'>${id}</a>`;  
+        updates_html += (`
+        <li>
+            <p>
+            <b><u>Version ${id} :</b></u> ${data.notes[key].released}<br/>
+            ${data.notes[key].text}
+            </p>
+        </li>
+        `);    
     }
-    updates_html +="</ul></div>";
+    updates_html +=`</ul></div>`;
     for(let key in data.todo){
 
-        todo_html += [
-            "<li>",
-                data.todo[key],
-            "</li>"
-        ].join('');       
+        todo_html += (`
+            <li>
+                ${data.todo[key]}
+            </li>
+        `);     
     }
-    todo_html+="</ul></div>";
+    todo_html+=`</ul></div>`;
     
-    $('#main_content').html("<div class='container'>"+updates_html+todo_html+"</div>");
+    $(`#home`).html(`<div class='container'>${updates_html}${todo_html}</div>`);
 } 
 
 /**
@@ -149,27 +156,27 @@ async function makeNotes(data){
  * @param {string array} data JSON file loaded 
  */
 async function makeDownload(data){
-    let main_html="";
+    let main_html=``;
     let public=await this.language.getGithubPublicURL();
        
     if(data.title!=undefined) document.title=data.title;
-    main_html += [
-            "<div class='container'>",
-                "<div class='request-center' style='margin-top:20%' col-md-12'>",
-                    "<div class='request-logo'>",
-                        "Download",
-                    "</div>",
-                    "<div class='request-title'>",
-                        "<h4>"+data.name+"</h4>",
-                    "</div>",
-                    "<p><h5><i>"+data.description+"</i></h5><p>",
-                    "<div>",
-                        "<a class='button button-style button-style-dark' href='"+public+data.href+"' onclick=''><i class='far fa-arrow-alt-circle-down'></i> "+data.type+"</a>",
-                    "</div>",
-                "</div>",
-            "</div>"
-            ].join('');
-            $('#main_content').html(main_html);
+    main_html += (`
+        <div class='container'>
+            <div class='request-center' style='margin-top:20%' col-md-12'>
+                <div class='request-logo'>
+                    Download
+                </div>
+                <div class='request-title'>
+                    <h4>${data.name}</h4>
+                </div>
+                <p><h5><i>${data.description}</i></h5><p>
+                <div>
+                    <a class='button button-style button-style-dark' href='${public}${data.href}' onclick=''><i class='far fa-arrow-alt-circle-down'></i> ${data.type}</a>
+                </div>
+            </div>
+        </div>
+    `);
+    $(`#home`).html(main_html);
 }
 
 /**
@@ -177,19 +184,19 @@ async function makeDownload(data){
  * @param {string array} data JSON file loaded 
  */
 function makePlayer(data){
-    let main_html="";
+    let main_html=``;
 
     if(data.title!=undefined) document.title=data.title;
-    main_html=[
-        "<div class='container'>",
-            "<h1>"+data.name+"</h1>",
-            "<p>"+data.description+"</p>",
-            "<div class='col-md-12 request-center video-container'>",
-                "<iframe width='854' height='480' src='"+data.href+"' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>",
-            "</div>",
-        "</div>"
-    ].join('');
-    $('#main_content').html(main_html)
+    main_html=(`
+        <div class='container'>
+            <h1>${data.name}</h1>
+            <p>${data.description}</p>
+            <div class='col-md-12 request-center iframe-container'>
+                <iframe width='854' height='480' src='${data.href}' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>
+            </div>,
+        </div>
+    `);
+    $(`#home`).html(main_html);
 }
 
 /**
@@ -197,9 +204,9 @@ function makePlayer(data){
  * @param {string array} data JSON file loaded 
  */
 async function makeWebGL(data){
-    let main_html="";
-    let width='960';
-    let height='643';
+    let main_html=``;
+    let width=`960`;
+    let height=`643`;
     let page=await this.language.getGithubPageURL();
     let githubURL=await this.language.getGithubURL();
 
@@ -208,15 +215,15 @@ async function makeWebGL(data){
     width=data.width != undefined ? data.width : width;
     height=data.height != undefined ? data.height : height;
 
-    main_html=[
-        "<div class='container'>",
-            "<h1>"+data.name+"</h1>",
-            "<p>"+data.description+"</p>",
-            "<p><a href='"+githubURL+data.href.split('/')[0]+"' target='_blank'><i class='fab fa-github'></i> Github source</a></p>",
-        "</div>",
-        "<div class='request-center video-container'><iframe src='"+href+"' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe></div>", 
-    ].join('');
-    $('#main_content').html(main_html)
+    main_html=(`
+        <div class='container'>
+            <h1>${data.name}</h1>
+            <p>${data.description}</p>
+            <p><a href='${githubURL}${data.href.split('/')[0]}' target='_blank'><i class='fab fa-github'></i> Github source</a></p>
+        </div>
+        <div class='request-center iframe-container'><iframe src='${href}' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe></div>
+    `);
+    $(`#home`).html(main_html);
 }
 
 /**
@@ -224,32 +231,29 @@ async function makeWebGL(data){
  * @param {string array} data JSON file loaded 
  */
 function makeRedirect(data){    
-    if(this.id=='WIP_Mobile'){
-        this.to='request.html?type=Redirect&id=Mobile&to='+this.to; 
-        this.id='WIP'
+    if(this.id==`WIP_Mobile`){
+        this.to=`request.html?type=Redirect&id=Mobile&to=${this.to}`; 
+        this.id=`WIP`
     } 
-    let main_html="";
-    main_html += [
-                    "<div class='container'>",
-                        "<div class='request-center' style='margin-top:20%' col-md-12'>",
-                            "<div class='request-logo'>",
-                                ""+this.id+"",
-                            "</div>",
-                            "<div class='request-title'>",
-                                "<h1>"+data.title+"</h1>",
-                            "</div>",
-                            "<p><h4><i>"+data.text+"</i></h4><p>",
-
-                            "<div class='counter'>",
-                                "<p>You will be automatically redirected in <span id='counter'>x</span> s</p>",
-                            "</div>",
-                                "<div>",
-                                    "<a class='button button-style button-style-dark' href='"+this.to+"'>"+data.button+"</a>",
-                                "</div>",
-                        "</div>",
-                    "</div>"
-                    ].join('');
-    $('#main_content').html(main_html);    
+    let main_html=``;
+    main_html += (`
+        <div class='container'>
+            <div class='request-center' style='margin-top:20%' col-md-12'>
+                <div class='request-logo'>${this.id}</div>
+                <div class='request-title'>
+                    <h1>${data.title}</h1>
+                </div>
+                <p><h4><i>${data.text}</i></h4><p>
+                <div class='counter'>
+                    <p>You will be automatically redirected in <span id='counter'>x</span> s</p>
+                </div>
+                    <div>
+                        <a class='button button-style button-style-dark' href='${this.to}'>${data.button}</a>
+                    </div>
+            </div>
+        </div>
+    `);
+    $(`#home`).html(main_html); 
 }
 
 /**
@@ -258,14 +262,13 @@ function makeRedirect(data){
  */
 function makePage(data){   
     this.type=data.type;
-    let main_html="";
-    main_html += [
-                    "<div class='container'>",
-                        "<h1>"+data.title+"</h1>",
-                        ""+data.text+"",
-                    "</div>"
-                    ].join('');
-    $('#main_content').html(main_html);    
+    let main_html=``;
+    main_html +=(`
+        <div class='container'>
+            <h1>${data.title}</h1>
+            <div>${data.text}</div>
+    `);
+    $(`#home`).html(main_html);    
 }
 
 /**
@@ -273,44 +276,42 @@ function makePage(data){
  * @param {string array} data JSON file loaded 
  */
 function makeUnknown(data){   
-    let main_html="";
-    main_html += [
-                    "<div class='container'>",
-                        "<div class='request-center' style='margin-top:20%' col-md-12'>",
-                            "<div class='request-logo'>",
-                                "Unknown",
-                            "</div>",
-                            "<div class='request-title'>",
-                                "<h1>"+data.title+"</h1>",
-                            "</div>",
-                            "<p><h4><i>"+data.text+"</i></h4><p>",
+    let main_html=``;
+    main_html += (`
+        <div class='container'>
+            <div class='request-center' style='margin-top:20%' col-md-12'>
+                <div class='request-logo'>Unknown</div>
+                <div class='request-title'>
+                    <h1>${data.title}</h1>
+                </div>
+                <p><h4><i>${data.text}</i></h4><p>
 
-                            "<div class='counter'>",
-                                "<p>You will be automatically redirected in <span id='counter'>x</span> s</p>",
-                            "</div>",
-                                "<div>",
-                                    "<a class='button button-style button-style-dark' href='./'>"+data.button+"</a>",
-                                "</div>",
-                        "</div>",
-                    "</div>"
-                    ].join('');
-    $('#main_content').html(main_html);    
+                <div class='counter'>
+                    <p>You will be automatically redirected in <span id='counter'>x</span> s</p>
+                </div>
+                <div>
+                    <a class='button button-style button-style-dark' href='/'>${data.button}</a>
+                </div>
+            </div>
+        </div>
+    `);
+    $(`#home`).html(main_html);    
 }
 
 /**
  *  Replace the hidden label 'counter' by the waiting time remaining before automatic action
  */
-function makeCounter() {
-    window.document.getElementById('counter').innerHTML = this.waitTime;
-    this.x = window.setInterval('count()', 1000);
+function makeCounter(to=`/`) {
+    window.document.getElementById(`counter`).innerHTML = this.waitTime;
+    this.x = window.setInterval(`count('${to}')`, 1001);
 }
 
 /**
  * Count until redirection
  */
-function count() {
+function count(to=`/`) {
     ((this.waitTime > 0)) ? (window.document.getElementById('counter').innerHTML = --this.waitTime) : (window.clearInterval(x));
     if (this.waitTime == 0) {
-        window.location = './';
+        window.location = to;
     }
 }

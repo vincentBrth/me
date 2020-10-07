@@ -3,22 +3,38 @@
             "text":"Hey ! This is Vincent Berthet",
             "typed":["I am an IT Digital Imaging engineer.", "Welcome to my website.", "Hope you will like it.","May we could meet one day :D."]
     }, 
-    "navigation":{
-         "bio":{
-            "menu":"Bio",
-            "title":"Who am I ?",
-            "content":"<p>&nbsp;&nbsp;&nbsp;Hey ! My name is Vincent, I am a <span id='bio_age'></span> years old French student. I am currently studying IT Digital Imaging in the Ecole Supérieur d’Ingénieurs de Rennes (ESIR – Rennes 1), and I wish you the welcome on my Portfolio!</p><p> For <span id='bio_duration'></span> years, computing and electronic and media have taken a more and more part on my free time. First of all, I have started as a self-educated and I did many projects to discover deeper both fields to understand what I would like to do as a professional.</p><p>In this way I have decided to continue my further studies in the first time in Electrical Engineering and Industrial Computing for 2 years, to learn more about computing and to find out new field like automation and embedded computing which I have interest in.</p><p>Finally, after this degree I decided to study one year in a foreign country in a Game Development Bachelor’s Degree in Glasgow (University of the West of Scotland). This was an incredible human experience where I have discovered deeper a culture, met a lot of international people as well as features of computing. Moreover, it obviously helped improve my English, which is an omnipresent skill in my daily life.</p><p>The whole of these challenges and choices have significantly enhanced my personality, especially to understand better aspects of communication and to make my professional project.</p><p>Cheers</p>"
-         },
-         "portfolio":{
-            "menu":"Portfolio",
-            "title":"My Portfolio"
-         },       
-         "contact":{
-            "menu":"Contact",
-            "title":"Contact"
-         }
-     },
-    "lang":"<img src='img/vberthet/united-kingdom-flag-round-xs.png' title='Click to switch to French'>",
+    "header":{
+        "bio":{
+            "anchor":"bio",
+            "anchorText":"bio",
+            "sectionTitle":"Who am I ?"
+        },
+        "portfolio":{
+            "anchor":"portfolio",
+            "anchorText":"portfolio",
+            "sectionTitle":"Portfolio"
+        },
+        "contact":{
+            "anchor":"contact",
+            "anchorText":"contact</div",
+            "sectionTitle":"Contact",
+            "liclass":"margin-right-30"
+        },
+        "nightshift":{
+            "onClick":"nightShift.toggle()",
+            "anchorText":"<div id='nightShift' class='navicon'>nightshift</i></div>"
+        },
+        "flag":{
+            "onClick":"language.switch()",
+            "aclass":"flag",
+            "anchorText":"<div class='navicon flag'><img src='img/vberthet/united-kingdom-flag-round-xs.png' title='Click to switch to French'></div>"
+        }
+    },
+    "bio":{
+        "right":{
+            "text":"<p>&nbsp;&nbsp;&nbsp;Hey ! My name is Vincent, I am a <span id='bio_age'></span> years old French student. I am currently studying IT Digital Imaging in the Ecole Supérieur d’Ingénieurs de Rennes (ESIR – Rennes 1), and I wish you the welcome on my Portfolio!</p><p> For <span id='bio_duration'></span> years, computing and electronic and media have taken a more and more part on my free time. First of all, I have started as a self-educated and I did many projects to discover deeper both fields to understand what I would like to do as a professional.</p><p>In this way I have decided to continue my further studies in the first time in Electrical Engineering and Industrial Computing for 2 years, to learn more about computing and to find out new field like automation and embedded computing which I have interest in.</p><p>Finally, after this degree I decided to study one year in a foreign country in a Game Development Bachelor’s Degree in Glasgow (University of the West of Scotland). This was an incredible human experience where I have discovered deeper a culture, met a lot of international people as well as features of computing. Moreover, it obviously helped improve my English, which is an omnipresent skill in my daily life.</p><p>The whole of these challenges and choices have significantly enhanced my personality, especially to understand better aspects of communication and to make my professional project.</p><p>Cheers</p>"
+        }
+    },
     "portfolio":{
         "BCOM":{
             "title":"b<>com training contract",

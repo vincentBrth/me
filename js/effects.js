@@ -16,7 +16,7 @@
             e.preventDefault();
         });
 
-        /* Scroll Naviagation Background Change with Sticky Navigation */          
+        /* Scroll Navigation Background Change with Sticky Navigation */          
         $(window).on('scroll', function () {
             if ($(window).scrollTop() > 100) {
                 $('.header-top-area').addClass('navigation-background');
@@ -27,9 +27,9 @@
 
         /* Mobile Navigation Hide or Collapse on Click */
         $(document).on('click', '.navbar-collapse.in', function (e) {
-            /*if ($(e.target).is('a') && $(e.target).attr('class') != 'dropdown-toggle') {
+            if ($(e.target).is('a') && $(e.target).attr('class') != 'dropdown-toggle') {
                 $(this).collapse('hide');
-            }*/
+            }
             $(this).collapse('hide');
         });
         $('body').scrollspy({
