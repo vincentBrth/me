@@ -3,7 +3,7 @@
         "GithubAPI":{
             "title":"Github API",
             "description":"Use Github REST API to automatically generate portfolio with Github's project and keep update website and my repositories",
-            "href":"/github-api/index.html?id=RealVincentBerthet",
+            "href":"https://realvincentberthet.github.io/github-api/index.html",
             "wip":true
         },
         "BCOM":{

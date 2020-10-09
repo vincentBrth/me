@@ -12,6 +12,9 @@
     transition: all 0.4s ease-out;
 }
 
+.navbar{
+    margin-bottom: 0px;
+}
 /* Body */
 .home-section{
     height:0px;

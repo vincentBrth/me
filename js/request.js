@@ -44,8 +44,8 @@ function checkColor(type){
     let color=style.getPropertyValue('--'+type.toLocaleLowerCase()+'-color');
 
     if(color==``){
-        console.warn(`Color not found use '--primary-color' instead`);
         color=style.getPropertyValue('--primary-color');
+        console.warn(`Color not found use '--primary-color' (${color}) instead`);
     } 
 
     return color;
@@ -262,11 +262,13 @@ function makeRedirect(data){
  */
 function makePage(data){   
     this.type=data.type;
+    document.title=this.type;
     let main_html=``;
     main_html +=(`
         <div class='container'>
             <h1>${data.title}</h1>
             <div>${data.text}</div>
+            <div id='page'>${data.page ? data.page : ''}</div>
     `);
     $(`#home`).html(main_html);    
 }

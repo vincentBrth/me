@@ -550,7 +550,7 @@ body.loaded #preloader{
 
 .bio-section {
 	overflow: hidden;
-    background-color:var(--bio-bkg-color);
+    background-color:var(--bkg-color-secondary);
 }
 
 .bio-section img {
@@ -614,7 +614,7 @@ ul.portfolio li.active:hover {
 }
 .portfolio .item {
     margin-top: 30px;
-    margin-bottom: 20px;
+    
     position: relative;
 }
 
@@ -665,6 +665,8 @@ ul.portfolio li.active:hover {
 }
 
 .form-control {
+    background-color: var(--bkg-color-secondary);
+    color: var(--text-color);
 	border: 2px solid transparent;
 	height: 50px;
 	border-radius: 2px; -webkit-border-radius: 2px; -moz-border-radius: 2px; -ms-border-radius: 2px; -o-border-radius: 2px;
@@ -810,8 +812,8 @@ ul.portfolio li.active:hover {
 }
 
 /* 10. Theme */
-.primary-color{
-    color: var(--primary-color);
+tr.odd{
+    background-color: var(--bkg-color-secondary) !important
 }
 
 .primary-color{
@@ -824,15 +826,15 @@ ul.portfolio li.active:hover {
     }
     body {
       --text-color: #eee;
-      --bkg-color: #0a0a0a;
-      --bio-bkg-color: #050505;
+      --bkg-color: #0f0f0f;
+      --bkg-color-secondary: #1f1e1e;
       --subText-color: #eee;
       --button-color:#000;
     }
     body.light-theme {
       --text-color: #222;
       --bkg-color: #fff;
-      --bio-bkg-color: #F9F9F9;
+      --bkg-color-secondary: #F9F9F9;
       --subText-color:#333;
       --button-color:#fff;
     }
