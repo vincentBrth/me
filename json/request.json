@@ -4,7 +4,8 @@
             "type":"GitHub API",
             "title":"GitHub Repositories",
             "text":"<p>You can find below all of my Github public repositories.</p><p>This page uses <a href='https://docs.github.com/en/free-pro-team@latest/rest/'>v3 GitHub REST API</a> to display in one view page details of my projects. This project aimed to manage updates of my <a href='/index.html#portfolio'>portfolio</a> / <a href='/request.html?type=Notes'>releases notes</a> with my GitHub repositories automatically.</p>",
-            "page":"<script type='text/javascript' src='/plugin/jQuery/2.2.4/js/jquery.min.js'><script src='/github-api/api.js'></script></script><script type='text/javascript'>$('#page').load('https://realvincentberthet.github.io/github-api/index.html');</script>"
+            "page":"<iframe src='https://realvincentberthet.github.io/github-api/'' name='targetframe' allowTransparency='true' scrolling='no' frameborder='0' width='100%'' height='100%'' ></iframe>",
+            "github":true
         }
     },
     "unknown":{

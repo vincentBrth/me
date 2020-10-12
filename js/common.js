@@ -5,10 +5,10 @@ console.info(`Hi there ! You are welcome to examine the code`);
 
 // Initialization
 let available_lang = new Map();
-available_lang.set(`en`,`/json/en.json`);
-available_lang.set(`fr`,`/json/fr.json`);
-available_lang.set(`.common`,`/json/common.json`);
-available_lang.set(`.request`,`/json/request.json`);
+available_lang.set(`en`,`json/en.json`);
+available_lang.set(`fr`,`json/fr.json`);
+available_lang.set(`.common`,`json/common.json`);
+available_lang.set(`.request`,`json/request.json`);
 this.language = new Language(available_lang,`en`);
 this.language.update = function(){update();}
 this.language.make = function(){make();}
@@ -338,7 +338,7 @@ function makeHeader(data,isRequest=false){
                     <div class='margin-left-20'>
                         <div class='row'>
                             <div class='logo col-sm-4'>
-                                <a class='smoth-scroll' href='${isRequest ? '/' : '#home'}'><img src='/img/vberthet/vb_black.png'>Vincent <b>Berthet</b></a>
+                                <a class='smoth-scroll' href='${isRequest ? './' : '#navigation'}'><img src='img/vberthet/vb_black.png'>Vincent <b>Berthet</b></a>
                             </div>
                             <div class='col-sm-8'>
                                 <div class='navigation-menu'>
@@ -390,7 +390,7 @@ function makeRelease(){
     current_release=`X`;
     $(`#release`).html(current_release);
 
-    let json=$.getJSON(`/json/request.json`);
+    let json=$.getJSON(`json/request.json`);
     json.done(function(data) {
         for(let i in data.notes){
             current_release=data.notes[i].id;
@@ -404,13 +404,24 @@ function makeRelease(){
 *    Make the footer of the page
 *    @param {string} data The data of the *current*.json
 */
-function makeFooter(data){ 
+function makeFooter(data,isRequest=false){ 
     let html=(`
         <div class='container text-center'>
-            &copy; ${new Date().getFullYear()}<a class='smoth-scroll' href='/'> Vincent Berthet Website</a> - <a href='/request.html?type=Notes' >V<span id='release'></span></a> | ${data.footer}<a class='smoth-scroll' href='/'> Vincent Berthet</a>
+            &copy; ${new Date().getFullYear()}<a class='smoth-scroll' href='${isRequest ? './' : '#navigation'}'> Vincent Berthet Website</a> - <a href='request.html?type=Notes' >V<span id='release'></span></a> | ${data.footer}<a class='smoth-scroll' href='${isRequest ? './' : '#navigation'}'> Vincent Berthet</a>
         </div> 
     `);
 
     $(`#footerContent`).html(html);
     makeRelease();
+    
+    //Refresh effect.js/Smooth Scroll
+    jQuery(document).ready(function () {
+        $(`a.smoth-scroll`).on(`click`, function (e) {
+            var anchor = $(this);
+            $(`html, body`).stop().animate({
+                scrollTop: $(anchor.attr(`href`)).offset().top - 50
+            }, 1000);
+            e.preventDefault();
+        });
+    });
 }

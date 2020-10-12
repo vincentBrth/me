@@ -12,7 +12,7 @@
         "portfolio":{
             "anchor":"portfolio",
             "anchorText":"portfolio",
-            "sectionTitle":"Portfolio"
+            "sectionTitle":"My Portfolio"
         },
         "contact":{
             "anchor":"contact",
@@ -138,10 +138,10 @@
                         "title":"My channel"
                     },        
                     "Instagram":{
-                        "title":"Discovers my photos"
+                        "title":"Discover my photos"
                     },
                     "Github":{
-                        "title":"Discovers my projects"
+                        "title":"Discover my projects"
                     }
                 }
     },

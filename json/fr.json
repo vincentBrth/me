@@ -17,7 +17,8 @@
         "contact":{
             "anchor":"contact",
             "anchorText":"contact",
-            "sectionTitle":"Contact"
+            "sectionTitle":"Contact",
+            "liclass":"margin-right-30"
         },
         "nightshift":{
             "onClick":"nightShift.toggle()",

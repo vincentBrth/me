@@ -88,23 +88,23 @@ async function make(){
     }
 
     let header=(`
-                {
-                    "header":{
-                        "${this.type}":{
-                            "anchor":"home",
-                            "anchorText":"${this.type}",
-                            "liclass":"margin-right-30 active"
-                        },
-                        "nightshift":{
-                            "onClick":"nightShift.toggle()",
-                            "anchorText":"<div id='nightShift' class='navicon'>nightshift</i></div>"
+                    {
+                        "header":{
+                            "${this.type}":{
+                                "anchor":"home",
+                                "anchorText":"${this.type}",
+                                "liclass":"margin-right-30 active"
+                            },
+                            "nightshift":{
+                                "onClick":"nightShift.toggle()",
+                                "anchorText":"<div id='nightShift' class='navicon'>nightshift</i></div>"
+                            }
                         }
                     }
-                }
-            `);
+                `);
 
     makeHeader(JSON.parse(header),true);
-    makeFooter(await this.language.getData(`en`));
+    makeFooter(await this.language.getData(`en`),true);
     document.documentElement.style.setProperty('--primary-color', checkColor(type));
 }
 
@@ -260,17 +260,28 @@ function makeRedirect(data){
  * Make a blank page
  * @param {string array} data JSON file loaded 
  */
-function makePage(data){   
+async function makePage(data){   
     this.type=data.type;
     document.title=this.type;
+   
     let main_html=``;
     main_html +=(`
         <div class='container'>
             <h1>${data.title}</h1>
-            <div>${data.text}</div>
-            <div id='page'>${data.page ? data.page : ''}</div>
+            <div>${data.text}</div>  
+        </div>
+        <div id='page'>${data.page ? data.page : ''}</div> 
     `);
-    $(`#home`).html(main_html);    
+       
+    $(`#home`).html(main_html); 
+    /*
+    console.log(data); 
+    if(data.github){
+
+        let githubSources=`<p><a href='${githubURL}${data.href.split('/')[0]}' target='_blank'><i class='fab fa-github'></i> Github source</a></p>`;
+        $(`#github`).html(main_html); 
+    }  
+    */
 }
 
 /**
@@ -292,7 +303,7 @@ function makeUnknown(data){
                     <p>You will be automatically redirected in <span id='counter'>x</span> s</p>
                 </div>
                 <div>
-                    <a class='button button-style button-style-dark' href='/'>${data.button}</a>
+                    <a class='button button-style button-style-dark' href='./'>${data.button}</a>
                 </div>
             </div>
         </div>
@@ -303,7 +314,7 @@ function makeUnknown(data){
 /**
  *  Replace the hidden label 'counter' by the waiting time remaining before automatic action
  */
-function makeCounter(to=`/`) {
+function makeCounter(to=`./`) {
     window.document.getElementById(`counter`).innerHTML = this.waitTime;
     this.x = window.setInterval(`count('${to}')`, 1001);
 }
@@ -311,7 +322,7 @@ function makeCounter(to=`/`) {
 /**
  * Count until redirection
  */
-function count(to=`/`) {
+function count(to=`./`) {
     ((this.waitTime > 0)) ? (window.document.getElementById('counter').innerHTML = --this.waitTime) : (window.clearInterval(x));
     if (this.waitTime == 0) {
         window.location = to;

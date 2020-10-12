@@ -104,7 +104,7 @@ async function makePortfolio(data,data_c){
                 //common content
                 const c=data_c.portfolio[key];
                 const filter=c.filter != undefined ? c.filter : ``;
-                const ico=c.ico != undefined ? c.ico : `/img/ico_project/ico_wip.png`;
+                const ico=c.ico != undefined ? c.ico : `img/ico_project/ico_wip.png`;
                 const skills=c.skills;
                 let href=c.href;
 
