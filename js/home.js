@@ -55,7 +55,7 @@ async function make(){
     let data_common=await this.language.getData(`.common`);
     
     makeHeader(data_lang);
-    makePreview(data_lang);
+    makePreview(data_lang,true);
     makeBio(data_lang);
     makePortfolio(data_lang,data_common);
     makeContact(data_lang,data_common);
@@ -71,8 +71,10 @@ async function make(){
 *    Build the preview text of the header section
 *    @param {string array} data The content of the *lang*.json used 
 */
-function makePreview(data){
-    $(`#preview_text_content`).html(data.preview.text);
+function makePreview(data,seekingjob=false){
+    let d=data.preview.text;
+    if(seekingjob && data.preview.job) d+=data.preview.job;
+    $(`#preview_text_content`).html(d);
     
     this.typed.strings=data.preview.typed;
     this.typed.reset();

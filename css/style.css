@@ -825,7 +825,7 @@ tr.odd{
         --primary-color: #24b662; 
     }
     body {
-      --text-color: #eee;
+      --text-color: #F2F0ED;
       --bkg-color: #0f0f0f;
       --bkg-color-secondary: #1f1e1e;
       --subText-color: #eee;
@@ -843,8 +843,8 @@ tr.odd{
 /* 11 .Responsive */
 @media only screen and (min-width:1680px) and (max-width: 1922px) {
     .bio-section p {
-           line-height: 30px;
-           font-size: 18px;
+           line-height: 29px;
+           font-size: 16px;
     }
 }
 
@@ -858,8 +858,8 @@ tr.odd{
 @media only screen and (min-width:991px) and (max-width: 1366px) {
      .bio-section p {
         padding-top: 10px;
-            line-height: 18px;
-            font-size: 14px;
+        line-height: 17px;
+        font-size: 13px;
      }
 }
 

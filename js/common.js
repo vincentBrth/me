@@ -40,6 +40,7 @@ function Language(langs){
         this.current=navigator.language;
     }else{
         this.current=langs.keys().next().value;
+        console.info(`navigator.language (${navigator.language}) not found in available languages, '${this.current}' set as default language`);
     }
     this.langs = langs;
         
