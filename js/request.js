@@ -17,7 +17,6 @@ function init(type,id,to){
     this.x;
     document.title = this.id;
     if(document.title==`null`) document.title=this.type;
-    this.language.setLang(`.request`);
     this.language.make();
 }
 
@@ -56,7 +55,7 @@ function checkColor(type){
  */
 async function make(){
     const typeLowerCase=this.type.toLocaleLowerCase();
-    let data=await this.language.getData();
+    let data=await this.language.getData(`.request`);
     let content=checkRequest(data[typeLowerCase],this.id);
 
     if(typeLowerCase==`notes`){

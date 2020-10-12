@@ -34,16 +34,23 @@ this.nightShift=new NightShift();
 *    @param {map} langs Mapping of language and his json
 *    @param {string} current The name of the language [en,fr,..]
 */
-function Language(langs){
-    if(langs.has(navigator.language)){
-        console.info(`navigator.language (${navigator.language}) found and loaded as default language`);
-        this.current=navigator.language;
-    }else{
-        this.current=langs.keys().next().value;
-        console.info(`navigator.language (${navigator.language}) not found in available languages, '${this.current}' set as default language`);
-    }
+function Language(langs){ 
     this.langs = langs;
-        
+    if(this.langs.has(localStorage.getItem(`lang`))){
+        this.current=localStorage.getItem(`lang`);
+        console.info(`localStorage lang (${localStorage.getItem(`lang`)}) found and loaded as default language`);
+    }else{
+        //not found use navigator parameters
+        if(langs.has(navigator.language)){
+            console.info(`navigator.language (${navigator.language}) found and loaded as default language`);
+            this.current=navigator.language;
+        }else{
+            this.current=langs.keys().next().value;
+            console.info(`navigator.language (${navigator.language}) not found in available languages, '${this.current}' set as default language`);
+        }
+    }
+    localStorage.setItem(`lang`,this.current);
+
     let promises=[];
     for(let [key, path] of this.langs){
         promises.push(new Promise((resolve) => {
@@ -69,9 +76,10 @@ function Language(langs){
 Language.prototype.setLang = function(current){
     if(typeof this.langs.get(current) != `undefined`){
         this.current=current;
+        localStorage.setItem(`lang`,this.current);
     }else{
         console.error(`${current} is not a valid language of the map used : ${this.langs}`);
-    }
+    }   
 }
 
 /**
