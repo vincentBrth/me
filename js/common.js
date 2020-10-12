@@ -9,7 +9,7 @@ available_lang.set(`en`,`json/en.json`);
 available_lang.set(`fr`,`json/fr.json`);
 available_lang.set(`.common`,`json/common.json`);
 available_lang.set(`.request`,`json/request.json`);
-this.language = new Language(available_lang,`en`);
+this.language = new Language(available_lang);
 this.language.update = function(){update();}
 this.language.make = function(){make();}
 this.nightShift=new NightShift();
@@ -34,8 +34,13 @@ this.nightShift=new NightShift();
 *    @param {map} langs Mapping of language and his json
 *    @param {string} current The name of the language [en,fr,..]
 */
-function Language(langs,current=`en`){
-    this.current=current;
+function Language(langs){
+    if(langs.has(navigator.language)){
+        console.info(`navigator.language (${navigator.language}) found and loaded as default language`);
+        this.current=navigator.language;
+    }else{
+        this.current=langs.keys().next().value;
+    }
     this.langs = langs;
         
     let promises=[];
@@ -320,7 +325,7 @@ function getAge(dt,format) {
 function makeHeader(data,isRequest=false){
     let anchorsList=``;
     const previousActive=$(`.nav li.active`).attr(`id`);
-
+    
     for(i in data.header)
     {
         const aclass=data.header[i].class ? data.header[i].class : data.header[i].anchor ? `smoth-scroll` : ``;
