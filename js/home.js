@@ -38,28 +38,28 @@ async function init(){
                                         2.Build content 
     ******************************************************************************************* 
 */
-/**
-*   Update the content with the current language
-*   @Warning the page must has been make at least once
-*/
-function update(){
-    $(`#portfolio_content`).mixItUp(`destroy`);
-    this.language.make();
-}
+    /**
+    *   Update the content with the current language
+    *   @Warning the page must has been make at least once
+    */
+    function update(){
+        $(`#portfolio_content`).mixItUp(`destroy`);
+        this.language.make();
+    }
 
 /**
 *	Make the different section of the page with the current language
 */
 async function make(){
+    let data=await this.language.getData(`.core`);
     let data_lang=await this.language.getData();
-    let data_common=await this.language.getData(`.common`);
     
-    makeHeader(data_lang);
-    makePreview(data_lang,true);
-    makeBio(data_lang);
-    makePortfolio(data_lang,data_common);
-    makeContact(data_lang,data_common);
-    makeFooter(data_lang);
+    makeHeader(data_lang[`header`]);
+    makePreview(data_lang[`preview`],true);
+    makeBio(data_lang[`header`],data_lang[`bio`]);
+    makePortfolio(data_lang[`header`],data_lang[`portfolio`],data[`portfolio`]);
+    makeContact(data_lang[`header`],data_lang[`contact`],data[`contact`],data_lang[`social`],data[`social`]);
+    makeFooter(data_lang[`footer`]);
 }
 
 /*
@@ -69,69 +69,68 @@ async function make(){
 */
 /**
 *    Build the preview text of the header section
-*    @param {string array} data The content of the *lang*.json used 
-*/
-function makePreview(data,seekingjob=false){
-    let d=data.preview.text;
-    if(seekingjob && data.preview.job) d+=data.preview.job;
+*    @param {string array} content_preview The content of the JSON [en,fr] used
+*    @param {boolean} seekingjob Set to true to display additionnal line
+*/  
+function makePreview(content_preview,seekingjob=false){
+    let d=content_preview.text;
+    if(seekingjob && content_preview.job) d+=content_preview.job;
     $(`#preview_text_content`).html(d);
     
-    this.typed.strings=data.preview.typed;
+    this.typed.strings=content_preview.typed;
     this.typed.reset();
 }
 
 /**
 *    Build the Bio section
-*    @param {string array} data The content of the *lang*.json used 
+*    @param {string array} content_header The content of the JSON [en,fr] used
+*    @param {string array} content_bio The content of the JSON [en,fr] used
 */
-function makeBio(data){
-    $(`#bio_right`).html(`<h2>`+data.header.bio.sectionTitle+`</h2>`+data.bio.right.text);
+function makeBio(content_header,content_bio){
+    $(`#bio_right`).html(`<h2>`+content_header.bio.sectionTitle+`</h2>`+content_bio.right.text);
     $(`#bio_age`).html(getAge(`20/02/1996`,`year`));
     $(`#bio_duration`).html(getAge(`20/02/1996`,`year`)-14);
 }
 
 /**
 *    Build the Portfolio section
-*    @param {string array} data The content of the *lang*.json used 
-*    @param {string array} data_c The content of common.json
+*    @param {string array} content_header The content of the JSON [en,fr] used
+*    @param {string array} content_portfolio The content of the JSON [en,fr] used
+*    @param {string array} content_c_portfolio The content of the JSON [core] used
 */
-async function makePortfolio(data,data_c){
-    let portfolio_html=``;
+async function makePortfolio(content_header,content_portfolio,content_c_portfolio){
+    let html=``;
     const page=`request.html`;
     const make=document.getElementById(`portfolio_content`) && document.getElementById(`portfolio_content`).innerHTML.length==0;
     
     if(make){
         //**MAKE CONTENT
-        for(let key in data_c.portfolio){
-                //common content
-                const c=data_c.portfolio[key];
+        for(let key in content_c_portfolio){
+                //core content
+                const c=content_c_portfolio[key];
                 const filter=c.filter != undefined ? c.filter : ``;
                 const ico=c.ico != undefined ? c.ico : `img/ico_project/ico_wip.png`;
                 const skills=c.skills;
                 let href=c.href;
-
-                //create url
-                if(href){
+                
+                if(content_c_portfolio[key].request){
+                    //Is a call to request.html
+                    href=`${page}?id=${key}`;
+                }else if(href){
+                    //create url
                     if(c.githubPage){
                         //isGithubPage
                         href=await this.language.getGithubPageURL()+href;
-                    }else if(c.github && !c.webgl){
-                        //isWeblgl hosted on githubpage
+                    }else if(c.github){
+                        //link to github
                         href=await this.language.getGithubURL()+href;
                     } 
                 }else{
-                    href+=`/${page}?type=error&id=404`;
+                    href+=`/${page}?id=404`;
                 }
-
-                let url=``;  
-                if(c.wip) url+=page+"?type=Redirect&id=WIP&to=";
-                if(c.mobile) url= url.length >0 ? page+"?type=Redirect&id=WIP_Mobile&to=" : page+"?type=Redirect&id=Mobile&to=";
-                if(c.player) url+=page+"?type=Player&id=";
-                if(c.webgl) url+=page+"?type=WebGL&id=";
-                url+=href;
-              
+            
                 if(c.hide== undefined || c.hide==false){
-                    portfolio_html +=
+                    html +=
                         (`
                             <div id='${key}-project' class='col-md-4 col-sm-6 col-xs-12 mix ${filter}'>
                                 <div class=''>
@@ -140,12 +139,12 @@ async function makePortfolio(data,data_c){
                                         <figcaption>
                                         <div>
                                             <div class='icon-links'>
-                                                <a href='${url}' target='_blank'><i class='fas fa-external-link-alt'></i></a>
+                                                <a href='${href}' target='_blank'><i class='fas fa-external-link-alt'></i></a>
                                             </div>
                                             <h2 id='${key}-title'>WIP</h2>
                                             <span>
                                                 ${skills ? `<p>${skills}</p>` : ``}
-                                                <p id='${key}-description'>WIP</p>
+                                                <p id='${key}-abstract'>WIP</p>
                                             </span>
                                         </div>
                                         </figcaption>		
@@ -157,27 +156,27 @@ async function makePortfolio(data,data_c){
         }
     }
 
-    $(`#portfolio_title_content`).html(`<h2>${data.header.portfolio.sectionTitle}</h2>`);
-    if(make) $(`#portfolio_content`).html(portfolio_html);
+    $(`#portfolio_title_content`).html(`<h2>${content_header.portfolio.sectionTitle}</h2>`);
+    if(make) $(`#portfolio_content`).html(html);
     $(`#portfolio_content`).mixItUp();
 
     //**UPDATE CONTENT of figure
-    for(let key1 in data.portfolio){
-        for(let key2 in data_c.portfolio){
-            const githubIco= data_c.portfolio[key2].github ==true ? `<i class='fab fa-github'></i>` :``;
+    for(let key1 in content_portfolio){
+        for(let key2 in content_c_portfolio){
+            const githubIco= content_c_portfolio[key2].github ==true ? `<i class='fab fa-github'></i>` :``;
             if(key1==key2){   
-                $(`#${key1}-title`).html(`${githubIco} ${data.portfolio[key1].title}`);
-                $(`#${key1}-description`).html(`${data.portfolio[key1].description}`);
+                $(`#${key1}-title`).html(`${githubIco} ${content_portfolio[key1].title}`);
+                $(`#${key1}-abstract`).html(`${content_portfolio[key1].abstract}`);
             }else{
-                //check if only present in common.json
+                //check if only present in core.json
                 let found=false;
-                for(let k in data.portfolio){
+                for(let k in content_portfolio){
                     if(k==key2) found=true;
                 }
 
                 if(!found){
-                    $(`#${key2}-title`).html(`${githubIco} ${data_c.portfolio[key2].title}`);
-                    $(`#${key2}-description`).html(`${data_c.portfolio[key2].description}`);
+                    $(`#${key2}-title`).html(`${githubIco} ${content_c_portfolio[key2].title}`);
+                    $(`#${key2}-abstract`).html(`${content_c_portfolio[key2].abstract}`);
                 }
             }
         }        
@@ -186,21 +185,23 @@ async function makePortfolio(data,data_c){
 
 /**
 *    Build the contact section
-*    @param {string array} data The content of the *lang*.json used 
-*    @param {string array} data The content of the common.json
+*    @param {string array} content_header The content of the JSON [en,fr] used 
+*    @param {string array} content_contact The content of the JSON [en,fr] used
+*    @param {string array} content_c_contact The content of the JSON [core] used
+*    @param {string array} content_social The content of the JSON [en,fr] used
+*    @param {string array} content_c_social The content of the JSON [core] used
 */
-function makeContact(data,data_c){
-    let contact_social_html=``;
-    let contact_info_html=``;
-    //contact info
-    for(let key in data_c.contact.info){
-        let c=data_c.contact.info[key];
-        let class_css=c.class;
+function makeContact(content_header,content_contact,content_c_contact,content_social,content_c_social){
+    //*******contact info
+    let html=``;
+    for(let key in content_c_contact){
+        let c=content_c_contact[key];
+        const class_css=c.class;
         let href=c.href;
         let title=c.title;
         let text=c.text;
-
-        let lang=data.contact.info[key];
+        
+        let lang=content_contact[key];
         if(lang!=undefined){
             href=lang.href != undefined ? lang.href : href;
             title=lang.title != undefined ? lang.title : title;
@@ -215,9 +216,10 @@ function makeContact(data,data_c){
         let style=``;
         if(key==`resume`){
             style=`style='color: var(--primary-color);'`;
+            href='request.html?id=CV';
         }
 
-        contact_info_html += (`
+        html += (`
             <div class='col-md-4 col-sm-4'>
                 <div class='contact-detail flag'>  
                     <a href='${href}' target='_blank' title='${title}'>
@@ -228,21 +230,23 @@ function makeContact(data,data_c){
         `);       
     }
     
-    //social icons
-    contact_social_html='';
-     for(let key in data_c.contact.social){ 
-        const c=data_c.contact.social[key];
-        const social_title=data.contact.social[key].title ? data.contact.social[key].title : c.title;
+    $(`#contact_title_content`).html(`<h2>${content_header.contact.sectionTitle}</h2>`);
+    $(`#contact_info_content`).html(html);
 
-        contact_social_html += (`
+    //*******social info
+    html=``;
+    for(let key in content_c_social){ 
+        const c=content_c_social[key];
+        const social_title=content_social[key].title ? content_social[key].title : c.title;
+
+        html += (`
             <li>
                 <a href='${c.href}${c.username}' target='_blank' class='${c.class}' title='${social_title}'><i class='${c.class_ico}'></i></a>
             </li>
         `);
     }
-    $(`#contact_title_content`).html(`<h2>`+data.header.contact.sectionTitle+`</h2>`);
-    $(`#contact_info_content`).html(contact_info_html);
-    $(`#contact_social_content`).html(contact_social_html);
+
+    $(`#contact_social_content`).html(html);
 }
 
 /*

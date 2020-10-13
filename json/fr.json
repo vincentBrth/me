@@ -38,113 +38,160 @@
     "portfolio":{
         "BCOM":{
             "title":"b<>com contrat d'alternance",
-            "description":"Contrat d'alternance (2019-2020)<br/>Rapport et slides de mes missions effectué durant mon alternance chez l'<a href='https://b-com.com/fr' target='_blank'>IRT b<>com</a>"
+            "abstract":"Contrat d'alternance (2019-2020)<br/>Rapport et slides de mes missions effectué durant mon alternance chez l'<a href='https://b-com.com/fr' target='_blank'>IRT b<>com</a>",
+            "request":{
+                "description":"<p>Rapport et présentation de mon contrat de professionalisation à <a target='_blank' href='https://b-com.com/'>b<>com</a> (French)</p><div>J'ai travaillé pendant un an en tant qu'ingénieur R&D au sein du laboratoire Immersive Medical Technologies spécialisé en vision par ordinateur et en vidéo. Au cours de cette année, j'ai contribué au développement d'un Framework C++17 open-source : <a href='http://www.solarframework.org/'>SolAR Framework</a>. Mes principaux travaux ont concerné le développement d'un plugin Unity pour Android, le support de l'intégration continu du framework et la réalisation d'un sample utilisant les caméras de profondeurs <a href='https://www.intelrealsense.com/'>Intel RealSense</a>"
+            }
         },
-        "AsymetrieICP":{
+        "Asymetrie_ICP":{
             "title":"Asymétrie ICP",
-            "description":"Ce projet repose sur le papier “An algorithm to map asymmetries of bilateral objects in point clouds” - Benoît Combès & al.<br/>Cet algorithme permet de quantifier automatiquement les asymétries d'une structure bilateral dans un nuage de point par Iterative Closest Point (ICP)"
+            "abstract":"Ce projet repose sur le papier “An algorithm to map asymmetries of bilateral objects in point clouds” - Benoît Combès & al.<br/>Cet algorithme permet de quantifier automatiquement les asymétries d'une structure bilateral dans un nuage de point par ICP"
         },
-        "LunaAndHelios":{
+        "Luna_And_Helios":{
             "title":"A Story of Luna & Helios",
-            "description":"Jeu réalisé lors de la Game Jam 2020 d'Orange.<br/>L'objectif de cet évenement était de créer un jeu vidéo en 35 heures, sur le sujet : Safe in the dark"
+            "abstract":"Jeu réalisé lors de la Game Jam 2020 d'Orange.<br/>L'objectif de cet évenement était de créer un jeu vidéo en 35 heures, sur le sujet : Safe in the dark",
+            "request":{
+                "description":"<p>Ce jeu a été réalisé lors de la game Jam 2020 d'Orange de l'ESIR. L'objectif de cet évenement était de réaliser un jeu vidéo en seulement 35 heures sur le theme : <b>Safe in the dark</b></p><p><b>Plus d'information sont disponible dans le README dédié du GitHub</b></p><p><a href='https://www.youtube.com/watch?v=EwTJOxKciyE&feature=youtu.be' target='_blank'><i class='fab fa-youtube'></i> Vidéo de gameplay</a></p>"
+            }
         },
         "Tensors":{
-            "title":"Tensor directed stylization",
-            "description":"This project rely on \"Tensors-directed simulation of strokes for image stylization with hatching and contours\" - David TSCHUMPERLE in September 2011 \n Its describe an algorithm to generate sketches from color images directed by an image-dependent tensor-valued geometry"
+            "title":"Stylisation dirigée par tenseurs",
+            "abstract":"Ce project repose sur le papier \"Tensors-directed simulation of strokes for image stylization with hatching and contours\" - David TSCHUMPERLE de Septembre 2011 \n Cette publication décris un algorithme pour générer des dessins à partir d'image basé sur ses tenseurs géométriques"
         },
         "HDR":{
             "title":"HDR",
-            "description":"Expérimentation de l'imagerie à grande gamme dynamique (HDR) avec la librairie OpenCV"
+            "abstract":"Expérimentation de l'imagerie à grande gamme dynamique (HDR) avec la librairie OpenCV"
         },
         "Askelys":{
             "title":"Askelys Rapport",
-            "description":"Rapport de stage au sein de l'entreprise <a href='http://askelys.com/' target='_blank'>Askelys</a> exerçant dans le domaine du Web Sémantique. Développement de d'un prototype WebGL sous Unity."
+            "abstract":"Rapport de stage au sein de l'entreprise <a href='http://askelys.com/' target='_blank'>Askelys</a> exerçant dans le domaine du web sémantique. Développement d'un prototype WebGL sous Unity.",
+            "request":{
+                "description":"<p>Rapport de stage (4 mois)</p>Rapport de stage au sein de l'entreprise <a href='http://askelys.com/' target='_blank'>Askelys</a> exerçant dans le domaine du web sémantique. Développement d'un prototype WebGL sous Unity utilisant la librairie Javascript de l'entreprise dédié au web sémantique.</p>"      
+            }
         },
         "Kubic":{
             "title":"Kubic Unity",
-            "description":"Projet Unity, l'objectif de ce projet était d'utiliser le navmesh"
+            "abstract":"Projet Unity, l'objectif de ce projet était d'utiliser le navmesh",
+            "request":{
+                "description":"<p><a href='https://docs.unity3d.com/ScriptReference/Application-streamingAssetsPath.html' target='_blank'>Streaming access ne sont pas utilisable avec Unity WebGL</a>.<br/>Ce jeu a été développé pour Windows, veuillez utiliser <a href='https://github.com/RealVincentBerthet/Kubic/blob/master/Kubic/Windows/Kubic.zip' target='_blank'>l'éxecutable Windows</a> pour avoir accès aux options, sons et autre fonctionalités</p><p>L'objectif de ce projet Unity était d'utiliser le navmesh.</br><b>Plus d'informations sont disponible dans le README dédié du GitHub </b></p>"
+            }
         },
         "Ray":{
             "title":"Pathtracing",
-            "description":"L'objectif de ce projet était d'implémenter les fonctionalités d'un moteur de lancé de rayons et des structures d'optimisation associés<br/>Dans un second temps, la gestion de l'illumination globale a été ajouté"
+            "abstract":"L'objectif de ce projet était d'implémenter les fonctionalités d'un moteur de lancé de rayons et des structures d'optimisation associés<br/>Dans un second temps, la gestion de l'illumination globale a été ajouté"
 
         },
-        "GameJam2019":{
+        "Game_Jam_2k19":{
             "title":"Isati Game Jam 2019",
-            "description":"Membre organisateur de l'évenement"
+            "abstract":"Membre organisateur de l'évenement",
+            "request":{
+                "description":"<p>Trailer de la première <a href='https://esir.univ-rennes1.fr/actualites/la-1ere-game-jam-lesir' target='_blank' >Game Jam de l'ESIR</a> en partenariat avec <a href='https://www.orange-business.com/en' target='_blank'>Orange Applications for Business</a></p><p>Membre organisateur de l'évenement</p><p>Vainqueur : <a href='https://www.youtube.com/watch?v=E_g47fFlD-E'>Game Jam of Thrones</a></p><p>Trailer réalsé par Vincent Berthet</p>"
+            }
         },
         "GOL":{
             "title":"Game of Life",
-            "description":"Application visant à évaluer l'ergonomie d'un logiciel vis à vis d'utilisateurs de niveaux d'expertises différents" 
+            "abstract":"Application visant à évaluer l'ergonomie d'un logiciel vis à vis d'utilisateurs de niveaux d'expertises différents" 
         },
         "WebsiteV1":{
             "title":"Ancien site",
-            "description":"Ancienne version de ce site (1.6)" 
+            "abstract":"Ancienne version de ce site (1.6)" 
         },
         "TA":{
             "title":"Tower Attack",
-            "description":"Programmation avancées pour support mobile (JS)"
+            "abstract":"Programmation avancées pour support mobile (JS)"
         },
         "Orium":{
             "title":"Orium",
-            "description":"Conception de niveaux 3D sous Unreal Engine 4"
+            "abstract":"Conception de niveaux 3D sous Unreal Engine 4",
+            "request":{
+                "description":"Conception de niveaux 3D sous Unreal Engine 4"
+            }
         },
         "Auld":{
             "title":"Auld",
-            "description":"RTS developpé sous Unreal Engine 4"
+            "abstract":"RTS developpé sous Unreal Engine 4"
         },
         "Scogue":{
             "title":"Scogue",
-            "description":"Jeu web développé avec le framework Phaser"
+            "abstract":"Jeu web développé avec le framework Phaser"
         },
         "Blog":{
             "title":"Blog",
-            "description":"Blog WordPress Creative Industries"
+            "abstract":"Blog WordPress Creative Industries"
         },     
         "Mutest":{
             "title":"Mu-Test Rapport",
-            "description":"Rapport de stage au sein de l'entreprise <a href='http://www.mu-test.com/' target='_blank'>Mu-Test</a> exerçant dans le domaine de l'ATE (Automated Test Equipment). Développement de GUI (Java) au sein de la suite, test unitaire, bug fixing."
+            "abstract":"Rapport de stage au sein de l'entreprise <a href='http://www.mu-test.com/' target='_blank'>Mu-Test</a> exerçant dans le domaine de l'ATE (Automated Test Equipment). Développement de GUI (Java) au sein de la suite, test unitaire, bug fixing.",
+            "request":{
+                "description":"Rapport de stage"     
+            }
         },       
         "Pacman":{
             "title":"Pac Man XNA",
-            "description":"Développé avec le framework XNA"
+            "abstract":"Développé avec le framework XNA",
+            "request":{
+                "description":"Présentation du jeu"     
+            }
         },      
         "Monitoring":{
             "title":"Monitoring",
-            "description":"Projet de DUT"
+            "abstract":"Projet de DUT"
         }
     },
     "contact":{
-        "info":{
-                    "mail":{
-                        "title":"Envoyer moi un mail"
-                    },
-                    "resume":{
-                        "href":"request.html?type=Download&id=CV_FR",
-                        "title":"Télécharger mon CV",
-                        "text":"CV"
-                    },
-                    "phone":{
-                        "title":"Appeler moi"
-                    }
+        "mail":{
+            "title":"Envoyer moi un mail"
         },
-        "social":{
-                    "Linkedin":{
-                        "title":"On se connecte ?"
-                    },    
-                    "Twitter":{
-                        "title":"Follow me"
-                    },      
-                    "YouTube":{
-                        "title":"Ma chaîne"
-                    },        
-                    "Instagram":{
-                        "title":"Découvrer mes photos"
-                    },
-                    "Github":{
-                        "title":"Découvrer mes projets"
-                    }
-                }
+        "resume":{
+            "title":"Télécharger mon CV",
+            "text":"CV",
+            "request":{
+                "description":"Curriculum Vitae",
+                "href":"CV/FR_CV_BERTHET_Vincent.pdf",
+                "name":"FR_CV_BERTHET_Vincent.pdf"    
+            }
+        },
+        "phone":{
+            "title":"Appeler moi"
+        }
     },
-  "footer":"Developpé par"
+    "social":{
+            "Linkedin":{
+                "title":"On se connecte ?"
+            },    
+            "Twitter":{
+                "title":"Follow me"
+            },      
+            "YouTube":{
+                "title":"Ma chaîne"
+            },        
+            "Instagram":{
+                "title":"Découvrer mes photos"
+            },
+            "Github":{
+                "title":"Découvrer mes projets"
+            }
+        },
+  "footer":{
+      "dev":"Developpé par"
+  },
+  "templates":{
+    "unknown":{
+        "title":"@TODO Missing data",
+        "text":"The data provided are not valid to load this page correctly",
+        "button":"Back" 
+    }, 
+    "redirect":{
+        "WIP":{
+            "title":"@TODO This project is still in progress",
+            "text":"The following version will probably not work as expected<br/>Thank you for your cooperation",
+            "button":"Go to the project" 
+        },
+        "Mobile":{
+            "title":"@TODO This project has been designed for the mobile platform",
+            "text":"If you are on a computer use the 'inspect tool'",
+            "button":"Go to the project" 
+        }
+    }
+}
 }

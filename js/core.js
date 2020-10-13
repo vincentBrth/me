@@ -7,8 +7,8 @@ console.info(`Hi there ! You are welcome to examine the code`);
 let available_lang = new Map();
 available_lang.set(`en`,`json/en.json`);
 available_lang.set(`fr`,`json/fr.json`);
-available_lang.set(`.common`,`json/common.json`);
-available_lang.set(`.request`,`json/request.json`);
+available_lang.set(`.core`,`json/core.json`);
+available_lang.set(`.notes`,`json/notes.json`);
 this.language = new Language(available_lang);
 this.language.update = function(){update();}
 this.language.make = function(){make();}
@@ -31,7 +31,6 @@ this.nightShift=new NightShift();
 */
 /**
 *    Language object
-*    @param {map} langs Mapping of language and his json
 *    @param {string} current The name of the language [en,fr,..]
 */
 function Language(langs){ 
@@ -107,15 +106,15 @@ Language.prototype.getData = async function(current=this.getLang()){
 }
 
 /**
-*   Get Github name for my account depending on username in common.json
+*   Get Github name for my account depending on username in core.json
 *   @return {string}
 */
 Language.prototype.getGithubName=async function(){
-    return (await Promise.resolve((await this.data).get(`.common`)))[`contact`][`social`][`Github`][`username`];
+    return (await Promise.resolve((await this.data).get(`.core`)))[`social`][`Github`][`username`];
 }
 
 /**
-*    Get Github URL for my account depending on username in common.json
+*    Get Github URL for my account depending on username in core.json
 *    @return {string}
 */
 Language.prototype.getGithubURL=async function(){
@@ -124,7 +123,7 @@ Language.prototype.getGithubURL=async function(){
 }
 
 /**
-*    Get Github page URL for my account depending on username in common.json
+*    Get Github page URL for my account depending on username in core.json
 *    @return {string}
 */
 Language.prototype.getGithubPageURL=async function(){
@@ -133,7 +132,7 @@ Language.prototype.getGithubPageURL=async function(){
 }
 
 /**
-*   Get Github public directory for my account depending on username in common.json
+*   Get Github public directory for my account depending on username in core.json
 *   @return {string}
 */
 Language.prototype.getGithubPublicURL=async function(){
@@ -328,23 +327,23 @@ function getAge(dt,format) {
 */
 /**
  * Make header of the page according to the type of the content to display
- * @param {string} data Data from json
+ * @param {string} content_header Data from json
  * @param {boolean} isRequest Set to true to use fixed black header
  */
-function makeHeader(data,isRequest=false){
+function makeHeader(content_header,isRequest=false){
     let anchorsList=``;
     const previousActive=$(`.nav li.active`).attr(`id`);
-    
-    for(i in data.header)
+    for(i in content_header)
     {
-        const aclass=data.header[i].class ? data.header[i].class : data.header[i].anchor ? `smoth-scroll` : ``;
-        const onClick=data.header[i].onClick ? `onclick='${data.header[i].onClick}'` : ``;
-        const href= data.header[i].anchor ? `href='#${data.header[i].anchor}'` : ``;
-        const id= data.header[i].anchor ? `id='${data.header[i].anchor}-anchor'` : ``;
-        const active=previousActive==`${data.header[i].anchor}-anchor` ? `active` : ``;
-        const liclass=data.header[i].liclass ? `${data.header[i].liclass}` : ``;
+        const aclass=content_header[i].class ? content_header[i].class : content_header[i].anchor ? `smoth-scroll` : ``;
+        const onClick=content_header[i].onClick ? `onclick='${content_header[i].onClick}'` : ``;
+        const href= content_header[i].anchor ? `href='#${content_header[i].anchor}'` : ``;
+        const id= content_header[i].anchor ? `id='${content_header[i].anchor}-anchor'` : ``;
+        const active=previousActive==`${content_header[i].anchor}-anchor` ? `active` : ``;
+        const liclass=content_header[i].liclass ? `${content_header[i].liclass}` : ``;
+        const anchorText=content_header[i].anchorText;
 
-        anchorsList+=`<li ${id} class='${liclass} ${active}'><a ${onClick} class='${aclass}' ${href}>${data.header[i].anchorText}</a></li>`;
+        anchorsList+=`<li ${id} class='${liclass} ${active}'><a ${onClick} class='${aclass}' ${href}>${anchorText}</a></li>`;
     }
     
     let html=(`
@@ -404,7 +403,7 @@ function makeRelease(){
     current_release=`X`;
     $(`#release`).html(current_release);
 
-    let json=$.getJSON(`json/request.json`);
+    let json=$.getJSON(`json/notes.json`);
     json.done(function(data) {
         for(let i in data.notes){
             current_release=data.notes[i].id;
@@ -416,12 +415,12 @@ function makeRelease(){
 
 /**
 *    Make the footer of the page
-*    @param {string} data The data of the *current*.json
+*    @param {string} content_footer The data of the *current*.json
 */
-function makeFooter(data,isRequest=false){ 
+function makeFooter(content_footer,isRequest=false){ 
     let html=(`
         <div class='container text-center'>
-            &copy; ${new Date().getFullYear()}<a class='smoth-scroll' href='${isRequest ? './' : '#navigation'}'> Vincent Berthet Website</a> - <a href='request.html?type=Notes' >V<span id='release'></span></a> | ${data.footer}<a class='smoth-scroll' href='${isRequest ? './' : '#navigation'}'> Vincent Berthet</a>
+            &copy; ${new Date().getFullYear()}<a class='smoth-scroll' href='${isRequest ? './' : '#navigation'}'> Vincent Berthet Website</a> - <a href='request.html?id=Notes' >V<span id='release'></span></a> | ${content_footer.dev}<a class='smoth-scroll' href='${isRequest ? './' : '#navigation'}'> Vincent Berthet</a>
         </div> 
     `);
 

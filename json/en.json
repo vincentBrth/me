@@ -38,112 +38,159 @@
     "portfolio":{
         "BCOM":{
             "title":"b<>com training contract",
-            "description":"Professional training contract (2019-2020)<br/>Report and slides of my works at <a href='https://b-com.com/en' target='_blank'>IRT b<>com</a>"
+            "abstract":"Professional training contract (2019-2020)<br/>Report and slides of my works at <a href='https://b-com.com/en' target='_blank'>IRT b<>com</a>",
+            "request":{
+                "description":"<p>Report and slides of my professional training contract at <a target='_blank' href='https://b-com.com/'>b<>com</a>(French)</p>"
+            }
         },
-        "AsymetrieICP":{
+        "Asymetrie_ICP":{
             "title":"Asymetrie ICP",
-            "description":"This project rely on “An algorithm to map asymmetries of bilateral objects in point clouds” - Benoît Combès & al.<br/>This algorithm able to automatically quantify the local asymmetries of bilateral structures in a point cloud by using Iterative Closest Point (ICP)"
+            "abstract":"This project rely on “An algorithm to map asymmetries of bilateral objects in point clouds” - Benoît Combès & al.<br/>This algorithm able to automatically quantify the local asymmetries of bilateral structures in a point cloud by using Iterative Closest Point (ICP)"
         },
-        "LunaAndHelios":{
+        "Luna_And_Helios":{
             "title":"A Story of Luna & Helios",
-            "description":"This game has been released during the Game Jam 2020.<br/>This event aimed was to build a video game in 35 hours on the subject : “Safe in the dark”"
+            "abstract":"This game has been released during the Game Jam 2020.<br/>This event aimed was to build a video game in 35 hours on the subject : “Safe in the dark”",
+            "request":{
+                "description":"<p>This game has been released during the Orange Game Jam 2020. The aim of this event was to build a video game in 35 hours on the subject : <b>Safe in the dark</b></p><p><b>More informations are available in the GitHub README</b></p><p><a href='https://www.youtube.com/watch?v=EwTJOxKciyE&feature=youtu.be' target='_blank'><i class='fab fa-youtube'></i> Gameplay video</a></p>"
+            }
         },
         "Tensors":{
             "title":"Tensor directed stylization",
-            "description":"This project rely on “Tensors-directed simulation of strokes for image stylization with hatching and contours” - David TSCHUMPERLE<br/>Its describe an algorithm to generate sketches from color images directed by an image-dependent tensor-valued geometry"
+            "abstract":"This project rely on “Tensors-directed simulation of strokes for image stylization with hatching and contours” - David TSCHUMPERLE<br/>Its describe an algorithm to generate sketches from color images directed by an image-dependent tensor-valued geometry"
         },
         "HDR":{
             "title":"HDR",
-            "description":"Experimentation of features related to High Dynamic Range (HDR) with OpenCV library"
+            "abstract":"Experimentation of features related to High Dynamic Range (HDR) with OpenCV library"
         },
         "Askelys":{
             "title":"Askelys Report",
-            "description":"Internship<br/>Report of my 4 months internship at <a href='http://askelys.com/' target='_blank'>Askelys</a> a startup working in the Semantic Web. Development of a WebGL prototype on Unity"
+            "abstract":"Internship<br/>Report of my 4 months internship at <a href='http://askelys.com/' target='_blank'>Askelys</a> a startup working in the Semantic Web. Development of a WebGL prototype on Unity",
+            "request":{
+                "description":"Report file (French)"      
+            }
         },
         "Kubic":{
             "title":"Kubic Unity",
-            "description":"Unity development project, the aim of the project was to use navmesh"
+            "abstract":"Unity development project, the aim of the project was to use navmesh",
+            "request":{
+                "description":"<p><a href='https://docs.unity3d.com/ScriptReference/Application-streamingAssetsPath.html' target='_blank'>No streaming access aren't available on WebGL with Unity</a>.<br/>As this game has been developed for OS, use <a href='https://github.com/RealVincentBerthet/Kubic/blob/master/Kubic/Windows/Kubic.zip' target='_blank'>Windows executable</a> to have access to options and sounds and others features in the game</p><p><b>More informations are available in the GitHub README</b></p>"
+            }
         },
         "Ray":{
             "title":"Pathtracing",
-            "description":"This project aimed was to implement features of a Raytracing engine and optimization structures related to it<br/>Then in a second part Global Illumination and Pathtracing have been added to this project."
+            "abstract":"This project aimed was to implement features of a Raytracing engine and optimization structures related to it<br/>Then in a second part Global Illumination and Pathtracing have been added to this project."
         },
-        "GameJam2019":{
-            "title":"Isati Game Jam 2019",
-            "description":"Organization of the event"
+        "Game_Jam_2k19":{
+            "title":"Isati Game Jam 2k19",
+            "abstract":"Organization of the event",
+            "request":{
+                "description":"<p>Trailer of the first <a href='https://esir.univ-rennes1.fr/actualites/la-1ere-game-jam-lesir' target='_blank' >Game Jam of ESIR</a> in partnership with <a href='https://www.orange-business.com/en' target='_blank'>Orange Applications for Business</a></p><p>Winner : <a href='https://www.youtube.com/watch?v=E_g47fFlD-E'>Game Jam of Thrones</a></p><p>Trailer made by Vincent Berthet</p>"
+            }
         },
         "GOL":{
             "title":"Game of Life",
-            "description":"GUI<br/> designed to understand ergonomic concerns of an application for different level of users" 
+            "abstract":"GUI<br/> designed to understand ergonomic concerns of an application for different level of users" 
         },
         "WebsiteV1":{
             "title":"Old website",
-            "description":"Old release of this website (1.6)"
+            "abstract":"Old release of this website (1.6)"
         },
         "TA":{
             "title":"Tower Attack",
-            "description":"Advanced Mobile Programming<br/>Tower Attack Game, implementing advanced features like queues, stacks, and pathways"
+            "abstract":"Advanced Mobile Programming<br/>Tower Attack Game, implementing advanced features like queues, stacks, and pathways"
         },
         "Orium":{
             "title":"Orium",
-            "description":"3D Level Design<br/>A game based on the time that the player will make to finish the game"
+            "abstract":"3D Level Design<br/>A game based on the time that the player will make to finish the game",
+            "request":{
+                "description":"Orium project game design, made on Unreal Engine"
+            }
         },
         "Auld":{
             "title":"Auld",
-            "description":"Game Design<br/>RTS game"
+            "abstract":"Game Design<br/>RTS game"
         },
         "Scogue":{
             "title":"Scogue",
-            "description":"Web game <br/>A Rogue like game"
+            "abstract":"Web game <br/>A Rogue like game"
         },
         "Blog":{
             "title":"Blog",
-            "description":"Creative Industries Blog<br/>A blog to deal with the subject of the creative industries"
+            "abstract":"Creative Industries Blog<br/>A blog to deal with the subject of the creative industries"
         },     
         "Mutest":{
             "title":"Mu-Test Report",
-            "description":"Internship<br/>Report of my 4 months internship at <a href='http://www.mu-test.com/' target='_blank'>Mu-Test</a>, a company working in the Automated Test Equipement (ATE)"
+            "abstract":"Internship<br/>Report of my 4 months internship at <a href='http://www.mu-test.com/' target='_blank'>Mu-Test</a>, a company working in the Automated Test Equipement (ATE)",
+            "request":{
+                "description":"Report file (French)"     
+            }
         },       
         "Pacman":{
             "title":"Pac Man XNA",
-            "description":"C# Project<br/>Development of the PacMan with the XNA framework"
+            "abstract":"C# Project<br/>Development of the PacMan with the XNA framework",
+            "request":{
+                "description":"Presentation file (French)"     
+            }
         },      
         "Monitoring":{
             "title":"Monitoring",
-            "description":"UTD Project<br/>HMI to provide data of a batteries monitoring system to the user"
+            "abstract":"UTD Project<br/>HMI to provide data of a batteries monitoring system to the user"
         }
     },
     "contact":{
-        "info":{
-                    "mail":{
-                        "title":"Send me a mail"
-                    },
-                    "resume":{
-                        "href":"request.html?type=Download&id=CV_EN",
-                        "title":"Download my resume",
-                        "text":"Resume"
-                    },
-                    "phone":{
-                        "title":"Call me"
-                    }
-        },
-        "social":{
-                    "Linkedin":{
-                        "title":"Let us connect"
-                    },  
-                    "Twitter":{
-                        "title":"Follow me"
-                    },      
-                    "YouTube":{
-                        "title":"My channel"
-                    },        
-                    "Instagram":{
-                        "title":"Discover my photos"
-                    },
-                    "Github":{
-                        "title":"Discover my projects"
-                    }
+            "mail":{
+                "title":"Send me a mail"
+            },
+            "resume":{
+                "title":"Download my resume",
+                "text":"Resume",
+                "request":{
+                    "description":"Curriculum Vitae",
+                    "href":"CV/EN_CV_BERTHET_Vincent.pdf",
+                    "name":"EN_CV_BERTHET_Vincent.pdf"    
                 }
+            },
+            "phone":{
+                "title":"Call me"
+            }
+        },
+    "social":{
+        "Linkedin":{
+            "title":"Let us connect"
+        },  
+        "Twitter":{
+            "title":"Follow me"
+        },      
+        "YouTube":{
+            "title":"My channel"
+        },        
+        "Instagram":{
+            "title":"Discover my photos"
+        },
+        "Github":{
+            "title":"Discover my projects"
+        } 
     },
-  "footer":"Developed by"
+    "footer":{
+        "dev":"Developed by"
+    },
+    "templates":{
+        "unknown":{
+            "title":"Missing data",
+            "text":"The data provided are not valid to load this page correctly",
+            "button":"Back" 
+        }, 
+        "redirect":{
+            "WIP":{
+                "title":"This project is still in progress",
+                "text":"The following version will probably not work as expected<br/>Thank you for your cooperation",
+                "button":"Go to the project" 
+            },
+            "Mobile":{
+                "title":"This project has been designed for the mobile platform",
+                "text":"If you are on a computer use the 'inspect tool'",
+                "button":"Go to the project" 
+            }
+        }
+    }
 }
