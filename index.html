@@ -13,7 +13,7 @@
         <meta name='copyright' content='vincent berthet'>
         <meta name='robots' content='index,follow'>
         <title>Vincent Berthet</title>
-        <link rel='shortcut icon' href='img/vberthet/vb_black.png'>
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
         <!-- CSS Stylesheet -->
         <link rel='stylesheet' type='text/css' href='css/style.css'>
         <link rel='stylesheet' type='text/css' href='css/project.css'>
@@ -26,43 +26,23 @@
         	<div class='loader'></div>
         </div>
  
-        <!-- Home & Menu Section -->
-        <header id='home' class='home-section'>
-            <div class='header-top-area'>
-                <div class='margin-left-20'>
-                    <div class='row'>
-                        <div class='logo col-sm-4'>
-                            <a class='smoth-scroll' href='#home'><img src='img/vberthet/vb_black.png'>Vincent <b>Berthet</b></a>
-                        </div>
-                        <div class='col-sm-8'>
-                            <div class='navigation-menu'>
-                                <div class='navbar'>
-                                    <div class='navbar-header'>
-                                        <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'>
-                                            <span class='sr-only'>Toggle navigation</span>
-                                            <span class='icon-bar'></span>
-                                            <span class='icon-bar'></span>
-                                            <span class='icon-bar'></span>
-                                        </button>
-                                    </div>
-                                    <div class='navbar-collapse collapse'>
-                                        <ul class='nav navbar-nav navbar-right'>
-                                            <li>
-                                                <a class='smoth-scroll' href='#bio'><div id='nav_bio_content'></div></a>
-                                            </li>
-                                            <li>
-                                                <a class='smoth-scroll' href='#portfolio'><div id='nav_portfolio_content'></div></a>
-                                            </li>
-                                            <li class='margin-right-30'> 
-                                                <a class='smoth-scroll' href='#contact'><div id='nav_contact_content'></div></a>
-                                            </li>
-                                            <li>
-                                                <a title='Night shift' onclick='nightShift.toggle()'><div id='nightShift' class='navicon'>NA</i></div></a>
-                                       		</li>
-                                            <li>
-                                                <a onclick='language.switch()'><div id='nav_flag_ico_content' class='navicon flag'></div></a>
-                                       		</li>
-                                        </ul>
+        <!-- Header -->
+        <header id='navigation'></header>
+
+        <!-- Home -->
+        <div id='home' class='home-section-background' data-stellar-background-ratio='0.6'>
+            <div class='display-table'>
+                <div class='display-table-cell'>
+                    <div class='container'>
+                        <div class='row'>
+                            <div class='col-md-12 text-center'>
+                                <div class='header-text'>
+                                    <p id='preview_text_content'></p>
+                                    <h2><span class='typing'></span></h2>
+                                    <div class='margin-top-60'>   
+                                        <a href='#bio' class='btn btn-circle smoth-scroll'>
+                                            <i class='fa fa-angle-double-down animated'></i>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -70,30 +50,8 @@
                     </div>
                 </div>
             </div>
-            
-            <div class='home-section-background' data-stellar-background-ratio='0.6'>
-                <div class='display-table'>
-                    <div class='display-table-cell'>
-                        <div class='container'>
-                            <div class='row'>
-                                <div class='col-md-12 text-center'>
-                                    <div class='header-text'>
-                                        <p id='preview_text_content'></p>
-                                        <h2><span class='typing'></span></h2>
-                                        <div class='margin-top-60'>   
-                                            <a href='#bio' class='btn btn-circle smoth-scroll'>
-                                                <i class='fa fa-angle-double-down animated'></i>
-                                            </a>
-                                    	</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>    
-        </header>
-
+        </div>    
+    
         <!-- Bio -->
         <section id='bio' class='bio-section'>
             <div class='row'>       
@@ -101,7 +59,7 @@
                     <img class='img-responsive' src='img/bg/me.jpg' draggable='false' alt=''/>
                 </div>
                 <div class='col-md-6 col-sm-12 col-xs-12'>
-                    <div id='bio_content' class='bio'></div>
+                    <div id='bio_right' class='bio'></div>
                 </div>   
             </div>
         </section>
@@ -157,22 +115,18 @@
         </section>
         
         <!-- Footer  -->
-        <footer class='footer-section'>
-            <div class='container text-center'>
-                &copy; <span id='year'></span><a class='smoth-scroll' href='#home'> Vincent Berthet Website</a> - <a href='request.html?type=Notes' >V<span id='release'></span></a> | <span id='footerContent'></span><a class='smoth-scroll' href='#home'> Vincent Berthet</a>
-            </div>      
-        </footer>
+        <footer id='footerContent' class='footer-section'></footer>
             
         <!-- Javascript Plugins  -->
-        <script src='plugin/jquery.min.js'></script>
-        <script src='plugin/bootstrap/js/bootstrap.min.js'></script>
-        <script src='plugin/stellar.min.js'></script>
-        <script src='plugin/typed.min.js'></script>
-        <script src='plugin/mixitup.min.js'></script>
+        <script src='plugin/jQuery/2.2.4/js/jquery.min.js'></script>
+        <script src='plugin/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+        <script src='plugin/stellar/0.6.2/js/stellar.min.js'></script>
+        <script src='plugin/typed/2.0.7/js/typed.min.js'></script>
+        <script src='plugin/mixItUp/2.1.11/js/mixitup.min.js'></script>
         <script src='plugin/gAnalitycs.js'></script>
         <!-- Main Javascript File  -->
-        <script src='js/effects.js'></script>
-        <script src='js/common.js'></script>
+        <script src='js/core.js'></script>
         <script src='js/home.js'></script>
+        <script src='js/effects.js'></script>
     </body>
 </html>
