@@ -191,6 +191,9 @@
                 "text":"If you are on a computer use the 'inspect tool'",
                 "button":"Go to the project" 
             }
+        },
+        "counter":{
+            "text":"You will be automatically redirected in"
         }
     }
 }

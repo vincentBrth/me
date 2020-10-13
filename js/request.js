@@ -239,7 +239,8 @@ async function makeRedirect(content,data){
     const templates = data.templates;
     const wip=content.request.wip ? content.request.wip : false;
     const mobile=content.request.mobile ? content.request.mobile : false;
-
+    const counter=templates.counter.text;
+    
     let title;
     let text;
     let button;
@@ -273,7 +274,7 @@ async function makeRedirect(content,data){
                 </div>
                 <p><h4><i>${text}</i></h4><p>
                 <div class='counter'>
-                    <p>You will be automatically redirected in <span id='counter'>x</span> s</p>
+                    <p>${counter} <span id='counter'>x</span> s</p>
                 </div>
                     <div>
                         <a class='button button-style button-style-dark' href='${href}'>${button}</a>

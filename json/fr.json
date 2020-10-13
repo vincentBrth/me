@@ -177,21 +177,24 @@
   },
   "templates":{
     "unknown":{
-        "title":"@TODO Missing data",
-        "text":"The data provided are not valid to load this page correctly",
-        "button":"Back" 
+        "title":"Données manquante",
+        "text":"La requête fournis ne peux pas être chargé correctement",
+        "button":"Retour" 
     }, 
     "redirect":{
         "WIP":{
-            "title":"@TODO This project is still in progress",
-            "text":"The following version will probably not work as expected<br/>Thank you for your cooperation",
-            "button":"Go to the project" 
+            "title":"Ce projet est en cours de développement",
+            "text":"La version actuel risque de ne pas fonctionner comme voulu<br/>Merci de votre compréhension",
+            "button":"Aller au projet" 
         },
         "Mobile":{
-            "title":"@TODO This project has been designed for the mobile platform",
-            "text":"If you are on a computer use the 'inspect tool'",
-            "button":"Go to the project" 
+            "title":"Ce projet a été désigné pour les plateformes mobile",
+            "text":"Si vous êtes sur un ordinateur utiliser l' 'inspecteur d'élément'",
+            "button":"Aller au projet" 
         }
+    },
+    "counter":{
+        "text":"Vous allez être automatiquement redirigé dans"
     }
 }
 }
