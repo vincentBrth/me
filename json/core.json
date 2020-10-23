@@ -1,8 +1,19 @@
 {   
     "portfolio":{
+        "ASCII_ART":{
+            "ico":"img/ico_project/ico_asciiart.png",
+            "title":"ASCII Art",
+            "abstract":"NA",
+            "filter":"Python OpenCV",
+            "skills":"Python, OpenCV",
+            "href":"AsciiArt",
+            "github":true
+        },
         "Github_API":{
             "title":"Github API",
             "abstract":"Use Github REST API to automatically generate portfolio with Github's project and keep update website and my repositories",
+            "filter":"Web Javascript",
+            "skills":"Javascript",
             "href":"github-api",
             "github":true,
             "githubPage":true,
