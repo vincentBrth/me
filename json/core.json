@@ -10,10 +10,10 @@
             "github":true
         },
         "Github_API":{
-            "title":"Github API",
-            "abstract":"Use Github REST API to automatically generate portfolio with Github's project and keep update website and my repositories",
+            "title":"NA",
+            "abstract":"NA",
             "filter":"Web Javascript",
-            "skills":"Javascript",
+            "skills":"Javascript, Rest",
             "href":"github-api",
             "github":true,
             "githubPage":true,
@@ -40,7 +40,7 @@
             "ico":"img/ico_project/ico_asymetrieICP.png",
             "title":"NA",
             "abstract":"NA",
-            "filter":"OpenCV",
+            "filter":"OpenCV Python",
             "href":"AsymetrieICP",
             "skills":"OpenCV, Python, ICP",
             "github":true
@@ -62,8 +62,17 @@
             "ico":"img/ico_project/ico_tensors.png",
             "title":"NA",
             "abstract":"NA",
-            "filter":"OpenCV", 
+            "filter":"OpenCV Python", 
             "href":"Tensor_directed_stylization",
+            "skills":"OpenCV, Python",
+            "github":true
+        },
+        "AR":{
+            "ico":"img/ico_project/ico_ar.png",
+            "title":"NA",
+            "abstract":"NA",
+            "filter":"OpenCV Python",
+            "href":"AR",
             "skills":"OpenCV, Python",
             "github":true
         },
@@ -71,7 +80,7 @@
             "ico":"img/ico_project/ico_hdr.png",
             "title":"NA",
             "abstract":"NA",
-            "filter":"OpenCV",
+            "filter":"OpenCV Python",
             "href":"HDR",
             "skills":"OpenCV, Python",
             "github":true
@@ -230,9 +239,9 @@
     "contact":{
             "mail":{
                 "class":"fas fa-envelope fa-2x",
-                "href":"mailto:vincent.berthet.pro@gmail.com",
+                "href":"mailto:vincent.berthet42@gmail.com",
                 "title":"NA",
-                "text":"vincent.berthet.pro@gmail.com"
+                "text":"vincent.berthet42@gmail.com"
             },
             "resume":{
                 "class":"fas fa-download fa-2x color-4",
@@ -251,7 +260,7 @@
                 "title":"NA",
                 "text":"06 58 65 90 33",
                 "country_code":"+33",
-                "country_flag":"img/vberthet/france-flag-round-xs.png"
+                "country_flag":"img/template/france-flag-round-xs.png"
             }
         },
     "social":{
