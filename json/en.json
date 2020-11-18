@@ -28,7 +28,7 @@
         "flag":{
             "onClick":"language.switch()",
             "aclass":"flag",
-            "anchorText":"<div class='navicon flag'><img src='img/vberthet/united-kingdom-flag-round-xs.png' title='Click to switch to French'></div>"
+            "anchorText":"<div class='navicon flag'><img src='img/template/united-kingdom-flag-round-xs.png' title='Click to switch to French'></div>"
         }
     },
     "bio":{
@@ -36,9 +36,17 @@
             "text":"<p>&nbsp;&nbsp;&nbsp;Hey! My name is Vincent, I am a <span id='bio_age'></span> years old French graduated. I am an engineer who graduated from the IT Digital Imaging in the Ecole Supérieure d'Ingénieurs de Rennes (ESIR - Rennes 1). I wish you a welcome to my portfolio!</p><p>For more than <span id='bio_duration'></span> years, computing, media, and electronics have taken more and more part of my daily life. Since my high school years, I started little by little to lead various projects. Which allowed me to discover computer science and to lead myself towards the development of software applications.</p><p>During my schooling, I obtained a UTD in Electrical Engineering and Industrial Computer Science which allowed me to discover electronics and industrial computer science. After this year, I decided to go on international mobility at the University of the West of Scotland (UWS) in Glasgow to learn 3D through a Bsc Game Development. After that, I joined an engineering school where I had the opportunity to follow a unique training in France because it was dedicated to the vast field of digital imaging.</p><p>I put my skills into practice during different internships. In particular, within innovative companies with strong expertise, either in startup such as Askelys in which I developed a 3D WebGL Unity interface for their semantic web API. Or, either during my professionalization contract for more than a year at the b<>com Technology Research Institute, by my contribution to the development of an open-source Augmented Reality Framework.</p><p>All these challenges allowed me to improve myself personally and professionally. You can find below some of my projects. Feel free to contact me to learn more about my profile.</p><p>Cheers</p>"       }
     },
     "portfolio":{
+        "Jekyll":{
+            "title":"Jekyll",
+            "abstract":"Use Jekyll to publish (markdown with Github API) and share easily tips with my family during the lockdown"
+        },
         "ASCII_ART":{
             "title":"ASCII Art",
-            "abstract":"Process an image to create an <a href='https://en.wikipedia.org/wiki/ASCII_art'>ASCII Art</a> effect."
+            "abstract":"Process an image to create an <a href='https://en.wikipedia.org/wiki/ASCII_art'>ASCII Art</a> effect"
+        },
+        "Github_API":{
+            "title":"Github API",
+            "abstract":"Pick up Github REST API to automatically generate portfolio with Github's project and keep update website and my repositories"
         },
         "BCOM":{
             "title":"b<>com training contract",
@@ -61,6 +69,10 @@
         "Tensors":{
             "title":"Tensor directed stylization",
             "abstract":"This project rely on “Tensors-directed simulation of strokes for image stylization with hatching and contours” - David TSCHUMPERLE<br/>Its describe an algorithm to generate sketches from color images directed by an image-dependent tensor-valued geometry"
+        },
+        "AR":{
+            "title":"Augmented Reality",
+            "abstract":"This project aimed to learn the basics of pose estimation for augmented reality. It relies on OpenCV library to process frame and computes pose estimation."
         },
         "HDR":{
             "title":"HDR",

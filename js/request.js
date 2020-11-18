@@ -117,7 +117,7 @@ async function makeNotes(data){
     const url=await this.language.getGithubURL();
     for(let key in data.notes){   
         let id=data.notes[key].id;
-        if(data.notes[key].github==true) id=`<a href='${url}vberthet/releases/tag/${id}' target='_blank'>${id}</a>`;  
+        if(data.notes[key].github==true) id=`<a href='${url}me/releases/tag/${id}' target='_blank'>${id}</a>`;  
         updates_html += (`
         <li>
             <p>
@@ -186,24 +186,27 @@ async function makeDownload(content, content_lang){
  * @param {string array} content The content of the JSON [core used
  * @param {string array} content_lang The content of the JSON [en,fr] used
  */
-function makePlayer(content,content_lang){
+async function makePlayer(content,content_lang){
     const content_lang_request = content_lang.request ? content_lang.request : content;
     const title=content_lang.title ? content_lang.title : content.title;
     const description=content_lang_request.description ? content_lang_request.description : content.request.description;
     const href=content_lang_request.href ? content_lang_request.href : content.request.href;
-        
+    const githubURL=await this.language.getGithubURL();
+    const source = content.github ? `<p><a href='${githubURL}${href.split('/')[0]}' target='_blank'><i class='fab fa-github'></i> Github source</a></p>` :``;
+
     document.title=title;
     const html = (`
         <div class='container'>
             <h1>${title}</h1>
             <p>${description}</p>
+            ${source}
             <div class='col-md-12 request-center iframe-container'>
                 <iframe width='854' height='480' src='${href}' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>
             </div>
         </div>
     `);
     $(`#home`).html(html);
-}
+  }
 
 /**
  * Make an embeded  web gl player with Unity default template

@@ -351,7 +351,7 @@ function makeHeader(content_header,isRequest=false){
                     <div class='margin-left-20'>
                         <div class='row'>
                             <div class='logo col-sm-4'>
-                                <a class='smoth-scroll' href='${isRequest ? './' : '#navigation'}'><img src='img/vberthet/vb_black.png'>Vincent <b>Berthet</b></a>
+                                <a class='smoth-scroll' href='${isRequest ? './' : '#navigation'}'><img src='img/template/vb_black.png'>Vincent <b>Berthet</b></a>
                             </div>
                             <div class='col-sm-8'>
                                 <div class='navigation-menu'>
