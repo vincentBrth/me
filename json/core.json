@@ -55,8 +55,7 @@
                 "id":"Download",
                 "description":"NA",
                 "name":"BERTHET_Vincent_bcom.zip",
-                "href":"Report/BERTHET_Vincent_bcom.zip",
-                "extension":".zip"
+                "href":"Report/BERTHET_Vincent_bcom.zip"
             }
         },
         "Asymetrie_ICP":{
@@ -99,6 +98,19 @@
             "skills":"OpenCV, Python",
             "github":true
         },
+        "Crowd_Choice":{
+            "ico":"img/ico_project/ico_crowd_choice.png",
+            "title":"NA",
+            "abstract":"NA",
+            "filter":"Management",
+            "skills":"Entrepreneurship",
+            "request":{
+                "id":"Download",
+                "description":"NA",
+                "name":"Crowd_choice.zip",
+                "href":"Project/Crowd_choice.zip"
+            }
+        },
         "HDR":{
             "ico":"img/ico_project/ico_hdr.png",
             "title":"NA",
@@ -118,8 +130,7 @@
                 "id":"Download",
                 "description":"NA",
                 "name":"Rapport_BERTHET_Vincent_Askelys_2019.pdf",
-                "href":"Report/Rapport_BERTHET_Vincent_Askelys_2019.pdf",
-                "extension":".pdf"
+                "href":"Report/Rapport_BERTHET_Vincent_Askelys_2019.pdf"
             }
         },
         "Kubic":{
@@ -181,8 +192,11 @@
             "abstract":"NA",
             "filter":"Javascript Game",
             "href":"https://towerattackproject.firebaseapp.com/",
-            "mobile":true,
-            "skills":"Javascript"
+            "skills":"Javascript",
+            "request":{
+                "id":"Redirect",
+                "mobile":true
+            }
         },
         "Orium":{
             "ico":"img/ico_project/ico_orium.png",
@@ -232,8 +246,7 @@
                 "id":"Download",
                 "description":"NA",
                 "name":"MuTest_2016.pdf",
-                "href":"Report/MuTest_2016.pdf",
-                "extension":".pdf"
+                "href":"Report/MuTest_2016.pdf"
             }
         },       
         "Pacman":{
@@ -246,8 +259,7 @@
                 "id":"Download",
                 "description":"NA",
                 "name":"Pacman.pdf",
-                "href":"Project/Pacman.pdf",
-                "extension":".pdf"
+                "href":"Project/Pacman.pdf"
             }
         },      
         "Monitoring":{
@@ -273,8 +285,7 @@
                 "request":{
                     "id":"Download",
                     "description":"NA",
-                    "name":"NA",
-                    "extension":".pdf"
+                    "name":"NA"
                 }
             },
             "phone":{

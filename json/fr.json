@@ -52,7 +52,7 @@
             "title":"b<>com contrat d'alternance",
             "abstract":"Contrat d'alternance (2019-2020)<br/>Rapport et slides de mes missions effectué durant mon alternance chez l'<a href='https://b-com.com/fr' target='_blank'>IRT b<>com</a>",
             "request":{
-                "description":"<p>Rapport et présentation de mon contrat de professionalisation à <a target='_blank' href='https://b-com.com/'>b<>com</a> (French)</p><div>J'ai travaillé pendant un an en tant qu'ingénieur R&D au sein du laboratoire Immersive Medical Technologies spécialisé en vision par ordinateur et en vidéo. Au cours de cette année, j'ai contribué au développement d'un Framework C++17 open-source : <a href='http://www.solarframework.org/'>SolAR Framework</a>. Mes principaux travaux ont concerné le développement d'un plugin Unity pour Android, le support de l'intégration continu du framework et la réalisation d'un sample utilisant les caméras de profondeurs <a href='https://www.intelrealsense.com/'>Intel RealSense</a>"
+                "description":"<p>Rapport et présentation de mon contrat de professionalisation à <a target='_blank' href='https://b-com.com/'>b<>com</a></p><div>J'ai travaillé pendant un an en tant qu'ingénieur R&D au sein du laboratoire Immersive Medical Technologies spécialisé en vision par ordinateur et en vidéo. Au cours de cette année, j'ai contribué au développement d'un Framework C++17 open-source : <a href='https://solarframework.github.io/'>SolAR Framework</a>. Mes principaux travaux ont concerné le développement d'un plugin Unity pour Android, le support de l'intégration continu du framework, le développement des modules et d'un sample afin de pouvoir utiliser les caméras de profondeurs tel les <a href='https://www.intelrealsense.com/'>Intel RealSense</a>."
             }
         },
         "Asymetrie_ICP":{
@@ -73,6 +73,13 @@
         "AR":{
             "title":"Réalité Augmentée",
             "abstract":"L'objectif de ce projet était de prendre plus en main le fonctionnement de la réalité augmentée ainsi que la librairie OpenCV. Notamment comment résoudre les problématiques liées à l'estimation de la pose"
+        },
+        "Crowd_Choice":{
+            "title":"Crowd Choice",
+            "abstract":"Formation d'une semaine en partenariat avec l'<a href='https://www.igr.univ-rennes1.fr/fr/' target='_blank'>IGR-IAE Rennes</a> dont l'objectif était de créer une startup avec toute les contraintes liées à l'entrepreneuriat",
+            "request":{
+                "description":"<div>Formation d'une semaine en partenariat avec l'<a href='https://www.igr.univ-rennes1.fr/fr/' target='_blank'>IGR-IAE Rennes</a> dont l'objectif était de créer une startup avec toute les contraintes liées à l'entrepreneuriat.</div><br/><div>Crowd Choice est une entreprise d’organisation événementielle basée sur un modèle de financement participatif. Le but est de produire des soirées à thème (style musical et culture étrangère) sur mesure, grâce à des sondages préparés en amont, dans les grandes villes de Bretagne. En fonction des votes de la communauté les évènements sont montés afin d'être soumis à un crowdfunding.</div>"
+            }
         },
         "HDR":{
             "title":"HDR",
@@ -205,7 +212,7 @@
         },
         "Mobile":{
             "title":"Ce projet a été désigné pour les plateformes mobile",
-            "text":"Si vous êtes sur un ordinateur utiliser l' 'inspecteur d'élément'",
+            "text":"Si vous êtes sur un ordinateur utiliser l' ''inspecteur d'élément'",
             "button":"Aller au projet" 
         }
     },

@@ -52,7 +52,7 @@
             "title":"b<>com training contract",
             "abstract":"Professional training contract (2019-2020)<br/>Report and slides of my works at <a href='https://b-com.com/en' target='_blank'>IRT b<>com</a>",
             "request":{
-                "description":"<p>Report and slides of my professional training contract at <a target='_blank' href='https://b-com.com/'>b<>com</a>(French)</p>"
+                "description":"<p>Report and slides of my professional training contract at <a target='_blank' href='https://b-com.com/'>b<>com</a></p><div>I worked for one year as an R&D engineer in the Immersive Medical Technologies laboratory specialized in computer vision and video. During this year, I contributed to the development of an open-source C++17 Framework: <a href='https://solarframework.github.io/'>SolAR Framework</a>. My main works concerned the development of a Unity plugin for Android, the support of the continuous integration of the framework, the development of modules and a sample to use depth cameras like the <a href='https://www.intelrealsense.com/'>Intel RealSense</a>"
             }
         },
         "Asymetrie_ICP":{
@@ -72,7 +72,14 @@
         },
         "AR":{
             "title":"Augmented Reality",
-            "abstract":"This project aimed to learn the basics of pose estimation for augmented reality. It relies on OpenCV library to process frame and computes pose estimation."
+            "abstract":"This project aimed to learn the basics of pose estimation for augmented reality. It relies on OpenCV library to process frame and computes pose estimation"
+        },
+        "Crowd_Choice":{
+            "title":"Crowd Choice",
+            "abstract":"A one-week training course in partnership with <a href='https://www.igr.univ-rennes1.fr/fr/' target='_blank'>IGR-IAE Rennes</a> whose objective was to create a startup with all the constraints linked to entrepreneurship",
+            "request":{
+                "description":"<div>A one-week training course in partnership with <a href='https://www.igr.univ-rennes1.fr/fr/' target='_blank'>IGR-IAE Rennes</a> whose objective was to create a startup with all the constraints linked to entrepreneurship.</div><br/><div>Crowd Choice is an event organization company based on a participative financing model. The goal is to produce themed evenings (musical style and foreign culture) tailored to the needs of the audience, thanks to surveys prepared in advance. According to the votes of the community the events are set up in order to be submitted to a crowdfunding.</div>"
+            }
         },
         "HDR":{
             "title":"HDR",
@@ -204,7 +211,7 @@
             },
             "Mobile":{
                 "title":"This project has been designed for the mobile platform",
-                "text":"If you are on a computer use the 'inspect tool'",
+                "text":"If you are on a computer use the ''inspect tool''",
                 "button":"Go to the project" 
             }
         },
