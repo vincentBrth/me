@@ -1,6 +1,19 @@
 {   
     "portfolio":{
+        "UnityMars":{
+            "title":"UnityMars",
+            "abstract":"",
+            "filter":"",
+            "skills":"",
+            "href":"UnityMars",
+            "github":true,           
+            "request":{
+                "id":"Redirect",
+                "wip":true
+            }
+        },
         "Jekyll":{
+            "ico":"img/ico_project/ico_jekyll.png",
             "title":"NA",
             "abstract":"NA",
             "filter":"Web",
@@ -9,8 +22,7 @@
             "github":true,
             "githubPage":true,            
             "request":{
-                "id":"Redirect",
-                "wip":true
+                "id":"Redirect"
             }
         },
         "ASCII_ART":{
@@ -23,6 +35,7 @@
             "github":true
         },
         "Github_API":{
+            "ico":"img/ico_project/ico_api.png",
             "title":"NA",
             "abstract":"NA",
             "filter":"Web Javascript",
