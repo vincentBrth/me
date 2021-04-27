@@ -198,6 +198,11 @@ a {
     text-decoration: none;
 }
 
+a:hover {
+    color:#24b662; 
+    text-decoration: none;
+}
+
 figure.effect-project .icon-links a span::before {
 	display: inline-block;
 	padding: 10px 10px 35px;

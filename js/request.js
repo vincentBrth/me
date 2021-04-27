@@ -147,21 +147,19 @@ async function makeNotes(data){
  * @param {string array} content_lang The content of the JSON [en,fr] used
  */
 async function makeDownload(content, content_lang){
-
-
-    console.log(content);
-    console.log(content_lang);
-
-
+    if(content_lang==undefined){
+        content_lang=content;
+    }
     const content_lang_request = content_lang.request ? content_lang.request : content;
     const title=content_lang.title ? content_lang.title : content.title;
     const name=content_lang_request.name ? content_lang_request.name : content.request.name;
     const description=content_lang_request.description ? content_lang_request.description : content.request.description;
+    const justify= description.length>100 ? `style='text-align:justify;'` : ``;
     const href=content_lang_request.href ? content_lang_request.href : content.request.href;
-    const extension=content_lang_request.extension ? content_lang_request.extension : content.request.extension;
+    const extension=href.split('.').pop();
     const public=await this.language.getGithubPublicURL();
-
     document.title=title;
+    
     const html = (`
         <div class='container'>
             <div class='request-center' style='margin-top:20%' col-md-12'>
@@ -171,9 +169,11 @@ async function makeDownload(content, content_lang){
                 <div class='request-title'>
                     <h4>${name}</h4>
                 </div>
-                <p><h5><i>${description}</i></h5><p>
+                <div ${justify}>
+                    <p><h5><i>${description}</i></h5><p>
+                </div>
                 <div>
-                    <a class='button button-style button-style-dark' href='${public}${href}' onclick=''><i class='far fa-arrow-alt-circle-down'></i> ${extension}</a>
+                    <a class='button button-style button-style-dark' href='${public}${href}' title='${name}' onclick=''><i class='far fa-arrow-alt-circle-down'></i> ${extension}</a>
                 </div>
             </div>
         </div>
@@ -244,7 +244,7 @@ async function makeRedirect(content,data){
     let title;
     let text;
     let button;
-    let href;
+    let href=content.href;
   
     //create url
     if(content.githubPage){
@@ -253,8 +253,8 @@ async function makeRedirect(content,data){
     }else if(content.github){
         //link to github
         href=(await this.language.getGithubURL())+href;
-    } 
-    
+    }
+
     if(wip){
         title=templates.redirect.WIP.title;
         text=templates.redirect.WIP.text; 
@@ -330,7 +330,7 @@ function makeUnknown(data){
                 <div class='request-title'>
                     <h1>${title}</h1>
                 </div>
-                <p><h4><i>${text}</i></h4><p>
+                <p><h4><i>${text}</i></h4></p>
 
                 <div class='counter'>
                     <p>You will be automatically redirected in <span id='counter'>x</span> s</p>

@@ -1,5 +1,27 @@
 {   
     "portfolio":{
+        "UnityMars":{
+            "title":"UnityMars",
+            "abstract":"",
+            "filter":"",
+            "skills":"",
+            "href":"UnityMars",
+            "github":true,           
+            "request":{
+                "id":"Redirect",
+                "wip":true
+            }
+        },
+        "Jekyll":{
+            "ico":"img/ico_project/ico_jekyll.png",
+            "title":"NA",
+            "abstract":"NA",
+            "filter":"Web",
+            "skills":"Jekyll, HTML5, CSS3, Javascript",
+            "href":"jekyll",
+            "github":true,
+            "githubPage":true
+        },
         "ASCII_ART":{
             "ico":"img/ico_project/ico_asciiart.png",
             "title":"ASCII Art",
@@ -10,10 +32,11 @@
             "github":true
         },
         "Github_API":{
-            "title":"Github API",
-            "abstract":"Use Github REST API to automatically generate portfolio with Github's project and keep update website and my repositories",
+            "ico":"img/ico_project/ico_api.png",
+            "title":"NA",
+            "abstract":"NA",
             "filter":"Web Javascript",
-            "skills":"Javascript",
+            "skills":"Javascript, Rest",
             "href":"github-api",
             "github":true,
             "githubPage":true,
@@ -32,15 +55,14 @@
                 "id":"Download",
                 "description":"NA",
                 "name":"BERTHET_Vincent_bcom.zip",
-                "href":"Report/BERTHET_Vincent_bcom.zip",
-                "extension":".zip"
+                "href":"Report/BERTHET_Vincent_bcom.zip"
             }
         },
         "Asymetrie_ICP":{
             "ico":"img/ico_project/ico_asymetrieICP.png",
             "title":"NA",
             "abstract":"NA",
-            "filter":"OpenCV",
+            "filter":"OpenCV Python",
             "href":"AsymetrieICP",
             "skills":"OpenCV, Python, ICP",
             "github":true
@@ -62,16 +84,38 @@
             "ico":"img/ico_project/ico_tensors.png",
             "title":"NA",
             "abstract":"NA",
-            "filter":"OpenCV", 
+            "filter":"OpenCV Python", 
             "href":"Tensor_directed_stylization",
             "skills":"OpenCV, Python",
             "github":true
+        },
+        "AR":{
+            "ico":"img/ico_project/ico_ar.png",
+            "title":"NA",
+            "abstract":"NA",
+            "filter":"OpenCV Python",
+            "href":"AR",
+            "skills":"OpenCV, Python",
+            "github":true
+        },
+        "Crowd_Choice":{
+            "ico":"img/ico_project/ico_crowd_choice.png",
+            "title":"NA",
+            "abstract":"NA",
+            "filter":"Management",
+            "skills":"Entrepreneurship",
+            "request":{
+                "id":"Download",
+                "description":"NA",
+                "name":"Crowd_choice.zip",
+                "href":"Project/Crowd_choice.zip"
+            }
         },
         "HDR":{
             "ico":"img/ico_project/ico_hdr.png",
             "title":"NA",
             "abstract":"NA",
-            "filter":"OpenCV",
+            "filter":"OpenCV Python",
             "href":"HDR",
             "skills":"OpenCV, Python",
             "github":true
@@ -86,8 +130,7 @@
                 "id":"Download",
                 "description":"NA",
                 "name":"Rapport_BERTHET_Vincent_Askelys_2019.pdf",
-                "href":"Report/Rapport_BERTHET_Vincent_Askelys_2019.pdf",
-                "extension":".pdf"
+                "href":"Report/Rapport_BERTHET_Vincent_Askelys_2019.pdf"
             }
         },
         "Kubic":{
@@ -149,8 +192,11 @@
             "abstract":"NA",
             "filter":"Javascript Game",
             "href":"https://towerattackproject.firebaseapp.com/",
-            "mobile":true,
-            "skills":"Javascript"
+            "skills":"Javascript",
+            "request":{
+                "id":"Redirect",
+                "mobile":true
+            }
         },
         "Orium":{
             "ico":"img/ico_project/ico_orium.png",
@@ -200,8 +246,7 @@
                 "id":"Download",
                 "description":"NA",
                 "name":"MuTest_2016.pdf",
-                "href":"Report/MuTest_2016.pdf",
-                "extension":".pdf"
+                "href":"Report/MuTest_2016.pdf"
             }
         },       
         "Pacman":{
@@ -214,8 +259,7 @@
                 "id":"Download",
                 "description":"NA",
                 "name":"Pacman.pdf",
-                "href":"Project/Pacman.pdf",
-                "extension":".pdf"
+                "href":"Project/Pacman.pdf"
             }
         },      
         "Monitoring":{
@@ -230,9 +274,9 @@
     "contact":{
             "mail":{
                 "class":"fas fa-envelope fa-2x",
-                "href":"mailto:vincent.berthet.pro@gmail.com",
+                "href":"mailto:vincent.berthet42@gmail.com",
                 "title":"NA",
-                "text":"vincent.berthet.pro@gmail.com"
+                "text":"vincent.berthet42@gmail.com"
             },
             "resume":{
                 "class":"fas fa-download fa-2x color-4",
@@ -241,8 +285,7 @@
                 "request":{
                     "id":"Download",
                     "description":"NA",
-                    "name":"NA",
-                    "extension":".pdf"
+                    "name":"NA"
                 }
             },
             "phone":{
@@ -251,7 +294,7 @@
                 "title":"NA",
                 "text":"06 58 65 90 33",
                 "country_code":"+33",
-                "country_flag":"img/vberthet/france-flag-round-xs.png"
+                "country_flag":"img/template/france-flag-round-xs.png"
             }
         },
     "social":{

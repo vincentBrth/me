@@ -28,7 +28,7 @@
         "flag":{
             "onClick":"language.switch()",
             "aclass":"flag",
-            "anchorText":"<div class='navicon flag'><img src='img/vberthet/france-flag-round-xs.png' title='Cliquer pour passer en anglais'></div>"
+            "anchorText":"<div class='navicon flag'><img src='img/template/france-flag-round-xs.png' title='Cliquer pour passer en anglais'></div>"
         }
     },
     "bio":{
@@ -36,15 +36,23 @@
             "text":"<p>&nbsp;&nbsp;&nbsp;&nbsp; Hey ! Je me présente Vincent, jeune diplômé français de <span id='bio_age'></span> ans. Je suis un ingénieur diplômé du cycle ingénieur Technologie de l'Information spécialité Imagerie Numérique au sein de l'Ecole Supérieur d’Ingénieurs de Rennes (ESIR - Rennes 1). Je vous souhaite la bienvenue sur mon portfolio !</p><p>Depuis plus de <span id='bio_duration'></span> ans, la programmation ainsi que l'univers du média et de l'électronique ont pris une place de plus en plus importante dans mon quotidien. En effet, depuis mes années lycéennes j'ai commencé petit à petit à mener divers projets, qui m'ont donné l'opportunité de découvrir l'informatique et de m’orienter vers le développement d’application logicielle.</p><p>Au cours de mon cursus scolaire, j'ai obtenu un DUT Génie Electrique et Informatique Industrielle qui m'a permis de découvrir l'électronique et l'informatique. A l’obtention de celui-ci, j’ai décidé de partir en mobilité internationale à l'University of the West of Scotland (UWS) de Glasgow pour apprendre la 3D à travers un Bsc Game Development. A la suite de quoi, j’ai intégré un cycle d’ingénieur où j’ai eu l’opportunité de suivre une formation unique en France car dédiée uniquement au vaste domaine de l’imagerie numérique.</p><p>J’ai pu mettre en pratique mes compétences lors de différents stages. En particulier au sein d’entreprises innovantes et à forte expertises, que ce soit une startup telle Askelys dans laquelle j’ai développé une interface 3D WebGL Unity pour leur API web sémantique. Ou bien, que ce soit lors de mon contrat de professionnalisation durant plus d’un an à l’Institut de Recherche Technologique b<>com, par ma contribution au développement d’un Framework de Réalité Augmentée open-source.</p><p>Tous ces challenges m’ont permis de m’enrichir personnellement et professionnellement. Vous pouvez retrouver ci-dessous quelques-uns de mes projets. N'hésitez pas à me contacter pour en savoir plus.</p><p>Cheers</p>"  }
     },
     "portfolio":{
+        "Jekyll":{
+            "title":"Jekyll",
+            "abstract":"Création d'un site web avec Jekyll pour publier ( des fichiers markdown avec l'API de Github) et partager facilements des tips avec ma famille durant le confinement"
+        },
         "ASCII_ART":{
             "title":"ASCII Art",
-            "abstract":"Traite une image pour appliquer un effet <a href='https://fr.wikipedia.org/wiki/Art_ASCII'>ASCII Art</a>."
+            "abstract":"Traite une image pour appliquer un effet <a href='https://fr.wikipedia.org/wiki/Art_ASCII'>ASCII Art</a>"
+        },
+        "Github_API":{
+            "title":"Github API",
+            "abstract":"Prise en main de l'API REST de Github afin d'automatiser la génération de mon portfolio avec mes répertoires publics de mon profile Github"
         },
         "BCOM":{
             "title":"b<>com contrat d'alternance",
             "abstract":"Contrat d'alternance (2019-2020)<br/>Rapport et slides de mes missions effectué durant mon alternance chez l'<a href='https://b-com.com/fr' target='_blank'>IRT b<>com</a>",
             "request":{
-                "description":"<p>Rapport et présentation de mon contrat de professionalisation à <a target='_blank' href='https://b-com.com/'>b<>com</a> (French)</p><div>J'ai travaillé pendant un an en tant qu'ingénieur R&D au sein du laboratoire Immersive Medical Technologies spécialisé en vision par ordinateur et en vidéo. Au cours de cette année, j'ai contribué au développement d'un Framework C++17 open-source : <a href='http://www.solarframework.org/'>SolAR Framework</a>. Mes principaux travaux ont concerné le développement d'un plugin Unity pour Android, le support de l'intégration continu du framework et la réalisation d'un sample utilisant les caméras de profondeurs <a href='https://www.intelrealsense.com/'>Intel RealSense</a>"
+                "description":"<p>Rapport et présentation de mon contrat de professionalisation à <a target='_blank' href='https://b-com.com/'>b<>com</a></p><div>J'ai travaillé pendant un an en tant qu'ingénieur R&D au sein du laboratoire Immersive Medical Technologies spécialisé en vision par ordinateur et en vidéo. Au cours de cette année, j'ai contribué au développement d'un Framework C++17 open-source : <a href='https://solarframework.github.io/'>SolAR Framework</a>. Mes principaux travaux ont concerné le développement d'un plugin Unity pour Android, le support de l'intégration continu du framework, le développement des modules et d'un sample afin de pouvoir utiliser les caméras de profondeurs tel les <a href='https://www.intelrealsense.com/'>Intel RealSense</a>."
             }
         },
         "Asymetrie_ICP":{
@@ -62,13 +70,24 @@
             "title":"Stylisation dirigée par tenseurs",
             "abstract":"Ce project repose sur le papier \"Tensors-directed simulation of strokes for image stylization with hatching and contours\" - David TSCHUMPERLE de Septembre 2011 \n Cette publication décris un algorithme pour générer des dessins à partir d'image basé sur ses tenseurs géométriques"
         },
+        "AR":{
+            "title":"Réalité Augmentée",
+            "abstract":"L'objectif de ce projet était de prendre plus en main le fonctionnement de la réalité augmentée ainsi que la librairie OpenCV. Notamment comment résoudre les problématiques liées à l'estimation de la pose"
+        },
+        "Crowd_Choice":{
+            "title":"Crowd Choice",
+            "abstract":"Formation d'une semaine en partenariat avec l'<a href='https://www.igr.univ-rennes1.fr/fr/' target='_blank'>IGR-IAE Rennes</a> dont l'objectif était de créer une startup avec toute les contraintes liées à l'entrepreneuriat",
+            "request":{
+                "description":"<div>Formation d'une semaine en partenariat avec l'<a href='https://www.igr.univ-rennes1.fr/fr/' target='_blank'>IGR-IAE Rennes</a> dont l'objectif était de créer une startup avec toute les contraintes liées à l'entrepreneuriat.</div><br/><div>Crowd Choice est une entreprise d’organisation événementielle basée sur un modèle de financement participatif. Le but est de produire des soirées à thème (style musical et culture étrangère) sur mesure, grâce à des sondages préparés en amont, dans les grandes villes de Bretagne. En fonction des votes de la communauté les évènements sont montés afin d'être soumis à un crowdfunding.</div>"
+            }
+        },
         "HDR":{
             "title":"HDR",
             "abstract":"Expérimentation de l'imagerie à grande gamme dynamique (HDR) avec la librairie OpenCV"
         },
         "Askelys":{
             "title":"Askelys Rapport",
-            "abstract":"Rapport de stage au sein de l'entreprise <a href='http://askelys.com/' target='_blank'>Askelys</a> exerçant dans le domaine du web sémantique. Développement d'un prototype WebGL sous Unity.",
+            "abstract":"Rapport de stage au sein de l'entreprise <a href='http://askelys.com/' target='_blank'>Askelys</a> exerçant dans le domaine du web sémantique. Développement d'un prototype WebGL sous Unity",
             "request":{
                 "description":"<p>Rapport de stage (4 mois)</p>Rapport de stage au sein de l'entreprise <a href='http://askelys.com/' target='_blank'>Askelys</a> exerçant dans le domaine du web sémantique. Développement d'un prototype WebGL sous Unity utilisant la librairie Javascript de l'entreprise dédié au web sémantique.</p>"      
             }
@@ -102,7 +121,7 @@
         },
         "TA":{
             "title":"Tower Attack",
-            "abstract":"Programmation avancées pour support mobile (JS)"
+            "abstract":"Programmation avancées pour support mobile"
         },
         "Orium":{
             "title":"Orium",
@@ -193,7 +212,7 @@
         },
         "Mobile":{
             "title":"Ce projet a été désigné pour les plateformes mobile",
-            "text":"Si vous êtes sur un ordinateur utiliser l' 'inspecteur d'élément'",
+            "text":"Si vous êtes sur un ordinateur utiliser l' ''inspecteur d'élément'",
             "button":"Aller au projet" 
         }
     },
