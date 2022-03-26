@@ -1,337 +1,337 @@
-{   
-    "portfolio":{
-        "UnityMars":{
-            "title":"UnityMars",
-            "abstract":"",
-            "filter":"",
-            "skills":"",
-            "href":"UnityMars",
-            "github":true,           
-            "request":{
-                "id":"Redirect",
-                "wip":true
+{
+    "portfolio": {
+        "UnityMars": {
+            "title": "UnityMars",
+            "abstract": "",
+            "filter": "",
+            "skills": "",
+            "href": "UnityMars",
+            "github": true,
+            "request": {
+                "id": "Redirect",
+                "wip": true
             }
         },
-        "Jekyll":{
-            "ico":"img/ico_project/ico_jekyll.png",
-            "title":"NA",
-            "abstract":"NA",
-            "filter":"Web",
-            "skills":"Jekyll, HTML5, CSS3, Javascript",
-            "href":"jekyll",
-            "github":true,
-            "githubPage":true
+        "Jekyll": {
+            "ico": "img/ico_project/ico_jekyll.png",
+            "title": "NA",
+            "abstract": "NA",
+            "filter": "Web",
+            "skills": "Jekyll, HTML5, CSS3, Javascript",
+            "href": "jekyll",
+            "github": true,
+            "githubPage": true
         },
-        "ASCII_ART":{
-            "ico":"img/ico_project/ico_asciiart.png",
-            "title":"ASCII Art",
-            "abstract":"NA",
-            "filter":"Python OpenCV",
-            "skills":"Python, OpenCV",
-            "href":"AsciiArt",
-            "github":true
+        "ASCII_ART": {
+            "ico": "img/ico_project/ico_asciiart.png",
+            "title": "ASCII Art",
+            "abstract": "NA",
+            "filter": "Python OpenCV",
+            "skills": "Python, OpenCV",
+            "href": "AsciiArt",
+            "github": true
         },
-        "Github_API":{
-            "ico":"img/ico_project/ico_api.png",
-            "title":"NA",
-            "abstract":"NA",
-            "filter":"Web Javascript",
-            "skills":"Javascript, Rest",
-            "href":"github-api",
-            "github":true,
-            "githubPage":true,
-            "request":{
-                "id":"Redirect",
-                "wip":true
+        "Github_API": {
+            "ico": "img/ico_project/ico_api.png",
+            "title": "NA",
+            "abstract": "NA",
+            "filter": "Web Javascript",
+            "skills": "Javascript, Rest",
+            "href": "github-api",
+            "github": true,
+            "githubPage": true,
+            "request": {
+                "id": "Redirect",
+                "wip": true
             }
         },
-        "BCOM":{
-            "ico":"img/ico_project/ico_bcom.png",
-            "title":"NA",
-            "abstract":"NA",
-            "filter":"Pro CSharp Cpp 3D",
-            "skills":"C++, Computer vision, Unity, C#, Qt, CI, 3D",
-            "request":{
-                "id":"Download",
-                "description":"NA",
-                "name":"BERTHET_Vincent_bcom.zip",
-                "href":"Report/BERTHET_Vincent_bcom.zip"
+        "BCOM": {
+            "ico": "img/ico_project/ico_bcom.png",
+            "title": "NA",
+            "abstract": "NA",
+            "filter": "Pro CSharp Cpp 3D",
+            "skills": "C++, Computer vision, Unity, C#, Qt, CI, 3D",
+            "request": {
+                "id": "Download",
+                "description": "NA",
+                "name": "BERTHET_Vincent_bcom.zip",
+                "href": "Report/BERTHET_Vincent_bcom.zip"
             }
         },
-        "Asymetrie_ICP":{
-            "ico":"img/ico_project/ico_asymetrieICP.png",
-            "title":"NA",
-            "abstract":"NA",
-            "filter":"OpenCV Python",
-            "href":"AsymetrieICP",
-            "skills":"OpenCV, Python, ICP",
-            "github":true
+        "Asymetrie_ICP": {
+            "ico": "img/ico_project/ico_asymetrieICP.png",
+            "title": "NA",
+            "abstract": "NA",
+            "filter": "OpenCV Python",
+            "href": "AsymetrieICP",
+            "skills": "OpenCV, Python, ICP",
+            "github": true
         },
-        "Luna_And_Helios":{
-            "ico":"img/ico_project/ico_luna_and_helios.png",
-            "title":"NA",
-            "abstract":"NA",
-            "filter":"Game CSharp",
-            "github":true,
-            "skills":"Unity, C#",
-            "request":{
-                "id":"WebGL",
-                "href":"LunaAndHelios/WebGL/index.html",
-                "description":"NA"
+        "Luna_And_Helios": {
+            "ico": "img/ico_project/ico_luna_and_helios.png",
+            "title": "NA",
+            "abstract": "NA",
+            "filter": "Game CSharp",
+            "github": true,
+            "skills": "Unity, C#",
+            "request": {
+                "id": "WebGL",
+                "href": "LunaAndHelios/WebGL/index.html",
+                "description": "NA"
             }
         },
-        "Tensors":{
-            "ico":"img/ico_project/ico_tensors.png",
-            "title":"NA",
-            "abstract":"NA",
-            "filter":"OpenCV Python", 
-            "href":"Tensor_directed_stylization",
-            "skills":"OpenCV, Python",
-            "github":true
+        "Tensors": {
+            "ico": "img/ico_project/ico_tensors.png",
+            "title": "NA",
+            "abstract": "NA",
+            "filter": "OpenCV Python",
+            "href": "Tensor_directed_stylization",
+            "skills": "OpenCV, Python",
+            "github": true
         },
-        "AR":{
-            "ico":"img/ico_project/ico_ar.png",
-            "title":"NA",
-            "abstract":"NA",
-            "filter":"OpenCV Python",
-            "href":"AR",
-            "skills":"OpenCV, Python",
-            "github":true
+        "AR": {
+            "ico": "img/ico_project/ico_ar.png",
+            "title": "NA",
+            "abstract": "NA",
+            "filter": "OpenCV Python",
+            "href": "AR",
+            "skills": "OpenCV, Python",
+            "github": true
         },
-        "Crowd_Choice":{
-            "ico":"img/ico_project/ico_crowd_choice.png",
-            "title":"NA",
-            "abstract":"NA",
-            "filter":"Management",
-            "skills":"Entrepreneurship",
-            "request":{
-                "id":"Download",
-                "description":"NA",
-                "name":"Crowd_choice.zip",
-                "href":"Project/Crowd_choice.zip"
+        "Crowd_Choice": {
+            "ico": "img/ico_project/ico_crowd_choice.png",
+            "title": "NA",
+            "abstract": "NA",
+            "filter": "Management",
+            "skills": "Entrepreneurship",
+            "request": {
+                "id": "Download",
+                "description": "NA",
+                "name": "Crowd_choice.zip",
+                "href": "Project/Crowd_choice.zip"
             }
         },
-        "HDR":{
-            "ico":"img/ico_project/ico_hdr.png",
-            "title":"NA",
-            "abstract":"NA",
-            "filter":"OpenCV Python",
-            "href":"HDR",
-            "skills":"OpenCV, Python",
-            "github":true
+        "HDR": {
+            "ico": "img/ico_project/ico_hdr.png",
+            "title": "NA",
+            "abstract": "NA",
+            "filter": "OpenCV Python",
+            "href": "HDR",
+            "skills": "OpenCV, Python",
+            "github": true
         },
-        "Askelys":{
-            "ico":"img/ico_project/ico_askelys.png",
-            "title":"NA",
-            "abstract":"NA",
-            "filter":"Pro CSharp",
-            "skills":"Unity, C#, Javascript, WebGL",
-            "request":{
-                "id":"Download",
-                "description":"NA",
-                "name":"Rapport_BERTHET_Vincent_Askelys_2019.pdf",
-                "href":"Report/Rapport_BERTHET_Vincent_Askelys_2019.pdf"
+        "Askelys": {
+            "ico": "img/ico_project/ico_askelys.png",
+            "title": "NA",
+            "abstract": "NA",
+            "filter": "Pro CSharp",
+            "skills": "Unity, C#, Javascript, WebGL",
+            "request": {
+                "id": "Download",
+                "description": "NA",
+                "name": "Rapport_BERTHET_Vincent_Askelys_2019.pdf",
+                "href": "Report/Rapport_BERTHET_Vincent_Askelys_2019.pdf"
             }
         },
-        "Kubic":{
-            "ico":"img/ico_project/ico_kubic.png",
-            "title":"NA",
-            "abstract":"NA",
-            "filter":"3D CSharp Game",
-            "github":true,
-            "skills":"Unity, C#",
-            "request":{
-                "id":"WebGL",
-                "href":"Kubic/Kubic/WebGL/index.html",
-                "description":"NA"    
+        "Kubic": {
+            "ico": "img/ico_project/ico_kubic.png",
+            "title": "NA",
+            "abstract": "NA",
+            "filter": "3D CSharp Game",
+            "github": true,
+            "skills": "Unity, C#",
+            "request": {
+                "id": "WebGL",
+                "href": "Kubic/Kubic/WebGL/index.html",
+                "description": "NA"
             }
         },
-        "Ray":{
-            "ico":"img/ico_project/ico_ray.png",
-            "title":"NA",
-            "abstract":"NA",
-            "filter":"Cpp 3D",
-            "href":"Ray",
-            "skills":"C++, RayTracing, PathTracing",
-            "github":true
+        "Ray": {
+            "ico": "img/ico_project/ico_ray.png",
+            "title": "NA",
+            "abstract": "NA",
+            "filter": "Cpp 3D",
+            "href": "Ray",
+            "skills": "C++, RayTracing, PathTracing",
+            "github": true
         },
-        "Game_Jam_2k19":{
-            "ico":"img/ico_project/ico_gameJam2k19.png",
-            "title":"NA",
-            "abstract":"NA",
-            "filter":"Management",
-            "skills":"Management",
-            "request":{
-                "id":"Player",
-                "href":"https://www.youtube.com/embed/Q5fmX5Q7btM",
-                "description":"NA"
+        "Game_Jam_2k19": {
+            "ico": "img/ico_project/ico_gameJam2k19.png",
+            "title": "NA",
+            "abstract": "NA",
+            "filter": "Management",
+            "skills": "Management",
+            "request": {
+                "id": "Player",
+                "href": "https://www.youtube.com/embed/Q5fmX5Q7btM",
+                "description": "NA"
             }
         },
-        "GOL":{
-            "ico":"img/ico_project/ico_gol.png",
-            "title":"NA",
-            "abstract":"NA",
-            "filter":"Cpp Game",
-            "href":"GoL",
-            "github":true,
-            "skills":"Qt, C++, GUI"
+        "GOL": {
+            "ico": "img/ico_project/ico_gol.png",
+            "title": "NA",
+            "abstract": "NA",
+            "filter": "Cpp Game",
+            "href": "GoL",
+            "github": true,
+            "skills": "Qt, C++, GUI"
         },
-        "WebsiteV1":{
-            "ico":"img/ico_project/ico_website_v1.png",
-            "title":"NA",
-            "abstract":"NA",
-            "filter":"Javascript Web",
-            "href":"vberthet_1.6.0",
-            "github":true,
-            "githubPage":true,
-            "skills":"Javascript, HTML5, CSS3, PHP, JQuery"
+        "WebsiteV1": {
+            "ico": "img/ico_project/ico_website_v1.png",
+            "title": "NA",
+            "abstract": "NA",
+            "filter": "Javascript Web",
+            "href": "vberthet_1.6.0",
+            "github": true,
+            "githubPage": true,
+            "skills": "Javascript, HTML5, CSS3, PHP, JQuery"
         },
-        "TA":{
-            "ico":"img/ico_project/ico_TA.png",
-            "title":"NA",
-            "abstract":"NA",
-            "filter":"Javascript Game",
-            "href":"https://towerattackproject.firebaseapp.com/",
-            "skills":"Javascript",
-            "request":{
-                "id":"Redirect",
-                "mobile":true
+        "TA": {
+            "ico": "img/ico_project/ico_TA.png",
+            "title": "NA",
+            "abstract": "NA",
+            "filter": "Javascript Game",
+            "href": "https://towerattackproject.firebaseapp.com/",
+            "skills": "Javascript",
+            "request": {
+                "id": "Redirect",
+                "mobile": true
             }
         },
-        "Orium":{
-            "ico":"img/ico_project/ico_orium.png",
-            "title":"NA",
-            "abstract":"NA",
-            "filter":"3D Game",
-            "skills":"UE4",
-            "request":{
-                "id":"Player",
-                "href":"https://www.youtube.com/embed/ksHjCFvTFxA",
-                "description":"NA"
+        "Orium": {
+            "ico": "img/ico_project/ico_orium.png",
+            "title": "NA",
+            "abstract": "NA",
+            "filter": "3D Game",
+            "skills": "UE4",
+            "request": {
+                "id": "Player",
+                "href": "https://www.youtube.com/embed/ksHjCFvTFxA",
+                "description": "NA"
             }
         },
-        "Auld":{
-            "ico":"img/ico_project/ico_auld.png",
-            "title":"NA",
-            "abstract":"NA",
-            "filter":"Management 3D Game",
-            "href":"http://projectauldue4.blogspot.com/",
-            "skills":"UE4"
+        "Auld": {
+            "ico": "img/ico_project/ico_auld.png",
+            "title": "NA",
+            "abstract": "NA",
+            "filter": "Management 3D Game",
+            "href": "http://projectauldue4.blogspot.com/",
+            "skills": "UE4"
         },
-        "Scogue":{
-            "ico":"img/ico_project/ico_scogue.png",
-            "title":"NA",
-            "abstract":"NA",
-            "filter":"Javascript Game",
-            "href":"Scogue",
-            "skills":"Javascript",
-            "github":true,
-            "githubPage":false
+        "Scogue": {
+            "ico": "img/ico_project/ico_scogue.png",
+            "title": "NA",
+            "abstract": "NA",
+            "filter": "Javascript Game",
+            "href": "Scogue",
+            "skills": "Javascript",
+            "github": true,
+            "githubPage": false
         },
-        "Blog":{
-            "ico":"img/ico_project/ico_blog.png",
-            "title":"NA",
-            "abstract":"NA",
-            "filter":"Web",
-            "href":"https://uwsblog.yo.fr/UWS_Blog/",
-            "skills":"WordPress"
-        },     
-        "Mutest":{
-            "ico":"img/ico_project/ico_mutest.png",
-            "title":"NA",
-            "abstract":"NA",
-            "filter":"Pro",
-            "skills":"Java",
-            "request":{
-                "id":"Download",
-                "description":"NA",
-                "name":"MuTest_2016.pdf",
-                "href":"Report/MuTest_2016.pdf"
+        "Blog": {
+            "ico": "img/ico_project/ico_blog.png",
+            "title": "NA",
+            "abstract": "NA",
+            "filter": "Web",
+            "href": "https://uwsblog.yo.fr/UWS_Blog/",
+            "skills": "WordPress"
+        },
+        "Mutest": {
+            "ico": "img/ico_project/ico_mutest.png",
+            "title": "NA",
+            "abstract": "NA",
+            "filter": "Pro",
+            "skills": "Java",
+            "request": {
+                "id": "Download",
+                "description": "NA",
+                "name": "MuTest_2016.pdf",
+                "href": "Report/MuTest_2016.pdf"
             }
-        },       
-        "Pacman":{
-            "ico":"img/ico_project/ico_pacman.png",
-            "title":"NA",
-            "abstract":"NA",
-            "filter":"CSharp Game",
-            "skills":"C#",
-            "request":{
-                "id":"Download",
-                "description":"NA",
-                "name":"Pacman.pdf",
-                "href":"Project/Pacman.pdf"
+        },
+        "Pacman": {
+            "ico": "img/ico_project/ico_pacman.png",
+            "title": "NA",
+            "abstract": "NA",
+            "filter": "CSharp Game",
+            "skills": "C#",
+            "request": {
+                "id": "Download",
+                "description": "NA",
+                "name": "Pacman.pdf",
+                "href": "Project/Pacman.pdf"
             }
-        },      
-        "Monitoring":{
-            "ico":"img/ico_project/ico_monitoring.png",
-            "title":"NA",
-            "description":"NA",
-            "filter":"Web",
-            "href":"https://uwsblog.yo.fr/",
-            "skills":"PHP, SQL, JQuery"
+        },
+        "Monitoring": {
+            "ico": "img/ico_project/ico_monitoring.png",
+            "title": "NA",
+            "description": "NA",
+            "filter": "Web",
+            "href": "https://uwsblog.yo.fr/",
+            "skills": "PHP, SQL, JQuery"
         }
     },
-    "contact":{
-            "mail":{
-                "class":"fas fa-envelope fa-2x",
-                "href":"mailto:vincent.berthet42@gmail.com",
-                "title":"NA",
-                "text":"vincent.berthet42@gmail.com"
-            },
-            "resume":{
-                "class":"fas fa-download fa-2x color-4",
-                "title":"NA",
-                "text":"NA",
-                "request":{
-                    "id":"Download",
-                    "description":"NA",
-                    "name":"NA"
-                }
-            },
-            "phone":{
-                "class":"fas fa-phone fa-2x",
-                "href":"tel:+33658659033",
-                "title":"NA",
-                "text":"06 58 65 90 33",
-                "country_code":"+33",
-                "country_flag":"img/template/france-flag-round-xs.png"
+    "contact": {
+        "mail": {
+            "class": "fas fa-envelope fa-2x",
+            "href": "mailto:vincent.berthet42@gmail.com",
+            "title": "NA",
+            "text": "vincent.berthet42@gmail.com"
+        },
+        "resume": {
+            "class": "fas fa-download fa-2x color-4",
+            "title": "NA",
+            "text": "NA",
+            "request": {
+                "id": "Download",
+                "description": "NA",
+                "name": "NA"
             }
         },
-    "social":{
-        "Linkedin":{
-            "class":"linkedin",
-            "title":"NA",
-            "href":"https://uk.linkedin.com/in/",
-            "username":"vincent-berthet",
-            "class_ico":"fab fa-linkedin"
-        },   
-        "Twitter":{
-            "class":"twitter",
-            "title":"NA",
-            "href":"https://twitter.com/",
-            "username":"_Sissouu",
-            "class_ico":"fab fa-twitter"
-        },      
-        "YouTube":{
-            "class":"youtube",
-            "title":"NA",
-            "href":"https://www.youtube.com/channel/",
-            "username":"UC1zTh8-gfUpfaW8xvRnYHXw",
-            "class_ico":"fab fa-youtube"
-        },        
-        "Instagram":{
-            "class":"instagram",
-            "title":"NA",
-            "href":"https://www.instagram.com/",
-            "username":"vincent_berthet",
-            "class_ico":"fab fa-instagram"
+        "phone": {
+            "class": "fas fa-phone fa-2x",
+            "href": "tel:+33658659033",
+            "title": "NA",
+            "text": "06 58 65 90 33",
+            "country_code": "+33",
+            "country_flag": "img/template/france-flag-round-xs.png"
+        }
+    },
+    "social": {
+        "Linkedin": {
+            "class": "linkedin",
+            "title": "NA",
+            "href": "https://uk.linkedin.com/in/",
+            "username": "vincent-berthet",
+            "class_ico": "fab fa-linkedin"
         },
-        "Github":{
-            "class":"github",
-            "title":"NA",
-            "href":"https://github.com/",
-            "username":"RealVincentBerthet",
-            "class_ico":"fab fa-github"
+        "Twitter": {
+            "class": "twitter",
+            "title": "NA",
+            "href": "https://twitter.com/",
+            "username": "_Sissouu",
+            "class_ico": "fab fa-twitter"
+        },
+        "YouTube": {
+            "class": "youtube",
+            "title": "NA",
+            "href": "https://www.youtube.com/channel/",
+            "username": "UC1zTh8-gfUpfaW8xvRnYHXw",
+            "class_ico": "fab fa-youtube"
+        },
+        "Instagram": {
+            "class": "instagram",
+            "title": "NA",
+            "href": "https://www.instagram.com/",
+            "username": "vincent_berthet",
+            "class_ico": "fab fa-instagram"
+        },
+        "Github": {
+            "class": "github",
+            "title": "NA",
+            "href": "https://github.com/",
+            "username": "RealVincentBerthet",
+            "class_ico": "fab fa-github"
         }
     }
 }
