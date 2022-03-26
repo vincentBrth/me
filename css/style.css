@@ -115,13 +115,18 @@ fieldset {
 .section-title h2 {
     margin-top: 0;
     font-weight: 600;
-    border-bottom: 4px double var(--primary-color);
-    border-radius: 25px;
     font-size: 30px;
-    margin: 0 auto;
-    padding: 10px 0;
     width: 350px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: var(--subText-color);
+}
+
+section h2::before {
+    content: "# ";
+    vertical-align: middle;
+    font-size: 45px;
+    color: var(--primary-color);
 }
 
 .section-title p {
@@ -459,6 +464,7 @@ body.loaded #preloader {
     color: var(--primary-color);
     -webkit-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
+    cursor: pointer;
 }
 
 .navigation-menu .navbar-nav li.active a {
@@ -508,20 +514,37 @@ body.loaded #preloader {
     height: 70px;
     margin-top: 15px;
     padding: 7px 16px;
-    border: 2px solid white;
     border-radius: 100% !important;
     font-size: 40px;
     color: white;
     background: transparent;
+    animation: up-down 1s ease-in-out infinite alternate-reverse both;
     -webkit-transition: background 0.3s ease-in-out;
     -moz-transition: background 0.3s ease-in-out;
     transition: background 0.3s ease-in-out;
 }
-.btn-circle:hover,
-.btn-circle:focus {
+
+@-webkit-keyframes up-down {
+    0% {
+        transform: translateY(5px);
+    }
+    100% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes up-down {
+    0% {
+        transform: translateY(5px);
+    }
+    100% {
+        transform: translateY(-5px);
+    }
+}
+
+.btn-circle:hover {
     outline: none;
-    color: #fff;
-    background: var(--primary-color);
+    color: var(--primary-color);
 }
 
 .btn-circle i.animated {
@@ -596,7 +619,6 @@ ul.portfolio {
     padding: 0;
     list-style: none;
     margin-top: 30px;
-    margin-left: 8px;
     text-align: center;
 }
 
@@ -849,7 +871,7 @@ tr.odd {
     }
     body {
         --text-color: #f2f0ed;
-        --bkg-color: #0f0f0f;
+        --bkg-color: #1a1a1a;
         --bkg-color-secondary: #1f1e1e;
         --subText-color: #eee;
         --button-color: #000;

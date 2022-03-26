@@ -53,9 +53,8 @@ function update() {
 async function make() {
     let data = await this.language.getData(`.core`);
     let data_lang = await this.language.getData();
-
     makeHeader(data_lang[`header`]);
-    makePreview(data_lang[`preview`], true);
+    makePreview(data_lang[`preview`], (seekingjob = data.job));
     makeBio(data_lang[`header`], data_lang[`bio`]);
     makePortfolio(data_lang[`header`], data_lang[`portfolio`], data[`portfolio`]);
     makeContact(data_lang[`header`], data_lang[`contact`], data[`contact`], data_lang[`social`], data[`social`]);
@@ -87,7 +86,8 @@ function makePreview(content_preview, seekingjob = false) {
  *    @param {string array} content_bio The content of the JSON [en,fr] used
  */
 function makeBio(content_header, content_bio) {
-    $(`#bio_right`).html(`<h2>` + content_header.bio.sectionTitle + `</h2>` + content_bio.right.text);
+    $(`#bio_title_content`).html(`<h2>${content_header.bio.sectionTitle}</h2>`);
+    $(`#bio_right`).html(content_bio.text.text);
     $(`#bio_age`).html(getAge(`20/02/1996`, `year`));
     $(`#bio_duration`).html(getAge(`20/02/1996`, `year`) - 14);
 }
@@ -132,7 +132,7 @@ async function makePortfolio(content_header, content_portfolio, content_c_portfo
             if (c.hide == undefined || c.hide == false) {
                 html += `
                             <div id='${key}-project' class='col-md-4 col-sm-6 col-xs-12 mix ${filter}'>
-                                <div class=''>
+                                <div class='row grid'>
                                     <figure class='effect-project'>
                                         <img src='${ico}'>
                                         <figcaption>
@@ -140,7 +140,7 @@ async function makePortfolio(content_header, content_portfolio, content_c_portfo
                                             <div class='icon-links'>
                                                 <a href='${href}' target='_blank'><i class='fas fa-external-link-alt'></i></a>
                                             </div>
-                                            <h2 id='${key}-title'>WIP</h2>
+                                            <h3 id='${key}-title'>WIP</h3>
                                             <span>
                                                 ${skills ? `<p>${skills}</p>` : ``}
                                                 <p id='${key}-abstract'>WIP</p>
@@ -209,7 +209,7 @@ function makeContact(content_header, content_contact, content_c_contact, content
 
         if (c.country_code != undefined && c.country_flag != undefined) {
             //add flag and phone code
-            text = `<img src='${c.country_flag}' title='${c.country_code}'>  ${text}`;
+            text = `${c.country_code}  ${text}`;
         }
 
         let style = ``;

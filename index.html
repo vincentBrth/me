@@ -43,8 +43,8 @@
                                     <p id="preview_text_content"></p>
                                     <h2><span class="typing"></span></h2>
                                     <div class="margin-top-60">
-                                        <a href="#bio" class="btn btn-circle smoth-scroll">
-                                            <i class="fa fa-angle-double-down animated"></i>
+                                        <a href="#bio" class="btn btn-circle smoth-scroll" onclick="this.blur();">
+                                            <i class="fa fa-angle-down animated"></i>
                                         </a>
                                     </div>
                                 </div>
@@ -58,10 +58,11 @@
         <!-- Bio -->
         <section id="bio" class="bio-section">
             <div class="row">
-                <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="col-md-4 col-sm-12 col-xs-12">
                     <img class="img-responsive" src="img/bg/poly.jpg" draggable="false" alt="" />
                 </div>
-                <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="col-md-8 col-sm-12 col-xs-12">
+                    <a href="#bio" class="section-title" id="bio_title_content"></a>
                     <div id="bio_right" class="bio"></div>
                 </div>
             </div>
@@ -72,7 +73,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="section-title" id="portfolio_title_content"></div>
+                        <a href="#portfolio" class="section-title" id="portfolio_title_content"></a>
                     </div>
                 </div>
 
@@ -94,7 +95,7 @@
 
                 <div class="portfolio-inner">
                     <div class="row">
-                        <div class="container grid" id="portfolio_content"></div>
+                        <div class="container" id="portfolio_content"></div>
                     </div>
                 </div>
             </div>
@@ -105,7 +106,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="section-title" id="contact_title_content"></div>
+                        <a href="#contact" class="section-title" id="contact_title_content"></a>
                     </div>
                 </div>
                 <div class="text-center margin-top-10 margin-bottom-50">

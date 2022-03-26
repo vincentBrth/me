@@ -292,7 +292,7 @@
             "class": "fas fa-phone fa-2x",
             "href": "tel:+33658659033",
             "title": "NA",
-            "text": "06 58 65 90 33",
+            "text": "6 58 65 90 33",
             "country_code": "+33",
             "country_flag": "img/template/france-flag-round-xs.png"
         }
@@ -333,5 +333,6 @@
             "username": "RealVincentBerthet",
             "class_ico": "fab fa-github"
         }
-    }
+    },
+    "job": false
 }
