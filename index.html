@@ -1,47 +1,50 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
     <head>
         <!-- Meta Tag -->
-        <meta charset='UTF-8'>
-        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <!-- SEO -->
-        <meta name='description' content='Welcome on the website of Vincent Berthet a french student. Open it !'>
-        <meta name=”keywords” content='job,Vincent,Berthet,Vincent Berthet,Berthet Vincent,etudiant,student,info,informatique,computing,ingenieur,engineer,dev,junior,portfolio,website,site,Rennes,France,Saint-Etienne,UJM,UWS,ESIR'>
-        <meta name='author' content='Vincent Berthet'>
-        <meta name='url' content='https://realvincentberthet.github.io/me/'>
-        <meta name='copyright' content='vincent berthet'>
-        <meta name='robots' content='index,follow'>
+        <meta name="description" content="Welcome on the website of Vincent Berthet a french student. Open it !" />
+        <meta
+            name="keywords"
+            content="job,Vincent,Berthet,Vincent Berthet,Berthet Vincent,etudiant,student,info,informatique,computing,ingenieur,engineer,dev,junior,portfolio,website,site,Rennes,France,Saint-Etienne,UJM,UWS,ESIR"
+        />
+        <meta name="author" content="Vincent Berthet" />
+        <meta name="url" content="https://realvincentberthet.github.io/me/" />
+        <meta name="copyright" content="vincent berthet" />
+        <meta name="robots" content="index,follow" />
         <title>Vincent Berthet</title>
-        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
         <!-- CSS Stylesheet -->
-        <link rel='stylesheet' type='text/css' href='css/style.css'>
-        <link rel='stylesheet' type='text/css' href='css/project.css'>
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="stylesheet" type="text/css" href="css/project.css" />
         <!-- Web Fonts  -->
-        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins:400,300,500,600,700'>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,300,500,600,700" />
     </head>
-    <body>    
+    <body>
         <!-- Preloader -->
-        <div id='preloader'>
-        	<div class='loader'></div>
+        <div id="preloader">
+            <div class="loader"></div>
         </div>
- 
+
         <!-- Header -->
-        <header id='navigation'></header>
+        <header id="navigation"></header>
 
         <!-- Home -->
-        <div id='home' class='home-section-background' data-stellar-background-ratio='0.6'>
-            <div class='display-table'>
-                <div class='display-table-cell'>
-                    <div class='container'>
-                        <div class='row'>
-                            <div class='col-md-12 text-center'>
-                                <div class='header-text'>
-                                    <p id='preview_text_content'></p>
-                                    <h2><span class='typing'></span></h2>
-                                    <div class='margin-top-60'>   
-                                        <a href='#bio' class='btn btn-circle smoth-scroll'>
-                                            <i class='fa fa-angle-double-down animated'></i>
+        <div id="home" class="home-section-background" data-stellar-background-ratio="0.6">
+            <div class="display-table">
+                <div class="display-table-cell">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <div class="header-text">
+                                    <p id="preview_text_content"></p>
+                                    <h2><span class="typing"></span></h2>
+                                    <div class="margin-top-60">
+                                        <a href="#bio" class="btn btn-circle smoth-scroll" onclick="this.blur();">
+                                            <i class="fa fa-angle-down animated"></i>
                                         </a>
                                     </div>
                                 </div>
@@ -50,84 +53,85 @@
                     </div>
                 </div>
             </div>
-        </div>    
-    
+        </div>
+
         <!-- Bio -->
-        <section id='bio' class='bio-section'>
-            <div class='row'>       
-                <div class='col-md-6 col-sm-12 col-xs-12'>
-                    <img class='img-responsive' src='img/bg/poly.jpg' draggable='false' alt=''/>
+        <section id="bio" class="bio-section">
+            <div class="row">
+                <div class="col-md-4 col-sm-12 col-xs-12">
+                    <img class="img-responsive" src="img/bg/poly.jpg" draggable="false" alt="" />
                 </div>
-                <div class='col-md-6 col-sm-12 col-xs-12'>
-                    <div id='bio_right' class='bio'></div>
-                </div>   
+                <div class="col-md-8 col-sm-12 col-xs-12">
+                    <a href="#bio" class="section-title" id="bio_title_content"></a>
+                    <div id="bio_right" class="bio"></div>
+                </div>
             </div>
         </section>
-        
+
         <!-- Portfolio -->
-        <section id='portfolio' class='portfolio section-space-padding'>
-            <div class='container'>
-                <div class='row'>
-                    <div class='col-sm-12'>
-                        <div class='section-title' id='portfolio_title_content'></div>
+        <section id="portfolio" class="portfolio section-space-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <a href="#portfolio" class="section-title" id="portfolio_title_content"></a>
                     </div>
                 </div>
-                
-                <div class='row'>
-                    <ul class='portfolio item'>
-                        <li class='filter' data-filter='all'>All</li>
-                        <li class='filter' data-filter='.Pro'>Pro</li>
-                        <li class='filter' data-filter='.OpenCV'>OpenCV</li>
-                        <li class='filter' data-filter='.3D'>3D</li>
-                        <li class='filter' data-filter='.CSharp'>C#</li>
-                        <li class='filter' data-filter='.Cpp'>C++</li>
-                        <li class='filter' data-filter='.Python'>Python</li>
-                        <li class='filter' data-filter='.Javascript'>Javascript</li>
-                        <li class='filter' data-filter='.Web'>Web</li>
-                        <li class='filter' data-filter='.Management'>Management</li>
-                        <li class='filter' data-filter='.Game'>Game</li>
+
+                <div class="row">
+                    <ul class="portfolio item">
+                        <li class="filter" data-filter="all">All</li>
+                        <li class="filter" data-filter=".Pro">Pro</li>
+                        <li class="filter" data-filter=".OpenCV">OpenCV</li>
+                        <li class="filter" data-filter=".3D">3D</li>
+                        <li class="filter" data-filter=".CSharp">C#</li>
+                        <li class="filter" data-filter=".Cpp">C++</li>
+                        <li class="filter" data-filter=".Python">Python</li>
+                        <li class="filter" data-filter=".Javascript">Javascript</li>
+                        <li class="filter" data-filter=".Web">Web</li>
+                        <li class="filter" data-filter=".Management">Management</li>
+                        <li class="filter" data-filter=".Game">Game</li>
                     </ul>
                 </div>
-                
-                <div class='portfolio-inner'>
-                    <div class='row'>
-                        <div class='container grid' id='portfolio_content'></div>
+
+                <div class="portfolio-inner">
+                    <div class="row">
+                        <div class="container" id="portfolio_content"></div>
                     </div>
                 </div>
             </div>
         </section>
-        
+
         <!-- Contact -->
-        <section id='contact' class='contact section-space-padding'>
-            <div class='container'>
-            <div class='row'>
-                    <div class='col-sm-12'>
-                        <div class='section-title' id='contact_title_content'></div>
+        <section id="contact" class="contact section-space-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <a href="#contact" class="section-title" id="contact_title_content"></a>
                     </div>
-            </div>
-                <div class='text-center margin-top-10 margin-bottom-50'>
-                    <div class='row' id='contact_info_content'></div>
+                </div>
+                <div class="text-center margin-top-10 margin-bottom-50">
+                    <div class="row" id="contact_info_content"></div>
                 </div>
             </div>
-        
-            <div class='margin-top-80'> 
-                <ul class='social-icon' id='contact_social_content'></ul>
+
+            <div class="margin-top-80">
+                <ul class="social-icon" id="contact_social_content"></ul>
             </div>
         </section>
-        
+
         <!-- Footer  -->
-        <footer id='footerContent' class='footer-section'></footer>
-            
+        <footer id="footerContent" class="footer-section"></footer>
+
         <!-- Javascript Plugins  -->
-        <script src='plugin/jQuery/2.2.4/js/jquery.min.js'></script>
-        <script src='plugin/bootstrap/3.3.7/js/bootstrap.min.js'></script>
-        <script src='plugin/stellar/0.6.2/js/stellar.min.js'></script>
-        <script src='plugin/typed/2.0.7/js/typed.min.js'></script>
-        <script src='plugin/mixItUp/2.1.11/js/mixitup.min.js'></script>
-        <script src='plugin/gAnalitycs.js'></script>
+        <script src="plugin/jQuery/2.2.4/js/jquery.min.js"></script>
+        <script src="plugin/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="plugin/stellar/0.6.2/js/stellar.min.js"></script>
+        <script src="plugin/typed/2.0.7/js/typed.min.js"></script>
+        <script src="plugin/mixItUp/2.1.11/js/mixitup.min.js"></script>
+        <script src="plugin/gAnalitycs.js"></script>
         <!-- Main Javascript File  -->
-        <script src='js/core.js'></script>
-        <script src='js/home.js'></script>
-        <script src='js/effects.js'></script>
+        <script src="js/core.js"></script>
+        <script src="js/home.js"></script>
+        <script src="js/effects.js"></script>
     </body>
 </html>
