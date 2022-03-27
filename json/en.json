@@ -1,222 +1,227 @@
-{    
-    "preview":{
-            "text":"Hey ! This is Vincent Berthet",
-            "job":"<p><h3>< <span class='primary-color'>Looking for a job</span> ></h3></p>",
-            "typed":["I am an IT Digital Imaging engineer.", "Welcome to my website.", "Hope you will like it.","I hope we can meet someday :D."]
-    }, 
-    "header":{
-        "bio":{
-            "anchor":"bio",
-            "anchorText":"bio",
-            "sectionTitle":"Who am I ?"
+{
+    "preview": {
+        "text": "Hey ! This is Vincent Berthet",
+        "job": "<p><h3>< <span class='primary-color'>Looking for a job</span> ></h3></p>",
+        "typed": [
+            "I am an IT Digital Imaging engineer.",
+            "Welcome to my website.",
+            "Hope you will like it.",
+            "I hope we can meet someday :D."
+        ]
+    },
+    "header": {
+        "bio": {
+            "anchor": "bio",
+            "anchorText": "bio",
+            "sectionTitle": "Who am I ?"
         },
-        "portfolio":{
-            "anchor":"portfolio",
-            "anchorText":"portfolio",
-            "sectionTitle":"My Portfolio"
+        "portfolio": {
+            "anchor": "portfolio",
+            "anchorText": "portfolio",
+            "sectionTitle": "My Portfolio"
         },
-        "contact":{
-            "anchor":"contact",
-            "anchorText":"contact</div",
-            "sectionTitle":"Contact",
-            "liclass":"margin-right-30"
+        "contact": {
+            "anchor": "contact",
+            "anchorText": "contact",
+            "sectionTitle": "Contact me !",
+            "liclass": "margin-right-30"
         },
-        "nightshift":{
-            "onClick":"nightShift.toggle()",
-            "anchorText":"<div id='nightShift' class='navicon'>nightshift</i></div>"
+        "nightshift": {
+            "onClick": "nightShift.toggle()",
+            "anchorText": "<div id='nightShift' class='navicon' title='change display mode'>nightshift</i></div>"
         },
-        "flag":{
-            "onClick":"language.switch()",
-            "aclass":"flag",
-            "anchorText":"<div class='navicon flag'><img src='img/template/united-kingdom-flag-round-xs.png' title='Click to switch to French'></div>"
+        "lang": {
+            "onClick": "language.switch()",
+            "anchorText": "<div class='navicon' title='Click to switch to French'>EN</div>"
         }
     },
-    "bio":{
-        "right":{
-            "text":"<p>&nbsp;&nbsp;&nbsp;Hey! My name is Vincent, I am a <span id='bio_age'></span> years old French graduated. I am an engineer who graduated from the IT Digital Imaging in the Ecole Supérieure d'Ingénieurs de Rennes (ESIR - Rennes 1). I wish you a welcome to my portfolio!</p><p>For more than <span id='bio_duration'></span> years, computing, media, and electronics have taken more and more part of my daily life. Since my high school years, I started little by little to lead various projects. Which allowed me to discover computer science and to lead myself towards the development of software applications.</p><p>During my schooling, I obtained a UTD in Electrical Engineering and Industrial Computer Science which allowed me to discover electronics and industrial computer science. After this year, I decided to go on international mobility at the University of the West of Scotland (UWS) in Glasgow to learn 3D through a Bsc Game Development. After that, I joined an engineering school where I had the opportunity to follow a unique training in France because it was dedicated to the vast field of digital imaging.</p><p>I put my skills into practice during different internships. In particular, within innovative companies with strong expertise, either in startup such as Askelys in which I developed a 3D WebGL Unity interface for their semantic web API. Or, either during my professionalization contract for more than a year at the b<>com Technology Research Institute, by my contribution to the development of an open-source Augmented Reality Framework.</p><p>All these challenges allowed me to improve myself personally and professionally. You can find below some of my projects. Feel free to contact me to learn more about my profile.</p><p>Cheers</p>"       }
-    },
-    "portfolio":{
-        "Jekyll":{
-            "title":"Jekyll",
-            "abstract":"Use Jekyll to publish (markdown with Github API) and share easily tips with my family during the lockdown"
-        },
-        "ASCII_ART":{
-            "title":"ASCII Art",
-            "abstract":"Process an image to create an <a href='https://en.wikipedia.org/wiki/ASCII_art'>ASCII Art</a> effect"
-        },
-        "Github_API":{
-            "title":"Github API",
-            "abstract":"Pick up Github REST API to automatically generate portfolio with Github's project and keep update website and my repositories"
-        },
-        "BCOM":{
-            "title":"b<>com training contract",
-            "abstract":"Professional training contract (2019-2020)<br/>Report and slides of my works at <a href='https://b-com.com/en' target='_blank'>IRT b<>com</a>",
-            "request":{
-                "description":"<p>Report and slides of my professional training contract at <a target='_blank' href='https://b-com.com/'>b<>com</a></p><div>I worked for one year as an R&D engineer in the Immersive Medical Technologies laboratory specialized in computer vision and video. During this year, I contributed to the development of an open-source C++17 Framework: <a href='https://solarframework.github.io/'>SolAR Framework</a>. My main works concerned the development of a Unity plugin for Android, the support of the continuous integration of the framework, the development of modules and a sample to use depth cameras like the <a href='https://www.intelrealsense.com/'>Intel RealSense</a>"
-            }
-        },
-        "Asymetrie_ICP":{
-            "title":"Asymetrie ICP",
-            "abstract":"This project rely on “An algorithm to map asymmetries of bilateral objects in point clouds” - Benoît Combès & al.<br/>This algorithm able to automatically quantify the local asymmetries of bilateral structures in a point cloud by using Iterative Closest Point (ICP)"
-        },
-        "Luna_And_Helios":{
-            "title":"A Story of Luna & Helios",
-            "abstract":"This game has been released during the Game Jam 2020.<br/>This event aimed was to build a video game in 35 hours on the subject : “Safe in the dark”",
-            "request":{
-                "description":"<p>This game has been released during the Orange Game Jam 2020. The aim of this event was to build a video game in 35 hours on the subject : <b>Safe in the dark</b></p><p><b>More informations are available in the GitHub README</b></p><p><a href='https://www.youtube.com/watch?v=EwTJOxKciyE&feature=youtu.be' target='_blank'><i class='fab fa-youtube'></i> Gameplay video</a></p>"
-            }
-        },
-        "Tensors":{
-            "title":"Tensor directed stylization",
-            "abstract":"This project rely on “Tensors-directed simulation of strokes for image stylization with hatching and contours” - David TSCHUMPERLE<br/>Its describe an algorithm to generate sketches from color images directed by an image-dependent tensor-valued geometry"
-        },
-        "AR":{
-            "title":"Augmented Reality",
-            "abstract":"This project aimed to learn the basics of pose estimation for augmented reality. It relies on OpenCV library to process frame and computes pose estimation"
-        },
-        "Crowd_Choice":{
-            "title":"Crowd Choice",
-            "abstract":"A one-week training course in partnership with <a href='https://www.igr.univ-rennes1.fr/fr/' target='_blank'>IGR-IAE Rennes</a> whose objective was to create a startup with all the constraints linked to entrepreneurship",
-            "request":{
-                "description":"<div>A one-week training course in partnership with <a href='https://www.igr.univ-rennes1.fr/fr/' target='_blank'>IGR-IAE Rennes</a> whose objective was to create a startup with all the constraints linked to entrepreneurship.</div><br/><div>Crowd Choice is an event organization company based on a participative financing model. The goal is to produce themed evenings (musical style and foreign culture) tailored to the needs of the audience, thanks to surveys prepared in advance. According to the votes of the community the events are set up in order to be submitted to a crowdfunding.</div>"
-            }
-        },
-        "HDR":{
-            "title":"HDR",
-            "abstract":"Experimentation of features related to High Dynamic Range (HDR) with OpenCV library"
-        },
-        "Askelys":{
-            "title":"Askelys Report",
-            "abstract":"Internship<br/>Report of my 4 months internship at <a href='http://askelys.com/' target='_blank'>Askelys</a> a startup working in the Semantic Web. Development of a WebGL prototype on Unity",
-            "request":{
-                "description":"Report file (French)"      
-            }
-        },
-        "Kubic":{
-            "title":"Kubic Unity",
-            "abstract":"Unity development project, the aim of the project was to use navmesh",
-            "request":{
-                "description":"<p><a href='https://docs.unity3d.com/ScriptReference/Application-streamingAssetsPath.html' target='_blank'>No streaming access aren't available on WebGL with Unity</a>.<br/>As this game has been developed for OS, use <a href='https://github.com/RealVincentBerthet/Kubic/blob/master/Kubic/Windows/Kubic.zip' target='_blank'>Windows executable</a> to have access to options and sounds and others features in the game</p><p><b>More informations are available in the GitHub README</b></p>"
-            }
-        },
-        "Ray":{
-            "title":"Pathtracing",
-            "abstract":"This project aimed was to implement features of a Raytracing engine and optimization structures related to it<br/>Then in a second part Global Illumination and Pathtracing have been added to this project."
-        },
-        "Game_Jam_2k19":{
-            "title":"Isati Game Jam 2k19",
-            "abstract":"Organization of the event",
-            "request":{
-                "description":"<p>Trailer of the first <a href='https://esir.univ-rennes1.fr/actualites/la-1ere-game-jam-lesir' target='_blank' >Game Jam of ESIR</a> in partnership with <a href='https://www.orange-business.com/en' target='_blank'>Orange Applications for Business</a></p><p>Winner : <a href='https://www.youtube.com/watch?v=E_g47fFlD-E'>Game Jam of Thrones</a></p><p>Trailer made by Vincent Berthet</p>"
-            }
-        },
-        "GOL":{
-            "title":"Game of Life",
-            "abstract":"GUI<br/> designed to understand ergonomic concerns of an application for different level of users" 
-        },
-        "WebsiteV1":{
-            "title":"Old website",
-            "abstract":"Old release of this website (1.6)"
-        },
-        "TA":{
-            "title":"Tower Attack",
-            "abstract":"Advanced Mobile Programming<br/>Tower Attack Game, implementing advanced features like queues, stacks, and pathways"
-        },
-        "Orium":{
-            "title":"Orium",
-            "abstract":"3D Level Design<br/>A game based on the time that the player will make to finish the game",
-            "request":{
-                "description":"Orium project game design, made on Unreal Engine"
-            }
-        },
-        "Auld":{
-            "title":"Auld",
-            "abstract":"Game Design<br/>RTS game"
-        },
-        "Scogue":{
-            "title":"Scogue",
-            "abstract":"Web game <br/>A Rogue like game"
-        },
-        "Blog":{
-            "title":"Blog",
-            "abstract":"Creative Industries Blog<br/>A blog to deal with the subject of the creative industries"
-        },     
-        "Mutest":{
-            "title":"Mu-Test Report",
-            "abstract":"Internship<br/>Report of my 4 months internship at <a href='http://www.mu-test.com/' target='_blank'>Mu-Test</a>, a company working in the Automated Test Equipement (ATE)",
-            "request":{
-                "description":"Report file (French)"     
-            }
-        },       
-        "Pacman":{
-            "title":"Pac Man XNA",
-            "abstract":"C# Project<br/>Development of the PacMan with the XNA framework",
-            "request":{
-                "description":"Presentation file (French)"     
-            }
-        },      
-        "Monitoring":{
-            "title":"Monitoring",
-            "abstract":"UTD Project<br/>HMI to provide data of a batteries monitoring system to the user"
+    "bio": {
+        "text": {
+            "text": "<p>&nbsp;&nbsp;&nbsp;Hey! My name is Vincent, I am a <span id='bio_age'></span> years old French graduated. I am an engineer who graduated from the IT Digital Imaging in the Ecole Supérieure d'Ingénieurs de Rennes (ESIR - Rennes 1). I wish you a welcome to my portfolio!</p><p>For more than <span id='bio_duration'></span> years, computing, media, and electronics have taken more and more part of my daily life. Since my high school years, I started little by little to lead various projects. Which allowed me to discover computer science and to lead myself towards the development of software applications.</p><p>During my schooling, I obtained a UTD in Electrical Engineering and Industrial Computer Science which allowed me to discover electronics and industrial computer science. After this year, I decided to go on international mobility at the University of the West of Scotland (UWS) in Glasgow to learn 3D through a Bsc Game Development. After that, I joined an engineering school where I had the opportunity to follow a unique training in France because it was dedicated to the vast field of digital imaging.</p><p>I put my skills into practice during different internships. In particular, within innovative companies with strong expertise, either in startup such as Askelys in which I developed a 3D WebGL Unity interface for their semantic web API. Or, either during my professionalization contract for more than a year at the b<>com Technology Research Institute, by my contribution to the development of an open-source Augmented Reality Framework.</p><p>All these challenges allowed me to improve myself personally and professionally. You can find below some of my projects. Feel free to contact me to learn more about my profile.</p><p>Cheers</p>"
         }
     },
-    "contact":{
-            "mail":{
-                "title":"Send me a mail"
-            },
-            "resume":{
-                "title":"Download my resume",
-                "text":"Resume",
-                "request":{
-                    "description":"Curriculum Vitae",
-                    "href":"CV/EN_CV_BERTHET_Vincent.pdf",
-                    "name":"EN_CV_BERTHET_Vincent.pdf"    
-                }
-            },
-            "phone":{
-                "title":"Call me"
+    "portfolio": {
+        "Jekyll": {
+            "title": "Jekyll",
+            "abstract": "Use Jekyll to publish (markdown with Github API) and share easily tips with my family during the lockdown"
+        },
+        "ASCII_ART": {
+            "title": "ASCII Art",
+            "abstract": "Process an image to create an <a href='https://en.wikipedia.org/wiki/ASCII_art'>ASCII Art</a> effect"
+        },
+        "Github_API": {
+            "title": "Github API",
+            "abstract": "Pick up Github REST API to automatically generate portfolio with Github's project and keep update website and my repositories"
+        },
+        "BCOM": {
+            "title": "b<>com training contract",
+            "abstract": "Professional training contract (2019-2020)<br/>Report and slides of my works at <a href='https://b-com.com/en' target='_blank'>IRT b<>com</a>",
+            "request": {
+                "description": "<p>Report and slides of my professional training contract at <a target='_blank' href='https://b-com.com/'>b<>com</a></p><div>I worked for one year as an R&D engineer in the Immersive Medical Technologies laboratory specialized in computer vision and video. During this year, I contributed to the development of an open-source C++17 Framework: <a href='https://solarframework.github.io/'>SolAR Framework</a>. My main works concerned the development of a Unity plugin for Android, the support of the continuous integration of the framework, the development of modules and a sample to use depth cameras like the <a href='https://www.intelrealsense.com/'>Intel RealSense</a>"
             }
         },
-    "social":{
-        "Linkedin":{
-            "title":"Let us connect"
-        },  
-        "Twitter":{
-            "title":"Follow me"
-        },      
-        "YouTube":{
-            "title":"My channel"
-        },        
-        "Instagram":{
-            "title":"Discover my photos"
+        "Asymetrie_ICP": {
+            "title": "Asymetrie ICP",
+            "abstract": "This project rely on “An algorithm to map asymmetries of bilateral objects in point clouds” - Benoît Combès & al.<br/>This algorithm able to automatically quantify the local asymmetries of bilateral structures in a point cloud by using Iterative Closest Point (ICP)"
         },
-        "Github":{
-            "title":"Discover my projects"
-        } 
-    },
-    "footer":{
-        "dev":"Developed by"
-    },
-    "templates":{
-        "unknown":{
-            "title":"Missing data",
-            "text":"The data provided are not valid to load this page correctly",
-            "button":"Back" 
-        }, 
-        "redirect":{
-            "WIP":{
-                "title":"This project is still in progress",
-                "text":"The following version will probably not work as expected<br/>Thank you for your cooperation",
-                "button":"Go to the project" 
-            },
-            "Mobile":{
-                "title":"This project has been designed for the mobile platform",
-                "text":"If you are on a computer use the ''inspect tool''",
-                "button":"Go to the project" 
+        "Luna_And_Helios": {
+            "title": "A Story of Luna & Helios",
+            "abstract": "This game has been released during the Game Jam 2020.<br/>This event aimed was to build a video game in 35 hours on the subject : “Safe in the dark”",
+            "request": {
+                "description": "<p>This game has been released during the Orange Game Jam 2020. The aim of this event was to build a video game in 35 hours on the subject : <b>Safe in the dark</b></p><p><b>More informations are available in the GitHub README</b></p><p><a href='https://www.youtube.com/watch?v=EwTJOxKciyE&feature=youtu.be' target='_blank'><i class='fab fa-youtube'></i> Gameplay video</a></p>"
             }
         },
-        "counter":{
-            "text":"You will be automatically redirected in"
+        "Tensors": {
+            "title": "Tensor directed stylization",
+            "abstract": "This project rely on “Tensors-directed simulation of strokes for image stylization with hatching and contours” - David TSCHUMPERLE<br/>Its describe an algorithm to generate sketches from color images directed by an image-dependent tensor-valued geometry"
+        },
+        "AR": {
+            "title": "Augmented Reality",
+            "abstract": "This project aimed to learn the basics of pose estimation for augmented reality. It relies on OpenCV library to process frame and computes pose estimation"
+        },
+        "Crowd_Choice": {
+            "title": "Crowd Choice",
+            "abstract": "A one-week training course in partnership with <a href='https://www.igr.univ-rennes1.fr/fr/' target='_blank'>IGR-IAE Rennes</a> whose objective was to create a startup with all the constraints linked to entrepreneurship",
+            "request": {
+                "description": "<div>A one-week training course in partnership with <a href='https://www.igr.univ-rennes1.fr/fr/' target='_blank'>IGR-IAE Rennes</a> whose objective was to create a startup with all the constraints linked to entrepreneurship.</div><br/><div>Crowd Choice is an event organization company based on a participative financing model. The goal is to produce themed evenings (musical style and foreign culture) tailored to the needs of the audience, thanks to surveys prepared in advance. According to the votes of the community the events are set up in order to be submitted to a crowdfunding.</div>"
+            }
+        },
+        "HDR": {
+            "title": "HDR",
+            "abstract": "Experimentation of features related to High Dynamic Range (HDR) with OpenCV library"
+        },
+        "Askelys": {
+            "title": "Askelys Report",
+            "abstract": "Internship<br/>Report of my 4 months internship at <a href='http://askelys.com/' target='_blank'>Askelys</a> a startup working in the Semantic Web. Development of a WebGL prototype on Unity",
+            "request": {
+                "description": "Report file (French)"
+            }
+        },
+        "Kubic": {
+            "title": "Kubic Unity",
+            "abstract": "Unity development project, the aim of the project was to use navmesh",
+            "request": {
+                "description": "<p><a href='https://docs.unity3d.com/ScriptReference/Application-streamingAssetsPath.html' target='_blank'>No streaming access aren't available on WebGL with Unity</a>.<br/>As this game has been developed for OS, use <a href='https://github.com/RealVincentBerthet/Kubic/blob/master/Kubic/Windows/Kubic.zip' target='_blank'>Windows executable</a> to have access to options and sounds and others features in the game</p><p><b>More informations are available in the GitHub README</b></p>"
+            }
+        },
+        "Ray": {
+            "title": "Pathtracing",
+            "abstract": "This project aimed was to implement features of a Raytracing engine and optimization structures related to it<br/>Then in a second part Global Illumination and Pathtracing have been added to this project."
+        },
+        "Game_Jam_2k19": {
+            "title": "Isati Game Jam 2k19",
+            "abstract": "Organization of the event",
+            "request": {
+                "description": "<p>Trailer of the first <a href='https://esir.univ-rennes1.fr/actualites/la-1ere-game-jam-lesir' target='_blank' >Game Jam of ESIR</a> in partnership with <a href='https://www.orange-business.com/en' target='_blank'>Orange Applications for Business</a></p><p>Winner : <a href='https://www.youtube.com/watch?v=E_g47fFlD-E'>Game Jam of Thrones</a></p><p>Trailer made by Vincent Berthet</p>"
+            }
+        },
+        "GOL": {
+            "title": "Game of Life",
+            "abstract": "GUI<br/> designed to understand ergonomic concerns of an application for different level of users"
+        },
+        "WebsiteV1": {
+            "title": "Old website",
+            "abstract": "Old release of this website (1.6)"
+        },
+        "TA": {
+            "title": "Tower Attack",
+            "abstract": "Advanced Mobile Programming<br/>Tower Attack Game, implementing advanced features like queues, stacks, and pathways"
+        },
+        "Orium": {
+            "title": "Orium",
+            "abstract": "3D Level Design<br/>A game based on the time that the player will make to finish the game",
+            "request": {
+                "description": "Orium project game design, made on Unreal Engine"
+            }
+        },
+        "Auld": {
+            "title": "Auld",
+            "abstract": "Game Design<br/>RTS game"
+        },
+        "Scogue": {
+            "title": "Scogue",
+            "abstract": "Web game <br/>A Rogue like game"
+        },
+        "Blog": {
+            "title": "Blog",
+            "abstract": "Creative Industries Blog<br/>A blog to deal with the subject of the creative industries"
+        },
+        "Mutest": {
+            "title": "Mu-Test Report",
+            "abstract": "Internship<br/>Report of my 4 months internship at <a href='http://www.mu-test.com/' target='_blank'>Mu-Test</a>, a company working in the Automated Test Equipement (ATE)",
+            "request": {
+                "description": "Report file (French)"
+            }
+        },
+        "Pacman": {
+            "title": "Pac Man XNA",
+            "abstract": "C# Project<br/>Development of the PacMan with the XNA framework",
+            "request": {
+                "description": "Presentation file (French)"
+            }
+        },
+        "Monitoring": {
+            "title": "Monitoring",
+            "abstract": "UTD Project<br/>HMI to provide data of a batteries monitoring system to the user"
+        }
+    },
+    "contact": {
+        "mail": {
+            "title": "Send me a mail"
+        },
+        "resume": {
+            "title": "Download my resume",
+            "text": "Resume",
+            "request": {
+                "description": "Curriculum Vitae",
+                "href": "CV/EN_CV_BERTHET_Vincent.pdf",
+                "name": "EN_CV_BERTHET_Vincent.pdf"
+            }
+        },
+        "phone": {
+            "title": "Call me"
+        }
+    },
+    "social": {
+        "Linkedin": {
+            "title": "Let us connect"
+        },
+        "Twitter": {
+            "title": "Follow me"
+        },
+        "YouTube": {
+            "title": "My channel"
+        },
+        "Instagram": {
+            "title": "Discover my photos"
+        },
+        "Github": {
+            "title": "Discover my projects"
+        }
+    },
+    "footer": {
+        "dev": "Developed by"
+    },
+    "templates": {
+        "unknown": {
+            "title": "Missing data",
+            "text": "The data provided are not valid to load this page correctly",
+            "button": "Back"
+        },
+        "redirect": {
+            "WIP": {
+                "title": "This project is still in progress",
+                "text": "The following version will probably not work as expected<br/>Thank you for your cooperation",
+                "button": "Go to the project"
+            },
+            "Mobile": {
+                "title": "This project has been designed for the mobile platform",
+                "text": "If you are on a computer use the ''inspect tool''",
+                "button": "Go to the project"
+            }
+        },
+        "counter": {
+            "text": "You will be automatically redirected in"
         }
     }
 }

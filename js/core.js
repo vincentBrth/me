@@ -5,14 +5,18 @@ console.info(`Hi there ! You are welcome to examine the code`);
 
 // Initialization
 let available_lang = new Map();
-available_lang.set(`en`,`json/en.json`);
-available_lang.set(`fr`,`json/fr.json`);
-available_lang.set(`.core`,`json/core.json`);
-available_lang.set(`.notes`,`json/notes.json`);
+available_lang.set(`en`, `json/en.json`);
+available_lang.set(`fr`, `json/fr.json`);
+available_lang.set(`.core`, `json/core.json`);
+available_lang.set(`.notes`, `json/notes.json`);
 this.language = new Language(available_lang);
-this.language.update = function(){update();}
-this.language.make = function(){make();}
-this.nightShift=new NightShift();
+this.language.update = function () {
+    update();
+};
+this.language.make = function () {
+    make();
+};
+this.nightShift = new NightShift();
 
 /*
     ******************************************************************************************* 
@@ -30,158 +34,159 @@ this.nightShift=new NightShift();
     ******************************************************************************************* 
 */
 /**
-*    Language object
-*    @param {string} current The name of the language [en,fr,..]
-*/
-function Language(langs){ 
+ *    Language object
+ *    @param {string} current The name of the language [en,fr,..]
+ */
+function Language(langs) {
     this.langs = langs;
-    if(this.langs.has(localStorage.getItem(`lang`))){
-        this.current=localStorage.getItem(`lang`);
+    if (this.langs.has(localStorage.getItem(`lang`))) {
+        this.current = localStorage.getItem(`lang`);
         console.info(`localStorage lang (${localStorage.getItem(`lang`)}) found and loaded as default language`);
-    }else{
+    } else {
         //not found use navigator parameters
-        if(langs.has(navigator.language)){
+        if (langs.has(navigator.language)) {
             console.info(`navigator.language (${navigator.language}) found and loaded as default language`);
-            this.current=navigator.language;
-        }else{
-            this.current=langs.keys().next().value;
+            this.current = navigator.language;
+        } else {
+            this.current = langs.keys().next().value;
             console.info(`navigator.language (${navigator.language}) not found in available languages, '${this.current}' set as default language`);
         }
     }
-    localStorage.setItem(`lang`,this.current);
+    localStorage.setItem(`lang`, this.current);
 
-    let promises=[];
-    for(let [key, path] of this.langs){
-        promises.push(new Promise((resolve) => {
-            resolve($.getJSON(path));
-        }))
+    let promises = [];
+    for (let [key, path] of this.langs) {
+        promises.push(
+            new Promise((resolve) => {
+                resolve($.getJSON(path));
+            })
+        );
     }
 
-    this.data=Promise.all(promises).then((values) => {
-        let tmp= new Map();
-        let index=0;
-        for(let [key, path] of this.langs){
-            tmp.set(key,values[index]);
+    this.data = Promise.all(promises).then((values) => {
+        let tmp = new Map();
+        let index = 0;
+        for (let [key, path] of this.langs) {
+            tmp.set(key, values[index]);
             index++;
-        }    
-        return tmp;    
+        }
+        return tmp;
     });
 }
 
 /**
-*    Check if the language is valid [en,fr,..] and set the right json file
-*    @param {string} current The name of the language
-*/
-Language.prototype.setLang = function(current){
-    if(typeof this.langs.get(current) != `undefined`){
-        this.current=current;
-        localStorage.setItem(`lang`,this.current);
-    }else{
+ *    Check if the language is valid [en,fr,..] and set the right json file
+ *    @param {string} current The name of the language
+ */
+Language.prototype.setLang = function (current) {
+    if (typeof this.langs.get(current) != `undefined`) {
+        this.current = current;
+        localStorage.setItem(`lang`, this.current);
+    } else {
         console.error(`${current} is not a valid language of the map used : ${this.langs}`);
-    }   
-}
+    }
+};
 
 /**
-*    Get the name of the language used [en,fr,..]
-*    @return {string}
-*/
-Language.prototype.getLang = function(){
+ *    Get the name of the language used [en,fr,..]
+ *    @return {string}
+ */
+Language.prototype.getLang = function () {
     return this.current;
-}
+};
 
 /**
-*    Get the path of the json file associated 
-*    @return {string}
-*/
-Language.prototype.getJsonPath = function(current=this.getLang()){
+ *    Get the path of the json file associated
+ *    @return {string}
+ */
+Language.prototype.getJsonPath = function (current = this.getLang()) {
     return this.langs.get(current);
-}
+};
 
 /**
-*    Get data from json file
-*    @param {string}
-*/
-Language.prototype.getData = async function(current=this.getLang()){
-    return await Promise.resolve((await this.data).get(current))
-}
+ *    Get data from json file
+ *    @param {string}
+ */
+Language.prototype.getData = async function (current = this.getLang()) {
+    return await Promise.resolve((await this.data).get(current));
+};
 
 /**
-*   Get Github name for my account depending on username in core.json
-*   @return {string}
-*/
-Language.prototype.getGithubName=async function(){
+ *   Get Github name for my account depending on username in core.json
+ *   @return {string}
+ */
+Language.prototype.getGithubName = async function () {
     return (await Promise.resolve((await this.data).get(`.core`)))[`social`][`Github`][`username`];
-}
+};
 
 /**
-*    Get Github URL for my account depending on username in core.json
-*    @return {string}
-*/
-Language.prototype.getGithubURL=async function(){
-    let url=await this.getGithubName();
+ *    Get Github URL for my account depending on username in core.json
+ *    @return {string}
+ */
+Language.prototype.getGithubURL = async function () {
+    let url = await this.getGithubName();
     return `https://github.com/${url}/`;
-}
+};
 
 /**
-*    Get Github page URL for my account depending on username in core.json
-*    @return {string}
-*/
-Language.prototype.getGithubPageURL=async function(){
-    let url=await this.getGithubName();
+ *    Get Github page URL for my account depending on username in core.json
+ *    @return {string}
+ */
+Language.prototype.getGithubPageURL = async function () {
+    let url = await this.getGithubName();
     return `https://${url}.github.io/`;
-}
+};
 
 /**
-*   Get Github public directory for my account depending on username in core.json
-*   @return {string}
-*/
-Language.prototype.getGithubPublicURL=async function(){
-    return  await this.getGithubURL()+`Workspace/raw/master/Public/`;
-}
+ *   Get Github public directory for my account depending on username in core.json
+ *   @return {string}
+ */
+Language.prototype.getGithubPublicURL = async function () {
+    return (await this.getGithubURL()) + `Workspace/raw/master/Public/`;
+};
 
 /**
-*     Declare the make function
-*/
-Language.prototype.make = function(){
+ *     Declare the make function
+ */
+Language.prototype.make = function () {
     console.error(`make is not implemented`);
-}
+};
 
 /**
-*    Declare the update function
-*/
-Language.prototype.update = function(){
+ *    Declare the update function
+ */
+Language.prototype.update = function () {
     console.error(`update is not implemented`);
-}
+};
 
 /**
-*    Switch to the language and then update the content
-*/
-Language.prototype.switch = function(){
+ *    Switch to the language and then update the content
+ */
+Language.prototype.switch = function () {
+    let lang = Array.from(this.langs.keys()).filter((e) => e[0] !== `.`);
 
-    let lang=Array.from(this.langs.keys()).filter(e => e[0] !== `.`);
-
-    if(lang.length>1){
-        let start=lang.indexOf(this.getLang());
+    if (lang.length > 1) {
+        let start = lang.indexOf(this.getLang());
         let index;
-        while(index==undefined){
-            if(start<lang.length){
-                if(lang[start][0]!=`.`){
-                    if(lang[start]!=this.getLang()){
-                        index=start; 
+        while (index == undefined) {
+            if (start < lang.length) {
+                if (lang[start][0] != `.`) {
+                    if (lang[start] != this.getLang()) {
+                        index = start;
                     }
                 }
-                start=start+1;
-            }else{
-                start=0;
+                start = start + 1;
+            } else {
+                start = 0;
             }
         }
         this.setLang(lang[index]);
-    }else{
+    } else {
         console.error(`Cannot change langue as only one langue is avalaible :${lang}`);
     }
 
     this.update();
-}
+};
 
 /*
     ******************************************************************************************* 
@@ -189,48 +194,44 @@ Language.prototype.switch = function(){
     ******************************************************************************************* 
 */
 /**
-*    NightShift class
-*/
-function NightShift(){
+ *    NightShift class
+ */
+function NightShift() {
     const currentTheme = localStorage.getItem(`theme`);
     if (currentTheme == `dark`) {
         document.body.classList.toggle(`dark-theme`);
     } else {
         document.body.classList.toggle(`light-theme`);
-    } 
-}
-
-/**
-*    Update NightShift icon
-*/
-NightShift.prototype.update = function(){
-    let theme=localStorage.getItem(`theme`);
-    if(theme==`dark`){
-        $(`#nightShift`).html(`<i class='far fa-moon'>`);
-    }else {
-        $(`#nightShift`).html(`<i class='fas fa-sun'>`);
     }
 }
 
 /**
-*    Toggle NighShift mode
-*/
-NightShift.prototype.toggle = function(){
-    if (window.matchMedia(`(prefers-color-scheme: dark)`).matches) {
-    document.body.classList.toggle(`light-theme`);
-    var theme = document.body.classList.contains(`light-theme`)
-        ? `light`
-        : `dark`;
+ *    Update NightShift icon
+ */
+NightShift.prototype.update = function () {
+    let theme = localStorage.getItem(`theme`);
+    if (theme == `dark`) {
+        $(`#nightShift`).html(`<i class='far fa-moon'>`);
     } else {
-    document.body.classList.toggle(`dark-theme`);
-    var theme = document.body.classList.contains(`dark-theme`)
-        ? `dark`
-        : `light`;
+        $(`#nightShift`).html(`<i class='fas fa-sun'>`);
+    }
+};
+
+/**
+ *    Toggle NighShift mode
+ */
+NightShift.prototype.toggle = function () {
+    if (window.matchMedia(`(prefers-color-scheme: dark)`).matches) {
+        document.body.classList.toggle(`light-theme`);
+        var theme = document.body.classList.contains(`light-theme`) ? `light` : `dark`;
+    } else {
+        document.body.classList.toggle(`dark-theme`);
+        var theme = document.body.classList.contains(`dark-theme`) ? `dark` : `light`;
     }
     localStorage.setItem(`theme`, theme);
 
     this.update();
-}
+};
 
 /*
     ******************************************************************************************* 
@@ -238,86 +239,106 @@ NightShift.prototype.toggle = function(){
     ******************************************************************************************* 
 */
 /**
-*	Check if a date exist and put it in a standard format
-*	@param {string} date The date checked
-*	@return {string} 
-*/
+ *	Check if a date exist and put it in a standard format
+ *	@param {string} date The date checked
+ *	@return {string}
+ */
 function checkDate(date) {
-  let yMin=1850; 
-  let yMax=2500; 
-  let separator=`/`;
-  let d=(date.substring(0,2));
-  let m=(date.substring(3,5));
-  let y=(date.substring(6));
-  let ok=1;
+    let yMin = 1850;
+    let yMax = 2500;
+    let separator = `/`;
+    let d = date.substring(0, 2);
+    let m = date.substring(3, 5);
+    let y = date.substring(6);
+    let ok = 1;
 
-  if ( ((isNaN(d))||(d<1)||(d>31)) && (ok==1) ) {
-     console.error(`Invalid day`); ok=0;
-  }
-  if ( ((isNaN(m))||(m<1)||(m>12)) && (ok==1) ) {
-      console.error(`Invalid month.`); ok=0;
-  }
-  if ( ((isNaN(y))||(y<yMin)||(y>yMax)) && (ok==1) ) {
-       console.error(`Invalid year`); ok=0;
-  }
-  if ( ((date.substring(2,3)!=separator)||(date.substring(5,6)!=separator)) && (ok==1) ) {
-      console.error(`Invalid `+separator); ok=0;
-  }
-  if (ok==1) {
-    let date2=new Date(y,m-1,d);
-    d2=date2.getDate();
-    m2=date2.getMonth()+1;
-    y2=date2.getYear();
-    if (y2<=100) {y2=1900+y2}
-    if ( (d!=d2)||(m!=m2)||(y!=y2) ) {
-      console.error(`Date ${date} doesn't exist`);
-      ok=0;
+    if ((isNaN(d) || d < 1 || d > 31) && ok == 1) {
+        console.error(`Invalid day`);
+        ok = 0;
     }
-    ok=date2;
-  }
- return ok;
+    if ((isNaN(m) || m < 1 || m > 12) && ok == 1) {
+        console.error(`Invalid month.`);
+        ok = 0;
+    }
+    if ((isNaN(y) || y < yMin || y > yMax) && ok == 1) {
+        console.error(`Invalid year`);
+        ok = 0;
+    }
+    if ((date.substring(2, 3) != separator || date.substring(5, 6) != separator) && ok == 1) {
+        console.error(`Invalid ` + separator);
+        ok = 0;
+    }
+    if (ok == 1) {
+        let date2 = new Date(y, m - 1, d);
+        d2 = date2.getDate();
+        m2 = date2.getMonth() + 1;
+        y2 = date2.getYear();
+        if (y2 <= 100) {
+            y2 = 1900 + y2;
+        }
+        if (d != d2 || m != m2 || y != y2) {
+            console.error(`Date ${date} doesn't exist`);
+            ok = 0;
+        }
+        ok = date2;
+    }
+    return ok;
 }
 
 /**
-*	Get an age in function of a date inserted
-*	@param {string} dt The date of birth used
-*	@param {string} format Used to customize the string returned
-*	@return {string}
-*/
-function getAge(dt,format) {
-  let date=checkDate(dt)
-  let m=new Date()
-  let age=``;
-  let age_y=0;
-  let age_m=0;
-  if (date!=0) {
-    if (date.getTime()>m.getTime()) {
-      age=`NA`;
-      console.error(`Date of birth is in the future`);
-      document.formage.dt_naissance.focus();
-    }
-    age_y = m.getFullYear()-date.getFullYear();
-    m.setYear(date.getYear());
-    if ((date.getTime()>m.getTime())&&(date.getMonth()-m.getMonth()!=0)) {age_y--;}
-    if (date.getMonth() >= m.getMonth()) {
-      age_m = 12 - (date.getMonth()-m.getMonth())
+ *	Get an age in function of a date inserted
+ *	@param {string} dt The date of birth used
+ *	@param {string} format Used to customize the string returned
+ *	@return {string}
+ */
+function getAge(dt, format) {
+    let date = checkDate(dt);
+    let m = new Date();
+    let age = ``;
+    let age_y = 0;
+    let age_m = 0;
+    if (date != 0) {
+        if (date.getTime() > m.getTime()) {
+            age = `NA`;
+            console.error(`Date of birth is in the future`);
+            document.formage.dt_naissance.focus();
+        }
+        age_y = m.getFullYear() - date.getFullYear();
+        m.setYear(date.getYear());
+        if (date.getTime() > m.getTime() && date.getMonth() - m.getMonth() != 0) {
+            age_y--;
+        }
+        if (date.getMonth() >= m.getMonth()) {
+            age_m = 12 - (date.getMonth() - m.getMonth());
+        } else {
+            age_m = m.getMonth() - date.getMonth();
+        }
+        if (age_m == 12) {
+            age_m = 0;
+        }
+        if (age_y == 1) {
+            age = age_y + ` year`;
+        }
+        if (age_y > 1) {
+            age = age_y + ` years old`;
+        }
+        if (age_y > 0 && age_m > 0) {
+            age += ` and `;
+        }
+        if (age_m > 0) {
+            age += age_m + ` month`;
+        }
+        if (age == ``) {
+            age = `less than 1 month`;
+        }
     } else {
-      age_m = (m.getMonth()-date.getMonth())
+        document.formage.dt_naissance.focus();
     }
-    if (age_m==12) {age_m=0;}
-    if (age_y==1) { age=age_y+` year`}
-    if (age_y>1) { age=age_y+` years old`}
-    if ((age_y>0)&&(age_m>0)) {age+=` and `}
-    if (age_m>0) {age+=age_m+` month`}
-    if (age==``) { age=`less than 1 month`}
-  } else {
-    document.formage.dt_naissance.focus();
-  }
-  if(format==`year`){
-    return age_y;
-  }else{
-   return age;
-  }
+    if (format == `year`) {
+        return age_y;
+    } else {
+        return age;
+    }
 }
 
 /*
@@ -330,28 +351,29 @@ function getAge(dt,format) {
  * @param {string} content_header Data from json
  * @param {boolean} isRequest Set to true to use fixed black header
  */
-function makeHeader(content_header,isRequest=false){
-    let anchorsList=``;
-    const previousActive=$(`.nav li.active`).attr(`id`);
-    for(i in content_header)
-    {
-        const aclass=content_header[i].class ? content_header[i].class : content_header[i].anchor ? `smoth-scroll` : ``;
-        const onClick=content_header[i].onClick ? `onclick='${content_header[i].onClick}'` : ``;
-        const href= content_header[i].anchor ? `href='#${content_header[i].anchor}'` : ``;
-        const id= content_header[i].anchor ? `id='${content_header[i].anchor}-anchor'` : ``;
-        const active=previousActive==`${content_header[i].anchor}-anchor` ? `active` : ``;
-        const liclass=content_header[i].liclass ? `${content_header[i].liclass}` : ``;
-        const anchorText=content_header[i].anchorText;
+function makeHeader(content_header, isRequest = false) {
+    let anchorsList = ``;
+    const previousActive = $(`.nav li.active`).attr(`id`);
+    for (i in content_header) {
+        const aclass = content_header[i].class ? content_header[i].class : content_header[i].anchor ? `smoth-scroll` : ``;
+        const onClick = content_header[i].onClick ? `onclick='${content_header[i].onClick}'` : ``;
+        const href = content_header[i].anchor ? `href='#${content_header[i].anchor}'` : ``;
+        const id = content_header[i].anchor ? `id='${content_header[i].anchor}-anchor'` : ``;
+        const active = previousActive == `${content_header[i].anchor}-anchor` ? `active` : ``;
+        const liclass = content_header[i].liclass ? `${content_header[i].liclass}` : ``;
+        const anchorText = content_header[i].anchorText;
 
-        anchorsList+=`<li ${id} class='${liclass} ${active}'><a ${onClick} class='${aclass}' ${href}>${anchorText}</a></li>`;
+        anchorsList += `<li ${id} class='${liclass} ${active}'><a ${onClick} class='${aclass}' ${href}>${anchorText}</a></li>`;
     }
-    
-    let html=(`
+
+    let html = `
                 <div class='${isRequest ? `request-header-top-area navigation-background` : `header-top-area`}'>
                     <div class='margin-left-20'>
                         <div class='row'>
                             <div class='logo col-sm-4'>
-                                <a class='smoth-scroll' href='${isRequest ? './' : '#navigation'}'><img src='img/vberthet/vb_black.png'>Vincent <b>Berthet</b></a>
+                                <a class='smoth-scroll' href='${
+                                    isRequest ? "./" : "#navigation"
+                                }'><img src='img/template/vb_black.png'>Vincent <b>Berthet</b></a>
                             </div>
                             <div class='col-sm-8'>
                                 <div class='navigation-menu'>
@@ -373,9 +395,9 @@ function makeHeader(content_header,isRequest=false){
                         </div>
                     </div>
                 </div>
-    `);
+    `;
 
-    if(document.getElementById(`navigation`) && document.getElementById(`navigation`).innerHTML.length==0) $(`#navigation`).html(html);
+    if (document.getElementById(`navigation`) && document.getElementById(`navigation`).innerHTML.length == 0) $(`#navigation`).html(html);
     $(`#anchorList`).html(anchorsList);
     this.nightShift.update();
 
@@ -383,9 +405,14 @@ function makeHeader(content_header,isRequest=false){
     jQuery(document).ready(function () {
         $(`a.smoth-scroll`).on(`click`, function (e) {
             var anchor = $(this);
-            $(`html, body`).stop().animate({
-                scrollTop: $(anchor.attr(`href`)).offset().top - 50
-            }, 1000);
+            $(`html, body`)
+                .stop()
+                .animate(
+                    {
+                        scrollTop: $(anchor.attr(`href`)).offset().top - 50,
+                    },
+                    1000
+                );
             e.preventDefault();
         });
     });
@@ -397,43 +424,52 @@ function makeHeader(content_header,isRequest=false){
     ******************************************************************************************* 
 */
 /**
-*    Build the release with the latest update wrote in the request.json
-*/
-function makeRelease(){
-    current_release=`X`;
+ *    Build the release with the latest update wrote in the request.json
+ */
+function makeRelease() {
+    current_release = `X`;
     $(`#release`).html(current_release);
 
-    let json=$.getJSON(`json/notes.json`);
-    json.done(function(data) {
-        for(let i in data.notes){
-            current_release=data.notes[i].id;
+    let json = $.getJSON(`json/notes.json`);
+    json.done(function (data) {
+        for (let i in data.notes) {
+            current_release = data.notes[i].id;
             $(`#release`).html(current_release);
             break;
-        } 
+        }
     });
 }
 
 /**
-*    Make the footer of the page
-*    @param {string} content_footer The data of the *current*.json
-*/
-function makeFooter(content_footer,isRequest=false){ 
-    let html=(`
+ *    Make the footer of the page
+ *    @param {string} content_footer The data of the *current*.json
+ */
+function makeFooter(content_footer, isRequest = false) {
+    let html = `
         <div class='container text-center'>
-            &copy; ${new Date().getFullYear()}<a class='smoth-scroll' href='${isRequest ? './' : '#navigation'}'> Vincent Berthet Website</a> - <a href='request.html?id=Notes' >V<span id='release'></span></a> | ${content_footer.dev}<a class='smoth-scroll' href='${isRequest ? './' : '#navigation'}'> Vincent Berthet</a>
+            &copy; ${new Date().getFullYear()}<a class='smoth-scroll' href='${
+        isRequest ? "./" : "#navigation"
+    }'> Vincent Berthet Website</a> - <a href='request.html?id=Notes' >V<span id='release'></span></a> | ${
+        content_footer.dev
+    }<a class='smoth-scroll' href='${isRequest ? "./" : "#navigation"}'> Vincent Berthet</a>
         </div> 
-    `);
+    `;
 
     $(`#footerContent`).html(html);
     makeRelease();
-    
+
     //Refresh effect.js/Smooth Scroll
     jQuery(document).ready(function () {
         $(`a.smoth-scroll`).on(`click`, function (e) {
             var anchor = $(this);
-            $(`html, body`).stop().animate({
-                scrollTop: $(anchor.attr(`href`)).offset().top - 50
-            }, 1000);
+            $(`html, body`)
+                .stop()
+                .animate(
+                    {
+                        scrollTop: $(anchor.attr(`href`)).offset().top - 50,
+                    },
+                    1000
+                );
             e.preventDefault();
         });
     });
