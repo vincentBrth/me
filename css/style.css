@@ -125,7 +125,6 @@ fieldset {
 section h2::before {
     content: "# ";
     vertical-align: middle;
-    font-size: 45px;
     color: var(--primary-color);
 }
 
@@ -509,6 +508,16 @@ body.loaded #preloader {
     color: var(--primary-color);
 }
 
+#preview_text_content::before {
+    content: "{";
+    color:var(--primary-color);
+}
+
+#preview_text_content::after {
+    content: "}";
+    color:var(--primary-color);
+}
+
 .btn-circle {
     width: 70px;
     height: 70px;
@@ -766,7 +775,7 @@ ul.portfolio li.active:hover {
 
 .social-icon li {
     display: inline-block;
-    margin: 0px 15px;
+    margin: 0px 5px;
 }
 
 .social-icon li a {
