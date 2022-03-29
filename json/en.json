@@ -1,11 +1,11 @@
 {
     "preview": {
         "text": "Hey! Welcome on my portfolio, feel free to contact me",
-        "job": "<p><h3>< <span class='primary-color'>Looking for a job</span> ></h3></p>",
+        "hireMe": "<p><h3>< <span class='primary-color'>Looking for a job</span> ></h3></p>",
         "typed": [
             "I am an IT Digital Imaging engineer.",
-            "Welcome to my website.",
-            "Hope you will like it.",
+            "You will learn more about me below.",
+            "However I don't know you...",
             "I hope we can meet someday :D."
         ]
     },
@@ -56,7 +56,7 @@
         "bcom": {
             "title": "b<>com training contract",
             "abstract": "Professional training contract (2019-2020)<br/>Report and slides of my works at <a href='https://b-com.com/en' target='_blank'>IRT b<>com</a>",
-            "request": {
+            "get": {
                 "description": "<p>Report and slides of my professional training contract at <a target='_blank' href='https://b-com.com/'>b<>com</a></p><div>I worked for one year as an R&D engineer in the Immersive Medical Technologies laboratory specialized in computer vision and video. During this year, I contributed to the development of an open-source C++17 Framework: <a href='https://solarframework.github.io/'>SolAR Framework</a>. My main works concerned the development of a Unity plugin for Android, the support of the continuous integration of the framework, the development of modules and a sample to use depth cameras like the <a href='https://www.intelrealsense.com/'>Intel RealSense</a>"
             }
         },
@@ -67,7 +67,7 @@
         "lunaAndHelios": {
             "title": "A Story of Luna & Helios",
             "abstract": "This game has been released during the Game Jam 2020.<br/>This event aimed was to build a video game in 35 hours on the subject : “Safe in the dark”",
-            "request": {
+            "get": {
                 "description": "<p>This game has been released during the Orange Game Jam 2020. The aim of this event was to build a video game in 35 hours on the subject : <b>Safe in the dark</b></p><p><b>More informations are available in the GitHub README</b></p><p><a href='https://www.youtube.com/watch?v=EwTJOxKciyE&feature=youtu.be' target='_blank'><i class='fab fa-youtube'></i> Gameplay video</a></p>"
             }
         },
@@ -82,7 +82,7 @@
         "crowdChoice": {
             "title": "Crowd Choice",
             "abstract": "A one-week training course in partnership with <a href='https://www.igr.univ-rennes1.fr/fr/' target='_blank'>IGR-IAE Rennes</a> whose objective was to create a startup with all the constraints linked to entrepreneurship",
-            "request": {
+            "get": {
                 "description": "<div>A one-week training course in partnership with <a href='https://www.igr.univ-rennes1.fr/fr/' target='_blank'>IGR-IAE Rennes</a> whose objective was to create a startup with all the constraints linked to entrepreneurship.</div><br/><div>Crowd Choice is an event organization company based on a participative financing model. The goal is to produce themed evenings (musical style and foreign culture) tailored to the needs of the audience, thanks to surveys prepared in advance. According to the votes of the community the events are set up in order to be submitted to a crowdfunding.</div>"
             }
         },
@@ -93,14 +93,14 @@
         "askelys": {
             "title": "Askelys Report",
             "abstract": "Internship<br/>Report of my 4 months internship at <a href='http://askelys.com/' target='_blank'>Askelys</a> a startup working in the Semantic Web. Development of a WebGL prototype on Unity",
-            "request": {
+            "get": {
                 "description": "Report file (French)"
             }
         },
         "kubic": {
             "title": "Kubic Unity",
             "abstract": "Unity development project, the aim of the project was to use navMesh",
-            "request": {
+            "get": {
                 "description": "<p><a href='https://docs.unity3d.com/ScriptReference/Application-streamingAssetsPath.html' target='_blank'>No streaming access aren't available on WebGL with Unity</a>.<br/>As this game has been developed for OS, use <a href='https://github.com/RealVincentBerthet/Kubic/blob/master/Kubic/Windows/Kubic.zip' target='_blank'>Windows executable</a> to have access to options and sounds and others features in the game</p><p><b>More informations are available in the GitHub README</b></p>"
             }
         },
@@ -111,7 +111,7 @@
         "gameJam2k19": {
             "title": "Isati Game Jam 2k19",
             "abstract": "Organization of the event",
-            "request": {
+            "get": {
                 "description": "<p>Trailer of the first <a href='https://esir.univ-rennes1.fr/actualites/la-1ere-game-jam-lesir' target='_blank' >Game Jam of ESIR</a> in partnership with <a href='https://www.orange-business.com/en' target='_blank'>Orange Applications for Business</a></p><p>Winner : <a href='https://www.youtube.com/watch?v=E_g47fFlD-E'>Game Jam of Thrones</a></p><p>Trailer made by Vincent Berthet</p>"
             }
         },
@@ -130,7 +130,7 @@
         "orium": {
             "title": "Orium",
             "abstract": "3D Level Design<br/>A game based on the time that the player will make to finish the game",
-            "request": {
+            "get": {
                 "description": "Orium project game design, made on Unreal Engine"
             }
         },
@@ -149,14 +149,14 @@
         "mutest": {
             "title": "Mu-Test Report",
             "abstract": "Internship<br/>Report of my 4 months internship at <a href='http://www.mu-test.com/' target='_blank'>Mu-Test</a>, a company working in the Automated Test Equipment (ATE)",
-            "request": {
+            "get": {
                 "description": "Report file (French)"
             }
         },
         "pacman": {
             "title": "Pac Man XNA",
             "abstract": "C# Project<br/>Development of the PacMan with the XNA framework",
-            "request": {
+            "get": {
                 "description": "Presentation file (French)"
             }
         },
@@ -172,7 +172,7 @@
         "resume": {
             "title": "Download my resume",
             "text": "Resume",
-            "request": {
+            "get": {
                 "description": "Curriculum Vitae",
                 "href": "CV/EN_CV_BERTHET_Vincent.pdf",
                 "name": "EN_CV_BERTHET_Vincent.pdf"

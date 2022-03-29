@@ -1,11 +1,11 @@
 {
     "preview": {
         "text": "Hey ! Bienvenu sur mon portfolio, n'hésitez pas à me contacter",
-        "job": "<p><h3>< <span class='primary-color'>Actuellement en recherche d'emploi</span> ></h3></p>",
+        "hireMe": "<p><h3>< <span class='primary-color'>Actuellement en recherche d'emploi</span> ></h3></p>",
         "typed": [
             "Je suis ingénieur en Imagerie Numérique.",
-            "Bienvenue sur mon site.",
-            "J'ose espérer que tu l'apprécieras.",
+            "Tu en apprendras d'avantage sur moi en dessous",
+            "Cependant je ne sais pas qui tu es...",
             "Peut-être nous nous rencontrerons un jour :D."
         ]
     },
@@ -56,7 +56,7 @@
         "bcom": {
             "title": "b<>com contrat d'alternance",
             "abstract": "Contrat d'alternance (2019-2020)<br/>Rapport et slides de mes missions effectué durant mon alternance chez l'<a href='https://b-com.com/fr' target='_blank'>IRT b<>com</a>",
-            "request": {
+            "get": {
                 "description": "<p>Rapport et présentation de mon contrat de professionnalisation à <a target='_blank' href='https://b-com.com/'>b<>com</a></p><div>J'ai travaillé pendant un an en tant qu'ingénieur R&D au sein du laboratoire Immersive Medical Technologies spécialisé en vision par ordinateur et en vidéo. Au cours de cette année, j'ai contribué au développement d'un Framework C++17 open-source : <a href='https://solarframework.github.io/'>SolAR Framework</a>. Mes principaux travaux ont concerné le développement d'un plugin Unity pour Android, le support de l'intégration continu du framework, le développement des modules et d'un sample afin de pouvoir utiliser les caméras de profondeurs tel les <a href='https://www.intelrealsense.com/'>Intel RealSense</a>."
             }
         },
@@ -67,7 +67,7 @@
         "lunaAndHelios": {
             "title": "A Story of Luna & Helios",
             "abstract": "Jeu réalisé lors de la Game Jam 2020 d'Orange.<br/>L'objectif de cet événement était de créer un jeu vidéo en 35 heures, sur le sujet : Safe in the dark",
-            "request": {
+            "get": {
                 "description": "<p>Ce jeu a été réalisé lors de la game Jam 2020 d'Orange de l'ESIR. L'objectif de cet événement était de réaliser un jeu vidéo en seulement 35 heures sur le theme : <b>Safe in the dark</b></p><p><b>Plus d'information sont disponible dans le README dédié du GitHub</b></p><p><a href='https://www.youtube.com/watch?v=EwTJOxKciyE&feature=youtu.be' target='_blank'><i class='fab fa-youtube'></i> Vidéo de gameplay</a></p>"
             }
         },
@@ -82,7 +82,7 @@
         "crowdChoice": {
             "title": "Crowd Choice",
             "abstract": "Formation d'une semaine en partenariat avec l'<a href='https://www.igr.univ-rennes1.fr/fr/' target='_blank'>IGR-IAE Rennes</a> dont l'objectif était de créer une startup avec toute les contraintes liées à l'entrepreneuriat",
-            "request": {
+            "get": {
                 "description": "<div>Formation d'une semaine en partenariat avec l'<a href='https://www.igr.univ-rennes1.fr/fr/' target='_blank'>IGR-IAE Rennes</a> dont l'objectif était de créer une startup avec toute les contraintes liées à l'entrepreneuriat.</div><br/><div>Crowd Choice est une entreprise d’organisation événementielle basée sur un modèle de financement participatif. Le but est de produire des soirées à thème (style musical et culture étrangère) sur mesure, grâce à des sondages préparés en amont, dans les grandes villes de Bretagne. En fonction des votes de la communauté les évènements sont montés afin d'être soumis à un crowdfunding.</div>"
             }
         },
@@ -93,14 +93,14 @@
         "askelys": {
             "title": "Askelys Rapport",
             "abstract": "Rapport de stage au sein de l'entreprise <a href='http://askelys.com/' target='_blank'>Askelys</a> exerçant dans le domaine du web sémantique. Développement d'un prototype WebGL sous Unity",
-            "request": {
+            "get": {
                 "description": "<p>Rapport de stage (4 mois)</p>Rapport de stage au sein de l'entreprise <a href='http://askelys.com/' target='_blank'>Askelys</a> exerçant dans le domaine du web sémantique. Développement d'un prototype WebGL sous Unity utilisant la librairie Javascript de l'entreprise dédié au web sémantique.</p>"
             }
         },
         "kubic": {
             "title": "Kubic Unity",
             "abstract": "Projet Unity, l'objectif de ce projet était d'utiliser le navMesh",
-            "request": {
+            "get": {
                 "description": "<p><a href='https://docs.unity3d.com/ScriptReference/Application-streamingAssetsPath.html' target='_blank'>Streaming access ne sont pas utilisable avec Unity WebGL</a>.<br/>Ce jeu a été développé pour Windows, veuillez utiliser <a href='https://github.com/RealVincentBerthet/Kubic/blob/master/Kubic/Windows/Kubic.zip' target='_blank'>l'exécutables Windows</a> pour avoir accès aux options, sons et autre fonctionnalités</p><p>L'objectif de ce projet Unity était d'utiliser le navMesh.</br><b>Plus d'informations sont disponible dans le README dédié du GitHub </b></p>"
             }
         },
@@ -111,7 +111,7 @@
         "gameJam2k19": {
             "title": "Isati Game Jam 2019",
             "abstract": "Membre organisateur de l'événement",
-            "request": {
+            "get": {
                 "description": "<p>Trailer de la première <a href='https://esir.univ-rennes1.fr/actualites/la-1ere-game-jam-lesir' target='_blank' >Game Jam de l'ESIR</a> en partenariat avec <a href='https://www.orange-business.com/en' target='_blank'>Orange Applications for Business</a></p><p>Membre organisateur de l'événement</p><p>Vainqueur : <a href='https://www.youtube.com/watch?v=E_g47fFlD-E'>Game Jam of Thrones</a></p><p>Trailer réalisé par Vincent Berthet</p>"
             }
         },
@@ -130,7 +130,7 @@
         "orium": {
             "title": "Orium",
             "abstract": "Conception de niveaux 3D sous Unreal Engine 4",
-            "request": {
+            "get": {
                 "description": "Conception de niveaux 3D sous Unreal Engine 4"
             }
         },
@@ -149,14 +149,14 @@
         "mutest": {
             "title": "Mu-Test Rapport",
             "abstract": "Rapport de stage au sein de l'entreprise <a href='http://www.mu-test.com/' target='_blank'>Mu-Test</a> exerçant dans le domaine de l'ATE (Automated Test Equipment). Développement de GUI (Java) au sein de la suite, test unitaire, bug fixing.",
-            "request": {
+            "get": {
                 "description": "Rapport de stage"
             }
         },
         "pacman": {
             "title": "Pac Man XNA",
             "abstract": "Développé avec le framework XNA",
-            "request": {
+            "get": {
                 "description": "Présentation du jeu"
             }
         },
@@ -172,7 +172,7 @@
         "resume": {
             "title": "Télécharger mon CV",
             "text": "CV",
-            "request": {
+            "get": {
                 "description": "Curriculum Vitae",
                 "href": "CV/FR_CV_BERTHET_Vincent.pdf",
                 "name": "FR_CV_BERTHET_Vincent.pdf"

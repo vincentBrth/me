@@ -51,14 +51,14 @@ function update() {
  *	Make the different section of the page with the current language
  */
 async function make() {
-    let data = await this.language.getData(".core");
-    let dataLang = await this.language.getData();
-    makeHeader(dataLang["header"]);
-    makePreview(dataLang["preview"], (hireMe = data.job));
-    makeBio(dataLang["header"], dataLang["bio"]);
-    makePortfolio(dataLang["header"], dataLang["portfolio"], data["portfolio"]);
-    makeContact(dataLang["header"], dataLang["contact"], data["contact"], dataLang["social"], data["social"]);
-    makeFooter(dataLang["footer"]);
+    const common = await this.language.getData(".core");
+    const lang = await this.language.getData();
+    makeHeader(lang);
+    makePreview(lang, (hireMe = common.hireMe));
+    makeBio(lang);
+    makePortfolio(common, lang);
+    makeContact(common, lang);
+    makeFooter(lang);
 }
 
 /*
@@ -71,10 +71,11 @@ async function make() {
  *    @param {string array} contentPreview The content of the JSON [en,fr] used
  *    @param {boolean} hireMe Set to true to display additional line
  */
-function makePreview(contentPreview, hireMe = false) {
-    let d = contentPreview.text;
-    if (hireMe && contentPreview.job) d += contentPreview.job;
-    $("#previewTextContent").html(d);
+function makePreview(lang, hireMe = false) {
+    const contentPreview = lang["preview"];
+    let preview = contentPreview.text;
+    if (hireMe && contentPreview.hireMe) preview += contentPreview.hireMe;
+    $("#previewTextContent").html(preview);
 
     this.typed.strings = contentPreview.typed;
     this.typed.reset();
@@ -85,7 +86,9 @@ function makePreview(contentPreview, hireMe = false) {
  *    @param {string array} contentHeader The content of the JSON [en,fr] used
  *    @param {string array} contentBio The content of the JSON [en,fr] used
  */
-function makeBio(contentHeader, contentBio) {
+function makeBio(lang) {
+    const contentHeader = lang["header"];
+    const contentBio = lang["bio"];
     $("#bioTitleContent").html(`<h2>${contentHeader.bio.sectionTitle}</h2>`);
     $("#bioRight").html(contentBio.text.text);
     $("#bioAge").html(getAge("20/02/1996", "year"));
@@ -98,9 +101,13 @@ function makeBio(contentHeader, contentBio) {
  *    @param {string array} contentPortfolio The content of the JSON [en,fr] used
  *    @param {string array} contentCommonPortfolio The content of the JSON [core] used
  */
-async function makePortfolio(contentHeader, contentPortfolio, contentCommonPortfolio) {
+async function makePortfolio(common, lang) {
+    const contentHeader = lang["header"];
+    const contentPortfolio = lang["portfolio"];
+    const contentCommonPortfolio = common["portfolio"];
+
     let html = "";
-    const page = "request.html";
+    const page = "get.html";
     const make = document.getElementById("portfolioContent") && document.getElementById("portfolioContent").innerHTML.length == 0;
 
     if (make) {
@@ -113,8 +120,8 @@ async function makePortfolio(contentHeader, contentPortfolio, contentCommonPortf
             const skills = c.skills;
             let href = c.href;
 
-            if (contentCommonPortfolio[key].request) {
-                //Is a call to request.html
+            if (contentCommonPortfolio[key].get) {
+                //Is a call to get.html
                 href = `${page}?id=${key}`;
             } else if (href) {
                 //create url
@@ -142,7 +149,7 @@ async function makePortfolio(contentHeader, contentPortfolio, contentCommonPortf
                                             </div>
                                             <h3 id="${key}-title">WIP</h3>
                                             <span>
-                                                ${skills ? "<p>${skills}</p>" : ""}
+                                                ${skills ? `<p>${skills}</p>` : ""}
                                                 <p id="${key}-abstract">WIP</p>
                                             </span>
                                         </div>
@@ -190,34 +197,33 @@ async function makePortfolio(contentHeader, contentPortfolio, contentCommonPortf
  *    @param {string array} contentSocial The content of the JSON [en,fr] used
  *    @param {string array} contentCommonSocial The content of the JSON [core] used
  */
-function makeContact(contentHeader, contentContact, contentCommonContact, contentSocial, contentCommonSocial) {
+function makeContact(common, lang) {
+    const contentHeader = lang["header"];
+    const contentContact = lang["contact"];
+    const contentCommonContact = common["contact"];
+    const contentSocial = lang["social"];
+    const contentCommonSocial = common["social"];
     // contact info
     let html = "";
     for (let key in contentCommonContact) {
-        let c = contentCommonContact[key];
-        const classCss = c.class;
-        let href = c.href;
-        let title = c.title;
-        let text = c.text;
+        const commonContact = contentCommonContact[key];
+        const style = commonContact.class;
+        let href = commonContact.get != undefined && commonContact.get.href != undefined ? commonContact.get.href : commonContact.href;
+        let title = commonContact.title;
+        let text = commonContact.text;
 
-        let lang = contentContact[key];
-        if (lang != undefined) {
-            href = lang.href != undefined ? lang.href : href;
-            title = lang.title != undefined ? lang.title : title;
-            text = lang.text != undefined ? lang.text : text;
-        }
-
-        let style = "";
-        if (key == "resume") {
-            style = 'style="color: var(--primary-color);"';
-            href = "request.html?id=CV";
+        // Override if lang is set
+        const langContact = contentContact[key];
+        if (langContact != undefined) {
+            title = langContact.title != undefined ? langContact.title : title;
+            text = langContact.text != undefined ? langContact.text : text;
         }
 
         html += `
             <div class="col-md-4 col-sm-4">
                 <div class="contact-detail flag">  
                     <a href="${href}" target="_blank" title="${title}">
-                    <i ${style} class="${classCss}"></i><p>${text}</p>
+                    <i class="${style}"></i><p>${text}</p>
                     </a>
                 </div>
             </div> 
