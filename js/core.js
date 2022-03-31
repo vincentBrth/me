@@ -1,6 +1,7 @@
 /**
  * @author Vincent Berthet <vincent.berthet42@gmail.com>
  */
+
 console.info("Hi there ! You are welcome to examine the code");
 
 // Initialization
@@ -8,7 +9,7 @@ let availableLang = new Map();
 availableLang.set("en", "json/en.json");
 availableLang.set("fr", "json/fr.json");
 availableLang.set(".core", "json/core.json");
-availableLang.set(".notes", "json/notes.json");
+availableLang.set(".todo", "json/todo.json");
 this.language = new Language(availableLang);
 this.language.update = function () {
     update();
@@ -346,9 +347,10 @@ function getAge(dt, format) {
 /**
  * Make header of the page according to the type of the content to display
  * @param {string} contentHeader Data from json
- * @param {boolean} isRequest Set to true to use fixed black header
+ * @param {boolean} isGet Set to true to use fixed black header
  */
-function makeHeader(contentHeader, isRequest = false) {
+function makeHeader(lang, isGet = false) {
+    const contentHeader = lang["header"];
     let anchorsList = "";
     const previousActive = $(".nav li.active").attr("id");
     for (i in contentHeader) {
@@ -364,12 +366,12 @@ function makeHeader(contentHeader, isRequest = false) {
     }
 
     let html = `
-                <div class="${isRequest ? `request-header-top-area navigation-background` : `header-top-area`}">
+                <div class="${isGet ? `get-header-top-area navigation-background` : `header-top-area`}">
                     <div class="margin-left-20">
                         <div class="row">
                             <div class="logo col-sm-4">
                                 <a class="smoth-scroll" href="${
-                                    isRequest ? "./" : "#navigation"
+                                    isGet ? "./" : "#navigation"
                                 }"><img src="img/template/vb_black.png">Vincent <b>Berthet</b></a>
                             </div>
                             <div class="col-sm-8">
@@ -420,35 +422,35 @@ function makeHeader(contentHeader, isRequest = false) {
                                         5. Footer
     ******************************************************************************************* 
 */
-/**
- *    Build the release with the latest update wrote in the request.json
- */
-function makeRelease() {
-    currentRelease = "X";
-    $("#release").html(currentRelease);
 
-    let json = $.getJSON("json/notes.json");
-    json.done(function (data) {
-        for (let i in data.notes) {
-            currentRelease = data.notes[i].version;
-            $("#release").html(currentRelease);
-            break;
-        }
-    });
+/**
+ *    Build the release with the latest update wrote in the get.json
+ */
+async function makeRelease() {
+    fetch(
+        `https://api.github.com/repos/${await this.language.getGithubName()}/${(await this.language.getData(".core"))["website"]}/releases`,
+        (init = { method: "GET", headers: {} })
+    )
+        .then((response) => response.json())
+        .then((data) => {
+            $("#release").html(data[0]["name"]);
+        })
+        .catch((error) => console.log(error));
 }
 
 /**
  *    Make the footer of the page
  *    @param {string} contentFooter The data of the *current*.json
  */
-function makeFooter(contentFooter, isRequest = false) {
+function makeFooter(lang, isGet = false) {
+    const contentFooter = lang["footer"];
     let html = `
         <div class="container text-center">
             &copy; ${new Date().getFullYear()}<a class="smoth-scroll" href="${
-        isRequest ? "./" : "#navigation"
-    }"> Vincent Berthet Website</a> - <a href="request.html?id=Notes" >V<span id="release"></span></a> | ${
+        isGet ? "./" : "#navigation"
+    }"> Vincent Berthet Website</a> - <a href="get.html?id=Notes" >V<span id="release"></span></a> | ${
         contentFooter.dev
-    }<a class="smoth-scroll" href="${isRequest ? "./" : "#navigation"}"> Vincent Berthet</a>
+    }<a class="smoth-scroll" href="${isGet ? "./" : "#navigation"}"> Vincent Berthet</a>
         </div> 
     `;
 

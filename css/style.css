@@ -508,12 +508,12 @@ body.loaded #preloader {
     color: var(--primary-color);
 }
 
-#preview_text_content::before {
+#previewTextContent::before {
     content: "{";
     color:var(--primary-color);
 }
 
-#preview_text_content::after {
+#previewTextContent::after {
     content: "}";
     color:var(--primary-color);
 }

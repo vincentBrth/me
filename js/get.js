@@ -3,8 +3,8 @@
  */
 
 /**
- * Initialize request.html depending of the request selected
- * @param {string} id Id requested
+ * Initialize get.html depending of the get selected
+ * @param {string} id Id get
  */
 function init(id) {
     this.id = id;
@@ -16,7 +16,7 @@ function init(id) {
 }
 
 /**
- * Update color of the page according to his type if it is defined in request.css
+ * Update color of the page according to his type if it is defined in get.css
  * @param {string} type Type of the page
  */
 function checkColor(type) {
@@ -49,14 +49,14 @@ async function make() {
     const contentLang = dataLang.portfolio[this.id];
     let lang = `,"lang":${JSON.stringify(dataLang.header.lang)}`;
     if (content) {
-        this.type = content["request"]["id"];
-        if (content["request"]["french"] == false) {
+        this.type = content["get"]["id"];
+        if (content["get"]["french"] == false) {
             lang = "";
         }
 
         if (!this.type) {
-            //Request invalid
-            console.error(`Request invalid : {type}${this.type.toLocaleLowerCase()}, - {id}${this.id}`);
+            //get invalid
+            console.error(`get invalid : {type}${this.type.toLocaleLowerCase()}, - {id}${this.id}`);
             makeUnknown(dataLang);
         } else if (this.type.toLocaleLowerCase() == "download") {
             makeDownload(content, contentLang);
@@ -74,30 +74,32 @@ async function make() {
         if (this.id.toLocaleLowerCase() == "notes") {
             this.type = "notes";
             lang = "";
-            makeNotes(await this.language.getData(".notes"));
+            makeNotes(await this.language.getData(".todo"));
         } else if (this.id.toLocaleLowerCase() == "cv") {
-            this.type = data.contact.resume.request.id;
+            this.type = data.contact.resume.get.id;
             makeDownload(data.contact.resume, dataLang.contact.resume);
         } else {
             makeUnknown(dataLang);
         }
     }
     title = this.id.split(/(?=[A-Z])/).join(" ");
-    document.title = title.toUpperCase();
-    let header = JSON.parse(`
-                {
-                    "${this.id}":{
-                        "anchor":"home",
-                        "anchorText":"${title}",
-                        "listItemClass":"margin-right-30 active"
-                    },
-                    "nightShift":${JSON.stringify(dataLang.header.nightShift)}
-                    ${lang}
-                }
+    document.title = title;
+    const header = JSON.parse(`
+        {
+            "header": {
+                        "${this.id}":{
+                            "anchor":"home",
+                            "anchorText":"${title}",
+                            "listItemClass":"margin-right-30 active"
+                        },
+                        "nightShift":${JSON.stringify(dataLang.header.nightShift)}
+                        ${lang}
+                      }
+            }
                 `);
 
     makeHeader(header, true);
-    makeFooter((await this.language.getData())["footer"], true);
+    makeFooter(await this.language.getData(), true);
     document.documentElement.style.setProperty("--primary-color", checkColor(this.type));
 }
 
@@ -106,9 +108,9 @@ async function make() {
  * @param {string array} data JSON file loaded
  */
 async function makeNotes(data) {
-    let updatesHtml = `
+    let releasesHtml = `
         <div class="col-sm-6">
-            <h1>Updates</h1><br/>
+            <h1>Releases</h1><br/>
             <ul>  
     `;
     let todoHtml = `
@@ -117,20 +119,7 @@ async function makeNotes(data) {
             <ul>   
     `;
 
-    const url = await this.language.getGithubURL();
-    for (let key in data.notes) {
-        let version = data.notes[key].version;
-        if (data.notes[key].github == true) version = `<a href="${url}me/releases/tag/${version}" target="_blank">${version}</a>`;
-        updatesHtml += `
-        <li>
-            <p>
-            <b><u>Version ${version} :</b></u> ${data.notes[key].released}<br/>
-            ${data.notes[key].text}
-            </p>
-        </li>
-        `;
-    }
-    updatesHtml += "</ul></div>";
+    // todo
     for (let key in data.todo) {
         todoHtml += `
             <li>
@@ -139,8 +128,31 @@ async function makeNotes(data) {
         `;
     }
     todoHtml += "</ul></div>";
-
-    $("#home").html(`<div class="container">${updatesHtml}${todoHtml}</div>`);
+    // release
+    fetch(
+        `https://api.github.com/repos/${await this.language.getGithubName()}/${(await this.language.getData(".core"))["website"]}/releases`,
+        (init = { method: "GET", headers: {} })
+    )
+        .then((response) => response.json())
+        .then((data) => {
+            for (let key in data) {
+                const version = data[key]["tag_name"];
+                const date = data[key]["created_at"].split("T")[0];
+                const url = data[key]["html_url"];
+                const body = data[key]["body"].replace(/(?:\r\n|\r|\n)/g, "<br>");
+                releasesHtml += `
+            <li>
+                <p>
+                <b><u>Version <a href="${url}" target="_blank">${version}</a> :</b></u> ${date}<br/>
+                ${body}
+                </p>
+            </li>
+            `;
+            }
+            releasesHtml += "</ul></div>";
+            $("#home").html(`<div class="container">${releasesHtml}${todoHtml}</div>`);
+        })
+        .catch((error) => console.log(error));
 }
 
 /**
@@ -152,23 +164,23 @@ async function makeDownload(content, contentLang) {
     if (contentLang == undefined) {
         contentLang = content;
     }
-    const contentLangRequest = contentLang.request ? contentLang.request : content;
+    const contentLangGet = contentLang.get ? contentLang.get : content;
     const title = contentLang.title ? contentLang.title : content.title;
-    const name = contentLangRequest.name ? contentLangRequest.name : content.request.name;
-    const description = contentLangRequest.description ? contentLangRequest.description : content.request.description;
+    const name = contentLangGet.name ? contentLangGet.name : content.get.name;
+    const description = contentLangGet.description ? contentLangGet.description : content.get.description;
     const justify = description.length > 100 ? 'style="text-align:justify;"' : "";
-    const href = contentLangRequest.href ? contentLangRequest.href : content.request.href;
+    const href = contentLangGet.href ? contentLangGet.href : content.get.href;
     const extension = href.split(".").pop();
     const public = await this.language.getGithubPublicURL();
     document.title = title;
-    requestType = this.language.getLang() == "fr" ? "Téléchargement" : this.type;
+    getType = this.language.getLang() == "fr" ? "Téléchargement" : this.type;
     const html = `
         <div class="container">
-            <div class="request-center" style="margin-top:20%">
-                <div class="request-logo">
-                    ${requestType}
+            <div class="get-center" style="margin-top:20%">
+                <div class="get-logo">
+                    ${getType}
                 </div>
-                <div class="request-title">
+                <div class="get-title">
                     <h4>${name}</h4>
                 </div>
                 <div ${justify}>
@@ -189,10 +201,10 @@ async function makeDownload(content, contentLang) {
  * @param {string array} contentLang The content of the JSON [en,fr] used
  */
 async function makePlayer(content, contentLang) {
-    const contentLangRequest = contentLang.request ? contentLang.request : content;
+    const contentLangGet = contentLang.get ? contentLang.get : content;
     const title = contentLang.title ? contentLang.title : content.title;
-    const description = contentLangRequest.description ? contentLangRequest.description : content.request.description;
-    const href = contentLangRequest.href ? contentLangRequest.href : content.request.href;
+    const description = contentLangGet.description ? contentLangGet.description : content.get.description;
+    const href = contentLangGet.href ? contentLangGet.href : content.get.href;
     const githubURL = await this.language.getGithubURL();
     const source = content.github
         ? `<p><a href="${githubURL}${href.split("/")[0]}" target="_blank"><i class="fab fa-github"></i> Github source</a></p>`
@@ -204,7 +216,7 @@ async function makePlayer(content, contentLang) {
             <h1>${title}</h1>
             <p>${description}</p>
             ${source}
-            <div class="col-md-12 request-center iframe-container">
+            <div class="col-md-12 get-center iframe-container">
                 <iframe width="854" height="480" src="${href}" frameborder="0" allow="autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
@@ -218,10 +230,10 @@ async function makePlayer(content, contentLang) {
  * @param {string array} contentLang The content of the JSON [en,fr] used
  */
 async function makeWebGL(content, contentLang) {
-    const contentLangRequest = contentLang.request ? contentLang.request : content;
+    const contentLangGet = contentLang.get ? contentLang.get : content;
     const title = contentLang.title ? contentLang.title : content.title;
-    const description = contentLangRequest.description ? contentLangRequest.description : content.request.description;
-    const href = contentLangRequest.href ? contentLangRequest.href : content.request.href;
+    const description = contentLangGet.description ? contentLangGet.description : content.get.description;
+    const href = contentLangGet.href ? contentLangGet.href : content.get.href;
     const page = await this.language.getGithubPageURL();
     const githubURL = await this.language.getGithubURL();
 
@@ -232,7 +244,7 @@ async function makeWebGL(content, contentLang) {
             <p>${description}</p>
             <p><a href="${githubURL}${href.split("/")[0]}" target="_blank"><i class="fab fa-github"></i> Github source</a></p>
         </div>
-        <div class="request-center iframe-container"><iframe src="${
+        <div class="get-center iframe-container"><iframe src="${
             page + href
         }" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
     `;
@@ -240,14 +252,14 @@ async function makeWebGL(content, contentLang) {
 }
 
 /**
- * Make a redirection request
+ * Make a redirection get
  * @param {string array} content The content of the JSON [en,fr] used
  * @param {string array} data The content of the JSON [en,fr]
  */
 async function makeRedirection(content, data) {
     const templates = data.templates;
-    const wip = content.request.wip ? content.request.wip : false;
-    const mobile = content.request.mobile ? content.request.mobile : false;
+    const wip = content.get.wip ? content.get.wip : false;
+    const mobile = content.get.mobile ? content.get.mobile : false;
     const counter = templates.counter.text;
 
     let title;
@@ -276,9 +288,9 @@ async function makeRedirection(content, data) {
 
     let html = `
         <div class="container">
-            <div class="request-center" style="margin-top:20%">
-                <div class="request-logo">${this.type}</div>
-                <div class="request-title">
+            <div class="get-center" style="margin-top:20%">
+                <div class="get-logo">${this.type}</div>
+                <div class="get-title">
                     <h1>${title}</h1>
                 </div>
                 <p><h4><i>${text}</i></h4><p>
@@ -316,7 +328,7 @@ async function makePage(data) {
 }
 
 /**
- * Make a unknown request
+ * Make a unknown get
  * @param {string array} data The content of the JSON [en,fr]
  */
 function makeUnknown(data) {
@@ -324,12 +336,12 @@ function makeUnknown(data) {
     const title = templates.title;
     const text = templates.text;
     const button = templates.button;
-    requestType = this.language.getLang() == "fr" ? "Inconnu" : "Unknown";
+    getType = this.language.getLang() == "fr" ? "Inconnu" : "Unknown";
     const html = `
         <div class="container">
-            <div class="request-center" style="margin-top:20%">
-                <div class="request-logo">${requestType}</div>
-                <div class="request-title">
+            <div class="get-center" style="margin-top:20%">
+                <div class="get-logo">${getType}</div>
+                <div class="get-title">
                     <h1>${title}</h1>
                 </div>
                 <p><h4><i>${text}</i></h4></p>

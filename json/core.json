@@ -1,4 +1,6 @@
 {
+    "website" : "me",
+    "hireMe": false,
     "portfolio": {
         "unityMars": {
             "title": "UnityMars",
@@ -7,7 +9,7 @@
             "skills": "",
             "href": "UnityMars",
             "github": true,
-            "request": {
+            "get": {
                 "id": "Redirection",
                 "wip": true
             }
@@ -23,7 +25,7 @@
             "githubPage": true
         },
         "asciiArt": {
-            "ico": "img/ico_project/ico_asciiArt.png",
+            "ico": "img/ico_project/ico_ascii_art.png",
             "title": "ASCII Art",
             "abstract": "NA",
             "filter": "Python OpenCV",
@@ -40,7 +42,7 @@
             "href": "github-api",
             "github": true,
             "githubPage": true,
-            "request": {
+            "get": {
                 "id": "Redirection",
                 "wip": true
             }
@@ -51,7 +53,7 @@
             "abstract": "NA",
             "filter": "Pro CSharp Cpp 3D",
             "skills": "C++, Computer vision, Unity, C#, Qt, CI, 3D",
-            "request": {
+            "get": {
                 "id": "Download",
                 "description": "NA",
                 "name": "BERTHET_Vincent_bcom.zip",
@@ -59,7 +61,7 @@
             }
         },
         "asymmetryICP": {
-            "ico": "img/ico_project/ico_asymmetryICP.png",
+            "ico": "img/ico_project/ico_asymmetry_icp.png",
             "title": "NA",
             "abstract": "NA",
             "filter": "OpenCV Python",
@@ -74,7 +76,7 @@
             "filter": "Game CSharp",
             "github": true,
             "skills": "Unity, C#",
-            "request": {
+            "get": {
                 "id": "WebGL",
                 "href": "LunaAndHelios/WebGL/index.html",
                 "description": "NA"
@@ -104,7 +106,7 @@
             "abstract": "NA",
             "filter": "Management",
             "skills": "Entrepreneurship",
-            "request": {
+            "get": {
                 "id": "Download",
                 "description": "NA",
                 "name": "Crowd_choice.zip",
@@ -126,7 +128,7 @@
             "abstract": "NA",
             "filter": "Pro CSharp",
             "skills": "Unity, C#, Javascript, WebGL",
-            "request": {
+            "get": {
                 "id": "Download",
                 "description": "NA",
                 "name": "Rapport_BERTHET_Vincent_Askelys_2019.pdf",
@@ -140,7 +142,7 @@
             "filter": "3D CSharp Game",
             "github": true,
             "skills": "Unity, C#",
-            "request": {
+            "get": {
                 "id": "WebGL",
                 "href": "Kubic/Kubic/WebGL/index.html",
                 "description": "NA"
@@ -156,12 +158,12 @@
             "github": true
         },
         "gameJam2k19": {
-            "ico": "img/ico_project/ico_gameJam2k19.png",
+            "ico": "img/ico_project/ico_game_jam_2k19.png",
             "title": "NA",
             "abstract": "NA",
             "filter": "Management",
             "skills": "Management",
-            "request": {
+            "get": {
                 "id": "Player",
                 "href": "https://www.youtube.com/embed/Q5fmX5Q7btM",
                 "description": "NA"
@@ -186,14 +188,14 @@
             "githubPage": true,
             "skills": "Javascript, HTML5, CSS3, PHP, JQuery"
         },
-        "ta": {
-            "ico": "img/ico_project/ico_TA.png",
+        "towerAttack": {
+            "ico": "img/ico_project/ico_tower_attack.png",
             "title": "NA",
             "abstract": "NA",
             "filter": "Javascript Game",
             "href": "https://towerattackproject.firebaseapp.com/",
             "skills": "Javascript",
-            "request": {
+            "get": {
                 "id": "Redirection",
                 "mobile": true
             }
@@ -204,7 +206,7 @@
             "abstract": "NA",
             "filter": "3D Game",
             "skills": "UE4",
-            "request": {
+            "get": {
                 "id": "Player",
                 "href": "https://www.youtube.com/embed/ksHjCFvTFxA",
                 "description": "NA"
@@ -242,7 +244,7 @@
             "abstract": "NA",
             "filter": "Pro",
             "skills": "Java",
-            "request": {
+            "get": {
                 "id": "Download",
                 "description": "NA",
                 "name": "MuTest_2016.pdf",
@@ -255,7 +257,7 @@
             "abstract": "NA",
             "filter": "CSharp Game",
             "skills": "C#",
-            "request": {
+            "get": {
                 "id": "Download",
                 "description": "NA",
                 "name": "Pacman.pdf",
@@ -281,11 +283,12 @@
         "resume": {
             "class": "fas fa-download fa-2x color-4",
             "title": "NA",
-            "text": "NA",
-            "request": {
+            "text": "CV",
+            "get": {
                 "id": "Download",
                 "description": "NA",
-                "name": "NA"
+                "name": "NA",
+                "href": "get.html?id=CV"
             }
         },
         "phone": {
@@ -331,6 +334,5 @@
             "username": "RealVincentBerthet",
             "classIco": "fab fa-github"
         }
-    },
-    "job": false
+    }
 }
