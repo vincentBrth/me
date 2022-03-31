@@ -43,7 +43,7 @@ function update() {
  * Call after initialization to make the correct content of the page
  */
 async function make() {
-    const data = await this.language.getData(".core");
+    const data = await this.language.getData(".common");
     const dataLang = await this.language.getData();
     const content = data.portfolio[this.id];
     const contentLang = dataLang.portfolio[this.id];
@@ -130,7 +130,7 @@ async function makeNotes(data) {
     todoHtml += "</ul></div>";
     // release
     fetch(
-        `https://api.github.com/repos/${await this.language.getGithubName()}/${(await this.language.getData(".core"))["website"]}/releases`,
+        `https://api.github.com/repos/${await this.language.getGithubName()}/${(await this.language.getData(".common"))["website"]}/releases`,
         (init = { method: "GET", headers: {} })
     )
         .then((response) => response.json())
@@ -157,7 +157,7 @@ async function makeNotes(data) {
 
 /**
  * Download page
- * @param {string array} content The content of the JSON [core] used
+ * @param {string array} content The content of the JSON [common] used
  * @param {string array} contentLang The content of the JSON [en,fr] used
  */
 async function makeDownload(content, contentLang) {
@@ -197,7 +197,7 @@ async function makeDownload(content, contentLang) {
 
 /**
  * Make an embedded player and description
- * @param {string array} content The content of the JSON [core used
+ * @param {string array} content The content of the JSON [common] used
  * @param {string array} contentLang The content of the JSON [en,fr] used
  */
 async function makePlayer(content, contentLang) {
@@ -226,7 +226,7 @@ async function makePlayer(content, contentLang) {
 
 /**
  * Make an embedded  web gl player with Unity default template
- * @param {string array} content The content of the JSON [core] used
+ * @param {string array} content The content of the JSON [common] used
  * @param {string array} contentLang The content of the JSON [en,fr] used
  */
 async function makeWebGL(content, contentLang) {

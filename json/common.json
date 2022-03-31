@@ -15,7 +15,7 @@
             }
         },
         "jekyll": {
-            "ico": "img/ico_project/ico_jekyll.png",
+            "ico": "img/project/ico_jekyll.png",
             "title": "NA",
             "abstract": "NA",
             "filter": "Web",
@@ -25,7 +25,7 @@
             "githubPage": true
         },
         "asciiArt": {
-            "ico": "img/ico_project/ico_ascii_art.png",
+            "ico": "img/project/ico_ascii_art.png",
             "title": "ASCII Art",
             "abstract": "NA",
             "filter": "Python OpenCV",
@@ -34,7 +34,7 @@
             "github": true
         },
         "githubApi": {
-            "ico": "img/ico_project/ico_api.png",
+            "ico": "img/project/ico_api.png",
             "title": "NA",
             "abstract": "NA",
             "filter": "Web Javascript",
@@ -48,7 +48,7 @@
             }
         },
         "bcom": {
-            "ico": "img/ico_project/ico_bcom.png",
+            "ico": "img/project/ico_bcom.png",
             "title": "NA",
             "abstract": "NA",
             "filter": "Pro CSharp Cpp 3D",
@@ -61,7 +61,7 @@
             }
         },
         "asymmetryICP": {
-            "ico": "img/ico_project/ico_asymmetry_icp.png",
+            "ico": "img/project/ico_asymmetry_icp.png",
             "title": "NA",
             "abstract": "NA",
             "filter": "OpenCV Python",
@@ -70,7 +70,7 @@
             "github": true
         },
         "lunaAndHelios": {
-            "ico": "img/ico_project/ico_luna_and_helios.png",
+            "ico": "img/project/ico_luna_and_helios.png",
             "title": "NA",
             "abstract": "NA",
             "filter": "Game CSharp",
@@ -83,7 +83,7 @@
             }
         },
         "tensors": {
-            "ico": "img/ico_project/ico_tensors.png",
+            "ico": "img/project/ico_tensors.png",
             "title": "NA",
             "abstract": "NA",
             "filter": "OpenCV Python",
@@ -92,7 +92,7 @@
             "github": true
         },
         "ar": {
-            "ico": "img/ico_project/ico_ar.png",
+            "ico": "img/project/ico_ar.png",
             "title": "NA",
             "abstract": "NA",
             "filter": "OpenCV Python",
@@ -101,7 +101,7 @@
             "github": true
         },
         "crowdChoice": {
-            "ico": "img/ico_project/ico_crowd_choice.png",
+            "ico": "img/project/ico_crowd_choice.png",
             "title": "NA",
             "abstract": "NA",
             "filter": "Management",
@@ -114,7 +114,7 @@
             }
         },
         "hdr": {
-            "ico": "img/ico_project/ico_hdr.png",
+            "ico": "img/project/ico_hdr.png",
             "title": "NA",
             "abstract": "NA",
             "filter": "OpenCV Python",
@@ -123,7 +123,7 @@
             "github": true
         },
         "askelys": {
-            "ico": "img/ico_project/ico_askelys.png",
+            "ico": "img/project/ico_askelys.png",
             "title": "NA",
             "abstract": "NA",
             "filter": "Pro CSharp",
@@ -136,7 +136,7 @@
             }
         },
         "kubic": {
-            "ico": "img/ico_project/ico_kubic.png",
+            "ico": "img/project/ico_kubic.png",
             "title": "NA",
             "abstract": "NA",
             "filter": "3D CSharp Game",
@@ -149,7 +149,7 @@
             }
         },
         "ray": {
-            "ico": "img/ico_project/ico_ray.png",
+            "ico": "img/project/ico_ray.png",
             "title": "NA",
             "abstract": "NA",
             "filter": "Cpp 3D",
@@ -158,7 +158,7 @@
             "github": true
         },
         "gameJam2k19": {
-            "ico": "img/ico_project/ico_game_jam_2k19.png",
+            "ico": "img/project/ico_game_jam_2k19.png",
             "title": "NA",
             "abstract": "NA",
             "filter": "Management",
@@ -170,7 +170,7 @@
             }
         },
         "gol": {
-            "ico": "img/ico_project/ico_gol.png",
+            "ico": "img/project/ico_gol.png",
             "title": "NA",
             "abstract": "NA",
             "filter": "Cpp Game",
@@ -179,7 +179,7 @@
             "skills": "Qt, C++, GUI"
         },
         "websiteV1": {
-            "ico": "img/ico_project/ico_website_v1.png",
+            "ico": "img/project/ico_website_v1.png",
             "title": "NA",
             "abstract": "NA",
             "filter": "Javascript Web",
@@ -189,7 +189,7 @@
             "skills": "Javascript, HTML5, CSS3, PHP, JQuery"
         },
         "towerAttack": {
-            "ico": "img/ico_project/ico_tower_attack.png",
+            "ico": "img/project/ico_tower_attack.png",
             "title": "NA",
             "abstract": "NA",
             "filter": "Javascript Game",
@@ -201,7 +201,7 @@
             }
         },
         "orium": {
-            "ico": "img/ico_project/ico_orium.png",
+            "ico": "img/project/ico_orium.png",
             "title": "NA",
             "abstract": "NA",
             "filter": "3D Game",
@@ -213,7 +213,7 @@
             }
         },
         "auld": {
-            "ico": "img/ico_project/ico_auld.png",
+            "ico": "img/project/ico_auld.png",
             "title": "NA",
             "abstract": "NA",
             "filter": "Management 3D Game",
@@ -221,7 +221,7 @@
             "skills": "UE4"
         },
         "scogue": {
-            "ico": "img/ico_project/ico_scogue.png",
+            "ico": "img/project/ico_scogue.png",
             "title": "NA",
             "abstract": "NA",
             "filter": "Javascript Game",
@@ -231,7 +231,7 @@
             "githubPage": false
         },
         "blog": {
-            "ico": "img/ico_project/ico_blog.png",
+            "ico": "img/project/ico_blog.png",
             "title": "NA",
             "abstract": "NA",
             "filter": "Web",
@@ -239,7 +239,7 @@
             "skills": "WordPress"
         },
         "mutest": {
-            "ico": "img/ico_project/ico_mutest.png",
+            "ico": "img/project/ico_mutest.png",
             "title": "NA",
             "abstract": "NA",
             "filter": "Pro",
@@ -252,7 +252,7 @@
             }
         },
         "pacman": {
-            "ico": "img/ico_project/ico_pacman.png",
+            "ico": "img/project/ico_pacman.png",
             "title": "NA",
             "abstract": "NA",
             "filter": "CSharp Game",
@@ -265,7 +265,7 @@
             }
         },
         "monitoring": {
-            "ico": "img/ico_project/ico_monitoring.png",
+            "ico": "img/project/ico_monitoring.png",
             "title": "NA",
             "description": "NA",
             "filter": "Web",

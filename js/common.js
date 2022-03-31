@@ -8,7 +8,7 @@ console.info("Hi there ! You are welcome to examine the code");
 let availableLang = new Map();
 availableLang.set("en", "json/en.json");
 availableLang.set("fr", "json/fr.json");
-availableLang.set(".core", "json/core.json");
+availableLang.set(".common", "json/common.json");
 availableLang.set(".todo", "json/todo.json");
 this.language = new Language(availableLang);
 this.language.update = function () {
@@ -113,15 +113,15 @@ Language.prototype.getData = async function (current = this.getLang()) {
 };
 
 /**
- *   Get Github name for my account depending on username in core.json
+ *   Get Github name for my account depending on username in common.json
  *   @return {string}
  */
 Language.prototype.getGithubName = async function () {
-    return (await Promise.resolve((await this.data).get(".core")))["social"]["github"]["username"];
+    return (await Promise.resolve((await this.data).get(".common")))["social"]["github"]["username"];
 };
 
 /**
- *    Get Github URL for my account depending on username in core.json
+ *    Get Github URL for my account depending on username in common.json
  *    @return {string}
  */
 Language.prototype.getGithubURL = async function () {
@@ -130,7 +130,7 @@ Language.prototype.getGithubURL = async function () {
 };
 
 /**
- *    Get Github page URL for my account depending on username in core.json
+ *    Get Github page URL for my account depending on username in common.json
  *    @return {string}
  */
 Language.prototype.getGithubPageURL = async function () {
@@ -139,7 +139,7 @@ Language.prototype.getGithubPageURL = async function () {
 };
 
 /**
- *   Get Github public directory for my account depending on username in core.json
+ *   Get Github public directory for my account depending on username in common.json
  *   @return {string}
  */
 Language.prototype.getGithubPublicURL = async function () {
@@ -372,7 +372,7 @@ function makeHeader(lang, isGet = false) {
                             <div class="logo col-sm-4">
                                 <a class="smoth-scroll" href="${
                                     isGet ? "./" : "#navigation"
-                                }"><img src="img/template/vb_black.png">Vincent <b>Berthet</b></a>
+                                }"><img src="img/vb_black.png">Vincent <b>Berthet</b></a>
                             </div>
                             <div class="col-sm-8">
                                 <div class="navigation-menu">
@@ -428,7 +428,7 @@ function makeHeader(lang, isGet = false) {
  */
 async function makeRelease() {
     fetch(
-        `https://api.github.com/repos/${await this.language.getGithubName()}/${(await this.language.getData(".core"))["website"]}/releases`,
+        `https://api.github.com/repos/${await this.language.getGithubName()}/${(await this.language.getData(".common"))["website"]}/releases`,
         (init = { method: "GET", headers: {} })
     )
         .then((response) => response.json())

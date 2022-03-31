@@ -51,7 +51,7 @@ function update() {
  *	Make the different section of the page with the current language
  */
 async function make() {
-    const common = await this.language.getData(".core");
+    const common = await this.language.getData(".common");
     const lang = await this.language.getData();
     makeHeader(lang);
     makePreview(lang, (hireMe = common.hireMe));
@@ -99,7 +99,7 @@ function makeBio(lang) {
  *    Build the Portfolio section
  *    @param {string array} contentHeader The content of the JSON [en,fr] used
  *    @param {string array} contentPortfolio The content of the JSON [en,fr] used
- *    @param {string array} contentCommonPortfolio The content of the JSON [core] used
+ *    @param {string array} contentCommonPortfolio The content of the JSON [common] used
  */
 async function makePortfolio(common, lang) {
     const contentHeader = lang["header"];
@@ -111,12 +111,11 @@ async function makePortfolio(common, lang) {
     const make = document.getElementById("portfolioContent") && document.getElementById("portfolioContent").innerHTML.length == 0;
 
     if (make) {
-        //**MAKE CONTENT
         for (let key in contentCommonPortfolio) {
-            //core content
+            //common content
             const c = contentCommonPortfolio[key];
             const filter = c.filter != undefined ? c.filter : "";
-            const ico = c.ico != undefined ? c.ico : "img/ico_project/ico_wip.png";
+            const ico = c.ico != undefined ? c.ico : "img/project/ico_wip.png";
             const skills = c.skills;
             let href = c.href;
 
@@ -166,7 +165,7 @@ async function makePortfolio(common, lang) {
     if (make) $("#portfolioContent").html(html);
     $("#portfolioContent").mixItUp();
 
-    //**UPDATE CONTENT of figure
+    // update portofolio
     for (let key1 in contentPortfolio) {
         for (let key2 in contentCommonPortfolio) {
             const githubIco = contentCommonPortfolio[key2].github == true ? '<i class="fab fa-github"></i>' : "";
@@ -174,7 +173,7 @@ async function makePortfolio(common, lang) {
                 $(`#${key1}-title`).html(`${githubIco} ${contentPortfolio[key1].title}`);
                 $(`#${key1}-abstract`).html(`${contentPortfolio[key1].abstract}`);
             } else {
-                //check if only present in core.json
+                //check if only present in common.json
                 let found = false;
                 for (let k in contentPortfolio) {
                     if (k == key2) found = true;
@@ -193,9 +192,9 @@ async function makePortfolio(common, lang) {
  *    Build the contact section
  *    @param {string array} contentHeader The content of the JSON [en,fr] used
  *    @param {string array} contentContact The content of the JSON [en,fr] used
- *    @param {string array} contentCommonContact The content of the JSON [core] used
+ *    @param {string array} contentCommonContact The content of the JSON [common] used
  *    @param {string array} contentSocial The content of the JSON [en,fr] used
- *    @param {string array} contentCommonSocial The content of the JSON [core] used
+ *    @param {string array} contentCommonSocial The content of the JSON [common] used
  */
 function makeContact(common, lang) {
     const contentHeader = lang["header"];
