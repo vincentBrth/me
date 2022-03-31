@@ -281,7 +281,7 @@
             "text": "vincent.berthet42@gmail.com"
         },
         "resume": {
-            "class": "fas fa-download fa-2x color-4",
+            "class": "fas fa-download fa-2x color-4 green",
             "title": "NA",
             "text": "CV",
             "get": {

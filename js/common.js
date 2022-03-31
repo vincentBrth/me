@@ -370,9 +370,7 @@ function makeHeader(lang, isGet = false) {
                     <div class="margin-left-20">
                         <div class="row">
                             <div class="logo col-sm-4">
-                                <a class="smoth-scroll" href="${
-                                    isGet ? "./" : "#navigation"
-                                }"><img src="img/vb_black.png">Vincent <b>Berthet</b></a>
+                                <a class="smoth-scroll" href="${isGet ? "./" : "#navigation"}"><img src="img/vb_black.png">Vincent <b>Berthet</b></a>
                             </div>
                             <div class="col-sm-8">
                                 <div class="navigation-menu">
@@ -433,7 +431,7 @@ async function makeRelease() {
     )
         .then((response) => response.json())
         .then((data) => {
-            $("#release").html(data[0]["name"]);
+            $("#release").html(data[0]["tag_name"]);
         })
         .catch((error) => console.log(error));
 }
