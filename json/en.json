@@ -123,7 +123,7 @@
             "title": "Old website",
             "abstract": "Old release of this website (1.6)"
         },
-        "ta": {
+        "towerAttack": {
             "title": "Tower Attack",
             "abstract": "Advanced Mobile Programming<br/>Tower Attack Game, implementing advanced features like queues, stacks, and pathways"
         },

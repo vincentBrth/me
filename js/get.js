@@ -140,14 +140,16 @@ async function makeNotes(data) {
                 const date = data[key]["created_at"].split("T")[0];
                 const url = data[key]["html_url"];
                 const body = data[key]["body"].replace(/(?:\r\n|\r|\n)/g, "<br>");
-                releasesHtml += `
-            <li>
-                <p>
-                <b><u>Version <a href="${url}" target="_blank">${version}</a> :</b></u> ${date}<br/>
-                ${body}
-                </p>
-            </li>
-            `;
+                if (body) {
+                    releasesHtml += `
+                    <li>
+                        <p>
+                        <b><u>Version <a href="${url}" target="_blank">${version}</a> :</b></u> ${date}<br/>
+                        ${body}
+                        </p>
+                    </li>
+                    `;
+                }
             }
             releasesHtml += "</ul></div>";
             $("#home").html(`<div class="container">${releasesHtml}${todoHtml}</div>`);
