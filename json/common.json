@@ -2,12 +2,12 @@
     "website" : "me",
     "hireMe": false,
     "portfolio": {
-        "unityMars": {
-            "title": "UnityMars",
-            "abstract": "",
+        "vrowl": {
+            "title": "VRowl",
+            "abstract": "VR application for mobile to determine in live the distance of items for petanque and palet breton.<br/><br/>Should be ready for August 2022",
             "filter": "",
             "skills": "",
-            "href": "UnityMars",
+            "href": "VRowl",
             "github": true,
             "get": {
                 "id": "Redirection",
