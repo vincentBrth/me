@@ -446,7 +446,7 @@ function makeFooter(lang, isGet = false) {
         <div class="container text-center">
             &copy; ${new Date().getFullYear()}<a class="smoth-scroll" href="${
         isGet ? "./" : "#navigation"
-    }"> Vincent Berthet Website</a> - <a href="get.html?id=Notes" >V<span id="release"></span></a> | ${
+    }"> Vincent Berthet Website</a> - <a href="get.html?id=Notes" ><span id="release"></span></a> | ${
         contentFooter.dev
     }<a class="smoth-scroll" href="${isGet ? "./" : "#navigation"}"> Vincent Berthet</a>
         </div> 

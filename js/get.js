@@ -139,7 +139,9 @@ async function makeNotes(data) {
                 const version = data[key]["tag_name"];
                 const date = data[key]["created_at"].split("T")[0];
                 const url = data[key]["html_url"];
-                const body = data[key]["body"].replace(/(?:\r\n|\r|\n)/g, "<br>");
+                let body = data[key]["body"].replace(/(?:\r\n|\r|\n)/g, "<br>");
+                body = body.replace(/\*/g, "-"); // replace markdown *
+                body = body.replace(/\[([^\]]+)\]\(([^\)]+)\)/g, '<a href="$2" target="_blank">$1</a>');  // replace markdown []()
                 if (body) {
                     releasesHtml += `
                     <li>
@@ -175,7 +177,7 @@ async function makeDownload(content, contentLang) {
     const extension = href.split(".").pop();
     const public = await this.language.getGithubPublicURL();
     document.title = title;
-    getType = this.language.getLang() == "fr" ? "Téléchargement" : this.type;
+    getType = this.language.getLang() == "fr" ? "Télécharger" : this.type;
     const html = `
         <div class="container">
             <div class="get-center" style="margin-top:20%">
