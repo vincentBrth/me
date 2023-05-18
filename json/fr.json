@@ -41,6 +41,10 @@
         }
     },
     "portfolio": {
+        "contestArena": {
+            "title": "Contest Arena",
+            "abstract": "Contest Arena est un site web (designer pour le mobile) permettant de s'affronter entre amis sur des concours en direct (ex : Miss France, Eurovision)"
+        },
         "jekyll": {
             "title": "Jekyll",
             "abstract": "Création d'un site web avec Jekyll pour publier ( des fichiers markdown avec l'API de Github) et partager facilement des tips avec ma famille durant le confinement"
