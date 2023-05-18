@@ -41,6 +41,10 @@
         }
     },
     "portfolio": {
+        "contestArena": {
+            "title": "Contest Arena",
+            "abstract": "Contest Arena is a contest website (designed for mobile) allowing to compete with your friends on live on competitions (ex: Miss France, Eurovision)"
+        },
         "jekyll": {
             "title": "Jekyll",
             "abstract": "Use Jekyll to publish (markdown with Github API) and share easily tips with my family during the lockdown"

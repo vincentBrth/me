@@ -14,6 +14,15 @@
                 "wip": true
             }
         },
+        "contestArena": {
+            "ico": "img/project/ico_contest_arena.png",
+            "title": "NA",
+            "abstract": "NA",
+            "filter": "Web",
+            "skills": "Vue, Firebase",
+            "href": "ContestArena",
+            "github": true
+        },
         "jekyll": {
             "ico": "img/project/ico_jekyll.png",
             "title": "NA",
