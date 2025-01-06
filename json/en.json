@@ -105,7 +105,7 @@
             "title": "Kubic Unity",
             "abstract": "Unity development project, the aim of the project was to use navMesh",
             "get": {
-                "description": "<p><a href='https://docs.unity3d.com/ScriptReference/Application-streamingAssetsPath.html' target='_blank'>No streaming access aren't available on WebGL with Unity</a>.<br/>As this game has been developed for OS, use <a href='https://github.com/RealVincentBerthet/Kubic/blob/master/Kubic/Windows/Kubic.zip' target='_blank'>Windows executable</a> to have access to options and sounds and others features in the game</p><p><b>More informations are available in the GitHub README</b></p>"
+                "description": "<p><a href='https://docs.unity3d.com/ScriptReference/Application-streamingAssetsPath.html' target='_blank'>No streaming access aren't available on WebGL with Unity</a>.<br/>As this game has been developed for OS, use <a href='https://github.com/vincentBrth/Kubic/blob/master/Kubic/Windows/Kubic.zip' target='_blank'>Windows executable</a> to have access to options and sounds and others features in the game</p><p><b>More informations are available in the GitHub README</b></p>"
             }
         },
         "ray": {

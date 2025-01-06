@@ -2,18 +2,6 @@
     "website" : "me",
     "hireMe": false,
     "portfolio": {
-        "vrowl": {
-            "title": "VRowl",
-            "abstract": "VR application for mobile to determine in live the distance of items for petanque and palet breton.<br/><br/>Should be ready for August 2022",
-            "filter": "",
-            "skills": "",
-            "href": "VRowl",
-            "github": true,
-            "get": {
-                "id": "Redirection",
-                "wip": true
-            }
-        },
         "contestArena": {
             "ico": "img/project/ico_contest_arena.png",
             "title": "NA",
@@ -340,7 +328,7 @@
             "class": "github",
             "title": "NA",
             "href": "https://github.com/",
-            "username": "RealVincentBerthet",
+            "username": "vincentBrth",
             "classIco": "fab fa-github"
         }
     }
