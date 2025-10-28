@@ -41,6 +41,10 @@
         }
     },
     "portfolio": {
+        "vincertainement": {
+            "title": "Vincertainment",
+            "abstract": "Games, challenge and few funny concepts"
+        },
         "contestArena": {
             "title": "Contest Arena",
             "abstract": "Contest Arena is a contest website (designed for mobile) allowing to compete with your friends on live on competitions (ex: Miss France, Eurovision)"
