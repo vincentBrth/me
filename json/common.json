@@ -2,6 +2,19 @@
     "website": "me",
     "hireMe": false,
     "portfolio": {
+        "pokedive": {
+            "ico": "img/project/ico_wip.png",
+            "title": "NA",
+            "abstract": "NA",
+            "filter": "Web",
+            "skills": "React, Supabase",
+            "href": "pokedive",
+            "github": true,
+            "get": {
+                "id": "Redirection",
+                "wip": true
+            }
+        },
         "vincertainement": {
             "ico": "img/project/ico_vincertainment.png",
             "title": "NA",

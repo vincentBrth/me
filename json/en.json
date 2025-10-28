@@ -41,6 +41,10 @@
         }
     },
     "portfolio": {
+        "pokedive": {
+            "title": "Pokedive",
+            "abstract": "A pokedex for divers !"
+        },
         "vincertainement": {
             "title": "Vincertainment",
             "abstract": "Games, challenge and few funny concepts"

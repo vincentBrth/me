@@ -41,6 +41,10 @@
         }
     },
     "portfolio": {
+        "pokedive": {
+            "title": "Pokedive",
+            "abstract": "Un pokedex pour les plongeurs !"
+        },
         "vincertainement": {
             "title": "Vincertainment",
             "abstract": "Jeux, casses têtes et divers concepts amusants"
