@@ -26,7 +26,7 @@ async function init() {
         typeSpeed: 70,
         backSpeed: 50,
         startDelay: 1500,
-        loop: true,
+        loop: false,
         backDelay: 1000,
     });
 

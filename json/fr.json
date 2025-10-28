@@ -1,12 +1,9 @@
 {
     "preview": {
-        "text": "Hey ! Bienvenue sur mon portfolio, n'hésitez pas à me contacter",
+        "text": "Hey ! Bienvenue sur mon portfolio",
         "hireMe": "<p><h3>< <span class='primary-color'>Actuellement en recherche d'emploi</span> ></h3></p>",
         "typed": [
-            "Je suis ingénieur en Imagerie Numérique.",
-            "Tu en apprendras d'avantage sur moi en dessous",
-            "Cependant je ne sais pas qui tu es...",
-            "Peut-être nous nous rencontrerons un jour :D."
+            "Attention, risque de profonde immersion dans mon univers, créativité illimitée 🐙"
         ]
     },
     "header": {
@@ -37,7 +34,7 @@
     },
     "bio": {
         "text": {
-            "text": "<p>&nbsp;&nbsp;&nbsp;&nbsp; Hey ! Je me présente Vincent, jeune ingénieur français de <span id='bioAge'></span> ans. Je suis diplômé du cycle ingénieur Technologie de l'Information spécialité Imagerie Numérique au sein de l'Ecole Supérieur d’Ingénieurs de Rennes. Je vous souhaite la bienvenue sur mon portfolio !</p><p>Depuis plus de <span id='bioDuration'></span> ans, la programmation ainsi que l'univers du média et de l'électronique ont pris une place de plus en plus importante dans mon quotidien. En effet, depuis mes années lycéennes j'ai commencé petit à petit à mener divers projets, qui m'ont donné l'opportunité de découvrir l'informatique et de m’orienter vers le développement d’application logicielle.</p><p>Au cours de mon cursus scolaire, j'ai obtenu un DUT Génie Électrique et Informatique Industrielle qui m'a permis de découvrir l'électronique et l'informatique. A l’obtention de celui-ci, j’ai décidé de partir en mobilité internationale à l'University of the West of Scotland (UWS) de Glasgow pour apprendre la 3D à travers un Bsc Game Development. A la suite de quoi, j’ai intégré un cycle d’ingénieur où j’ai eu l’opportunité de suivre une formation unique en France car dédiée uniquement au vaste domaine de l’imagerie numérique.</p><p>J’ai pu mettre en pratique mes compétences lors de différents stages. En particulier au sein d’entreprises innovantes et à forte expertises, que ce soit une startup telle Askelys dans laquelle j’ai développé une interface 3D WebGL Unity pour leur API web sémantique. Ou bien, que ce soit lors de mon contrat de professionnalisation au sein du laboratoire Immersive Medical Technologies de l’Institut de Recherche Technologique b<>com, par ma contribution au développement d’un Framework de Réalité Augmentée open-source.</p><p>Tous ces challenges m’ont permis de m’enrichir personnellement et professionnellement. Vous pouvez retrouver ci-dessous quelques-uns de mes projets.</p><p>Je suis aujourd’hui à la recherche d'un nouveau challenge n'hésitez pas à me contacter directement  pour en savoir plus.</p><p>Cheers</p>"
+            "text": "<p>&nbsp;&nbsp;&nbsp;&nbsp; Hey ! Moi c'est Vincent, ingénieur français de <span id='bioAge'></span> ans, ravi de vous souhaiter la bienvenue sur mon portfolio et merci de prendre le temps de me découvrir !</p><p>Passionné par une multitude de sujets, j'aime apprendre, expérimenter, me casser les dents, arriver à maîtriser différents aspects du monde qui nous entoure. Que ce soit aussi bien dans le réel que dans le virtuel, vous trouverez ici un ensemble de projets sur lesquels j’ai été impliqué au fil du temps. Ils reflètent mes curiosités, mes passions et une partie de mes compétences.</p><p>Ce portfolio, c'est un véritable amas d'idées, des plus farfelues aux plus sérieuses, en passant par celles qui me tiennent particulièrement à cœur. Le tout à la disposition de tous et surtout des curieux !</p><p>Attaché à la liberté et au partage, vous trouverez l'ensemble des sources accessibles. N'hésitez pas à me contacter évidemment pour échanger, discuter ou simplement partager une idée.</p></p><p>Cheers</p>"
         }
     },
     "portfolio": {
