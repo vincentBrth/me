@@ -1,0 +1,381 @@
+/**
+ * Animations et transitions améliorées pour le portfolio
+ * @author Vincent Berthet
+ */
+
+/* Variables CSS pour les animations */
+:root {
+    --animation-duration-fast: 0.2s;
+    --animation-duration-normal: 0.3s;
+    --animation-duration-slow: 0.5s;
+    --animation-duration-slower: 0.8s;
+    --animation-easing-ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --animation-easing-ease-in-out: cubic-bezier(0.42, 0, 0.58, 1);
+    --animation-easing-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* ===========================================
+   ANIMATIONS D'ENTRÉE (FADE IN)
+   =========================================== */
+
+/* Animation fade-in générale */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation slide-in depuis la gauche */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animation slide-in depuis la droite */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animation scale-in */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Animation rotate-in */
+@keyframes rotateIn {
+    from {
+        opacity: 0;
+        transform: rotate(-10deg) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+    }
+}
+
+/* ===========================================
+   ANIMATIONS DE HOVER AMÉLIORÉES
+   =========================================== */
+
+/* Hover avec effet de lift */
+@keyframes liftUp {
+    from {
+        transform: translateY(0);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    to {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* Hover avec effet de scale */
+@keyframes scaleUp {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.05);
+    }
+}
+
+/* Hover avec effet de rotation */
+@keyframes rotateHover {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(5deg);
+    }
+}
+
+/* ===========================================
+   ANIMATIONS DE LOADING AMÉLIORÉES
+   =========================================== */
+
+/* Animation de pulsation douce */
+@keyframes pulseSoft {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+}
+
+/* Animation de bounce subtile */
+@keyframes bounceSubtle {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Animation de shimmer (effet de brillance) */
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* ===========================================
+   CLASSES UTILITAIRES POUR LES ANIMATIONS
+   =========================================== */
+
+/* Classes d'animation d'entrée */
+.animate-fade-in {
+    animation: fadeIn var(--animation-duration-slow) var(--animation-easing-ease-out) forwards;
+    opacity: 0;
+}
+
+.animate-slide-in-left {
+    animation: slideInLeft var(--animation-duration-slow) var(--animation-easing-ease-out) forwards;
+    opacity: 0;
+}
+
+.animate-slide-in-right {
+    animation: slideInRight var(--animation-duration-slow) var(--animation-easing-ease-out) forwards;
+    opacity: 0;
+}
+
+.animate-scale-in {
+    animation: scaleIn var(--animation-duration-normal) var(--animation-easing-bounce) forwards;
+    opacity: 0;
+}
+
+.animate-rotate-in {
+    animation: rotateIn var(--animation-duration-slow) var(--animation-easing-ease-out) forwards;
+    opacity: 0;
+}
+
+/* Délais d'animation */
+.animate-delay-1 { animation-delay: 0.1s; }
+.animate-delay-2 { animation-delay: 0.2s; }
+.animate-delay-3 { animation-delay: 0.3s; }
+.animate-delay-4 { animation-delay: 0.4s; }
+.animate-delay-5 { animation-delay: 0.5s; }
+
+/* ===========================================
+   AMÉLIORATIONS DES TRANSITIONS EXISTANTES
+   =========================================== */
+
+/* Transitions fluides pour tous les éléments interactifs */
+a, button, .btn, .card, .portfolio-item {
+    transition: all var(--animation-duration-normal) var(--animation-easing-ease-out);
+}
+
+/* Hover effects améliorés */
+.portfolio-item:hover {
+    animation: liftUp var(--animation-duration-normal) var(--animation-easing-ease-out) forwards;
+}
+
+.social-icon a:hover {
+    animation: scaleUp var(--animation-duration-fast) var(--animation-easing-ease-out) forwards;
+}
+
+/* ===========================================
+   ANIMATIONS SPÉCIFIQUES AU PORTFOLIO
+   =========================================== */
+
+/* Animation d'apparition des projets */
+.portfolio-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all var(--animation-duration-slow) var(--animation-easing-ease-out);
+}
+
+.portfolio-item.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animation de filtrage des projets */
+.portfolio-item.filtering {
+    transition: all var(--animation-duration-normal) var(--animation-easing-ease-out);
+    transform: scale(0.8);
+    opacity: 0;
+}
+
+.portfolio-item.filtering.show {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* ===========================================
+   ANIMATIONS DE NAVIGATION
+   =========================================== */
+
+/* Animation de la navigation sticky */
+.navigation-background {
+    transition: all var(--animation-duration-normal) var(--animation-easing-ease-out);
+    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.9) !important;
+}
+
+/* Animation des liens de navigation */
+.navigation-menu .navbar-nav li a {
+    position: relative;
+    transition: all var(--animation-duration-normal) var(--animation-easing-ease-out);
+}
+
+.navigation-menu .navbar-nav li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: all var(--animation-duration-normal) var(--animation-easing-ease-out);
+    transform: translateX(-50%);
+}
+
+.navigation-menu .navbar-nav li a:hover::after {
+    width: 100%;
+}
+
+/* ===========================================
+   ANIMATIONS DE TEXTE
+   =========================================== */
+
+/* Animation de révélation de texte */
+@keyframes textReveal {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.text-reveal {
+    animation: textReveal var(--animation-duration-slow) var(--animation-easing-ease-out) forwards;
+    opacity: 0;
+}
+
+/* Animation de typing améliorée */
+.typed-cursor {
+    animation: blink 1s infinite;
+    font-weight: 100;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+/* ===========================================
+   ANIMATIONS DE BOUTONS
+   =========================================== */
+
+/* Effet de ripple pour les boutons */
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.btn-ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+}
+
+/* ===========================================
+   ANIMATIONS DE SCROLL
+   =========================================== */
+
+/* Animation de révélation au scroll */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all var(--animation-duration-slower) var(--animation-easing-ease-out);
+}
+
+.reveal-on-scroll.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===========================================
+   RESPONSIVE ANIMATIONS
+   =========================================== */
+
+/* Désactiver les animations sur mobile pour les performances */
+@media (max-width: 768px) {
+    .animate-fade-in,
+    .animate-slide-in-left,
+    .animate-slide-in-right,
+    .animate-scale-in,
+    .animate-rotate-in {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+    
+    .portfolio-item {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* Réduire les animations pour les utilisateurs qui préfèrent moins de mouvement */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

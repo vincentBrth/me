@@ -25,6 +25,7 @@
 /* 1. Import */
 @import url("../plugin/bootstrap/3.3.7/css/bootstrap.min.css");
 @import url("../plugin/fontawesome/5.0.13/web-fonts-with-css/css/fontawesome-all.min.css");
+@import url("animations.css");
 
 /* 2. Global Style */
 body {
@@ -157,9 +158,15 @@ section h2::before {
     font-weight: 700;
     outline: none;
     position: relative;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    transition: all 0.3s;
+    -webkit-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -moz-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: translateY(0);
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .button:after {
@@ -531,10 +538,35 @@ body.loaded #preloader {
     font-size: 40px;
     color: white;
     background: transparent;
-    animation: up-down 1s ease-in-out infinite alternate-reverse both;
-    -webkit-transition: background 0.3s ease-in-out;
-    -moz-transition: background 0.3s ease-in-out;
-    transition: background 0.3s ease-in-out;
+    animation: up-down 2s ease-in-out infinite alternate-reverse both;
+    -webkit-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -moz-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-circle::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.6s ease;
+}
+
+.btn-circle:hover::before {
+    width: 100%;
+    height: 100%;
+}
+
+.btn-circle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 @-webkit-keyframes up-down {
