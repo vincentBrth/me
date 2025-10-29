@@ -6,7 +6,7 @@
 */
 /*
    Table Of Content
-   
+
    1. Import
    2. Global Style
    3. Preloader
@@ -358,7 +358,7 @@ body.loaded #preloader {
 
 .home-section-background h2 {
     color: #f8f8f8;
-    font-size: 50px;
+    font-size: 20px;
     letter-spacing: 5px;
     margin: 0;
 }
