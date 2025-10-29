@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <!-- Google Tag Manager -->
     <script>
       (function (w, d, s, l, i) {
@@ -39,10 +39,13 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/portfolio.css" />
     <!-- Web Fonts  -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,300,500,600,700" />
-</head>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins:400,300,500,600,700"
+    />
+  </head>
 
-<body>
+  <body>
     <!-- Google Tag Manager (noscript) -->
     <noscript
       ><iframe
@@ -55,7 +58,7 @@
     <!-- End Google Tag Manager (noscript) -->
     <!-- Preloader -->
     <div id="preloader">
-        <div class="loader"></div>
+      <div class="loader"></div>
     </div>
 
     <!-- Header -->
@@ -89,66 +92,90 @@
             </div>
           </div>
         </div>
+      </div>
     </div>
 
     <!-- Bio -->
-    <section id="bio" class="bio-section">
-        <div class="row">
-            <div class="col-md-4 col-sm-12 col-xs-12">
-                <img class="img-responsive" src="img/bg/me.jpg" draggable="false" alt="" />
-            </div>
-            <div class="col-md-8 col-sm-12 col-xs-12">
-                <a href="#bio" class="section-title" id="bioTitleContent"></a>
-                <div id="bioRight" class="bio"></div>
-            </div>
+    <section id="bio" class="bio-section reveal-on-scroll">
+      <div class="row">
+        <div class="col-md-4 col-sm-12 col-xs-12">
+          <img
+            class="img-responsive animate-scale-in"
+            src="img/bg/me.jpg"
+            draggable="false"
+            alt="Photo de Vincent Berthet, ingénieur en imagerie numérique"
+          />
         </div>
+        <div class="col-md-8 col-sm-12 col-xs-12">
+          <a
+            href="#bio"
+            class="section-title animate-slide-in-right"
+            id="bioTitleContent"
+          ></a>
+          <div id="bioRight" class="bio text-reveal"></div>
+        </div>
+      </div>
     </section>
 
     <!-- Portfolio -->
-    <section id="portfolio" class="portfolio section-space-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <a href="#portfolio" class="section-title" id="portfolioTitleContent"></a>
-                </div>
-            </div>
-
-            <div class="row">
-                <ul class="portfolio item">
-                    <li class="filter" data-filter="all">All</li>
-                    <li class="filter" data-filter=".Pro">Pro</li>
-                    <li class="filter" data-filter=".3D">3D</li>
-                    <li class="filter" data-filter=".2D">2D</li>
-                    <li class="filter" data-filter=".Web">Web</li>
-                    <li class="filter" data-filter=".Management">Management</li>
-                    <li class="filter" data-filter=".Game">Game</li>
-                </ul>
-            </div>
-
-            <div class="portfolio-inner">
-                <div class="row">
-                    <div class="container" id="portfolioContent"></div>
-                </div>
-            </div>
+    <section
+      id="portfolio"
+      class="portfolio section-space-padding reveal-on-scroll"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <a
+              href="#portfolio"
+              class="section-title animate-fade-in"
+              id="portfolioTitleContent"
+            ></a>
+          </div>
         </div>
+
+        <div class="row">
+          <ul class="portfolio item">
+            <li class="filter" data-filter="all">All</li>
+            <li class="filter" data-filter=".Pro">Pro</li>
+            <li class="filter" data-filter=".3D">3D</li>
+            <li class="filter" data-filter=".2D">2D</li>
+            <li class="filter" data-filter=".Web">Web</li>
+            <li class="filter" data-filter=".Management">Management</li>
+            <li class="filter" data-filter=".Game">Game</li>
+          </ul>
+        </div>
+
+        <div class="portfolio-inner">
+          <div class="row">
+            <div class="container" id="portfolioContent"></div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="contact section-space-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <a href="#contact" class="section-title" id="contactTitleContent"></a>
-                </div>
-            </div>
-            <div class="text-center margin-top-50 margin-bottom-50">
-                <div class="row" id="contactInfoContent"></div>
-            </div>
-
-            <div class="row">
-                <ul class="social-icon" id="contactSocialContent"></ul>
-            </div>
+    <section
+      id="contact"
+      class="contact section-space-padding reveal-on-scroll"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <a
+              href="#contact"
+              class="section-title animate-fade-in"
+              id="contactTitleContent"
+            ></a>
+          </div>
         </div>
+        <div class="text-center margin-top-50 margin-bottom-50">
+          <div class="row" id="contactInfoContent"></div>
+        </div>
+
+        <div class="row">
+          <ul class="social-icon" id="contactSocialContent"></ul>
+        </div>
+      </div>
     </section>
 
     <!-- Footer  -->
@@ -160,11 +187,10 @@
     <script src="plugin/stellar/0.6.2/js/stellar.min.js"></script>
     <script src="plugin/typed/2.0.7/js/typed.min.js"></script>
     <script src="plugin/mixItUp/2.1.11/js/mixitup.min.js"></script>
-    <script src="plugin/gAnalitycs.js"></script>
     <!-- Main Javascript File  -->
     <script src="js/common.js"></script>
     <script src="js/index.js"></script>
     <script src="js/effects.js"></script>
-</body>
-
+    <script src="js/animations.js"></script>
+  </body>
 </html>
