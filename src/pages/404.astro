@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { legacyProjects } from '../data/legacy';
+import { asciiOctopus } from '../data/octopus';
 import { localePath, useTranslations, withBase } from '../i18n/ui';
 
 const t = useTranslations('en');
@@ -8,6 +9,20 @@ const tf = useTranslations('fr');
 const legacy = {
   base: withBase(''),
   projects: legacyProjects,
+};
+
+// GitHub Pages serves this single page for every missing URL, in any language. It is built in
+// English and translated in the browser for French visitors (see the script at the bottom).
+const keys = [
+  'nav.skip', 'nav.about', 'nav.experience', 'nav.projects', 'nav.beyond', 'nav.contact', 'nav.menu', 'nav.theme',
+  '404.title', '404.text', '404.back',
+] as const;
+const fr = {
+  base: withBase(''),
+  title: `${tf('404.title')} — Vincent Berthet`,
+  words: Object.fromEntries(keys.map((k) => [t(k), tf(k)])),
+  /** Label of the language switch on a French page. */
+  switchLabel: tf('nav.lang'),
 };
 ---
 
@@ -31,23 +46,60 @@ const legacy = {
     })();
   </script>
   <section class="container nf">
-    <pre aria-hidden="true">{`       _____
-     .'     '.
-    /  o   o  \\
-   |     v     |
-    \\  '---'  /
-   _/'-.___.-'\\_
-  / / / | | \\ \\ \\
- ( ( (  | |  ) ) )
-  \\_\\_\\_|_|_/_/_/`}</pre>
+    <pre aria-hidden="true">{asciiOctopus}</pre>
     <p class="code">404</p>
     <h1>{t('404.title')}</h1>
-    <p>{t('404.text')} <span lang="fr">— {tf('404.text')}</span></p>
+    <p>{t('404.text')}</p>
     <p>
       <a class="btn btn-primary" href={localePath('en', '/')}>{t('404.back')}</a>
-      <a class="btn" href={localePath('fr', '/')} lang="fr">{tf('404.back')}</a>
     </p>
   </section>
+  <script is:inline define:vars={{ fr }}>
+    // French visitor: /fr/… URL, French chosen with the language switch, or French browser.
+    (() => {
+      let saved = null;
+      try {
+        saved = localStorage.getItem('lang');
+      } catch {}
+      const path = location.pathname;
+      const isFr =
+        path === fr.base + '/fr' ||
+        path.startsWith(fr.base + '/fr/') ||
+        (saved ? saved === 'fr' : /^fr\b/i.test(navigator.language || ''));
+      const lang = document.querySelector('a.lang');
+      if (!isFr) {
+        // The language switch leads to the French home page (there is no "French 404" URL).
+        if (lang) lang.href = fr.base + '/fr/';
+        return;
+      }
+      document.documentElement.lang = 'fr';
+      document.title = fr.title;
+      const tr = (s) => fr.words[s.trim()] ?? null;
+      const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+      for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+        const v = tr(n.nodeValue);
+        if (v) n.nodeValue = n.nodeValue.replace(n.nodeValue.trim(), v);
+      }
+      for (const el of document.querySelectorAll('[title], [aria-label]')) {
+        for (const attr of ['title', 'aria-label']) {
+          const v = el.hasAttribute(attr) && tr(el.getAttribute(attr));
+          if (v) el.setAttribute(attr, v);
+        }
+      }
+      // Internal links to the English home page now lead to the French one.
+      for (const a of document.querySelectorAll('a[href]')) {
+        const href = a.getAttribute('href');
+        if (href === fr.base + '/' || href.startsWith(fr.base + '/#')) a.setAttribute('href', fr.base + '/fr' + href.slice(fr.base.length));
+      }
+      if (lang) {
+        lang.href = fr.base + '/';
+        lang.hreflang = lang.lang = 'en';
+        lang.title = fr.switchLabel;
+        lang.querySelector('[aria-hidden]').textContent = 'EN';
+        lang.querySelector('.sr-only').textContent = fr.switchLabel;
+      }
+    })();
+  </script>
 </Layout>
 
 <style>

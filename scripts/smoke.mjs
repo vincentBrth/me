@@ -83,6 +83,9 @@ try {
   const missing = await open('/fr/does-not-exist', fr);
   await missing.page.waitForTimeout(500);
   check(missing.page.url().endsWith('/fr/does-not-exist'), 'the 404 page does not redirect in a loop');
+  check((await missing.page.textContent('h1')) === 'Page introuvable', 'the 404 page is in French for a French visitor');
+  const missingEn = await open('/does-not-exist', context);
+  check((await missingEn.page.textContent('h1')) === 'Page not found', 'the 404 page is in English for an English visitor');
 } finally {
   await browser.close();
   close();
