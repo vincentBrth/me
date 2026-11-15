@@ -1,0 +1,13 @@
+order: 20
+title: { en: Tower Attack, fr: Tower Attack }
+summary:
+  en: "A mobile tower game built for an advanced mobile programming course, using queues, stacks and pathfinding."
+  fr: "Un jeu de tours pour mobile réalisé en cours de programmation mobile avancée, avec files, piles et recherche de chemin."
+cover: ../../assets/projects/tower-attack.webp
+categories: [games, web]
+stack: [JavaScript]
+year: '2017'
+mobileOnly: true
+links:
+  source: https://github.com/vincentBrth/TowerAttack
+  demo: https://towerattackproject.firebaseapp.com/

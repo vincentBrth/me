@@ -1,0 +1,11 @@
+order: 13
+title: { en: HDR imaging, fr: Imagerie HDR }
+summary:
+  en: "Experimenting with High Dynamic Range (HDR) imaging features using OpenCV."
+  fr: "Expérimentations autour de l'imagerie à grande gamme dynamique (HDR) avec OpenCV."
+cover: ../../assets/projects/hdr.webp
+categories: [vision]
+stack: [Python, OpenCV]
+year: '2019'
+links:
+  source: https://github.com/vincentBrth/HDR

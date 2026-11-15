@@ -1,0 +1,231 @@
+---
+import { Image } from 'astro:assets';
+import Icon, { type IconName } from './Icon.astro';
+import { isOpenSource, plain, type Project } from '../lib/content';
+import { categories, localePath, useTranslations, type Lang } from '../i18n/ui';
+
+interface Props {
+  project: Project;
+  lang: Lang;
+}
+
+const { project, lang } = Astro.props;
+const t = useTranslations(lang);
+const { data } = project;
+const href = localePath(lang, `/projects/${project.id}`);
+const title = data.title[lang];
+const meta = [data.year, ...data.categories.map((c) => categories[c][lang])].filter(Boolean).join(' · ');
+const openSource = isOpenSource(project);
+
+// What the visitor will find on the project page.
+const has: { icon: IconName; label: string }[] = [
+  data.webgl && { icon: 'gamepad' as const, label: t('project.has.play') },
+  data.video && { icon: 'video' as const, label: t('project.has.video') },
+  data.links.website && { icon: 'globe' as const, label: t('project.website') },
+  data.links.demo && { icon: 'arrow-up-right' as const, label: t('project.has.demo') },
+  data.links.download && { icon: 'download' as const, label: t('project.has.download') },
+].filter((x) => !!x);
+const filters = [...data.categories, ...(data.featured ? ['featured'] : [])].join(' ');
+---
+
+<article class="card reveal" data-categories={filters}>
+  <div class="cover" style={`view-transition-name: cover-${project.id}`}>
+    {
+      data.cover ? (
+        <Image
+          src={data.cover}
+          alt=""
+          widths={[400, 640]}
+          sizes="(min-width: 900px) 360px, (min-width: 600px) 50vw, 100vw"
+        />
+      ) : (
+        <div class="placeholder" aria-hidden="true">
+          {title}
+        </div>
+      )
+    }
+    <div class="badges">
+      {
+        data.featured && (
+          <span class="badge featured">
+            <Icon name="star" /> {t('project.featured')}
+          </span>
+        )
+      }
+      {data.wip && <span class="badge">{t('project.wip')}</span>}
+      {
+        openSource && (
+          <span class="badge github">
+            <Icon name="github" /> {t('project.openSource')}
+          </span>
+        )
+      }
+    </div>
+  </div>
+  <div class="body">
+    <p class="meta">{meta}</p>
+    <h3><a href={href}>{title}</a></h3>
+    <p class="summary">{plain(data.summary[lang])}</p>
+    <div class="foot">
+      <ul class="tags">
+        {data.stack.slice(0, 4).map((s) => <li class="tag">{s}</li>)}
+      </ul>
+      {
+        has.length > 0 && (
+          <ul class="has">
+            {has.map((h) => (
+              <li title={h.label}>
+                <Icon name={h.icon} />
+                <span class="sr-only">{h.label}</span>
+              </li>
+            ))}
+          </ul>
+        )
+      }
+    </div>
+  </div>
+</article>
+
+<style>
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease,
+      border-color 0.25s ease;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+    border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+  }
+  .card[hidden] {
+    display: none;
+  }
+
+  .cover {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: color-mix(in srgb, var(--text) 5%, var(--bg));
+    border-bottom: 1px solid var(--border);
+  }
+  .cover :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  .card:hover .cover :global(img) {
+    transform: scale(1.04);
+  }
+  .placeholder {
+    height: 100%;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    font: 600 clamp(1.5rem, 4vw, 2.25rem) var(--font-display);
+    color: var(--accent);
+    background:
+      repeating-linear-gradient(0deg, transparent 0 19px, var(--border) 19px 20px),
+      repeating-linear-gradient(90deg, transparent 0 19px, var(--border) 19px 20px);
+  }
+  .badges {
+    position: absolute;
+    inset: 12px 12px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    border-radius: 999px;
+    background: rgb(17 17 17 / 0.88);
+    color: #fff;
+    font: 500 0.72rem var(--font-mono);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+  .badge :global(svg) {
+    width: 13px;
+    height: 13px;
+  }
+  .badge.featured {
+    background: var(--accent);
+    color: var(--on-accent);
+  }
+  .badge.featured :global(svg) {
+    fill: currentColor;
+  }
+  .badge.github {
+    margin-left: auto;
+    background: rgb(255 255 255 / 0.92);
+    color: #111;
+  }
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 20px;
+    flex: 1;
+  }
+  .meta {
+    margin: 0;
+    font: 0.75rem var(--font-mono);
+    color: var(--text-muted);
+  }
+  h3 {
+    font-size: 1.3rem;
+  }
+  h3 a {
+    text-decoration: none;
+  }
+  /* The whole card is clickable. */
+  h3 a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+  .summary {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+  .foot {
+    margin-top: auto;
+    padding-top: 8px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .has {
+    display: flex;
+    gap: 2px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: var(--accent);
+  }
+  .has li {
+    display: grid;
+    place-items: center;
+    width: 26px;
+    height: 26px;
+  }
+  .has :global(svg) {
+    width: 17px;
+    height: 17px;
+  }
+</style>

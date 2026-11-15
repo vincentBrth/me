@@ -1,0 +1,17 @@
+order: 8
+featured: true
+title: { en: Asymmetry mapping with ICP, fr: Cartographie d'asymétries par ICP }
+summary:
+  en: "Automatically quantifies the local asymmetries of bilateral structures in 3D point clouds, using Iterative Closest Point."
+  fr: "Quantifie automatiquement les asymétries locales de structures bilatérales dans des nuages de points 3D, par Iterative Closest Point."
+description:
+  en: |
+    Implementation of *“An algorithm to map asymmetries of bilateral objects in point clouds”* by Benoît Combès et al.
+  fr: |
+    Implémentation de l'article *« An algorithm to map asymmetries of bilateral objects in point clouds »* de Benoît Combès et al.
+cover: ../../assets/projects/asymmetry-icp.webp
+categories: [vision, 3d]
+stack: [Python, OpenCV, ICP]
+year: '2020'
+links:
+  source: https://github.com/vincentBrth/AsymmetryICP

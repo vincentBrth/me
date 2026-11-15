@@ -1,0 +1,11 @@
+order: 23
+title: { en: Scogue, fr: Scogue }
+summary:
+  en: "A roguelike web game built with the Phaser framework."
+  fr: "Un jeu web de type roguelike développé avec le framework Phaser."
+cover: ../../assets/projects/scogue.webp
+categories: [games, web]
+stack: [JavaScript, Phaser]
+links:
+  source: https://github.com/vincentBrth/Scogue
+  demo: https://vincentbrth.github.io/Scogue/

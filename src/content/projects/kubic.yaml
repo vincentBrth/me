@@ -1,0 +1,21 @@
+order: 15
+title: { en: Kubic, fr: Kubic }
+summary:
+  en: "A Unity game built to explore NavMesh-based AI navigation."
+  fr: "Un jeu Unity conçu pour explorer la navigation d'IA par NavMesh."
+description:
+  en: |
+    The game was designed for desktop: streaming assets are [not available in Unity WebGL builds](https://docs.unity3d.com/ScriptReference/Application-streamingAssetsPath.html), so options and sounds are missing in the browser. Use the [Windows build](https://github.com/vincentBrth/Kubic/tree/master/Kubic/Windows) for the full experience.
+
+    More details are available in the GitHub README.
+  fr: |
+    Le jeu a été conçu pour ordinateur : les streaming assets [ne sont pas disponibles en WebGL avec Unity](https://docs.unity3d.com/ScriptReference/Application-streamingAssetsPath.html), donc les options et les sons manquent dans le navigateur. Utilisez la [version Windows](https://github.com/vincentBrth/Kubic/tree/master/Kubic/Windows) pour l'expérience complète.
+
+    Plus de détails dans le README du dépôt GitHub.
+cover: ../../assets/projects/kubic.webp
+categories: [games, 3d]
+stack: [Unity, C#]
+year: '2019'
+webgl: https://vincentbrth.github.io/Kubic/Kubic/WebGL/index.html
+links:
+  source: https://github.com/vincentBrth/Kubic

@@ -1,0 +1,22 @@
+order: 9
+featured: true
+title: { en: A Story of Luna & Helios, fr: A Story of Luna & Helios }
+summary:
+  en: "A game built in 35 hours during the Orange Game Jam 2020, on the theme “Safe in the dark”. Playable in the browser."
+  fr: "Un jeu réalisé en 35 heures pendant la Game Jam Orange 2020, sur le thème « Safe in the dark ». Jouable dans le navigateur."
+description:
+  en: |
+    Built during the Orange Game Jam 2020 at ESIR. The challenge: make a video game in only 35 hours on the theme **Safe in the dark**.
+
+    More details are available in the GitHub README, and a [gameplay video](https://www.youtube.com/watch?v=EwTJOxKciyE) is online.
+  fr: |
+    Réalisé pendant la Game Jam Orange 2020 de l'ESIR. Le défi : créer un jeu vidéo en seulement 35 heures sur le thème **Safe in the dark**.
+
+    Plus de détails dans le README du dépôt GitHub, et une [vidéo de gameplay](https://www.youtube.com/watch?v=EwTJOxKciyE) est en ligne.
+cover: ../../assets/projects/luna-and-helios.webp
+categories: [games]
+stack: [Unity, C#]
+year: '2020'
+webgl: https://vincentbrth.github.io/LunaAndHelios/WebGL/index.html
+links:
+  source: https://github.com/vincentBrth/LunaAndHelios

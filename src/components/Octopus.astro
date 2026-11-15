@@ -1,0 +1,49 @@
+---
+/**
+ * The octopus 🐙, mascot shared with the resume: the same Twemoji drawing (CC-BY 4.0),
+ * inlined so it looks identical everywhere, with or without an emoji font.
+ */
+import svg from '@twemoji/svg/1f419.svg?raw';
+
+interface Props {
+  class?: string;
+  label?: string;
+}
+const { class: className, label } = Astro.props;
+const inner = svg.replace(/^[\s\S]*?<svg[^>]*>/, '').replace(/<\/svg>\s*$/, '');
+---
+
+<svg
+  class:list={['octopus', className]}
+  viewBox="0 0 36 36"
+  role={label ? 'img' : undefined}
+  aria-label={label}
+  aria-hidden={label ? undefined : 'true'}
+  set:html={inner}
+/>
+
+<style>
+  .octopus {
+    display: inline-block;
+    width: 1.15em;
+    height: 1.15em;
+    vertical-align: -0.2em;
+    transform-origin: 50% 70%;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .octopus:hover {
+      animation: wiggle 0.8s ease-in-out;
+    }
+  }
+  @keyframes wiggle {
+    20% {
+      transform: rotate(-12deg) scale(1.1);
+    }
+    45% {
+      transform: rotate(10deg) scale(1.1);
+    }
+    70% {
+      transform: rotate(-6deg);
+    }
+  }
+</style>

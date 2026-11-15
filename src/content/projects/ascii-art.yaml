@@ -1,0 +1,12 @@
+order: 5
+featured: true
+title: { en: ASCII Art, fr: ASCII Art }
+summary:
+  en: "Turns any image into [ASCII art](https://en.wikipedia.org/wiki/ASCII_art). The portrait on the home page is a nod to it."
+  fr: "Transforme n'importe quelle image en [ASCII art](https://fr.wikipedia.org/wiki/Art_ASCII). Le portrait de la page d'accueil y fait un clin d'œil."
+cover: ../../assets/projects/ascii-art.webp
+categories: [vision]
+stack: [Python, OpenCV]
+year: '2020'
+links:
+  source: https://github.com/vincentBrth/AsciiArt

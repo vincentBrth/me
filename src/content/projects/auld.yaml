@@ -1,0 +1,11 @@
+order: 22
+title: { en: Auld, fr: Auld }
+summary:
+  en: "Game design and team management of a real-time strategy game in Unreal Engine 4."
+  fr: "Game design et gestion d'équipe d'un jeu de stratégie en temps réel sous Unreal Engine 4."
+cover: ../../assets/projects/auld.webp
+categories: [games, 3d, initiatives]
+stack: [Unreal Engine 4]
+links:
+  demo: http://projectauldue4.blogspot.com/
+archived: true

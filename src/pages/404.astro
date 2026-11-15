@@ -1,0 +1,82 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { legacyProjects } from '../data/legacy';
+import { localePath, useTranslations, withBase } from '../i18n/ui';
+
+const t = useTranslations('en');
+const tf = useTranslations('fr');
+const legacy = {
+  base: withBase(''),
+  projects: legacyProjects,
+};
+---
+
+<Layout lang="en" path="/404" title={t('404.title')} langRedirect={false}>
+  <script is:inline define:vars={{ legacy }}>
+    // Links of the previous version of the site: get.html?id=… and card.html.
+    (() => {
+      const path = location.pathname.replace(/\/$/, '');
+      const fr = /^fr\b/i.test(navigator.language || '');
+      const home = legacy.base + (fr ? '/fr' : '');
+      let to = null;
+      if (path === legacy.base + '/card.html') to = legacy.base + '/card/';
+      if (path === legacy.base + '/get.html') {
+        const id = new URLSearchParams(location.search).get('id') || '';
+        if (legacy.projects[id]) to = home + '/projects/' + legacy.projects[id];
+        else if (id.toLowerCase() === 'cv') to = legacy.base + '/cv/';
+        else if (id.toLowerCase() === 'notes') to = 'https://github.com/vincentBrth/me/releases';
+        else to = home + '/';
+      }
+      if (to) location.replace(to);
+    })();
+  </script>
+  <section class="container nf">
+    <pre aria-hidden="true">{`       _____
+     .'     '.
+    /  o   o  \\
+   |     v     |
+    \\  '---'  /
+   _/'-.___.-'\\_
+  / / / | | \\ \\ \\
+ ( ( (  | |  ) ) )
+  \\_\\_\\_|_|_/_/_/`}</pre>
+    <p class="code">404</p>
+    <h1>{t('404.title')}</h1>
+    <p>{t('404.text')} <span lang="fr">— {tf('404.text')}</span></p>
+    <p>
+      <a class="btn btn-primary" href={localePath('en', '/')}>{t('404.back')}</a>
+      <a class="btn" href={localePath('fr', '/')} lang="fr">{tf('404.back')}</a>
+    </p>
+  </section>
+</Layout>
+
+<style>
+  .nf {
+    min-height: 70svh;
+    display: grid;
+    place-content: center;
+    justify-items: start;
+    gap: 16px;
+    padding-block: 64px;
+  }
+  pre {
+    margin: 0;
+    color: var(--accent);
+    font: 0.95rem/1.15 var(--font-mono);
+  }
+  .code {
+    margin: 0;
+    font: 600 0.85rem var(--font-mono);
+    letter-spacing: 0.3em;
+    color: var(--text-muted);
+  }
+  h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+  p {
+    color: var(--text-muted);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+</style>

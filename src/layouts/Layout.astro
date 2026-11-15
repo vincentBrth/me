@@ -1,0 +1,456 @@
+---
+import '../styles/global.css';
+import { Image } from 'astro:assets';
+import Icon from '../components/Icon.astro';
+import logo from '../assets/logo.png';
+import { site } from '../data/site';
+import { localePath, useTranslations, withBase, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  title?: string;
+  description?: string;
+  /** Path of this page without locale prefix, e.g. `/` or `/projects/ray`. */
+  path: string;
+  /** Extra JSON-LD object. */
+  jsonLd?: object;
+  /** Redirect French browsers to the French version (disabled on the 404 page). */
+  langRedirect?: boolean;
+}
+
+const { lang, title, description, path, jsonLd, langRedirect = true } = Astro.props;
+const t = useTranslations(lang);
+const other: Lang = lang === 'en' ? 'fr' : 'en';
+const pageTitle = title ? `${title} — ${site.name}` : t('meta.title');
+const pageDescription = description ?? t('meta.description');
+const canonical = new URL(localePath(lang, path), Astro.site);
+const alternates = (['en', 'fr'] as const).map((l) => ({ lang: l, href: new URL(localePath(l, path), Astro.site).href }));
+// Generated after the build by scripts/postbuild.mjs from src/pages/og/[lang].astro.
+const ogUrl = new URL(withBase(`/og/${lang}.png`), Astro.site).href;
+const home = localePath(lang, '/');
+const nav = [
+  { href: `${home}#about`, label: t('nav.about') },
+  { href: `${home}#experience`, label: t('nav.experience') },
+  { href: `${home}#projects`, label: t('nav.projects') },
+  { href: `${home}#beyond`, label: t('nav.beyond') },
+  { href: `${home}#contact`, label: t('nav.contact') },
+];
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <meta name="author" content={site.name} />
+    <link rel="canonical" href={canonical} />
+    {alternates.map((a) => <link rel="alternate" hreflang={a.lang} href={a.href} />)}
+    <link rel="alternate" hreflang="x-default" href={alternates[0].href} />
+    <link rel="icon" href={withBase('/favicon.ico')} sizes="32x32" />
+    <link rel="icon" href={withBase('/icon-192.png')} type="image/png" sizes="192x192" />
+    <link rel="apple-touch-icon" href={withBase('/apple-touch-icon.png')} />
+    <link rel="manifest" href={withBase('/site.webmanifest')} />
+    <link rel="sitemap" href={withBase('/sitemap-index.xml')} />
+    <meta name="theme-color" content="#f6f5f2" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0f0f0f" media="(prefers-color-scheme: dark)" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content={lang === 'fr' ? 'fr_FR' : 'en_US'} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+
+    {
+      site.goatcounter && (
+        <script
+          is:inline
+          async
+          data-goatcounter={`https://${site.goatcounter}.goatcounter.com/count`}
+          src="https://gc.zgo.at/count.js"
+        />
+      )
+    }
+
+    {
+      lang === 'en' && langRedirect && (
+        <script is:inline define:vars={{ frUrl: localePath('fr', path) }}>
+          // First visit on an English page with a French browser: switch to French.
+          // An explicit choice made with the language switch always wins.
+          try {
+            const saved = localStorage.getItem('lang');
+            const prefersFr = /^fr\b/i.test(navigator.language || '');
+            if (saved === 'fr' || (!saved && prefersFr)) {
+              location.replace(frUrl + location.search + location.hash);
+            }
+          } catch {}
+        </script>
+      )
+    }
+
+    <script is:inline>
+      // Applied before paint to avoid a theme flash.
+      (() => {
+        const d = document.documentElement;
+        d.classList.add('js');
+        try {
+          const saved = localStorage.getItem('theme');
+          if (saved === 'dark' || saved === 'light') d.dataset.theme = saved;
+        } catch {}
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main">{t('nav.skip')}</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href={home} aria-label={site.name}>
+          <Image src={logo} width={32} height={32} densities={[1, 2]} alt="" loading="eager" />
+          <span>Vincent <b>Berthet</b></span>
+        </a>
+        <nav id="site-nav" aria-label="Main">
+          <ul class="nav-links">
+            {
+              nav.map((n) => (
+                <li>
+                  <a href={n.href} data-section={n.href.split('#')[1]}>
+                    {n.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button class="icon-btn menu-btn" type="button" aria-controls="site-nav" aria-expanded="false" title={t('nav.menu')}>
+            <Icon name="menu" class="icon-open" />
+            <Icon name="close" class="icon-close" />
+            <span class="sr-only">{t('nav.menu')}</span>
+          </button>
+          <a class="icon-btn lang" href={localePath(other, path)} hreflang={other} lang={other} title={t('nav.lang')}>
+            <span aria-hidden="true">{other.toUpperCase()}</span>
+            <span class="sr-only">{t('nav.lang')}</span>
+          </a>
+          <button class="icon-btn" type="button" id="theme-toggle" title={t('nav.theme')} aria-label={t('nav.theme')}>
+            <Icon name="sun" class="icon-sun" />
+            <Icon name="moon" class="icon-moon" />
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© {new Date().getFullYear()} {site.name}</p>
+      </div>
+    </footer>
+
+    <script>
+      const root = document.documentElement;
+      document.getElementById('theme-toggle')?.addEventListener('click', () => {
+        const current =
+          root.dataset.theme ?? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        const next = current === 'dark' ? 'light' : 'dark';
+        root.dataset.theme = next;
+        try {
+          localStorage.setItem('theme', next);
+        } catch {}
+      });
+
+      // Remember the language explicitly chosen, so it is not overridden by the browser language.
+      document.querySelector<HTMLAnchorElement>('a.lang')?.addEventListener('click', (e) => {
+        try {
+          localStorage.setItem('lang', (e.currentTarget as HTMLAnchorElement).hreflang);
+        } catch {}
+      });
+
+      // The name in the header scrolls back to the top when already on the home page.
+      document.querySelector<HTMLAnchorElement>('.brand')?.addEventListener('click', (e) => {
+        if (new URL((e.currentTarget as HTMLAnchorElement).href).pathname !== location.pathname) return;
+        e.preventDefault();
+        const smooth = !matchMedia('(prefers-reduced-motion: reduce)').matches;
+        scrollTo({ top: 0, behavior: smooth ? 'smooth' : 'auto' });
+        history.replaceState(null, '', location.pathname + location.search);
+      });
+
+      // Mobile menu.
+      const menuBtn = document.querySelector<HTMLButtonElement>('.menu-btn');
+      const siteNav = document.getElementById('site-nav');
+      const setMenu = (open: boolean) => {
+        menuBtn?.setAttribute('aria-expanded', String(open));
+        siteNav?.classList.toggle('open', open);
+      };
+      menuBtn?.addEventListener('click', () => setMenu(menuBtn.getAttribute('aria-expanded') !== 'true'));
+      siteNav?.addEventListener('click', (e) => {
+        if ((e.target as HTMLElement).closest('a')) setMenu(false);
+      });
+      addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') setMenu(false);
+      });
+
+      const header = document.querySelector('.site-header');
+      const onScroll = () => header?.classList.toggle('is-scrolled', scrollY > 8);
+      addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      // Fade-in of blocks as they come into view. Everything above the bottom of the
+      // viewport is revealed, including blocks skipped by a jump to an anchor, so a
+      // section is never found empty when scrolling back up.
+      let pending = [...document.querySelectorAll<HTMLElement>('.reveal')];
+      let ticking = false;
+      const reveal = () => {
+        ticking = false;
+        const limit = innerHeight * 0.95;
+        pending = pending.filter((el) => {
+          if (el.getBoundingClientRect().top > limit) return true;
+          el.classList.add('is-visible');
+          return false;
+        });
+        if (!pending.length) removeEventListener('scroll', onReveal);
+      };
+      const onReveal = () => {
+        if (!ticking) {
+          ticking = true;
+          requestAnimationFrame(reveal);
+        }
+      };
+      addEventListener('scroll', onReveal, { passive: true });
+      addEventListener('resize', onReveal, { passive: true });
+      reveal();
+
+      // Highlights, in the menu, the section currently in the middle of the screen.
+      const links = new Map(
+        [...document.querySelectorAll<HTMLAnchorElement>('.nav-links a[data-section]')].map((a) => [a.dataset.section!, a]),
+      );
+      const sections = [...links.keys()].map((id) => document.getElementById(id)).filter((s) => !!s);
+      if (sections.length) {
+        const spy = new IntersectionObserver(
+          (entries) => {
+            for (const e of entries) {
+              if (!e.isIntersecting) continue;
+              links.forEach((a, id) => {
+                if (id === e.target.id) a.setAttribute('aria-current', 'true');
+                else a.removeAttribute('aria-current');
+              });
+            }
+          },
+          { rootMargin: '-45% 0px -50% 0px' },
+        );
+        sections.forEach((s) => spy.observe(s));
+        // Back at the top (hero): nothing is highlighted.
+        addEventListener(
+          'scroll',
+          () => {
+            if (scrollY < innerHeight * 0.4) links.forEach((a) => a.removeAttribute('aria-current'));
+          },
+          { passive: true },
+        );
+      }
+    </script>
+  </body>
+</html>
+
+<style>
+  .skip {
+    position: absolute;
+    left: 16px;
+    top: -100px;
+    z-index: 100;
+    padding: 8px 14px;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: var(--radius-sm);
+  }
+  .skip:focus {
+    top: 12px;
+  }
+
+  .site-header {
+    /* Stays still during page transitions. */
+    view-transition-name: site-header;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    height: var(--header-h);
+    border-bottom: 1px solid transparent;
+    transition:
+      background 0.2s ease,
+      border-color 0.2s ease;
+  }
+  .site-header:global(.is-scrolled) {
+    background: color-mix(in srgb, var(--bg) 82%, transparent);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom-color: var(--border);
+  }
+  .header-inner {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    white-space: nowrap;
+  }
+  .brand:hover {
+    color: inherit;
+  }
+  .brand img {
+    border-radius: 7px;
+  }
+  :global([data-theme='dark']) .brand img {
+    filter: invert(1);
+  }
+  @media (prefers-color-scheme: dark) {
+    :global(:root:not([data-theme='light'])) .brand img {
+      filter: invert(1);
+    }
+  }
+  nav {
+    margin-left: auto;
+  }
+  .nav-links {
+    display: flex;
+    gap: 4px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-links a {
+    display: block;
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-size: 0.92rem;
+    text-decoration: none;
+    color: var(--text-muted);
+  }
+  .nav-links a:hover {
+    color: var(--text);
+    background: color-mix(in srgb, var(--text) 6%, transparent);
+  }
+  .nav-links a[aria-current] {
+    color: var(--accent);
+    background: var(--accent-soft);
+    font-weight: 500;
+  }
+  .header-actions {
+    display: flex;
+    gap: 6px;
+  }
+  .icon-btn {
+    display: inline-grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+    text-decoration: none;
+    font: 600 0.75rem var(--font-mono);
+  }
+  .icon-btn:hover {
+    border-color: var(--text);
+    color: var(--text);
+  }
+  .icon-btn :global(svg) {
+    width: 18px;
+    height: 18px;
+  }
+  .icon-btn :global(.icon-moon) {
+    display: none;
+  }
+  :global([data-theme='dark']) .icon-btn :global(.icon-sun) {
+    display: none;
+  }
+  :global([data-theme='dark']) .icon-btn :global(.icon-moon) {
+    display: block;
+  }
+  @media (prefers-color-scheme: dark) {
+    :global(:root:not([data-theme='light'])) .icon-btn :global(.icon-sun) {
+      display: none;
+    }
+    :global(:root:not([data-theme='light'])) .icon-btn :global(.icon-moon) {
+      display: block;
+    }
+  }
+
+  .menu-btn {
+    display: none;
+  }
+  .menu-btn :global(.icon-close),
+  .menu-btn[aria-expanded='true'] :global(.icon-open) {
+    display: none;
+  }
+  .menu-btn[aria-expanded='true'] :global(.icon-close) {
+    display: block;
+  }
+
+  @media (max-width: 760px) {
+    .menu-btn {
+      display: inline-grid;
+    }
+    nav {
+      display: none;
+      position: absolute;
+      top: var(--header-h);
+      left: 0;
+      right: 0;
+      margin: 0;
+      padding: 8px var(--gutter) 16px;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+    nav:global(.open) {
+      display: block;
+    }
+    .nav-links {
+      flex-direction: column;
+    }
+    .nav-links a {
+      padding: 12px 8px;
+      border-radius: var(--radius-sm);
+      font-size: 1.05rem;
+      color: var(--text);
+    }
+    .header-actions {
+      margin-left: auto;
+    }
+  }
+
+  .site-footer {
+    border-top: 1px solid var(--border);
+    padding-block: 32px;
+    font-size: 0.9rem;
+  }
+  .footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+    justify-content: space-between;
+  }
+  .footer-inner p {
+    margin: 0;
+  }
+</style>

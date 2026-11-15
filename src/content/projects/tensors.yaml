@@ -1,0 +1,21 @@
+order: 10
+featured: true
+title: { en: Tensor-directed stylization, fr: Stylisation dirigée par tenseurs }
+summary:
+  en: "Generates hatched sketches from color images, guided by the image's own tensor-valued geometry."
+  fr: "Génère des dessins hachurés à partir d'images couleur, guidés par la géométrie tensorielle propre à l'image."
+description:
+  en: |
+    Implementation of *“Tensor-directed simulation of strokes for image stylization with hatching and contours”* by David Tschumperlé (2011).
+
+    Strokes are simulated along the directions given by a structure tensor field computed from the image, producing hatching and contours that follow its geometry.
+  fr: |
+    Implémentation de l'article *« Tensor-directed simulation of strokes for image stylization with hatching and contours »* de David Tschumperlé (2011).
+
+    Les traits sont simulés le long des directions d'un champ de tenseurs de structure calculé sur l'image, ce qui produit des hachures et des contours qui en suivent la géométrie.
+cover: ../../assets/projects/tensors.webp
+categories: [vision]
+stack: [Python, OpenCV]
+year: '2019'
+links:
+  source: https://github.com/vincentBrth/Tensor_directed_stylization

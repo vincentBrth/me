@@ -1,0 +1,14 @@
+order: 25
+title: { en: Internship at Mu-Test, fr: Stage chez Mu-Test }
+summary:
+  en: "4-month internship in automated test equipment (ATE) — Java GUI development, unit tests and bug fixing."
+  fr: "Stage de 4 mois dans le test automatisé (ATE) — développement d'interfaces Java, tests unitaires et correction de bugs."
+description:
+  en: "Internship report (French) of my 4 months at [Mu-Test](http://www.mu-test.com/), a company working on automated test equipment."
+  fr: "Rapport de mon stage de 4 mois chez [Mu-Test](http://www.mu-test.com/), entreprise du domaine de l'ATE (Automated Test Equipment)."
+cover: ../../assets/projects/mutest.webp
+categories: [pro]
+stack: [Java]
+year: '2016'
+links:
+  download: { url: 'https://github.com/vincentBrth/Workspace/raw/master/Public/Report/MuTest_2016.pdf', name: MuTest_2016.pdf, lang: fr }

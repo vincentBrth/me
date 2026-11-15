@@ -1,0 +1,8 @@
+order: 27
+title: { en: Battery monitoring, fr: Supervision de batteries }
+summary:
+  en: "A web HMI displaying the data of a battery monitoring system, built during my DUT."
+  fr: "Une IHM web affichant les données d'un système de supervision de batteries, réalisée pendant mon DUT."
+cover: ../../assets/projects/monitoring.webp
+categories: [web]
+stack: [PHP, SQL, jQuery]

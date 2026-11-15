@@ -1,0 +1,12 @@
+order: 2
+title: { en: Vincertainment, fr: Vincertainment }
+summary:
+  en: "Games, puzzles and a few fun concepts gathered in one web app."
+  fr: "Jeux, casse-têtes et quelques concepts amusants réunis dans une application web."
+cover: ../../assets/projects/vincertainment.webp
+categories: [web, games]
+stack: [Svelte, Firebase]
+year: '2025'
+links:
+  source: https://github.com/vincentBrth/vincertainment
+  demo: https://vincertainment-77.web.app/

@@ -1,0 +1,12 @@
+order: 19
+title: { en: Portfolio v1, fr: Portfolio v1 }
+summary:
+  en: "The first version of this portfolio (1.6), kept for the record."
+  fr: "La première version de ce portfolio (1.6), gardée pour la mémoire."
+cover: ../../assets/projects/website-v1.webp
+categories: [web]
+stack: [JavaScript, HTML, CSS, PHP, jQuery]
+links:
+  source: https://github.com/vincentBrth/me_v1
+  demo: https://vincentbrth.github.io/me_v1/
+archived: true

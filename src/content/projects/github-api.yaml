@@ -1,0 +1,13 @@
+order: 6
+title: { en: GitHub API, fr: GitHub API }
+summary:
+  en: "Experimenting with the GitHub REST API to generate a portfolio automatically from my public repositories."
+  fr: "Prise en main de l'API REST de GitHub pour générer automatiquement un portfolio à partir de mes dépôts publics."
+cover: ../../assets/projects/api.webp
+categories: [web]
+stack: [JavaScript, REST]
+year: '2020'
+links:
+  source: https://github.com/vincentBrth/github-api
+  demo: https://vincentbrth.github.io/github-api
+archived: true

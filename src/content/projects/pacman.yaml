@@ -1,0 +1,10 @@
+order: 26
+title: { en: Pac-Man in XNA, fr: Pac-Man en XNA }
+summary:
+  en: "A Pac-Man clone written in C# with Microsoft's XNA framework."
+  fr: "Un clone de Pac-Man écrit en C# avec le framework XNA de Microsoft."
+cover: ../../assets/projects/pacman.webp
+categories: [games]
+stack: [C#, XNA]
+links:
+  download: { url: 'https://github.com/vincentBrth/Workspace/raw/master/Public/Project/Pacman.pdf', name: Pacman.pdf, lang: fr }

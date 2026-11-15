@@ -1,0 +1,21 @@
+order: 16
+featured: true
+title: { en: Path tracer, fr: Path tracer }
+summary:
+  en: "A ray tracing engine written in C++ with acceleration structures, extended with global illumination and path tracing."
+  fr: "Un moteur de lancer de rayons en C++ avec structures d'accélération, étendu à l'illumination globale et au path tracing."
+description:
+  en: |
+    The first part of the project implemented the core features of a ray tracing engine and the acceleration structures that make it fast.
+
+    The second part added global illumination through path tracing.
+  fr: |
+    La première partie du projet a consisté à implémenter les fonctionnalités d'un moteur de lancer de rayons et les structures d'accélération associées.
+
+    La seconde partie a ajouté l'illumination globale par path tracing.
+cover: ../../assets/projects/ray.webp
+categories: [3d]
+stack: [C++, Ray tracing, Path tracing]
+year: '2019'
+links:
+  source: https://github.com/vincentBrth/Ray
