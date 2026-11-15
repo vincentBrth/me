@@ -1,0 +1,105 @@
+---
+import { siGithub, siInstagram, siX, siYoutube } from 'simple-icons';
+import arrowLeft from 'lucide-static/icons/arrow-left.svg?raw';
+import arrowRight from 'lucide-static/icons/arrow-right.svg?raw';
+import arrowUpRight from 'lucide-static/icons/arrow-up-right.svg?raw';
+import download from 'lucide-static/icons/download.svg?raw';
+import fileDown from 'lucide-static/icons/file-down.svg?raw';
+import gamepad from 'lucide-static/icons/gamepad-2.svg?raw';
+import mail from 'lucide-static/icons/mail.svg?raw';
+import moon from 'lucide-static/icons/moon.svg?raw';
+import phone from 'lucide-static/icons/phone.svg?raw';
+import play from 'lucide-static/icons/play.svg?raw';
+import sun from 'lucide-static/icons/sun.svg?raw';
+import archive from 'lucide-static/icons/archive.svg?raw';
+import camera from 'lucide-static/icons/camera.svg?raw';
+import check from 'lucide-static/icons/check.svg?raw';
+import clapperboard from 'lucide-static/icons/clapperboard.svg?raw';
+import copy from 'lucide-static/icons/copy.svg?raw';
+import dices from 'lucide-static/icons/dices.svg?raw';
+import globe from 'lucide-static/icons/globe.svg?raw';
+import guitar from 'lucide-static/icons/guitar.svg?raw';
+import images from 'lucide-static/icons/images.svg?raw';
+import maximize2 from 'lucide-static/icons/maximize-2.svg?raw';
+import menu from 'lucide-static/icons/menu.svg?raw';
+import star from 'lucide-static/icons/star.svg?raw';
+import video from 'lucide-static/icons/video.svg?raw';
+import waves from 'lucide-static/icons/waves.svg?raw';
+import wrench from 'lucide-static/icons/wrench.svg?raw';
+import close from 'lucide-static/icons/x.svg?raw';
+
+// LinkedIn is no longer part of simple-icons (brand request), so its glyph is inlined.
+const linkedinPath =
+  'M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 4.892v6.249zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z';
+
+const brands = {
+  github: siGithub.path,
+  instagram: siInstagram.path,
+  x: siX.path,
+  youtube: siYoutube.path,
+  linkedin: linkedinPath,
+} as const;
+
+const strokes = {
+  'arrow-left': arrowLeft,
+  'arrow-right': arrowRight,
+  'arrow-up-right': arrowUpRight,
+  download,
+  'file-down': fileDown,
+  gamepad,
+  mail,
+  moon,
+  phone,
+  play,
+  sun,
+  archive,
+  camera,
+  check,
+  clapperboard,
+  copy,
+  dices,
+  globe,
+  guitar,
+  images,
+  'maximize-2': maximize2,
+  menu,
+  star,
+  video,
+  waves,
+  wrench,
+  close,
+} as const;
+
+export type IconName = keyof typeof brands | keyof typeof strokes;
+
+interface Props {
+  name: IconName;
+  class?: string;
+}
+
+const { name, class: className } = Astro.props;
+
+function inner(svg: string) {
+  return svg.replace(/^[\s\S]*?<svg[^>]*>/, '').replace(/<\/svg>\s*$/, '');
+}
+---
+
+{
+  name in brands ? (
+    <svg class={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d={brands[name as keyof typeof brands]} />
+    </svg>
+  ) : (
+    <svg
+      class={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+      set:html={inner(strokes[name as keyof typeof strokes])}
+    />
+  )
+}

@@ -1,0 +1,10 @@
+order: 11
+title: { en: Augmented reality, fr: Réalité augmentée }
+summary:
+  en: "Learning the basics of camera pose estimation for augmented reality, processing frames with OpenCV."
+  fr: "Apprentissage des bases de l'estimation de pose de caméra pour la réalité augmentée, avec traitement des images par OpenCV."
+cover: ../../assets/projects/ar.webp
+categories: [vision, 3d]
+stack: [Python, OpenCV]
+links:
+  source: https://github.com/vincentBrth/AR

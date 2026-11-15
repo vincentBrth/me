@@ -1,0 +1,13 @@
+order: 3
+featured: true
+title: { en: Contest Arena, fr: Contest Arena }
+summary:
+  en: "A mobile-first web app to compete with your friends live during TV contests such as Miss France or Eurovision."
+  fr: "Une application web pensée pour mobile pour s'affronter entre amis en direct pendant des concours télévisés comme Miss France ou l'Eurovision."
+cover: ../../assets/projects/contest-arena.webp
+categories: [web]
+stack: [Vue, Firebase]
+year: '2022'
+links:
+  source: https://github.com/vincentBrth/ContestArena
+  demo: https://contestarena.web.app/

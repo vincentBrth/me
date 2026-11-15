@@ -1,7 +1,9 @@
+# Serve the production build locally: `npm run build && docker compose up`
+# then open http://localhost:8080/me/
 services:
   nginx:
     image: nginx:latest
     ports:
       - "8080:80"
     volumes:
-      - ./:/usr/share/nginx/html:ro
+      - ./dist:/usr/share/nginx/html/me:ro

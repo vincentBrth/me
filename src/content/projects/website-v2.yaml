@@ -1,0 +1,13 @@
+order: 0
+title: { en: Portfolio v2, fr: Portfolio v2 }
+summary:
+  en: "The previous version of this portfolio, saved just before its redesign."
+  fr: "La version précédente de ce portfolio, sauvegardée juste avant sa refonte."
+cover: ../../assets/projects/website-v2.webp
+categories: [web]
+stack: [JavaScript, jQuery, Bootstrap, HTML, CSS]
+year: '2026'
+archived: true
+links:
+  source: https://github.com/vincentBrth/me_v2
+  demo: https://vincentbrth.github.io/me_v2/

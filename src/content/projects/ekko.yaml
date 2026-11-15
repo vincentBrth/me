@@ -1,0 +1,21 @@
+order: 1
+featured: true
+title: { en: Ekko, fr: Ekko }
+summary:
+  en: "“Your view of the ocean.” My entrepreneurial project, designed and built solo all the way to launch."
+  fr: "« Votre regard sur l'océan. » Mon projet entrepreneurial, conçu et développé en solo jusqu'à sa commercialisation."
+description:
+  en: |
+    Ekko is my own company and product: an app built around the ocean, which I design and develop alone, from the first line of code to its commercial launch.
+
+    It started as **Pokedive**, a Pokédex for scuba divers.
+  fr: |
+    Ekko, c'est ma propre entreprise et mon produit : une application tournée vers l'océan, que je conçois et développe seul, de la première ligne de code jusqu'à sa commercialisation.
+
+    Le projet est né de **Pokedive**, un Pokédex pour les plongeurs.
+categories: [web, initiatives]
+stack: [Rust, Next.js, PostgreSQL]
+year: '2026'
+wip: true
+links:
+  website: https://ekkoapp.org

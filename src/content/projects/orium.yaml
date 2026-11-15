@@ -1,0 +1,10 @@
+order: 21
+title: { en: Orium, fr: Orium }
+summary:
+  en: "3D level design in Unreal Engine 4 for a game built around the time the player takes to finish it."
+  fr: "Conception de niveaux 3D sous Unreal Engine 4 pour un jeu centré sur le temps que met le joueur à le terminer."
+cover: ../../assets/projects/orium.webp
+categories: [games, 3d]
+stack: [Unreal Engine 4]
+video: ksHjCFvTFxA
+archived: true

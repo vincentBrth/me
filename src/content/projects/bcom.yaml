@@ -1,0 +1,32 @@
+order: 7
+title: { en: SolAR at b<>com, fr: SolAR chez b<>com }
+summary:
+  en: "One year as an R&D engineer in computer vision, contributing to SolAR, an open-source C++17 framework for augmented reality."
+  fr: "Un an comme ingénieur R&D en vision par ordinateur, à contribuer à SolAR, un framework open source C++17 pour la réalité augmentée."
+description:
+  en: |
+    I worked for one year (work-study, 2019–2020) as an R&D engineer in the Immersive Medical Technologies laboratory of [IRT b<>com](https://b-com.com/), which specializes in computer vision and video.
+
+    I contributed to the [SolAR Framework](https://solarframework.github.io/), an open-source C++17 framework for augmented reality. My main work:
+
+    - a **Unity plugin for Android**,
+    - support of the framework's **continuous integration**,
+    - **modules and a sample** to use depth cameras such as the [Intel RealSense](https://www.realsenseai.com/).
+
+    The archive contains my report and the slides of my final presentation.
+  fr: |
+    J'ai travaillé un an (alternance, 2019–2020) comme ingénieur R&D au sein du laboratoire Immersive Medical Technologies de l'[IRT b<>com](https://b-com.com/), spécialisé en vision par ordinateur et en vidéo.
+
+    J'ai contribué au [SolAR Framework](https://solarframework.github.io/), un framework open source C++17 pour la réalité augmentée. Mes principaux travaux :
+
+    - un **plugin Unity pour Android**,
+    - le support de l'**intégration continue** du framework,
+    - des **modules et un sample** pour utiliser des caméras de profondeur comme les [Intel RealSense](https://www.realsenseai.com/).
+
+    L'archive contient mon rapport et les slides de ma soutenance.
+cover: ../../assets/projects/bcom.webp
+categories: [pro, vision, 3d]
+stack: [C++17, Computer vision, Unity, C#, Qt, CI]
+year: 2019 — 2020
+links:
+  download: { url: 'https://github.com/vincentBrth/Workspace/raw/master/Public/Report/BERTHET_Vincent_bcom.zip', name: BERTHET_Vincent_bcom.zip }

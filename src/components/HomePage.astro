@@ -1,0 +1,772 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AsciiPortrait from './AsciiPortrait.astro';
+import Icon from './Icon.astro';
+import Octopus from './Octopus.astro';
+import ProjectCard from './ProjectCard.astro';
+import { beyond } from '../data/beyond';
+import { experience } from '../data/experience';
+import { site } from '../data/site';
+import { skills } from '../data/skills';
+import { getProjects } from '../lib/content';
+import { categories, localePath, useTranslations, withBase, type Category, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const all = await getProjects();
+const projects = all.filter((p) => !p.data.archived);
+const archives = all.filter((p) => p.data.archived);
+const featuredCount = all.filter((p) => p.data.featured).length;
+const cvPage = withBase(site.cv.page);
+// Counts include the archived projects, which also answer to the filters.
+const filters = (Object.keys(categories) as Category[])
+  .map((c) => ({ id: c, label: categories[c][lang], count: all.filter((p) => p.data.categories.includes(c)).length }))
+  .filter((f) => f.count > 0);
+const timeline = experience.filter((e) => !e.draft);
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: site.name,
+  jobTitle: t('hero.role'),
+  url: new URL(localePath(lang, '/'), Astro.site).href,
+  sameAs: site.socials.map((s) => s.href),
+};
+---
+
+<Layout lang={lang} path="/" jsonLd={jsonLd}>
+  <!-- Hero -->
+  <section class="hero container">
+    <div class="hero-text">
+      <p class="eyebrow">hello world</p>
+      <h1>
+        <span class="hello">{t('hero.hello')}</span>
+        Vincent Berthet<span class="dot">.</span>
+      </h1>
+      <p class="role">
+        {t('hero.role')}, <span class="role-more">{t('hero.more')}&nbsp;<Octopus label="🐙" /></span>
+      </p>
+      <p class="pitch">{t('hero.pitch')}</p>
+      {
+        site.available && (
+          <p class="available">
+            <span class="pulse" aria-hidden="true" />
+            {t('hero.available')}
+          </p>
+        )
+      }
+      <div class="cta">
+        <a class="btn btn-primary" href="#projects">
+          {t('hero.cta.projects')}
+          <Icon name="arrow-right" />
+        </a>
+        <a class="btn btn-accent" href={cvPage}>
+          <Icon name="file-down" />
+          {t('hero.cta.cv')}
+        </a>
+      </div>
+      <ul class="socials">
+        <li>
+          <a href={`mailto:${site.email}`} title={site.email}>
+            <Icon name="mail" />
+            <span class="sr-only">{t('contact.email')}</span>
+          </a>
+        </li>
+        {
+          site.phone.show && (
+            <li>
+              <a href={site.phone.href} title={site.phone.display}>
+                <Icon name="phone" />
+                <span class="sr-only">{t('contact.phone')}</span>
+              </a>
+            </li>
+          )
+        }
+        <li class="sep" aria-hidden="true" />
+        {
+          site.socials.map((s) => (
+            <li>
+              <a href={s.href} title={s.label} rel="me">
+                <Icon name={s.id} />
+                <span class="sr-only">{s.label}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div class="hero-visual">
+      <AsciiPortrait label={t('hero.portrait')} hint={{ hover: t('hero.hint.hover'), touch: t('hero.hint.touch') }} />
+    </div>
+  </section>
+
+  <!-- About + skills -->
+  <section id="about" class="section container about">
+    <div class="reveal">
+      <h2 class="section-title">{t('about.title')}</h2>
+      {t('about.text').map((p) => <p>{p}</p>)}
+    </div>
+    <div class="reveal toolbox">
+      <h3>{t('skills.title')}</h3>
+      {
+        skills.map((g) => (
+          <div class="skill-group">
+            <p class="skill-title">{g.title[lang]}</p>
+            <ul class="tags">
+              {g.items.map((i) => (
+                <li class="tag">{i}</li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="section container">
+    <h2 class="section-title">{t('experience.title')}</h2>
+    <ol class="timeline">
+      {
+        timeline.map((e) => (
+          <li class="reveal">
+            <p class="period">{e.period}</p>
+            <div>
+              <h3>
+                {e.role[lang]} · {e.url ? <a href={e.url}>{e.org}</a> : e.org}
+              </h3>
+              <p>{e.text[lang]}</p>
+              {e.project && (
+                <a class="more" href={localePath(lang, `/projects/${e.project}`)}>
+                  {t('experience.more')} <Icon name="arrow-right" />
+                </a>
+              )}
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="section container">
+    <h2 class="section-title">{t('projects.title')}</h2>
+    <p class="section-lead">{t('projects.lead')}</p>
+    <div class="filters" role="group" aria-label={t('projects.filter')} data-filters hidden>
+      <button type="button" aria-pressed="true" data-filter="all">
+        {t('projects.filter.all')} <span>{all.length}</span>
+      </button>
+      {
+        featuredCount > 0 && (
+          <button type="button" aria-pressed="false" data-filter="featured" class="featured">
+            <Icon name="star" /> {t('projects.filter.featured')} <span>{featuredCount}</span>
+          </button>
+        )
+      }
+      {
+        filters.map((f) => (
+          <button type="button" aria-pressed="false" data-filter={f.id}>
+            {f.label} <span>{f.count}</span>
+          </button>
+        ))
+      }
+    </div>
+    <div class="grid compact" data-grid>
+      {projects.map((p) => <ProjectCard project={p} lang={lang} />)}
+    </div>
+    {
+      archives.length > 0 && (
+        <div class="archives" data-archives>
+          <h3>
+            <Icon name="archive" /> {t('projects.archives')} <span data-archives-count>{archives.length}</span>
+          </h3>
+          <p>{t('projects.archivesLead')}</p>
+          <ul>
+            {archives.map((p) => (
+              <li data-categories={[...p.data.categories, ...(p.data.featured ? ['featured'] : [])].join(' ')}>
+                <a href={localePath(lang, `/projects/${p.id}`)}>{p.data.title[lang]}</a>
+                <span>{[p.data.year, p.data.stack.slice(0, 3).join(', ')].filter(Boolean).join(' · ')}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )
+    }
+  </section>
+
+  <!-- Beyond code -->
+  <section id="beyond" class="section container">
+    <h2 class="section-title">{t('beyond.title')}</h2>
+    <p class="section-lead">{t('beyond.lead')}</p>
+    <ul class="beyond">
+      {
+        beyond.map((b) => (
+          <li class="reveal">
+            <span class="beyond-icon">
+              <Icon name={b.icon} />
+            </span>
+            <h3>{b.title[lang]}</h3>
+            <p>{b.text[lang]}</p>
+            {b.link && (
+              <a href={b.link.href}>
+                {b.link.label[lang]} <Icon name="arrow-up-right" />
+              </a>
+            )}
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section container contact">
+    <div class="contact-box reveal">
+      <h2 class="section-title">{t('contact.title')}</h2>
+      <p class="section-lead">{t('contact.lead')}</p>
+      <div class="email-row">
+        <a class="email" href={`mailto:${site.email}`}>{site.email}</a>
+        <button
+          type="button"
+          class="icon-btn copy"
+          data-copy={site.email}
+          data-copied={t('contact.copied')}
+          title={t('contact.copy')}
+          aria-label={t('contact.copy')}
+        >
+          <Icon name="copy" class="i-copy" />
+          <Icon name="check" class="i-check" />
+        </button>
+        <span class="copied" role="status" aria-live="polite"></span>
+      </div>
+      <div class="cta">
+        <a class="btn btn-primary" href={`mailto:${site.email}`}>
+          <Icon name="mail" />
+          {t('contact.email')}
+        </a>
+        {
+          site.phone.show && (
+            <a class="btn" href={site.phone.href}>
+              <Icon name="phone" />
+              {site.phone.display}
+            </a>
+          )
+        }
+        <a class="btn btn-accent" href={cvPage}>
+          <Icon name="file-down" />
+          {t('contact.cv')}
+        </a>
+      </div>
+      <ul class="socials">
+        {
+          site.socials.map((s) => (
+            <li>
+              <a href={s.href} title={s.label} rel="me">
+                <Icon name={s.id} />
+                <span class="sr-only">{s.label}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const bar = document.querySelector<HTMLElement>('[data-filters]');
+  const grid = document.querySelector<HTMLElement>('[data-grid]');
+  const archives = document.querySelector<HTMLElement>('[data-archives]');
+  if (bar && grid) {
+    bar.hidden = false;
+    const buttons = [...bar.querySelectorAll<HTMLButtonElement>('button')];
+    const cards = [...grid.querySelectorAll<HTMLElement>('[data-categories]')];
+    bar.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest('button');
+      if (!btn) return;
+      const f = btn.dataset.filter!;
+      buttons.forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+      for (const c of cards) {
+        const show = f === 'all' || c.dataset.categories!.split(' ').includes(f);
+        c.hidden = !show;
+        if (show) c.classList.add('is-visible');
+      }
+      // Archived projects follow the same filter; the block disappears when none matches.
+      if (archives) {
+        const items = [...archives.querySelectorAll<HTMLElement>('li[data-categories]')];
+        let visible = 0;
+        for (const li of items) {
+          li.hidden = !(f === 'all' || li.dataset.categories!.split(' ').includes(f));
+          if (!li.hidden) visible++;
+        }
+        archives.hidden = visible === 0;
+        const count = archives.querySelector('[data-archives-count]');
+        if (count) count.textContent = String(visible);
+      }
+    });
+  }
+
+  // Copy the email address (many visitors have no mail client configured).
+  document.querySelectorAll<HTMLButtonElement>('[data-copy]').forEach((btn) => {
+    const status = btn.parentElement?.querySelector('.copied');
+    btn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(btn.dataset.copy!);
+        btn.classList.add('done');
+        if (status) status.textContent = btn.dataset.copied!;
+        setTimeout(() => {
+          btn.classList.remove('done');
+          if (status) status.textContent = '';
+        }, 2000);
+      } catch {
+        // Clipboard not available: the mailto link remains.
+      }
+    });
+  });
+</script>
+
+<style>
+  /* Hero */
+  .hero {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: clamp(32px, 6vw, 80px);
+    align-items: center;
+    min-height: min(860px, calc(100svh - var(--header-h)));
+    padding-block: 40px 64px;
+  }
+  h1 {
+    font-size: clamp(2.75rem, 7.5vw, 5.5rem);
+    letter-spacing: -0.035em;
+    margin-bottom: 20px;
+  }
+  .hello {
+    display: block;
+    font-size: 0.4em;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+  .dot {
+    color: var(--accent);
+  }
+  .role {
+    font: 500 clamp(1.05rem, 2vw, 1.25rem) var(--font-display);
+    margin-bottom: 16px;
+  }
+  .role-more {
+    color: var(--accent);
+    white-space: nowrap;
+  }
+  .pitch {
+    color: var(--text-muted);
+    max-width: 52ch;
+    margin-bottom: 28px;
+  }
+  .available {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 14px 6px 10px;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font: 500 0.85rem var(--font-mono);
+  }
+  .pulse {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 0 var(--accent);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    70% {
+      box-shadow: 0 0 0 8px transparent;
+    }
+    100% {
+      box-shadow: 0 0 0 0 transparent;
+    }
+  }
+  .cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .socials {
+    display: flex;
+    gap: 4px;
+    list-style: none;
+    padding: 0;
+    margin: 28px 0 0 -10px;
+  }
+  .socials a {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    color: var(--text-muted);
+  }
+  .socials a:hover {
+    color: var(--accent);
+    background: var(--accent-soft);
+  }
+  .socials :global(svg) {
+    width: 20px;
+    height: 20px;
+  }
+  .socials .sep {
+    width: 1px;
+    margin: 10px 6px;
+    background: var(--border);
+  }
+
+  @media (max-width: 860px) {
+    .hero {
+      grid-template-columns: 1fr;
+      min-height: 0;
+      padding-top: 24px;
+    }
+    .hero-visual {
+      order: -1;
+      width: 100%;
+      max-width: 320px;
+      margin-inline: auto;
+    }
+  }
+  /* On phones, a smaller portrait keeps the name and role visible without scrolling. */
+  @media (max-width: 600px) {
+    .hero {
+      gap: 24px;
+      padding-top: 16px;
+    }
+    .hero-visual {
+      max-width: 210px;
+    }
+  }
+
+  /* About */
+  .about {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: clamp(32px, 6vw, 80px);
+    align-items: start;
+  }
+  .about p {
+    max-width: 62ch;
+  }
+  .toolbox {
+    padding: 28px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--bg-elevated);
+  }
+  .toolbox h3 {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+  }
+  .skill-group + .skill-group {
+    margin-top: 20px;
+  }
+  .skill-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  @media (max-width: 860px) {
+    .about {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Timeline */
+  .timeline {
+    list-style: none;
+    padding: 0;
+    margin: 40px 0 0;
+    border-left: 1px solid var(--border);
+  }
+  .timeline li {
+    position: relative;
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 8px 32px;
+    padding: 0 0 40px 32px;
+  }
+  .timeline li::before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 6px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--accent);
+  }
+  .period {
+    font: 0.85rem/1.9 var(--font-mono);
+    color: var(--text-muted);
+    margin: 0;
+  }
+  .timeline h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+  }
+  .timeline h3 a {
+    text-decoration: none;
+    color: var(--accent);
+  }
+  .timeline p {
+    color: var(--text-muted);
+    max-width: 68ch;
+    margin-bottom: 8px;
+  }
+  .more {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--accent);
+  }
+  .more :global(svg) {
+    width: 16px;
+    height: 16px;
+  }
+  @media (max-width: 640px) {
+    .timeline li {
+      grid-template-columns: 1fr;
+      padding-left: 24px;
+    }
+  }
+
+  /* Projects */
+  .grid {
+    display: grid;
+    gap: 24px;
+  }
+  .grid.compact {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  }
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 28px;
+  }
+  .filters[hidden] {
+    display: none;
+  }
+  .filters button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 40px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text);
+    font: 500 0.9rem var(--font-sans);
+    cursor: pointer;
+  }
+  .filters button span {
+    font: 0.75rem var(--font-mono);
+    color: var(--text-muted);
+  }
+  .filters button:hover {
+    border-color: var(--text);
+  }
+  .filters button[aria-pressed='true'] {
+    background: var(--text);
+    border-color: var(--text);
+    color: var(--bg);
+  }
+  .filters button[aria-pressed='true'] span {
+    color: inherit;
+    opacity: 0.7;
+  }
+  .filters .featured {
+    border-color: color-mix(in srgb, var(--accent) 50%, var(--border));
+    color: var(--accent);
+  }
+  .filters .featured :global(svg) {
+    width: 14px;
+    height: 14px;
+    fill: currentColor;
+  }
+  .filters .featured[aria-pressed='true'] {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--on-accent);
+  }
+
+  /* Archives */
+  .archives {
+    margin-top: 40px;
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+  }
+  .archives[hidden],
+  .archives li[hidden] {
+    display: none;
+  }
+  .archives h3 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.15rem;
+  }
+  .archives h3 span {
+    font: 0.75rem var(--font-mono);
+    color: var(--text-muted);
+  }
+  .archives h3 :global(svg) {
+    width: 18px;
+    height: 18px;
+    color: var(--accent);
+  }
+  .archives > p {
+    color: var(--text-muted);
+    margin: 12px 0;
+  }
+  .archives ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+    gap: 4px 24px;
+  }
+  .archives li {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--border);
+  }
+  .archives li a {
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .archives li span {
+    font: 0.75rem var(--font-mono);
+    color: var(--text-muted);
+    text-align: right;
+  }
+
+  /* Beyond code */
+  .beyond {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+    gap: 16px;
+  }
+  .beyond li {
+    padding: 24px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--bg-elevated);
+  }
+  .beyond-icon {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+  .beyond-icon :global(svg) {
+    width: 22px;
+    height: 22px;
+  }
+  .beyond h3 {
+    font-size: 1.15rem;
+    margin-bottom: 6px;
+  }
+  .beyond p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin: 0;
+  }
+  .beyond a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .beyond a :global(svg) {
+    width: 15px;
+    height: 15px;
+  }
+
+  /* Contact */
+  .contact-box {
+    padding: clamp(32px, 6vw, 72px);
+    border-radius: calc(var(--radius) * 1.5);
+    border: 1px solid var(--border);
+    background:
+      radial-gradient(circle at 100% 0%, var(--accent-soft), transparent 50%),
+      var(--bg-elevated);
+  }
+  .email-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    margin-bottom: 32px;
+  }
+  .copy {
+    display: inline-grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+  }
+  .copy:hover {
+    border-color: var(--text);
+  }
+  .copy :global(svg) {
+    width: 18px;
+    height: 18px;
+  }
+  .copy :global(.i-check),
+  .copy.done :global(.i-copy) {
+    display: none;
+  }
+  .copy.done :global(.i-check) {
+    display: block;
+    color: var(--accent);
+  }
+  .copied {
+    font: 0.8rem var(--font-mono);
+    color: var(--accent);
+  }
+  .email {
+    display: inline-block;
+    font: 600 clamp(1.25rem, 4.5vw, 2.5rem) var(--font-display);
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+  }
+</style>

@@ -1,0 +1,16 @@
+order: 14
+title: { en: Internship at Askelys, fr: Stage chez Askelys }
+summary:
+  en: "4-month internship in a semantic web startup, building a Unity WebGL prototype."
+  fr: "Stage de 4 mois dans une startup du web sémantique : développement d'un prototype WebGL sous Unity."
+description:
+  en: |
+    Internship report (French) of my 4 months at [Askelys](http://askelys.com/), a startup working on the semantic web. I developed a Unity WebGL prototype using the company's JavaScript library.
+  fr: |
+    Rapport de mon stage de 4 mois chez [Askelys](http://askelys.com/), startup du web sémantique. J'y ai développé un prototype WebGL sous Unity utilisant la librairie JavaScript de l'entreprise.
+cover: ../../assets/projects/askelys.webp
+categories: [pro, 3d, web]
+stack: [Unity, C#, JavaScript, WebGL]
+year: '2019'
+links:
+  download: { url: 'https://github.com/vincentBrth/Workspace/raw/master/Public/Report/Rapport_BERTHET_Vincent_Askelys_2019.pdf', name: Rapport_BERTHET_Vincent_Askelys_2019.pdf, lang: fr }

@@ -1,0 +1,19 @@
+order: 17
+title: { en: ESIR Game Jam 2019, fr: Game Jam ESIR 2019 }
+summary:
+  en: "Co-organized the first ESIR Game Jam with Orange Applications for Business, and made its trailer."
+  fr: "Co-organisation de la première Game Jam de l'ESIR avec Orange Applications for Business, et réalisation de son trailer."
+description:
+  en: |
+    Trailer of the first [ESIR Game Jam](https://esir.univ-rennes1.fr/actualites/la-1ere-game-jam-lesir), in partnership with Orange Applications for Business. I was part of the organizing team and made the trailer.
+
+    Winner: [Game Jam of Thrones](https://www.youtube.com/watch?v=E_g47fFlD-E).
+  fr: |
+    Trailer de la première [Game Jam de l'ESIR](https://esir.univ-rennes1.fr/actualites/la-1ere-game-jam-lesir), en partenariat avec Orange Applications for Business. Je faisais partie de l'équipe d'organisation et j'ai réalisé le trailer.
+
+    Vainqueur : [Game Jam of Thrones](https://www.youtube.com/watch?v=E_g47fFlD-E).
+cover: ../../assets/projects/game-jam-2k19.webp
+categories: [initiatives, games]
+stack: [Event management, Video editing]
+year: '2019'
+video: Q5fmX5Q7btM

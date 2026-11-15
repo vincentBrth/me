@@ -1,0 +1,8 @@
+order: 24
+title: { en: Creative industries blog, fr: Blog sur les industries créatives }
+summary:
+  en: "A WordPress blog about the creative industries."
+  fr: "Un blog WordPress consacré aux industries créatives."
+cover: ../../assets/projects/blog.webp
+categories: [web]
+stack: [WordPress]
