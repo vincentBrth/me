@@ -19,6 +19,7 @@ My portfolio: profile, experience, projects and resume, in English and French.
 - **Resume** written in HTML (`cv.html`), served at `/me/cv/` and exported to PDF at every build.
 - **Email signature** at `/me/card/`, with a button to copy it.
 - Light and dark themes, mobile menu, smooth page transitions (in browsers that support them).
+- **Console easter egg** (`src/components/ConsoleEgg.astro`): open the browser console and type `vincent.help()`.
 - **Privacy**: no cookies, no trackers, fonts self-hosted, YouTube only loaded when a video is played.
   Optional cookie-free statistics with GoatCounter.
 
