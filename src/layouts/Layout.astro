@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { Image } from 'astro:assets';
+import ConsoleEgg from '../components/ConsoleEgg.astro';
 import Icon from '../components/Icon.astro';
 import logo from '../assets/logo.png';
 import { site } from '../data/site';
@@ -157,6 +158,8 @@ const nav = [
         <p>© {new Date().getFullYear()} {site.name}</p>
       </div>
     </footer>
+
+    <ConsoleEgg lang={lang} />
 
     <script>
       const root = document.documentElement;

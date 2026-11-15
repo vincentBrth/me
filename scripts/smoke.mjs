@@ -46,6 +46,11 @@ try {
     const featured = await page.$$eval('[data-grid] [data-categories]', (els) => els.filter((e) => !e.hidden).length);
     const expected = Number(await page.textContent('[data-filter="featured"] span'));
     check(featured === expected, `/${lang} "Selection" filter shows ${featured}/${expected} projects`);
+    const egg = await page.evaluate(() => {
+      const v = window.vincent;
+      return v && v.help() === '🐙' && typeof v.projects() === 'string' && typeof v.squid() === 'string';
+    });
+    check(egg, `/${lang} console easter egg (vincent.help, projects, squid) works`);
     await page.close();
   }
 
