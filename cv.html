@@ -191,24 +191,30 @@
 
     .target {
       margin-top: 2.6mm;
-      padding: 2.2mm 3.2mm 2.2mm 3.6mm;
-      background: var(--green);
-      color: #fff;
-      border-radius: 2.5mm;
+      padding: 2mm 3.2mm 2mm 3.4mm;
+      background: var(--green-soft);
+      border-left: 1.2mm solid var(--green);
+      color: var(--ink);
+      border-radius: 1.2mm 2.5mm 2.5mm 1.2mm;
       font-size: 9.3pt;
       line-height: 1.35;
-      max-width: 122mm;
+      max-width: 138mm;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      column-gap: 3mm;
+      row-gap: .4mm;
     }
 
-    .target strong {
-      font-weight: 800;
+    .target dt {
+      font: 700 7pt/1.35 var(--mono);
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--green-dark);
+      padding-top: .45mm;
     }
 
-    .target small {
-      display: block;
-      margin-top: .8mm;
-      font-size: 8pt;
-      color: #e8f6ee;
+    .target dd {
+      font-weight: 700;
     }
 
     .contact {
@@ -587,12 +593,14 @@
             <circle cx="14" cy="21" r="2" fill="#292F33" />
             <circle cx="22" cy="21" r="2" fill="#292F33" />
           </svg> ! <span class="brace">}</span></p>
-        <p class="target">
-          <strong>Alternance Bac+3 ou poste avec formation</strong> · vision, robotique, énergie ·
-          <span style="white-space:nowrap">Saint-Étienne / Lyon</span> · <strong>disponible dès maintenant</strong>
-          <small>Éligible au contrat de professionnalisation (demandeur d'emploi de 26 ans et plus) : aide France
-            Travail jusqu'à 2 000 € pour l'employeur.</small>
-        </p>
+        <dl class="target">
+          <dt>Recherche</dt>
+          <dd>Poste ou contrat pro, avec montée en compétences</dd>
+          <dt>Domaines</dt>
+          <dd>Énergie · Robotique · Embarqué</dd>
+          <dt>Secteur</dt>
+          <dd>Rhône-Alpes</dd>
+        </dl>
       </div>
       <ol class="route" aria-label="Parcours">
         <li><span class="yr">2014</span><b>Génie électrique</b><span class="sub">DUT GEII</span></li>
@@ -600,7 +608,8 @@
         <li><span class="yr">2017</span><b>Ingénieur TI</b><span class="sub">Imagerie numérique</span></li>
         <li><span class="yr">2019</span><b>R&amp;D</b><span class="sub">b&lt;&gt;com · ATEME</span></li>
         <li><span class="yr">2026</span><b>Entrepreneuriat</b><span class="sub">Ekko</span></li>
-        <li class="next"><span class="yr">Prochaine étape</span><b>Energie, robotique, embarquée</b></li>
+        <li class="next"><span class="yr">Prochaine étape</span><span class="sub">Énergie, robotique, embarqué</span>
+        </li>
       </ol>
       <ul class="contact">
         <li><svg viewBox="0 0 24 24">
@@ -1118,8 +1127,8 @@
             <p>Un bras qui écrit une dictée : cinématique inverse et commande des moteurs.</p>
           </div>
           <div class="proj">
-            <h3>Drone FPV</h3>
-            <p>Assemblage, soudure, réglage du contrôleur de vol et pilotage en immersion.</p>
+            <h3>Participatif</h3>
+            <p>Chantier participatif écologique en maçonnerie pierre chaux et ossature bois.</p>
           </div>
           <div class="proj">
             <h3>Serveur auto-hébergé</h3>
