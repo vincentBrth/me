@@ -14,9 +14,9 @@ export type Category = keyof typeof categories;
 
 export const ui = {
   en: {
-    'meta.title': 'Vincent Berthet — Engineer, imaging, 3D & web',
+    'meta.title': 'Vincent Berthet — Engineer, vision, robotics & energy',
     'meta.description':
-      'Portfolio of Vincent Berthet, a French engineer working across digital imaging, computer vision, 3D, games and the web.',
+      'Portfolio of Vincent Berthet, a hands-on French engineer working across computer vision, robotics, drones, energy and games.',
     'nav.about': 'About',
     'nav.experience': 'Experience',
     'nav.projects': 'Projects',
@@ -27,10 +27,10 @@ export const ui = {
     'nav.lang': 'Lire en français',
     'nav.skip': 'Skip to content',
     'hero.hello': 'Hi, I’m',
-    'hero.role': 'Engineer — digital imaging, 3D & web',
+    'hero.role': 'Engineer — vision, robotics & energy',
     'hero.more': 'and much more',
     'hero.pitch':
-      'I build things where pixels meet code: computer vision, rendering engines, games and web apps. Curious by nature, I love learning, experimenting, failing and eventually mastering.',
+      'I build projects that bridge the digital and the physical: computer vision, robotics, energy, games. A hands-on generalist, I go from a screen to a community building site, from organising an event to a motorbike ride or a day on the water. I love learning, getting it wrong, eventually mastering, then leading and working alongside a team to turn our ideas into solutions that meet real needs.',
     'hero.available': 'Open to opportunities',
     'hero.cta.projects': 'See my work',
     'hero.cta.cv': 'My resume',
@@ -95,9 +95,9 @@ export const ui = {
     '404.back': 'Back to home',
   },
   fr: {
-    'meta.title': 'Vincent Berthet — Ingénieur, imagerie, 3D & web',
+    'meta.title': 'Vincent Berthet — Ingénieur, vision, robotique & énergie',
     'meta.description':
-      'Portfolio de Vincent Berthet, ingénieur français entre imagerie numérique, vision par ordinateur, 3D, jeux vidéo et web.',
+      'Portfolio de Vincent Berthet, ingénieur français touche-à-tout entre vision par ordinateur, robotique, drones, énergie et jeux vidéo.',
     'nav.about': 'À propos',
     'nav.experience': 'Parcours',
     'nav.projects': 'Projets',
@@ -108,10 +108,10 @@ export const ui = {
     'nav.lang': 'Read in English',
     'nav.skip': 'Aller au contenu',
     'hero.hello': 'Salut, moi c’est',
-    'hero.role': 'Ingénieur — imagerie numérique, 3D & web',
+    'hero.role': 'Ingénieur — vision, robotique & énergie',
     'hero.more': 'et bien plus',
     'hero.pitch':
-      'Je construis des choses à la frontière entre pixels et code : vision par ordinateur, moteurs de rendu, jeux et applications web. Curieux de nature, j’aime apprendre, expérimenter, me casser les dents et finir par maîtriser.',
+      'Je construis des projets qui relient le numérique au réel : vision par ordinateur, robotique, énergie, jeux. Touche-à-tout, je passe d’un écran à un chantier participatif, de l’organisation d’un événement à une sortie en moto ou aquatique. J’aime apprendre, me casser les dents, finir par maîtriser, puis encadrer et m’embarquer avec une équipe pour transformer nos idées en réalisations qui répondent à de vrais besoins.',
     'hero.available': 'Ouvert aux opportunités',
     'hero.cta.projects': 'Voir mes projets',
     'hero.cta.cv': 'Mon CV',
