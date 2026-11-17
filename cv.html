@@ -316,6 +316,17 @@
       list-style: none;
     }
 
+    aside .hashtags li {
+      padding-left: 0;
+      background: none;
+    }
+
+    .hashtags b {
+      font: 700 7.6pt var(--mono);
+      color: var(--green-dark);
+      margin-right: .6mm;
+    }
+
     /* puces en forme de pastilles à souder */
     aside li {
       font-size: 8.3pt;
@@ -327,7 +338,7 @@
     .tags {
       display: flex;
       flex-wrap: wrap;
-      gap: .9mm;
+      gap: .8mm;
     }
 
     .tags span {
@@ -335,7 +346,7 @@
       background: #fff;
       border: 1px solid var(--line);
       border-radius: 1mm;
-      padding: 0 1.3mm;
+      padding: 0 1mm;
     }
 
     .tags span.hl {
@@ -635,52 +646,69 @@
       <section>
         <h2>Compétences</h2>
 
-        <h3>Électricité &amp; énergie</h3>
+        <h3>Personnelles</h3>
         <ul>
-          <li>Bases du DUT GEII</li>
-          <li>Systèmes embarqués, microcontrôleurs</li>
-          <li>Lecture de schémas, mesures</li>
-          <li>Électrotechnique, automatisme (bases)</li>
+          <li>Apprentissage et partage</li>
+          <li>Esprit de groupe</li>
+          <li>Prise d'initiative</li>
+          <li>Capacité à travailler seul</li>
+          <li>Encadrement d'équipe</li>
         </ul>
 
-        <h3>Vision &amp; robotique</h3>
+        <h3>Techniques</h3>
         <div class="tags">
-          <span class="hl">C/C++17</span><span class="hl">Python</span><span class="hl">OpenCV</span>
-          <span>Vision par ordinateur</span><span>Capteurs 3D</span><span>OpenGL</span><span>Réalité augmentée</span>
+          <span>Linux</span>
+          <span>C/C++17</span>
+          <span>Python</span>
+          <span>Rust</span>
+          <span>Go</span>
+          <span>LLM/Agent IA</span>
+          <span>OpenCV</span>
+          <span>OpenGL</span>
+          <span>Web fullstack</span>
+          <span>Cloud</span>
+          <span>SQL</span>
+          <span>Docker</span>
+          <span>Git</span>
+          <span>Rendu 3D</span>
         </div>
 
-        <h3>Système &amp; outils</h3>
-        <div class="tags">
-          <span class="hl">Linux</span><span>Git</span><span>CI/CD</span><span>Docker</span><span>SQL</span>
-          <span>Rust</span><span>Go</span><span>C#</span><span>Web</span><span>Cloud</span>
-        </div>
-      </section>
-
-      <section>
-        <h2>Ce que j'apporte</h2>
+        <h3>Expertise</h3>
         <ul>
-          <li>Encadrement &amp; transmission</li>
-          <li>Travail en équipe agile</li>
+          <li>Vision par ordinateur</li>
+          <li>Capteurs 3D</li>
+          <li>Architecture de solution</li>
+          <li>Systèmes embarqués</li>
+          <li>Énergie</li>
+          <li>Électronique</li>
+          <li>Industrialisation</li>
+        </ul>
+
+        <h3>Certifications &amp; formations</h3>
+        <ul>
           <li>Secouriste (PSC1)</li>
+          <li>Méthodes agiles, SCRUM</li>
         </ul>
       </section>
 
       <section>
-        <h2>Langues</h2>
+        <h2>Communication</h2>
         <ul>
-          <li>Français : langue maternelle</li>
-          <li>Anglais : courant (1 an en Écosse)</li>
-          <li>Italien, espagnol : bases</li>
+          <li>Français</li>
+          <li>Anglais (couramment)</li>
+          <li>Italien, espagnol (bases+)</li>
         </ul>
       </section>
 
       <section>
-        <h2>Centres d'intérêt</h2>
-        <ul>
-          <li>DIY, bricolage, mécanique moto</li>
-          <li>Guitare électrique</li>
-          <li>Voile, canyoning, plongée</li>
-          <li>Jeux de stratégie</li>
+        <h2>Ce qui m'anime...</h2>
+        <ul class="hashtags">
+          <li><b>#sport</b> volley, moto, voile, canyoning, plongée, HIIT</li>
+          <li><b>#stratégie</b> jeux de société, jeux vidéo</li>
+          <li><b>#bricolage</b> DIY, bois, mécanique</li>
+          <li><b>#art</b> documentaire, histoire, SF, animation, punk, rock</li>
+          <li><b>#cuisine</b> tout.</li>
+          <li><b>#psychologie</b> sociale, positive</li>
         </ul>
       </section>
       <!-- QR code : pointe vers ton portail. Pour changer l'adresse : python3 qr_svg.py "URL" qr.svg puis remplace ce <svg> -->
@@ -1127,7 +1155,7 @@
             <p>Un bras qui écrit une dictée : cinématique inverse et commande des moteurs.</p>
           </div>
           <div class="proj">
-            <h3>Participatif</h3>
+            <h3>Écoconstruction</h3>
             <p>Chantier participatif écologique en maçonnerie pierre chaux et ossature bois.</p>
           </div>
           <div class="proj">
@@ -1179,9 +1207,9 @@
           <div class="job-head">
             <h3>Développeur logiciel et test électronique</h3><span class="when">2016</span>
           </div>
-          <p class="where">Mu-Test (43) · Stage</p>
+          <p class="where">Mu-Test · Saint-Just-Malmont (43) · Stage</p>
           <ul>
-            <li>ATE : amélioration et expérimentation de procédures de validation de composants.</li>
+            <li>Automated Test Equipment : amélioration et expérimentation de procédures de validation de composants électroniques.</li>
           </ul>
         </div>
 
