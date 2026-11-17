@@ -46,6 +46,11 @@ try {
     const featured = await page.$$eval('[data-grid] [data-categories]', (els) => els.filter((e) => !e.hidden).length);
     const expected = Number(await page.textContent('[data-filter="featured"] span'));
     check(featured === expected, `/${lang} "Selection" filter shows ${featured}/${expected} projects`);
+    const egg = await page.evaluate(() => {
+      const v = window.vincent;
+      return v && v.help() === '🐙' && typeof v.projects() === 'string' && typeof v.squid() === 'string';
+    });
+    check(egg, `/${lang} console easter egg (vincent.help, projects, squid) works`);
     await page.close();
   }
 
@@ -78,6 +83,9 @@ try {
   const missing = await open('/fr/does-not-exist', fr);
   await missing.page.waitForTimeout(500);
   check(missing.page.url().endsWith('/fr/does-not-exist'), 'the 404 page does not redirect in a loop');
+  check((await missing.page.textContent('h1')) === 'Page introuvable', 'the 404 page is in French for a French visitor');
+  const missingEn = await open('/does-not-exist', context);
+  check((await missingEn.page.textContent('h1')) === 'Page not found', 'the 404 page is in English for an English visitor');
 } finally {
   await browser.close();
   close();

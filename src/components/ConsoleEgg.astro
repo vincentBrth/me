@@ -1,0 +1,252 @@
+---
+/**
+ * Easter egg for the curious who open the browser console: an ASCII octopus, a greeting and a
+ * small `vincent` object with a few commands (help, contact, cv, projects, ascii, squid).
+ * The page itself only changes when a command is called, or when the developer tools are opened
+ * with a keyboard shortcut: the site then decodes itself in ASCII, once.
+ */
+import octopusSvg from '@twemoji/svg/1f419.svg?raw';
+import { getProjects } from '../lib/content';
+import { asciiOctopus } from '../data/octopus';
+import { site } from '../data/site';
+import { localePath, withBase, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+
+// The console is a developer's space: it always speaks English, whatever the page language.
+const text = {
+  hello: 'Hey, you are reading the console? We should get along.',
+  hint: 'Type vincent.help() to see what I can do.',
+  help: 'Available commands:',
+  commands: {
+    help: 'this list',
+    contact: 'write me an email',
+    cv: 'download my resume (PDF)',
+    projects: 'all my projects, as a table',
+    ascii: 'the whole site in ASCII, for a few seconds',
+    squid: '🐙🐙🐙',
+  },
+  contact: 'Opening your email app…',
+  subject: 'Hello from the console',
+  cv: 'Downloading the resume…',
+  projects: 'projects',
+  ascii: 'Decoding…',
+  squid: 'Release the octopuses!',
+};
+
+const projects = (await getProjects()).map((p) => ({
+  title: p.data.title[lang],
+  year: p.data.year ?? '',
+  stack: p.data.stack.join(', '),
+  url: localePath(lang, `/projects/${p.id}`),
+}));
+
+const data = {
+  text,
+  octopus: asciiOctopus,
+  email: site.email,
+  cv: withBase(site.cv.pdf),
+  projects,
+  squid: `data:image/svg+xml,${encodeURIComponent(octopusSvg)}`,
+};
+---
+
+<script type="application/json" id="console-egg" set:html={JSON.stringify(data)} />
+
+<script>
+  type Data = {
+    text: Record<string, string> & { commands: Record<string, string> };
+    octopus: string;
+    email: string;
+    cv: string;
+    projects: { title: string; year: string; stack: string; url: string }[];
+    squid: string;
+  };
+  const el = document.getElementById('console-egg');
+  if (el) {
+    const d: Data = JSON.parse(el.textContent || '{}');
+    const t = d.text;
+    const green = 'color:#22a85a';
+    const mono = 'font-family:ui-monospace,monospace';
+    const reduced = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /** Every page of the site in ASCII: monospace font, then each visible letter is decoded. */
+    let asciiRunning = false;
+    const ascii = () => {
+      if (asciiRunning) return;
+      asciiRunning = true;
+      const root = document.documentElement;
+      root.classList.add('ascii-mode');
+      const end = () => {
+        root.classList.remove('ascii-mode');
+        asciiRunning = false;
+      };
+      if (reduced()) return void setTimeout(end, 3000);
+
+      // Text nodes on screen only: that is all that can be seen, and it keeps every frame cheap.
+      const nodes: { node: Text; text: string; at: Float32Array }[] = [];
+      const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+      for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+        const parent = n.parentElement;
+        if (!n.nodeValue?.trim() || !parent || parent.closest('script, style, pre, svg, [aria-hidden="true"]')) continue;
+        const r = parent.getBoundingClientRect();
+        if (r.bottom < 0 || r.top > innerHeight || !r.width) continue;
+        const text = n.nodeValue;
+        nodes.push({ node: n as Text, text, at: Float32Array.from(text, () => Math.random()) });
+      }
+      const glyphs = '@#%&*+=-:.01';
+      const duration = 2600;
+      const start = performance.now();
+      const frame = (now: number) => {
+        // Fully scrambled at first, then the letters come back one by one.
+        const p = Math.max(0, (now - start - 500) / duration);
+        for (const { node, text, at } of nodes) {
+          let out = '';
+          for (let i = 0; i < text.length; i++) {
+            const c = text[i];
+            out += c.trim() === '' || at[i] < p ? c : glyphs[(Math.random() * glyphs.length) | 0];
+          }
+          node.nodeValue = out;
+        }
+        if (p < 1) requestAnimationFrame(frame);
+        else {
+          for (const { node, text } of nodes) node.nodeValue = text;
+          setTimeout(end, 1200);
+        }
+      };
+      requestAnimationFrame(frame);
+    };
+
+    /** A rain of octopuses over the page. */
+    const squid = () => {
+      const layer = document.createElement('div');
+      layer.className = 'squid-rain';
+      layer.setAttribute('aria-hidden', 'true');
+      const count = reduced() ? 8 : 42;
+      let longest = 0;
+      for (let i = 0; i < count; i++) {
+        const img = document.createElement('img');
+        img.src = d.squid;
+        img.alt = '';
+        const dur = 2.4 + Math.random() * 2.6;
+        const delay = Math.random() * 1.8;
+        longest = Math.max(longest, dur + delay);
+        img.style.cssText =
+          `left:${Math.random() * 100}%;width:${24 + Math.random() * 44}px;` +
+          `--sway:${(Math.random() - 0.5) * 160}px;--rot:${(Math.random() - 0.5) * 720}deg;` +
+          `animation-duration:${dur}s;animation-delay:${delay}s`;
+        layer.append(img);
+      }
+      document.body.append(layer);
+      setTimeout(() => layer.remove(), longest * 1000 + 200);
+    };
+
+    const commands = {
+      help() {
+        console.log(
+          `%c${t.help}\n` +
+            Object.entries(t.commands)
+              .map(([name, desc]) => `  vincent.${name}()`.padEnd(22) + desc)
+              .join('\n'),
+          mono,
+        );
+        return '🐙';
+      },
+      contact() {
+        location.href = `mailto:${d.email}?subject=${encodeURIComponent(t.subject)}`;
+        return t.contact;
+      },
+      cv() {
+        const a = document.createElement('a');
+        a.href = d.cv;
+        a.download = '';
+        a.click();
+        return t.cv;
+      },
+      projects() {
+        console.table(
+          Object.fromEntries(
+            d.projects.map((p) => [p.title, { year: p.year, stack: p.stack, url: new URL(p.url, location.href).href }]),
+          ),
+        );
+        return `${d.projects.length} ${t.projects}`;
+      },
+      ascii() {
+        ascii();
+        return t.ascii;
+      },
+      squid() {
+        squid();
+        return t.squid;
+      },
+    };
+    Object.defineProperty(window, 'vincent', { value: Object.freeze(commands), configurable: true });
+
+    // Opening the developer tools with a keyboard shortcut (F12, Ctrl+Shift+I/J/C, Cmd+Option+I/J/C)
+    // plays the ASCII effect once. The shortcut is not blocked: the tools still open as usual.
+    const onKey = (e: KeyboardEvent) => {
+      const combo = (e.ctrlKey && e.shiftKey && !e.altKey) || (e.metaKey && e.altKey);
+      const devtools = e.key === 'F12' || (combo && ['KeyI', 'KeyJ', 'KeyC'].includes(e.code));
+      if (!devtools) return;
+      removeEventListener('keydown', onKey);
+      setTimeout(ascii, 400);
+    };
+    addEventListener('keydown', onKey);
+
+    console.log(`%c${d.octopus}`, `${green};${mono};font-weight:bold;line-height:1.2`);
+    console.log(`%c${t.hello}\n%c${t.hint}`, `${green};font-size:14px;font-weight:bold`, 'font-size:12px');
+  }
+</script>
+
+<style is:global>
+  html.ascii-mode body,
+  html.ascii-mode body * {
+    font-family: var(--font-mono) !important;
+    letter-spacing: 0 !important;
+  }
+  html.ascii-mode img {
+    filter: grayscale(1) contrast(1.6);
+  }
+
+  .squid-rain {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .squid-rain img {
+    position: absolute;
+    top: 0;
+    height: auto;
+    animation: squid-fall linear both;
+  }
+  @keyframes squid-fall {
+    from {
+      transform: translate3d(0, -80px, 0) rotate(0);
+    }
+    to {
+      transform: translate3d(var(--sway), 110vh, 0) rotate(var(--rot));
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .squid-rain img {
+      top: auto;
+      bottom: 0;
+      animation: squid-pop 2s ease both;
+    }
+    @keyframes squid-pop {
+      0%,
+      100% {
+        opacity: 0;
+      }
+      20%,
+      80% {
+        opacity: 1;
+      }
+    }
+  }
+</style>

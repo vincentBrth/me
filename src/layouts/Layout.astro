@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { Image } from 'astro:assets';
+import ConsoleEgg from '../components/ConsoleEgg.astro';
 import Icon from '../components/Icon.astro';
 import logo from '../assets/logo.png';
 import { site } from '../data/site';
@@ -32,7 +33,7 @@ const nav = [
   { href: `${home}#about`, label: t('nav.about') },
   { href: `${home}#experience`, label: t('nav.experience') },
   { href: `${home}#projects`, label: t('nav.projects') },
-  { href: `${home}#beyond`, label: t('nav.beyond') },
+  ...(site.showBeyond ? [{ href: `${home}#beyond`, label: t('nav.beyond') }] : []),
   { href: `${home}#contact`, label: t('nav.contact') },
 ];
 ---
@@ -155,8 +156,14 @@ const nav = [
     <footer class="site-footer">
       <div class="container footer-inner">
         <p>© {new Date().getFullYear()} {site.name}</p>
+        <ul class="footer-links">
+          <li><a href={localePath(lang, '/legal')}>{t('footer.legal')}</a></li>
+          <li><a href={`https://github.com/${site.github}/${site.repo}`}>{t('footer.source')}</a></li>
+        </ul>
       </div>
     </footer>
+
+    <ConsoleEgg lang={lang} />
 
     <script>
       const root = document.documentElement;
@@ -452,5 +459,20 @@ const nav = [
   }
   .footer-inner p {
     margin: 0;
+  }
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .footer-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+  .footer-links a:hover {
+    color: var(--accent);
   }
 </style>
