@@ -15,7 +15,7 @@ const legacy = {
 // English and translated in the browser for French visitors (see the script at the bottom).
 const keys = [
   'nav.skip', 'nav.about', 'nav.experience', 'nav.projects', 'nav.beyond', 'nav.contact', 'nav.menu', 'nav.theme',
-  '404.title', '404.text', '404.back',
+  '404.title', '404.text', '404.back', 'footer.legal', 'footer.source',
 ] as const;
 const fr = {
   base: withBase(''),
@@ -86,10 +86,10 @@ const fr = {
           if (v) el.setAttribute(attr, v);
         }
       }
-      // Internal links to the English home page now lead to the French one.
+      // Internal links to the English home and legal pages now lead to the French ones.
       for (const a of document.querySelectorAll('a[href]')) {
         const href = a.getAttribute('href');
-        if (href === fr.base + '/' || href.startsWith(fr.base + '/#')) a.setAttribute('href', fr.base + '/fr' + href.slice(fr.base.length));
+        if (href === fr.base + '/' || href === fr.base + '/legal' || href.startsWith(fr.base + '/#')) a.setAttribute('href', fr.base + '/fr' + href.slice(fr.base.length));
       }
       if (lang) {
         lang.href = fr.base + '/';

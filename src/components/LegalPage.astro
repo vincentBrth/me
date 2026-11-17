@@ -1,0 +1,141 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Icon from './Icon.astro';
+import { site } from '../data/site';
+import { localePath, useTranslations, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const repo = `https://github.com/${site.github}/${site.repo}`;
+const email = `<a href="mailto:${site.email}">${site.email}</a>`;
+
+/** Legal notice required by the French LCEN (art. 6), and what the site does with visitors' data. */
+const sections: Record<Lang, { title: string; body: string[] }[]> = {
+  en: [
+    {
+      title: 'Publisher',
+      body: [
+        `This website is a personal, non-commercial portfolio published by ${site.name}, who is also the publication director.`,
+        `Contact: ${email}`,
+      ],
+    },
+    {
+      title: 'Hosting',
+      body: [
+        'GitHub, Inc. (GitHub Pages), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, United States. <a href="https://github.com">github.com</a>',
+      ],
+    },
+    {
+      title: 'Intellectual property',
+      body: [
+        `The source code of this website is available on <a href="${repo}">GitHub</a> under the MIT license.`,
+        `Unless stated otherwise, texts, photos and visuals belong to ${site.name}. Please ask before reusing them.`,
+      ],
+    },
+    {
+      title: 'Privacy',
+      body: [
+        'This website uses no cookies and collects no personal data.',
+        'Your theme and language choices are stored in your own browser (local storage) so they are kept between visits. They are never sent anywhere.',
+        'YouTube videos are only loaded when you click on them, through the privacy-enhanced youtube-nocookie.com player. From then on, Google receives your IP address and applies its own privacy policy.',
+        'As with any website, the host may keep technical logs (such as IP addresses) for security purposes.',
+        ...(site.goatcounter
+          ? ['Audience statistics are measured with GoatCounter, without cookies and without collecting personal data.']
+          : []),
+        `For any question, write to ${email}.`,
+      ],
+    },
+  ],
+  fr: [
+    {
+      title: 'Éditeur',
+      body: [
+        `Ce site est un portfolio personnel et non commercial, édité par ${site.name}, également directeur de la publication.`,
+        `Contact : ${email}`,
+      ],
+    },
+    {
+      title: 'Hébergement',
+      body: [
+        'GitHub, Inc. (GitHub Pages), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis. <a href="https://github.com">github.com</a>',
+      ],
+    },
+    {
+      title: 'Propriété intellectuelle',
+      body: [
+        `Le code source de ce site est disponible sur <a href="${repo}">GitHub</a> sous licence MIT.`,
+        `Sauf mention contraire, les textes, photos et visuels appartiennent à ${site.name}. Merci de me demander avant de les réutiliser.`,
+      ],
+    },
+    {
+      title: 'Confidentialité',
+      body: [
+        'Ce site n’utilise aucun cookie et ne collecte aucune donnée personnelle.',
+        'Vos choix de thème et de langue sont enregistrés dans votre propre navigateur (stockage local) pour être conservés d’une visite à l’autre. Ils ne sont jamais transmis.',
+        'Les vidéos YouTube ne sont chargées que lorsque vous cliquez dessus, via le lecteur youtube-nocookie.com. Google reçoit alors votre adresse IP et applique sa propre politique de confidentialité.',
+        'Comme pour tout site web, l’hébergeur peut conserver des journaux techniques (adresses IP notamment) à des fins de sécurité.',
+        ...(site.goatcounter
+          ? ['La fréquentation est mesurée avec GoatCounter, sans cookie et sans collecte de données personnelles.']
+          : []),
+        `Pour toute question, écrivez à ${email}.`,
+      ],
+    },
+  ],
+};
+---
+
+<Layout lang={lang} path="/legal" title={t('legal.title')} description={t('legal.description')}>
+  <article class="container legal">
+    <a class="back" href={localePath(lang, '/')}><Icon name="arrow-left" /> {t('404.back')}</a>
+    <h1>{t('legal.title')}</h1>
+    {
+      sections[lang].map((s) => (
+        <section>
+          <h2>{s.title}</h2>
+          {s.body.map((p) => (
+            <p set:html={p} />
+          ))}
+        </section>
+      ))
+    }
+  </article>
+</Layout>
+
+<style>
+  .legal {
+    max-width: 820px;
+    padding-block: 32px 96px;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+  }
+  .back :global(svg) {
+    width: 16px;
+    height: 16px;
+  }
+  h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    letter-spacing: -0.03em;
+    margin-bottom: 40px;
+  }
+  h2 {
+    font-size: 1.25rem;
+    margin: 40px 0 12px;
+  }
+  p {
+    color: var(--text-muted);
+    margin: 0 0 12px;
+  }
+  p :global(a) {
+    color: var(--accent);
+  }
+</style>
