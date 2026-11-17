@@ -48,7 +48,7 @@ const jsonLd = {
         Vincent Berthet<span class="dot">.</span>
       </h1>
       <p class="role">
-        {t('hero.role')}, <span class="role-more">{t('hero.more')}&nbsp;<Octopus label="🐙" /></span>
+        {t('hero.role')} <span class="role-more">{t('hero.more')}&nbsp;<Octopus label="🐙" /></span>
       </p>
       <p class="pitch">{t('hero.pitch')}</p>
       {
@@ -199,28 +199,30 @@ const jsonLd = {
   </section>
 
   <!-- Beyond code -->
-  <section id="beyond" class="section container">
-    <h2 class="section-title">{t('beyond.title')}</h2>
-    <p class="section-lead">{t('beyond.lead')}</p>
-    <ul class="beyond">
-      {
-        beyond.map((b) => (
-          <li class="reveal">
-            <span class="beyond-icon">
-              <Icon name={b.icon} />
-            </span>
-            <h3>{b.title[lang]}</h3>
-            <p>{b.text[lang]}</p>
-            {b.link && (
-              <a href={b.link.href}>
-                {b.link.label[lang]} <Icon name="arrow-up-right" />
-              </a>
-            )}
-          </li>
-        ))
-      }
-    </ul>
-  </section>
+  {
+    site.showBeyond && (
+      <section id="beyond" class="section container">
+        <h2 class="section-title">{t('beyond.title')}</h2>
+        <p class="section-lead">{t('beyond.lead')}</p>
+        <ul class="beyond">
+          {beyond.map((b) => (
+            <li class="reveal">
+              <span class="beyond-icon">
+                <Icon name={b.icon} />
+              </span>
+              <h3>{b.title[lang]}</h3>
+              <p>{b.text[lang]}</p>
+              {b.link && (
+                <a href={b.link.href}>
+                  {b.link.label[lang]} <Icon name="arrow-up-right" />
+                </a>
+              )}
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
 
   <!-- Contact -->
   <section id="contact" class="section container contact">

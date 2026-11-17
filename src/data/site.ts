@@ -5,11 +5,13 @@ export const site = {
   name: 'Vincent Berthet',
   github: 'vincentBrth',
   repo: 'me',
-  email: 'vincent.berthet.pro@protonmail.com',
+  email: 'vincent.berthet@protonmail.com',
   /** Set `show` to false to hide the phone number from the site. */
   phone: { show: true, display: '+33 6 58 65 90 33', href: 'tel:+33658659033' },
   /** Shows the "Open to opportunities" badge in the hero. */
   available: false,
+  /** Shows the "Beyond code" section of the home page and its menu link. */
+  showBeyond: false,
   /**
    * The resume is the `cv.html` file at the repository root. It is served at /cv/ and
    * exported to PDF at build time (scripts/postbuild.mjs).
