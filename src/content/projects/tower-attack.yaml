@@ -3,9 +3,18 @@ title: { en: Tower Attack, fr: Tower Attack }
 summary:
   en: "A mobile tower game built for an advanced mobile programming course, using queues, stacks and pathfinding."
   fr: "Un jeu de tours pour mobile réalisé en cours de programmation mobile avancée, avec files, piles et recherche de chemin."
+description:
+  en: |
+    A tower defense turned upside down: here, you attack the towers instead of defending them.
+
+    Built with Phaser for phones, the game has you gather wood, metal and food as they appear on the map, then spend them to send units along curved paths towards enemy towers, each with its own damage, range and rate of fire. Levels (terrain, towers, paths and resources) are described in JSON files, so new ones can be added without touching the code.
+  fr: |
+    Un tower defense à l'envers : ici, on attaque les tours au lieu de les défendre.
+
+    Développé avec Phaser pour téléphone, le jeu fait récolter du bois, du métal et de la nourriture qui apparaissent sur la carte, puis les dépenser pour envoyer des unités le long de chemins courbes vers les tours ennemies, chacune avec ses dégâts, sa portée et sa cadence de tir. Les niveaux (terrain, tours, chemins et ressources) sont décrits dans des fichiers JSON, ce qui permet d'en ajouter sans toucher au code.
 cover: ../../assets/projects/tower-attack.webp
 categories: [games, web]
-stack: [JavaScript]
+stack: [JavaScript, Phaser]
 year: '2017'
 mobileOnly: true
 links:

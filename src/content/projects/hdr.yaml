@@ -3,6 +3,15 @@ title: { en: HDR imaging, fr: Imagerie HDR }
 summary:
   en: "Experimenting with High Dynamic Range (HDR) imaging features using OpenCV."
   fr: "Expérimentations autour de l'imagerie à grande gamme dynamique (HDR) avec OpenCV."
+description:
+  en: |
+    Lab work at ESIR with Benoit Quero, on capturing and displaying scenes whose range of light goes beyond what a camera or a screen can render.
+
+    From photos of the same scene taken at several exposure times, we recover the camera response function and merge them into an HDR image (Debevec and Robertson methods), or fuse them directly into a well-exposed picture (Mertens). We then compared tone mapping operators to show the result on a standard screen: Drago, Durand, Mantiuk and Reinhard, alongside simple gamma, logarithmic and exponential operators written by hand.
+  fr: |
+    TP à l'ESIR avec Benoit Quero, sur la capture et l'affichage de scènes dont l'écart de lumière dépasse ce qu'un appareil photo ou un écran peut restituer.
+
+    À partir de photos d'une même scène prises avec plusieurs temps d'exposition, on retrouve la courbe de réponse de l'appareil et on les fusionne en une image HDR (méthodes de Debevec et de Robertson), ou directement en une image bien exposée (Mertens). On a ensuite comparé des opérateurs de tone mapping pour afficher le résultat sur un écran classique : Drago, Durand, Mantiuk et Reinhard, ainsi que des opérateurs gamma, logarithmique et exponentiel écrits à la main.
 cover: ../../assets/projects/hdr.webp
 categories: [vision]
 stack: [Python, OpenCV]

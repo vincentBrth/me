@@ -1,11 +1,23 @@
 order: 22
 title: { en: Auld, fr: Auld }
 summary:
-  en: "Game design and team management of a real-time strategy game in Unreal Engine 4."
-  fr: "Game design et gestion d'équipe d'un jeu de stratégie en temps réel sous Unreal Engine 4."
+  en: "Real-time strategy game in Unreal Engine 4, made as a team at UWS: I was the level designer, then built its interface."
+  fr: "Jeu de stratégie en temps réel sous Unreal Engine 4, réalisé en équipe à l'UWS : j'y étais level designer, puis j'ai conçu son interface."
+description:
+  en: |
+    Team project of the Computer Games Development degree at the University of the West of Scotland. Inspired by *Stellaris* and the *Missile War* map of *Warcraft III*, Auld pits two nations on neighbouring planets against each other: gather resources, strengthen your shield and fire missiles to bring the other one down.
+
+    In a team of four, I first handled level design, the project blog and the search for assets, then designed and built the game interface. When two members left halfway through, the two of us who remained carried on in pair programming, up to a prototype with the core mechanics: planets, shields, missiles, resources, technology tree and multiplayer. The design document can be downloaded from this page.
+  fr: |
+    Projet d'équipe du BSc Computer Games Development à l'University of the West of Scotland. Inspiré de *Stellaris* et de la carte *Missile War* de *Warcraft III*, Auld oppose deux nations installées sur des planètes voisines : récolter des ressources, renforcer son bouclier et lancer des missiles pour faire tomber l'adversaire.
+
+    Dans une équipe de quatre, je me suis d'abord occupé du level design, du blog du projet et de la recherche d'assets, puis j'ai conçu et réalisé l'interface du jeu. Quand deux membres sont partis en cours de route, nous avons continué à deux en pair programming, jusqu'à un prototype avec les mécaniques principales : planètes, boucliers, missiles, ressources, arbre technologique et multijoueur. Le document de conception (en anglais) est téléchargeable sur cette page.
 cover: ../../assets/projects/auld.webp
 categories: [games, 3d, initiatives]
-stack: [Unreal Engine 4]
+stack: [Unreal Engine 4, Blueprints]
+year: '2017'
 links:
+  download: { url: 'https://github.com/vincentBrth/Workspace/raw/master/Public/Project/Game_Development_Document.pdf', name: Game_Development_Document.pdf, lang: en }
   demo: http://projectauldue4.blogspot.com/
 archived: true
+video: DXS8MZFRZzk

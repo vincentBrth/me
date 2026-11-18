@@ -3,6 +3,15 @@ title: { en: Pac-Man in XNA, fr: Pac-Man en XNA }
 summary:
   en: "A Pac-Man clone written in C# with Microsoft's XNA framework."
   fr: "Un clone de Pac-Man écrit en C# avec le framework XNA de Microsoft."
+description:
+  en: |
+    A Pac-Man remake in C# with Microsoft's XNA framework, presented in slides (in French) that can be downloaded from this page.
+
+    The maze is a grid in which every entity follows its own rules: only Pac-Man can take the teleport tunnels, and ghosts cannot go back into their pen once out. As in the original, each ghost has its own behaviour: Clyde wanders at random, Blinky hunts Pac-Man, Pinky tries to anticipate his moves and Inky alternates between chasing and fleeing, and they all run away once a power pellet is eaten. To track Pac-Man, each ghost splits the map into zones around itself and heads towards the one where he is.
+  fr: |
+    Un remake de Pac-Man en C# avec le framework XNA de Microsoft, présenté dans des diapositives téléchargeables sur cette page.
+
+    Le labyrinthe est une grille dans laquelle chaque entité suit ses propres règles : seul Pac-Man peut emprunter les tunnels de téléportation, et les fantômes ne peuvent plus revenir dans leur enclos une fois sortis. Comme dans l'original, chaque fantôme a son comportement : Clyde erre au hasard, Blinky traque Pac-Man, Pinky essaie d'anticiper ses déplacements et Inky alterne entre poursuite et fuite, et tous s'enfuient quand une super pilule est avalée. Pour suivre Pac-Man, chaque fantôme découpe la carte en zones autour de lui et se dirige vers celle où il se trouve.
 cover: ../../assets/projects/pacman.webp
 categories: [games]
 stack: [C#, XNA]

@@ -3,8 +3,19 @@ title: { en: Augmented reality, fr: Réalité augmentée }
 summary:
   en: "Learning the basics of camera pose estimation for augmented reality, processing frames with OpenCV."
   fr: "Apprentissage des bases de l'estimation de pose de caméra pour la réalité augmentée, avec traitement des images par OpenCV."
+description:
+  en: |
+    Learning project on the basics of camera pose estimation, the building block of augmented reality.
+
+    The camera is first calibrated with a chessboard. On each frame, keypoints are detected and matched against a reference marker (ORB, SIFT or AKAZE, with a choice of matcher), a homography locates the marker, and `solvePnP` gives the camera pose, used to project a 3D model (OBJ) onto the image. It works with ArUco, chessboard or natural image markers.
+  fr: |
+    Projet d'apprentissage des bases de l'estimation de pose de caméra, la brique de base de la réalité augmentée.
+
+    La caméra est d'abord calibrée avec un damier. Sur chaque image, des points d'intérêt sont détectés et appariés avec un marqueur de référence (ORB, SIFT ou AKAZE, avec le choix de l'apparieur), une homographie localise le marqueur, puis `solvePnP` donne la pose de la caméra, qui sert à projeter un modèle 3D (OBJ) sur l'image. Fonctionne avec des marqueurs ArUco, un damier ou une image naturelle.
 cover: ../../assets/projects/ar.webp
 categories: [vision, 3d]
 stack: [Python, OpenCV]
+year: '2020'
+video: HUaX9xxEagU
 links:
   source: https://github.com/vincentBrth/AR

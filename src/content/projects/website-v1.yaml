@@ -3,6 +3,11 @@ title: { en: Portfolio v1, fr: Portfolio v1 }
 summary:
   en: "The first version of this portfolio (1.6), kept for the record."
   fr: "La première version de ce portfolio (1.6), gardée pour la mémoire."
+description:
+  en: |
+    My very first portfolio (version 1.6), written with Bootstrap, jQuery, PHP and HTML5/CSS3. Kept online as it was, for the record.
+  fr: |
+    Mon tout premier portfolio (version 1.6), écrit avec Bootstrap, jQuery, PHP et HTML5/CSS3. Gardé en ligne tel quel, pour la mémoire.
 cover: ../../assets/projects/website-v1.webp
 categories: [web]
 stack: [JavaScript, HTML, CSS, PHP, jQuery]

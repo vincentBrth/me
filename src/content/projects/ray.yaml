@@ -6,16 +6,20 @@ summary:
   fr: "Un moteur de lancer de rayons en C++ avec structures d'accélération, étendu à l'illumination globale et au path tracing."
 description:
   en: |
-    The first part of the project implemented the core features of a ray tracing engine and the acceleration structures that make it fast.
+    A rendering engine written in C++ during my engineering degree, in two parts.
 
-    The second part added global illumination through path tracing.
+    The first part implements the core of a ray tracer: a camera, geometric primitives (spheres, cubes, cylinders, cones, disks, triangles), meshes loaded from 3DS files, materials, textures, reflection and refraction, and a bounding volume hierarchy (BVH) that keeps rendering fast on large scenes.
+
+    The second part adds global illumination with path tracing: area lights (disk, rectangle, sphere), light sampling, and quasi-random Sobol sequences to reduce noise.
   fr: |
-    La première partie du projet a consisté à implémenter les fonctionnalités d'un moteur de lancer de rayons et les structures d'accélération associées.
+    Un moteur de rendu écrit en C++ pendant mon cycle ingénieur, en deux parties.
 
-    La seconde partie a ajouté l'illumination globale par path tracing.
+    La première partie implémente le cœur d'un lanceur de rayons : une caméra, des primitives géométriques (sphères, cubes, cylindres, cônes, disques, triangles), des maillages chargés depuis des fichiers 3DS, des matériaux, des textures, la réflexion et la réfraction, et une hiérarchie de volumes englobants (BVH) qui garde le rendu rapide sur de grandes scènes.
+
+    La seconde partie ajoute l'illumination globale par path tracing : sources de lumière surfaciques (disque, rectangle, sphère), échantillonnage des lumières et suites quasi aléatoires de Sobol pour réduire le bruit.
 cover: ../../assets/projects/ray.webp
 categories: [3d]
-stack: [C++, Ray tracing, Path tracing]
+stack: [C++, Ray tracing, Path tracing, BVH]
 year: '2019'
 links:
   source: https://github.com/vincentBrth/Ray

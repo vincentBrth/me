@@ -6,16 +6,16 @@ summary:
   fr: "Génère des dessins hachurés à partir d'images couleur, guidés par la géométrie tensorielle propre à l'image."
 description:
   en: |
-    Implementation of *“Tensor-directed simulation of strokes for image stylization with hatching and contours”* by David Tschumperlé (2011).
+    Implementation, with Benoit Quero at ESIR, of *“Tensor-directed simulation of strokes for image stylization with hatching and contours”* by David Tschumperlé (2011).
 
-    Strokes are simulated along the directions given by a structure tensor field computed from the image, producing hatching and contours that follow its geometry.
+    We first tried a naive approach, blending a grayscale version of the image with blur. The tensor approach then computes a structure tensor field from the image, and simulates pencil strokes that follow its directions, producing hatching and contours that respect the geometry of the picture. Blur, number and length of strokes and tensor settings can be tuned, and a script generates series of sketches to compare them.
   fr: |
-    Implémentation de l'article *« Tensor-directed simulation of strokes for image stylization with hatching and contours »* de David Tschumperlé (2011).
+    Implémentation, avec Benoit Quero à l'ESIR, de l'article *« Tensor-directed simulation of strokes for image stylization with hatching and contours »* de David Tschumperlé (2011).
 
-    Les traits sont simulés le long des directions d'un champ de tenseurs de structure calculé sur l'image, ce qui produit des hachures et des contours qui en suivent la géométrie.
+    Nous avons d'abord essayé une approche naïve, qui mélange une version en niveaux de gris de l'image avec du flou. L'approche par tenseurs calcule ensuite un champ de tenseurs de structure sur l'image, puis simule des traits de crayon qui suivent ses directions, ce qui produit des hachures et des contours qui respectent la géométrie de l'image. Le flou, le nombre et la longueur des traits et les paramètres des tenseurs sont réglables, et un script génère des séries de croquis pour les comparer.
 cover: ../../assets/projects/tensors.webp
 categories: [vision]
-stack: [Python, OpenCV]
+stack: [Python, OpenCV, SciPy]
 year: '2019'
 links:
   source: https://github.com/vincentBrth/Tensor_directed_stylization

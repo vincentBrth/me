@@ -8,11 +8,15 @@ description:
   en: |
     Built during the Orange Game Jam 2020 at ESIR. The challenge: make a video game in only 35 hours on the theme **Safe in the dark**.
 
-    More details are available in the GitHub README, and a [gameplay video](https://www.youtube.com/watch?v=EwTJOxKciyE) is online.
+    Our answer is a 2D platformer about two twins: Luna cannot bear sunlight, while Helios is terrified of the dark. The player switches between them to get through each level, using light zones, ladders and portals, in search of two relics that would free them. I was one of the two developers in a team of five, alongside a game and sound designer, a graphic designer and a storyteller.
+
+    A [gameplay video](https://www.youtube.com/watch?v=EwTJOxKciyE) is online.
   fr: |
     Réalisé pendant la Game Jam Orange 2020 de l'ESIR. Le défi : créer un jeu vidéo en seulement 35 heures sur le thème **Safe in the dark**.
 
-    Plus de détails dans le README du dépôt GitHub, et une [vidéo de gameplay](https://www.youtube.com/watch?v=EwTJOxKciyE) est en ligne.
+    Notre réponse est un jeu de plateforme 2D autour de deux jumeaux : Luna ne supporte pas la lumière du soleil, et Helios a une peur panique du noir. Le joueur passe de l'un à l'autre pour franchir chaque niveau, entre zones de lumière, échelles et portails, à la recherche de deux reliques qui les libéreraient. J'étais l'un des deux développeurs d'une équipe de cinq, avec un game et sound designer, un graphiste et un conteur.
+
+    Une [vidéo de gameplay](https://www.youtube.com/watch?v=EwTJOxKciyE) est en ligne.
 cover: ../../assets/projects/luna-and-helios.webp
 categories: [games]
 stack: [Unity, C#]

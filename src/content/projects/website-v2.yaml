@@ -3,6 +3,11 @@ title: { en: Portfolio v2, fr: Portfolio v2 }
 summary:
   en: "The previous version of this portfolio, saved just before its redesign."
   fr: "La version précédente de ce portfolio, sauvegardée juste avant sa refonte."
+description:
+  en: |
+    The previous version of this site: a static portfolio in jQuery and Bootstrap, hosted on GitHub Pages. Its old links (`get.html?id=…`, `card.html`) still work: the current site redirects them to the matching pages.
+  fr: |
+    La version précédente de ce site : un portfolio statique en jQuery et Bootstrap, hébergé sur GitHub Pages. Ses anciens liens (`get.html?id=…`, `card.html`) fonctionnent toujours : le site actuel les redirige vers les pages correspondantes.
 cover: ../../assets/projects/website-v2.webp
 categories: [web]
 stack: [JavaScript, jQuery, Bootstrap, HTML, CSS]
