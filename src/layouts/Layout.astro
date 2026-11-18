@@ -164,6 +164,42 @@ const nav = [
 
     <ConsoleEgg lang={lang} />
 
+    <script is:inline>
+      // Restore the reading position saved by the language switch. Inline and synchronous, so it
+      // runs before the first paint (and before the view transition snapshot): no jump visible.
+      (() => {
+        let saved;
+        try {
+          saved = JSON.parse(sessionStorage.getItem('lang-scroll') || 'null');
+          sessionStorage.removeItem('lang-scroll');
+        } catch {}
+        const norm = (p) => p.replace(/\/$/, '');
+        if (!saved || norm(saved.path) !== norm(location.pathname) || location.hash) return;
+        if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+        const restore = () => {
+          const all = document.querySelectorAll('main *');
+          const el = all.length === saved.count ? all[saved.index] : undefined;
+          const header = document.querySelector('.site-header');
+          const top = header ? header.getBoundingClientRect().height : 0;
+          let y;
+          if (el) {
+            const r = el.getBoundingClientRect();
+            y = scrollY + r.top + saved.ratio * r.height - top;
+          } else {
+            y = saved.page * (document.documentElement.scrollHeight - innerHeight);
+          }
+          scrollTo({ top: y, behavior: 'instant' });
+        };
+        restore();
+        // Late images or fonts may shift the layout: correct once everything is loaded,
+        // unless the visitor has started scrolling in the meantime.
+        let moved = false;
+        const stop = () => (moved = true);
+        ['wheel', 'touchstart', 'keydown'].forEach((t) => addEventListener(t, stop, { once: true, passive: true }));
+        addEventListener('load', () => moved || restore(), { once: true });
+      })();
+    </script>
+
     <script>
       const root = document.documentElement;
       document.getElementById('theme-toggle')?.addEventListener('click', () => {
@@ -176,11 +212,50 @@ const nav = [
         } catch {}
       });
 
-      // Remember the language explicitly chosen, so it is not overridden by the browser language.
+      // Remember the language explicitly chosen, so it is not overridden by the browser language,
+      // and keep the reading position: both languages share the same markup, so the element at the
+      // top of the viewport is found again by its index, then the offset inside it is restored.
+      const SCROLL_KEY = 'lang-scroll';
+      const anchors = () => Array.from(document.querySelectorAll<HTMLElement>('main *'));
+      const headerH = () => document.querySelector('.site-header')?.getBoundingClientRect().height ?? 0;
+
       document.querySelector<HTMLAnchorElement>('a.lang')?.addEventListener('click', (e) => {
+        const link = e.currentTarget as HTMLAnchorElement;
         try {
-          localStorage.setItem('lang', (e.currentTarget as HTMLAnchorElement).hreflang);
+          localStorage.setItem('lang', link.hreflang);
         } catch {}
+        if (scrollY < 1) return;
+        const top = headerH();
+        const all = anchors();
+        // Deepest element crossing the line just under the header.
+        let index = -1;
+        all.forEach((el, i) => {
+          const r = el.getBoundingClientRect();
+          if (r.height > 0 && r.top <= top && r.bottom > top) index = i;
+        });
+        const el = all[index];
+        const r = el?.getBoundingClientRect();
+        try {
+          sessionStorage.setItem(
+            SCROLL_KEY,
+            JSON.stringify({
+              path: new URL(link.href).pathname,
+              count: all.length,
+              index,
+              ratio: r ? (top - r.top) / r.height : 0,
+              page: scrollY / (document.documentElement.scrollHeight - innerHeight || 1),
+            }),
+          );
+        } catch {}
+      });
+
+      // Cross-fade only when switching language, not on the other links of the site.
+      addEventListener('pageswap', (e: Event) => {
+        const ev = e as Event & { viewTransition?: { skipTransition(): void }; activation?: { entry: { url: string } } };
+        const lang = document.querySelector<HTMLAnchorElement>('a.lang');
+        if (!ev.viewTransition) return;
+        const to = ev.activation?.entry.url;
+        if (!lang || !to || new URL(to).pathname !== new URL(lang.href).pathname) ev.viewTransition.skipTransition();
       });
 
       // The name in the header scrolls back to the top when already on the home page.

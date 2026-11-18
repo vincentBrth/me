@@ -6,22 +6,18 @@ summary:
   fr: "« Votre regard sur l'océan. » Mon projet entrepreneurial."
 description:
   en: |
-    Ekko is my own company and product: a community app for divers and ocean lovers, which I design and develop alone, from the first line of code to its commercial launch.
+    Ekko is my flagship project of the year, in which I try my hand at entrepreneurship by building a community app for ocean lovers, which I design and develop alone while surrounding myself with plenty of people to advise me.
 
-    Members record their observations, identify species together and build a shared picture of marine life. Among the features: a species dex that works offline, community identification, dive buddies and certificates, and hidden positions for sensitive species.
+    On the app, members share their experiences, identify species together and build a shared picture of marine life. Among the features: a species dex that works offline, community identification, sharing your pictures, meetups and much more to come.
 
-    Under the hood: a Rust monorepo (Axum REST API, Apalis background jobs, PostgreSQL with PostGIS, Redis, S3 storage), an Expo / React Native app for Android, iOS and the web, and a Next.js website, all deployed with Docker. Architecture choices are recorded in decision records (ADRs), and an MCP server gives AI agents read-only access for development and moderation.
-
-    It started as **Pokedive**, a Pokédex for scuba divers.
+    Under the hood: a Rust monorepo (Axum REST API, Apalis background jobs, PostgreSQL with PostGIS, Redis, S3 storage), an Expo / React Native app for Android, iOS and the web, and a Next.js website, all deployed with Docker. With the whole ops side behind it (Grafana, Loki, cAdvisor, etc.), and an MCP server that gives AI agents read-only access for development and moderation.
   fr: |
-    Ekko, c'est ma propre entreprise et mon produit : une application communautaire pour les plongeurs et les amoureux de l'océan, que je conçois et développe seul, de la première ligne de code jusqu'à sa commercialisation.
+    Ekko, c'est mon projet phare de l'année où je m'essaie à l'entrepreneuriat en construisant une application communautaire pour les amoureux de l'océan, que je conçois et développe seul en m'entourant d'un tas de personnes pour me conseiller.
 
-    Les membres partagent leurs observations, identifient les espèces ensemble et construisent une image commune de la vie marine. Parmi les fonctionnalités : un dex des espèces consultable hors ligne, l'identification communautaire, les binômes de plongée et les certificats, et le masquage de la position des espèces sensibles.
+    Sur l'application, les membres partagent leurs expériences, identifient les espèces ensemble et construisent une image commune de la vie marine. Parmi les fonctionnalités : un dex des espèces consultable hors ligne, l'identification communautaire, le partage de vos images, des rencontres et bien d'autres à venir.
 
-    Côté technique : un monorepo Rust (API REST Axum, tâches de fond Apalis, PostgreSQL avec PostGIS, Redis, stockage S3), une application Expo / React Native pour Android, iOS et le web, et un site Next.js, le tout déployé avec Docker. Les choix d'architecture sont consignés dans des fiches de décision (ADR), et un serveur MCP donne aux agents IA un accès en lecture seule pour le développement et la modération.
-
-    Le projet est né de **Pokedive**, un Pokédex pour les plongeurs.
-categories: [web, initiatives]
+    Côté technique : un monorepo Rust (API REST Axum, tâches de fond Apalis, PostgreSQL avec PostGIS, Redis, stockage S3), une application Expo / React Native pour Android, iOS et le web, et un site Next.js, le tout déployé avec Docker. Avec tout le côté ops derrière (Grafana, Loki, cAdvisor, etc.), et un serveur MCP qui donne aux agents IA un accès en lecture seule pour le développement et la modération.
+categories: [web, pro]
 stack: [Rust, Axum, PostgreSQL, PostGIS, Expo, React Native, Next.js, Docker]
 year: '2026'
 wip: true

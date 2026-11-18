@@ -12,7 +12,8 @@ description:
 
     - **porting SolAR to Android** through its Unity plugin: cross-compiling the framework and its third-party libraries (Boost, OpenCV, Ceres, g2o, PCL…) with Clang and the Android NDK, Swig bindings, then optimizing the pipelines (multithreading, settings). The first natural image, fiducial marker and SLAM pipelines ran on Android in January, and the port became a flagship feature of SolAR 0.8.0;
     - **support for Android** in the framework's **continuous integration**, and its documentation;
-    - **modules and a sample** to use depth cameras such as the [Intel RealSense](https://www.realsenseai.com/).
+    - **modules and a sample** to use depth cameras such as the [Intel RealSense](https://www.realsenseai.com/);
+    - **augmented reality demos on Android** with the fiducial marker and SLAM pipelines, presented at trade shows for healthcare and industry professionals.
 
     The archive contains my report and the slides of my final presentation (in French).
   fr: |
@@ -22,7 +23,8 @@ description:
 
     - le **portage de SolAR sur Android** via son plugin Unity : compilation croisée du framework et de ses librairies tierces (Boost, OpenCV, Ceres, g2o, PCL…) avec Clang et le NDK Android, bindings Swig, puis optimisation des pipelines (multithreading, paramétrage). Les premiers pipelines image naturelle, marqueur fiduciel et SLAM ont tourné sur Android en janvier, et le portage est devenu une fonctionnalité phare de SolAR 0.8.0 ;
     - le **support d'Android** dans l'**intégration continue** du framework, et sa documentation ;
-    - des **modules et un sample** pour utiliser des caméras de profondeur comme les [Intel RealSense](https://www.realsenseai.com/).
+    - des **modules et un sample** pour utiliser des caméras de profondeur comme les [Intel RealSense](https://www.realsenseai.com/) ;
+    - des **démonstrations de réalité augmentée sur Android** avec les pipelines marqueur fiduciel et SLAM, présentées sur des salons destinés aux professionnels de la santé et de l'industrie.
 
     L'archive contient mon rapport et les slides de ma soutenance.
 cover: ../../assets/projects/bcom.webp

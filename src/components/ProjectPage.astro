@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import Icon from './Icon.astro';
 import { getProjects, isOpenSource, md, plain, type Project } from '../lib/content';
@@ -21,6 +21,11 @@ const index = all.findIndex((p) => p.id === project.id);
 const prev = all[(index - 1 + all.length) % all.length];
 const next = all[(index + 1) % all.length];
 const back = `${localePath(lang, '/')}#projects`;
+
+// Full-size links go through the image pipeline: the raw source URL breaks in dev under `base`, and is heavier.
+const gallery = await Promise.all(
+  data.gallery.map(async (g) => ({ ...g, full: (await getImage({ src: g.src, width: Math.min(g.src.width, 1600) })).src })),
+);
 ---
 
 <Layout lang={lang} path={`/projects/${project.id}`} title={title} description={plain(data.summary[lang])}>
@@ -99,8 +104,8 @@ const back = `${localePath(lang, '/')}#projects`;
         {
           data.gallery.length > 0 && (
             <section class="gallery" aria-label={t('project.gallery')}>
-              {data.gallery.map((g) => (
-                <a href={g.src.src}>
+              {gallery.map((g) => (
+                <a href={g.full}>
                   <Image src={g.src} alt={g.alt?.[lang] ?? ''} widths={[480, 960]} sizes="(min-width: 1000px) 360px, 100vw" />
                 </a>
               ))}

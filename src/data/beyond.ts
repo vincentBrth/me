@@ -15,16 +15,16 @@ export const beyond: Item[] = [
     icon: 'volleyball',
     title: { en: 'Sport', fr: 'Sport' },
     text: {
-      en: 'Volleyball, motorbike, sailing, canyoning, diving and HIIT. Diving is where Ekko started.',
-      fr: 'Volley, moto, voile, canyoning, plongée et HIIT. C’est sous l’eau qu’est né Ekko.',
+      en: 'Volleyball, motorbike, sailing, canyoning, diving and HIIT.',
+      fr: 'Volley, moto, voile, canyoning, plongée et HIIT.',
     },
   },
   {
     icon: 'dices',
     title: { en: 'Strategy', fr: 'Stratégie' },
     text: {
-      en: 'Board games and video games, as long as it takes some planning.',
-      fr: 'Jeux de société et jeux vidéo, tant qu’il faut réfléchir à plusieurs coups.',
+      en: 'Board games and video games.',
+      fr: 'Jeux de société et jeux vidéo.',
     },
   },
   {
@@ -39,8 +39,8 @@ export const beyond: Item[] = [
     icon: 'film',
     title: { en: 'Art & culture', fr: 'Art & culture' },
     text: {
-      en: 'Documentaries, history, sci-fi and animation, with punk and rock in the background.',
-      fr: 'Documentaires, histoire, SF et animation, avec du punk et du rock en fond sonore.',
+      en: 'Documentaries, history, sci-fi and animation, punk/rock music.',
+      fr: 'Documentaires, histoire, SF et animation, musique punk/rock.',
     },
   },
   {
@@ -55,8 +55,8 @@ export const beyond: Item[] = [
     icon: 'brain',
     title: { en: 'Psychology', fr: 'Psychologie' },
     text: {
-      en: 'Social and positive psychology: understanding how people think, act and work together.',
-      fr: 'Sociale et positive : comprendre comment on pense, agit et interagit ensemble.',
+      en: 'Social and positive psychology, understanding how people think, act and work together.',
+      fr: 'Sociale et positive, comprendre comment on pense, agit et interagit ensemble.',
     },
   },
 ];

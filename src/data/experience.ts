@@ -16,12 +16,12 @@ type Entry = {
 export const experience: Entry[] = [
   {
     period: '2026 — today',
-    role: { en: 'Founder', fr: 'Fondateur' },
+    role: { en: 'Entrepreneur', fr: 'Entrepreneur' },
     org: 'Ekko',
     url: 'https://ekkoapp.org/',
     text: {
-      en: '“Your view of the ocean.” A community platform that turns every experience into exploration, learning and sharing for ocean preservation.',
-      fr: '« Votre regard sur l’océan. » Plateforme communautaire qui transforme chaque expérience en exploration, apprentissage et partage pour la préservation des océans.',
+      en: '“Your view of the ocean.” A community app to share, identify and record marine discoveries, in service of learning and ocean preservation.',
+      fr: '« Votre regard sur l’océan. » Application communautaire pour partager, identifier et recenser les découvertes marines, au service de l’apprentissage et de la préservation des océans.',
     },
     project: 'ekko',
   },
@@ -77,18 +77,18 @@ export const experience: Entry[] = [
     org: 'University of the West of Scotland',
     url: 'https://www.uws.ac.uk/',
     text: {
-      en: 'One year in Glasgow: project management, game design, GUI design, level design and 3D development.',
-      fr: 'Un an à Glasgow : gestion de projet, game design, conception d’interfaces, level design et développement 3D.',
+      en: 'One year in Glasgow on ERASMUS: first and foremost a wonderful human experience, and new skills learned in project management, game design, GUI design, level design and 3D development.',
+      fr: 'Un an à Glasgow en ERASMUS : avant tout une fabuleuse expérience humaine, et de nouvelles compétences apprises en gestion de projet, game design, conception d’interfaces, level design et développement 3D.',
     },
   },
   {
     period: '2016',
-    role: { en: 'Software & electronic test intern', fr: 'Stagiaire développeur logiciel et test électronique' },
+    role: { en: 'Software developer & electronic testing intern', fr: 'Stagiaire développeur logiciel et test électronique' },
     org: 'Mu-Test',
     url: 'http://www.mu-test.com/',
     text: {
-      en: '4-month internship in automated test equipment (ATE): improvement and experimentation of validation procedures for electronic components, Java GUI development, unit testing.',
-      fr: 'Stage de 4 mois dans le test automatisé (ATE) : amélioration et expérimentation de procédures de validation de composants électroniques, développement d’interfaces Java, tests unitaires.',
+      en: '4-month internship in automated test equipment (ATE): improved and trialled validation procedures for electronic components. FPGA and embedded systems programming.',
+      fr: 'Stage de 4 mois dans le test automatisé (ATE) : amélioration et expérimentation de procédures de validation de composants électroniques. Programmation de FPGA et de systèmes embarqués.',
     },
     project: 'mutest',
   },

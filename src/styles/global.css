@@ -64,6 +64,21 @@
   box-sizing: border-box;
 }
 
+/* Soft cross-fade between the two languages of a page (the other links skip it, see Layout). */
+@view-transition {
+  navigation: auto;
+}
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.25s;
+  animation-timing-function: ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  @view-transition {
+    navigation: none;
+  }
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--header-h) + 16px);
