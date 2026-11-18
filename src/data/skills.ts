@@ -5,7 +5,7 @@ type Group = { title: Record<Lang, string>; items: string[] };
 export const skills: Group[] = [
   {
     title: { en: 'Languages & systems', fr: 'Langages & systèmes' },
-    items: ['C/C++17', 'Python', 'Rust', 'Go', 'Linux', 'Docker', 'Git'],
+    items: ['C/C++17', 'Python', 'Rust', 'Go', 'Linux', 'Docker', 'Kubernetes', 'Git'],
   },
   {
     title: { en: 'Imaging & computer vision', fr: 'Imagerie & vision' },
