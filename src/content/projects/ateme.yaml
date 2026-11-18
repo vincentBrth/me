@@ -10,8 +10,8 @@ description:
 
     My main work:
 
-    - **development** of the product, in a team, on software that has to stay reliable under load and at low latency;
-    - **architecture** of a high-availability microservices solution;
+    - **development** of the product, in a team, in C++, Go and Python, on software that has to stay reliable under load and at low latency;
+    - **architecture** of a high-availability microservices solution, deployed with Docker and Kubernetes;
     - **quality**: I was in charge of quality on the product;
     - **proxy manager**: organising the team's workflow and onboarding newcomers.
   fr: |
@@ -19,10 +19,11 @@ description:
 
     Mes principaux travaux :
 
-    - le **développement** du produit, en équipe, sur un logiciel qui doit rester fiable sous la charge et à faible latence ;
-    - l'**architecture** d'une solution microservices haute disponibilité ;
+    - le **développement** du produit, en équipe, en C++, Go et Python, sur un logiciel qui doit rester fiable sous la charge et à faible latence ;
+    - l'**architecture** d'une solution microservices haute disponibilité, déployée avec Docker et Kubernetes ;
     - la **qualité** : j'encadrais la qualité du produit ;
     - le rôle de **proxy-manager** : organisation du workflow de l'équipe et intégration des nouveaux arrivants.
+cover: ../../assets/projects/ateme.png
 categories: [pro]
-stack: [C/C++, Microservices, Cloud, OTT]
+stack: [C++, Go, Python, Kubernetes, Docker, Microservices, OTT]
 year: 2021 — 2026

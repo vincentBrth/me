@@ -1,4 +1,5 @@
 order: 10
+featured: true
 title: { en: A Story of Luna & Helios, fr: A Story of Luna & Helios }
 summary:
   en: "A game built in 35 hours during the Orange Game Jam 2020, on the theme “Safe in the dark”. Playable in the browser."
