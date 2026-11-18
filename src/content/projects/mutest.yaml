@@ -1,14 +1,20 @@
 order: 26
 title: { en: Internship at Mu-Test, fr: Stage chez Mu-Test }
 summary:
-  en: "4-month internship in automated test equipment (ATE) — Java GUI development, unit tests and bug fixing."
-  fr: "Stage de 4 mois dans le test automatisé (ATE) — développement d'interfaces Java, tests unitaires et correction de bugs."
+  en: "4-month internship in automated test equipment (ATE): validation procedures for electronic components, FPGA and embedded systems programming."
+  fr: "Stage de 4 mois dans le test automatisé (ATE) : procédures de validation de composants électroniques, programmation de FPGA et de systèmes embarqués."
 description:
-  en: "Internship report (French) of my 4 months at [Mu-Test](http://www.mu-test.com/), a company working on automated test equipment."
-  fr: "Rapport de mon stage de 4 mois chez [Mu-Test](http://www.mu-test.com/), entreprise du domaine de l'ATE (Automated Test Equipment)."
+  en: |
+    A 4-month internship as a software developer and electronic tester at [Mu-Test](http://www.mu-test.com/), in Saint-Just-Malmont, a company working on Automated Test Equipment (ATE).
+
+    I improved and trialled validation procedures for electronic components, and programmed FPGAs and embedded systems. The archive contains my internship report (in French).
+  fr: |
+    Un stage de 4 mois comme développeur logiciel et testeur électronique chez [Mu-Test](http://www.mu-test.com/), à Saint-Just-Malmont, entreprise du domaine de l'ATE (Automated Test Equipment).
+
+    J'ai amélioré et expérimenté des procédures de validation de composants électroniques, et programmé des FPGA et des systèmes embarqués. L'archive contient mon rapport de stage.
 cover: ../../assets/projects/mutest.webp
 categories: [pro]
-stack: [Java]
+stack: [FPGA, Embedded systems, Electronic testing]
 year: '2016'
 links:
   download: { url: 'https://github.com/vincentBrth/Workspace/raw/master/Public/Report/MuTest_2016.pdf', name: MuTest_2016.pdf, lang: fr }

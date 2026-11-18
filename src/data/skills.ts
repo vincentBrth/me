@@ -13,7 +13,7 @@ export const skills: Group[] = [
   },
   {
     title: { en: '3D, rendering & games', fr: '3D, rendu & jeux' },
-    items: ['OpenGL', 'Ray & path tracing', 'Unity / C#', 'Unreal Engine', 'WebGL'],
+    items: ['OpenGL', 'Ray & path tracing', 'Unity / C#', 'WebGL'],
   },
   {
     title: { en: 'Web & cloud', fr: 'Web & cloud' },

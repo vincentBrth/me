@@ -14,6 +14,11 @@ description:
     Notre point de départ : en province, le public choisit rarement sa programmation, et les artistes internationaux passent peu en Bretagne. Crowd Choice est une entreprise événementielle basée sur le financement participatif : des soirées à thème (styles musicaux, cultures étrangères) sont conçues à partir de sondages auprès de la communauté, dans les grandes villes de Bretagne, puis soumises à un crowdfunding. Nous avons construit l'étude de marché, le modèle économique (crowdfunding, sponsoring, subventions publiques) et un prévisionnel sur trois ans. L'archive contient la présentation et le business plan.
 cover: ../../assets/projects/crowd-choice.webp
 categories: [initiatives]
+gallery:
+  - src: ../../assets/projects/crowd-choice-mockup.png
+    alt:
+      en: Mockup of the Crowd Choice homepage, with the campaigns being voted on and funded.
+      fr: Maquette de la page d'accueil de Crowd Choice, avec les campagnes en cours de vote et de financement.
 stack: [Entrepreneurship, Market study, Business plan]
 year: '2020'
 links:
