@@ -1,6 +1,8 @@
 /**
  * Runs after `astro build`. Opens the built site in headless Chromium to produce:
- * - dist/cv/CV_BERTHET_Vincent.pdf from /cv/ (the hand-written cv.html);
+ * - dist/cv/CV_BERTHET_Vincent.pdf from /cv/ (the hand-written cv.html) and
+ *   dist/cv/CV_BERTHET_Vincent_EN.pdf from /cv/en/ (cv.en.html);
+ * - dist/card/*.pdf, the contact card alone, from /card/ and /card/en/;
  * - dist/og/<lang>.png, the social sharing images, from /og/<lang>/.
  *
  * On a machine where Chromium cannot start, the step is skipped with a warning,
@@ -9,7 +11,8 @@
 import { join } from 'node:path';
 import { DIST, serve } from './serve.mjs';
 
-const CV_PDF = 'cv/CV_BERTHET_Vincent.pdf';
+const CV_PDFS = { '/cv/': 'cv/CV_BERTHET_Vincent.pdf', '/cv/en/': 'cv/CV_BERTHET_Vincent_EN.pdf' };
+const CARD_PDFS = { '/card/': 'card/Carte_BERTHET_Vincent.pdf', '/card/en/': 'card/Card_BERTHET_Vincent_EN.pdf' };
 const LANGS = ['en', 'fr'];
 
 async function launch() {
@@ -31,12 +34,30 @@ const browser = await launch();
 if (browser) {
   const { origin, close } = await serve();
   try {
-    // Resume → PDF (A4, as defined by the @page rule of cv.html).
-    const page = await browser.newPage();
-    await page.goto(`${origin}/cv/`, { waitUntil: 'networkidle' });
-    await page.emulateMedia({ media: 'print' });
-    await page.pdf({ path: join(DIST, CV_PDF), printBackground: true, preferCSSPageSize: true });
-    console.log(`[postbuild] ${CV_PDF}`);
+    // Resumes → PDF (A4, as defined by the @page rule of cv.html).
+    for (const [path, pdf] of Object.entries(CV_PDFS)) {
+      const page = await browser.newPage();
+      await page.goto(`${origin}${path}`, { waitUntil: 'networkidle' });
+      await page.emulateMedia({ media: 'print' });
+      await page.pdf({ path: join(DIST, pdf), printBackground: true, preferCSSPageSize: true });
+      console.log(`[postbuild] ${pdf}`);
+    }
+
+    // Contact cards → PDF, on a page cut to the size of the card.
+    for (const [path, pdf] of Object.entries(CARD_PDFS)) {
+      const page = await browser.newPage();
+      await page.goto(`${origin}${path}`, { waitUntil: 'networkidle' });
+      await page.emulateMedia({ media: 'print' });
+      const box = await page.locator('#card > table').boundingBox();
+      await page.pdf({
+        path: join(DIST, pdf),
+        printBackground: true,
+        width: `${Math.ceil(box.width)}px`,
+        height: `${Math.ceil(box.height) + 1}px`,
+        pageRanges: '1',
+      });
+      console.log(`[postbuild] ${pdf}`);
+    }
 
     // Sharing images.
     for (const lang of LANGS) {

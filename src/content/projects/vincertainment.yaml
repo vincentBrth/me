@@ -1,11 +1,20 @@
-order: 2
+order: 3
 title: { en: Vincertainment, fr: Vincertainment }
 summary:
   en: "Games, puzzles and a few fun concepts gathered in one web app."
   fr: "Jeux, casse-têtes et quelques concepts amusants réunis dans une application web."
+description:
+  en: |
+    A personal web app made for people close to me, mixing games, riddles and a few light-hearted ideas.
+
+    Content is unlocked step by step with keys and countdowns, and a carpool section lets you review trips. It is built with SvelteKit, TypeScript and Tailwind CSS, with Firebase for accounts (email or Google), the Realtime Database and hosting, deployed with GitHub Actions.
+  fr: |
+    Une application web personnelle faite pour mes proches, qui mêle jeux, énigmes et quelques idées légères.
+
+    Les contenus se débloquent au fur et à mesure avec des clés et des comptes à rebours, et une rubrique covoiturage permet de noter les trajets. Elle est développée avec SvelteKit, TypeScript et Tailwind CSS, avec Firebase pour les comptes (e-mail ou Google), la Realtime Database et l'hébergement, et déployée avec GitHub Actions.
 cover: ../../assets/projects/vincertainment.webp
 categories: [web, games]
-stack: [Svelte, Firebase]
+stack: [Svelte, TypeScript, Tailwind, Firebase]
 year: '2025'
 links:
   source: https://github.com/vincentBrth/vincertainment

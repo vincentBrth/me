@@ -1,3 +1,4 @@
+import type { ImageMetadata } from 'astro';
 import type { IconName } from '../components/Icon.astro';
 import type { Lang } from '../i18n/ui';
 
@@ -8,53 +9,120 @@ type Item = {
   link?: { href: string; label: Record<Lang, string> };
 };
 
-/** "Beyond code" section of the home page. Taken from the interests listed in the resume. */
+/** "What drives me" section of the home page. Taken from the interests listed in the resume. */
 export const beyond: Item[] = [
   {
-    icon: 'wrench',
-    title: { en: 'DIY & motorbike mechanics', fr: 'DIY & mécanique moto' },
+    icon: 'volleyball',
+    title: { en: 'Sport', fr: 'Sport' },
     text: {
-      en: 'Taking things apart to understand how they work, then (usually) putting them back together.',
-      fr: 'Démonter pour comprendre comment ça marche, puis (en général) tout remonter.',
-    },
-  },
-  {
-    icon: 'guitar',
-    title: { en: 'Electric guitar', fr: 'Guitare électrique' },
-    text: {
-      en: 'Another kind of signal processing.',
-      fr: 'Une autre forme de traitement du signal.',
-    },
-  },
-  {
-    icon: 'waves',
-    title: { en: 'Sailing, canyoning & diving', fr: 'Voile, canyoning & plongée' },
-    text: {
-      en: 'Anything with water, wind or a bit of altitude. Diving is where Ekko started.',
-      fr: 'Tout ce qui se pratique avec de l’eau, du vent ou un peu de dénivelé. C’est sous l’eau qu’est né Ekko.',
+      en: 'Volleyball, motorbike, sailing, canyoning, diving and HIIT. Diving is where Ekko started.',
+      fr: 'Volley, moto, voile, canyoning, plongée et HIIT. C’est sous l’eau qu’est né Ekko.',
     },
   },
   {
     icon: 'dices',
-    title: { en: 'Strategy games', fr: 'Jeux de stratégie' },
+    title: { en: 'Strategy', fr: 'Stratégie' },
     text: {
-      en: 'Board or screen, as long as it takes some planning.',
-      fr: 'Sur plateau ou sur écran, tant qu’il faut réfléchir à plusieurs coups.',
+      en: 'Board games and video games, as long as it takes some planning.',
+      fr: 'Jeux de société et jeux vidéo, tant qu’il faut réfléchir à plusieurs coups.',
     },
   },
   {
-    icon: 'camera',
-    title: { en: 'Photography', fr: 'Photographie' },
-    text: { en: 'A few shots along the way.', fr: 'Quelques images en chemin.' },
-    link: { href: 'https://www.instagram.com/vincent_berthet', label: { en: 'Instagram', fr: 'Instagram' } },
+    icon: 'wrench',
+    title: { en: 'DIY', fr: 'Bricolage' },
+    text: {
+      en: 'Various and miscellaneous.',
+      fr: 'Divers & variés.',
+    },
   },
   {
-    icon: 'clapperboard',
-    title: { en: 'Video', fr: 'Vidéo' },
+    icon: 'film',
+    title: { en: 'Art & culture', fr: 'Art & culture' },
     text: {
-      en: 'Editing and trailers, like the one for the ESIR Game Jam.',
-      fr: 'Montage et trailers, comme celui de la Game Jam de l’ESIR.',
+      en: 'Documentaries, history, sci-fi and animation, with punk and rock in the background.',
+      fr: 'Documentaires, histoire, SF et animation, avec du punk et du rock en fond sonore.',
     },
-    link: { href: 'https://www.youtube.com/channel/UC1zTh8-gfUpfaW8xvRnYHXw', label: { en: 'YouTube', fr: 'YouTube' } },
+  },
+  {
+    icon: 'chef-hat',
+    title: { en: 'Cooking', fr: 'Cuisine' },
+    text: {
+      en: 'Everything. No exceptions.',
+      fr: 'Tout. Sans exception.',
+    },
+  },
+  {
+    icon: 'brain',
+    title: { en: 'Psychology', fr: 'Psychologie' },
+    text: {
+      en: 'Social and positive psychology: understanding how people think, act and work together.',
+      fr: 'Sociale et positive : comprendre comment on pense, agit et interagit ensemble.',
+    },
+  },
+];
+
+import canyoning from '../assets/beyond/canyoning.webp';
+import bivouac from '../assets/beyond/bivouac.webp';
+import plongee from '../assets/beyond/plongee.webp';
+import chantier from '../assets/beyond/chantier.webp';
+import moto from '../assets/beyond/moto.webp';
+import roadTrip from '../assets/beyond/road-trip.webp';
+import plage from '../assets/beyond/plage.webp';
+import pause from '../assets/beyond/pause.webp';
+
+type Photo = {
+  src: ImageMetadata;
+  /** Shown over the photo; leave empty for none. */
+  caption: Record<Lang, string>;
+  alt: Record<Lang, string>;
+  /** CSS object-position, to keep the subject in the square crop. */
+  position?: string;
+};
+
+/** Photo strip under the "What drives me" cards. Sources in src/assets/beyond/ (resized, metadata stripped). */
+export const photos: Photo[] = [
+  {
+    src: canyoning,
+    caption: { en: '', fr: '' },
+    alt: { en: 'Abseiling down a cliff above a turquoise pool', fr: 'En rappel au-dessus d’un bassin turquoise' },
+    position: '50% 60%',
+  },
+  {
+    src: bivouac,
+    caption: { en: '', fr: '' },
+    alt: { en: 'A tent on a mountain pasture at sunset', fr: 'Une tente sur un alpage au coucher du soleil' },
+  },
+  {
+    src: plongee,
+    caption: { en: '', fr: '' },
+    alt: { en: 'Scuba diving above a reef', fr: 'En plongée au-dessus d’un récif' },
+  },
+  {
+    src: chantier,
+    caption: { en: '', fr: '' },
+    alt: { en: 'On a stonework site, mountains in the background', fr: 'Sur un chantier de maçonnerie, montagnes en arrière-plan' },
+    position: '50% 70%',
+  },
+  {
+    src: moto,
+    caption: { en: '', fr: '' },
+    alt: { en: 'Sitting on a motorbike facing the sea', fr: 'Assis sur une moto face à la mer' },
+  },
+  {
+    src: roadTrip,
+    caption: { en: '', fr: '' },
+    alt: { en: 'A car with a roof tent set up in a mountain valley', fr: 'Une voiture avec tente de toit dépliée dans une vallée' },
+  },
+  {
+    src: plage,
+    caption: { en: '', fr: '' },
+    alt: { en: 'Walking along a beach', fr: 'Marche le long d’une plage' },
+    position: '50% 65%',
+  },
+  {
+    src: pause,
+    caption: { en: '', fr: '' },
+    alt: { en: 'Selfie by the sea', fr: 'Selfie au bord de la mer' },
+    position: '30% 50%',
   },
 ];

@@ -1,4 +1,4 @@
-order: 8
+order: 9
 featured: true
 title: { en: Asymmetry mapping with ICP, fr: Cartographie d'asymétries par ICP }
 summary:
@@ -6,12 +6,16 @@ summary:
   fr: "Quantifie automatiquement les asymétries locales de structures bilatérales dans des nuages de points 3D, par Iterative Closest Point."
 description:
   en: |
-    Implementation of *“An algorithm to map asymmetries of bilateral objects in point clouds”* by Benoît Combès et al.
+    Implementation, with Benoit Quero at ESIR, of *“An algorithm to map asymmetries of bilateral objects in point clouds”* by Benoît Combès et al.
+
+    Many natural shapes, such as faces or brain structures, are almost symmetric. The algorithm looks for their best plane of symmetry in an ICP-like loop: the point cloud is mirrored across the current plane, each point is paired with its nearest neighbour in the mirrored cloud (k-d tree), and the plane is re-estimated from these pairs. The remaining distances give a map of local asymmetries, rendered in 3D with VTK. We tested it on face models, symmetric then deformed, and on brain ventricles.
   fr: |
-    Implémentation de l'article *« An algorithm to map asymmetries of bilateral objects in point clouds »* de Benoît Combès et al.
+    Implémentation, avec Benoit Quero à l'ESIR, de l'article *« An algorithm to map asymmetries of bilateral objects in point clouds »* de Benoît Combès et al.
+
+    Beaucoup de formes naturelles, comme les visages ou certaines structures du cerveau, sont presque symétriques. L'algorithme cherche leur meilleur plan de symétrie dans une boucle proche de l'ICP : le nuage de points est réfléchi par rapport au plan courant, chaque point est apparié à son plus proche voisin dans le nuage réfléchi (k-d tree), puis le plan est réestimé à partir de ces paires. Les distances restantes donnent une carte des asymétries locales, affichée en 3D avec VTK. Nous l'avons testé sur des modèles de visage, symétriques puis déformés, et sur des ventricules cérébraux.
 cover: ../../assets/projects/asymmetry-icp.webp
 categories: [vision, 3d]
-stack: [Python, OpenCV, ICP]
+stack: [Python, NumPy, SciPy, VTK]
 year: '2020'
 links:
   source: https://github.com/vincentBrth/AsymmetryICP

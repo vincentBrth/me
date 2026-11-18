@@ -1,11 +1,20 @@
-order: 6
+order: 7
 title: { en: GitHub API, fr: GitHub API }
 summary:
   en: "Experimenting with the GitHub REST API to generate a portfolio automatically from my public repositories."
   fr: "Prise en main de l'API REST de GitHub pour générer automatiquement un portfolio à partir de mes dépôts publics."
+description:
+  en: |
+    A first try at the GitHub REST API, as a step towards a portfolio that builds itself from my repositories.
+
+    Using Octokit, the page lists a user's public repositories with their licence and tags and shows them in a sortable table (DataTables). A helper can also commit files to a repository through the API.
+  fr: |
+    Une première prise en main de l'API REST de GitHub, comme étape vers un portfolio qui se construit tout seul à partir de mes dépôts.
+
+    Avec Octokit, la page liste les dépôts publics d'un utilisateur avec leur licence et leurs tags, et les affiche dans un tableau triable (DataTables). Une fonction permet aussi de publier des fichiers dans un dépôt via l'API.
 cover: ../../assets/projects/api.webp
 categories: [web]
-stack: [JavaScript, REST]
+stack: [JavaScript, REST, Octokit]
 year: '2020'
 links:
   source: https://github.com/vincentBrth/github-api

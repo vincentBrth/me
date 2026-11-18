@@ -1,16 +1,20 @@
-order: 14
+order: 15
 title: { en: Internship at Askelys, fr: Stage chez Askelys }
 summary:
   en: "4-month internship in a semantic web startup, building a Unity WebGL prototype."
   fr: "Stage de 4 mois dans une startup du web sémantique : développement d'un prototype WebGL sous Unity."
 description:
   en: |
-    Internship report (French) of my 4 months at [Askelys](http://askelys.com/), a startup working on the semantic web. I developed a Unity WebGL prototype using the company's JavaScript library.
+    Four-month internship in the 4th year of my engineering degree at [Askelys](http://askelys.com/), a young Rennes startup building a search engine that lets anyone explore company data stored as a semantic database (RDF, ontologies), without any knowledge of how it is structured.
+
+    As the engine moved towards commercial launch, I developed a new prototype interface for it, based on specifications written by an ergonomist: a graphical interface in Unity WebGL, talking to the company's JavaScript library, that guides users as they build their query step by step from the engine's suggestions. I then packaged it as a desktop app for Windows, Linux and macOS with Electron. My report (in French) can be downloaded from this page.
   fr: |
-    Rapport de mon stage de 4 mois chez [Askelys](http://askelys.com/), startup du web sémantique. J'y ai développé un prototype WebGL sous Unity utilisant la librairie JavaScript de l'entreprise.
+    Stage de quatre mois en 4e année d'école d'ingénieur chez [Askelys](http://askelys.com/), jeune startup rennaise qui développe un moteur de recherche permettant à n'importe qui d'explorer les données d'une entreprise stockées dans une base sémantique (RDF, ontologies), sans rien connaître de leur structure.
+
+    Alors que le moteur entrait en phase de commercialisation, j'ai développé un nouveau prototype d'interface, à partir d'un cahier des charges rédigé par un ergonome : une interface graphique en Unity WebGL, qui dialogue avec la librairie JavaScript de l'entreprise et guide l'utilisateur dans la construction pas à pas de sa requête à partir des suggestions du moteur. Je l'ai ensuite packagée en application de bureau pour Windows, Linux et macOS avec Electron. Mon rapport est téléchargeable sur cette page.
 cover: ../../assets/projects/askelys.webp
 categories: [pro, 3d, web]
-stack: [Unity, C#, JavaScript, WebGL]
+stack: [Unity, C#, JavaScript, WebGL, Electron]
 year: '2019'
 links:
   download: { url: 'https://github.com/vincentBrth/Workspace/raw/master/Public/Report/Rapport_BERTHET_Vincent_Askelys_2019.pdf', name: Rapport_BERTHET_Vincent_Askelys_2019.pdf, lang: fr }

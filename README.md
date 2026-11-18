@@ -4,7 +4,7 @@
 
 My portfolio: profile, experience, projects and resume, in English and French.
 
-**https://vincentbrth.github.io/me/** · [resume](https://vincentbrth.github.io/me/cv/) · [email signature](https://vincentbrth.github.io/me/card/)
+**https://vincentbrth.github.io/me/** · resume ([FR](https://vincentbrth.github.io/me/cv/), [EN](https://vincentbrth.github.io/me/cv/en/)) · [email signature](https://vincentbrth.github.io/me/card/)
 
 ![Demo of the portfolio](docs/demo.gif)
 
@@ -16,8 +16,8 @@ My portfolio: profile, experience, projects and resume, in English and French.
 - **Projects** in chronological order, with domain filters, a "Selection" filter and badges
   (Selection, Open source, Work in progress). Archived projects are listed below the grid.
 - **Project pages** with video, WebGL game, links, downloads and screenshots.
-- **Resume** written in HTML (`cv.html`), served at `/me/cv/` and exported to PDF at every build.
-- **Email signature** at `/me/card/`, with a button to copy it.
+- **Resume** written in HTML, in French (`cv.html`, served at `/me/cv/`) and English (`cv.en.html`, served at `/me/cv/en/`), exported to PDF at every build.
+- **Email signature** at `/me/card/` (FR) and `/me/card/en/` (EN): copy it (rich or HTML), download it as PDF or add it to contacts (.vcf).
 - Light and dark themes, mobile menu, smooth page transitions (in browsers that support them).
 - **Console easter egg** (`src/components/ConsoleEgg.astro`): open the browser console and type `vincent.help()`.
 - **Privacy**: no cookies, no trackers, fonts self-hosted, YouTube only loaded when a video is played.
@@ -52,11 +52,11 @@ delete the `.astro/` folder and start it again.
 | Name, email, phone, socials, "open to work" badge, statistics | `src/data/site.ts`          |
 | Experience timeline                                         | `src/data/experience.ts`      |
 | Toolbox (skills)                                            | `src/data/skills.ts`          |
-| "Beyond code" section                                       | `src/data/beyond.ts`          |
+| "What drives me" section                                    | `src/data/beyond.ts`          |
 | Interface texts, hero, about (EN / FR)                      | `src/i18n/ui.ts`              |
 | Projects                                                    | `src/content/projects/*.yaml` |
 | Project images                                              | `src/assets/projects/`        |
-| Resume                                                      | `cv.html`                     |
+| Resume (FR / EN)                                            | `cv.html` / `cv.en.html`      |
 
 ### Projects
 
@@ -91,8 +91,10 @@ Images are resized and converted to WebP at build time: drop the originals in `s
 
 `npm run build` ends with `scripts/postbuild.mjs`, which opens the built site in headless Chromium to:
 
-- export `cv.html` to `dist/cv/CV_BERTHET_Vincent.pdf`, downloadable from `/me/cv/`. Emojis are replaced by
+- export `cv.html` to `dist/cv/CV_BERTHET_Vincent.pdf` (downloadable from `/me/cv/`) and `cv.en.html` to
+  `dist/cv/CV_BERTHET_Vincent_EN.pdf` (from `/me/cv/en/`). Emojis are replaced by
   [Twemoji](https://github.com/jdecked/twemoji) drawings (CC-BY 4.0), so they print without an emoji font;
+- export the email signature card to `dist/card/Carte_BERTHET_Vincent.pdf` and `dist/card/Card_BERTHET_Vincent_EN.pdf`;
 - take the social sharing images (`dist/og/en.png`, `dist/og/fr.png`) from `src/pages/og/[lang].astro`.
 
 Without Chromium, this step is skipped with a warning (locally only: it is required in CI).
@@ -116,14 +118,14 @@ language redirect and legacy links.
 ## Project structure
 
 ```
-cv.html                 resume (HTML, A4)
+cv.html, cv.en.html     resume in French and English (HTML, A4)
 public/                 files served as is: icons, email signature images
 scripts/                postbuild (PDF, sharing images), smoke test, demo recording
 src/
   assets/               photo, logo, project images
   components/           home page, project page, cards, ASCII portrait, icons
   content/projects/     one YAML file per project
-  data/                 site settings, experience, skills, "beyond code", legacy links
+  data/                 site settings, experience, skills, "what drives me", legacy links
   i18n/ui.ts            interface texts in English and French
   layouts/Layout.astro  page shell: header, menu, footer, theme, language
   pages/                routes: home (en, fr), projects, cv, card, 404, sharing images

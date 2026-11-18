@@ -15,7 +15,7 @@ const legacy = {
 // English and translated in the browser for French visitors (see the script at the bottom).
 const keys = [
   'nav.skip', 'nav.about', 'nav.experience', 'nav.projects', 'nav.beyond', 'nav.contact', 'nav.menu', 'nav.theme',
-  '404.title', '404.text', '404.back', 'footer.legal', 'footer.source',
+  '404.title', '404.text', '404.back', 'footer.legal',
 ] as const;
 const fr = {
   base: withBase(''),
@@ -56,7 +56,8 @@ const fr = {
   </section>
   <script is:inline define:vars={{ fr }}>
     // French visitor: /fr/… URL, French chosen with the language switch, or French browser.
-    (() => {
+    // Runs once the whole page is parsed, so that the footer (after this script) is translated too.
+    const translate = () => {
       let saved = null;
       try {
         saved = localStorage.getItem('lang');
@@ -98,7 +99,9 @@ const fr = {
         lang.querySelector('[aria-hidden]').textContent = 'EN';
         lang.querySelector('.sr-only').textContent = fr.switchLabel;
       }
-    })();
+    };
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', translate);
+    else translate();
   </script>
 </Layout>
 

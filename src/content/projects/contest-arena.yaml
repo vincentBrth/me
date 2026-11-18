@@ -1,12 +1,21 @@
-order: 3
+order: 4
 featured: true
 title: { en: Contest Arena, fr: Contest Arena }
 summary:
   en: "A mobile-first web app to compete with your friends live during TV contests such as Miss France or Eurovision."
   fr: "Une application web pensée pour mobile pour s'affronter entre amis en direct pendant des concours télévisés comme Miss France ou l'Eurovision."
+description:
+  en: |
+    Made to play along with friends during TV contests such as Miss France or Eurovision: everyone votes from their phone and the rankings update in real time.
+
+    Built with Nuxt (Vue) and Tailwind CSS on top of the Firebase Realtime Database, it includes sign-in, rules for each contest, simple and advanced rankings, a bingo and an admin view to run the event. Python scripts prepare and upload the contestants' pictures, and every merge is deployed to Firebase Hosting with GitHub Actions. UX design and backlog were worked out beforehand in Notion.
+  fr: |
+    Pensée pour jouer entre amis pendant des concours télévisés comme Miss France ou l'Eurovision : chacun vote depuis son téléphone et les classements se mettent à jour en direct.
+
+    Réalisée avec Nuxt (Vue) et Tailwind CSS sur la Realtime Database de Firebase, elle propose la connexion, les règles de chaque concours, des classements simple et avancé, un bingo et une vue d'administration pour animer l'événement. Des scripts Python préparent et envoient les photos des candidats, et chaque fusion est déployée sur Firebase Hosting avec GitHub Actions. Le design UX et le backlog ont été préparés en amont dans Notion.
 cover: ../../assets/projects/contest-arena.webp
 categories: [web]
-stack: [Vue, Firebase]
+stack: [Vue, Nuxt, Tailwind, Firebase, Python]
 year: '2022'
 links:
   source: https://github.com/vincentBrth/ContestArena

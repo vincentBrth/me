@@ -3,7 +3,7 @@
  * Chromium and the main features are exercised. Exits with an error code on the first problem,
  * so CI blocks the deployment.
  */
-import { existsSync, readdirSync, statSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { chromium } from 'playwright';
 import { DIST, serve } from './serve.mjs';
@@ -66,13 +66,23 @@ try {
   }
 
   console.log('Resume, card and sharing images');
-  const cv = await open('/cv/');
-  check(cv.status === 200 && (await cv.page.$('.cv-toolbar')) !== null, '/cv/ loads with its toolbar');
-  const pdf = join(DIST, 'cv', 'CV_BERTHET_Vincent.pdf');
-  check(existsSync(pdf) && statSync(pdf).size > 10_000, 'the resume PDF was generated');
+  for (const [path, file] of [['/cv/', 'CV_BERTHET_Vincent.pdf'], ['/cv/en/', 'CV_BERTHET_Vincent_EN.pdf']]) {
+    const cv = await open(path);
+    check(cv.status === 200 && (await cv.page.$('.page-toolbar')) !== null, `${path} loads with its toolbar`);
+    const pdf = join(DIST, 'cv', file);
+    check(existsSync(pdf) && statSync(pdf).size > 10_000, `${file} was generated`);
+  }
   for (const lang of ['en', 'fr']) check(existsSync(join(DIST, 'og', `${lang}.png`)), `og/${lang}.png was generated`);
-  const card = await open('/card/');
-  check(card.status === 200, '/card/ loads');
+  for (const [path, file] of [['/card/', 'Carte_BERTHET_Vincent.pdf'], ['/card/en/', 'Card_BERTHET_Vincent_EN.pdf']]) {
+    const card = await open(path);
+    check(card.status === 200 && (await card.page.$('.page-toolbar')) !== null, `${path} loads with its toolbar`);
+    const pdf = join(DIST, 'card', file);
+    check(existsSync(pdf) && statSync(pdf).size > 5_000, `${file} was generated`);
+  }
+  for (const dir of ['card', 'card/en']) {
+    const vcf = join(DIST, dir, 'vincent-berthet.vcf');
+    check(existsSync(vcf) && readFileSync(vcf, 'utf8').startsWith('BEGIN:VCARD'), `${dir}/vincent-berthet.vcf was generated`);
+  }
 
   console.log('Redirects');
   const fr = await browser.newContext({ locale: 'fr-FR' });
@@ -84,6 +94,7 @@ try {
   await missing.page.waitForTimeout(500);
   check(missing.page.url().endsWith('/fr/does-not-exist'), 'the 404 page does not redirect in a loop');
   check((await missing.page.textContent('h1')) === 'Page introuvable', 'the 404 page is in French for a French visitor');
+  check((await missing.page.textContent('.footer-links a')) === 'Mentions légales', 'its footer is in French too');
   const missingEn = await open('/does-not-exist', context);
   check((await missingEn.page.textContent('h1')) === 'Page not found', 'the 404 page is in English for an English visitor');
 } finally {

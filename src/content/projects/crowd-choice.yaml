@@ -1,19 +1,20 @@
-order: 12
+order: 13
 title: { en: Crowd Choice, fr: Crowd Choice }
 summary:
   en: "A one-week startup challenge with IGR-IAE Rennes, building a crowdfunded event company from scratch."
   fr: "Un défi startup d'une semaine avec l'IGR-IAE Rennes, pour monter de zéro une entreprise événementielle financée par la foule."
 description:
   en: |
-    A one-week training course in partnership with IGR-IAE Rennes whose goal was to create a startup with all the constraints of entrepreneurship.
+    A one-week training course in partnership with IGR-IAE Rennes, in January 2020, whose goal was to create a startup with all the constraints of entrepreneurship, in a team of seven.
 
-    Crowd Choice is an event company based on participative financing: themed evenings (music styles, foreign cultures) are designed from community surveys, then submitted to crowdfunding.
+    Our starting point: outside Paris, audiences rarely choose what is programmed, and international artists seldom tour in Brittany. Crowd Choice is an event company based on participative financing: themed evenings (music styles, foreign cultures) are designed from community surveys in the big cities of Brittany, then submitted to crowdfunding. We built the market study, the business model (crowdfunding, sponsoring, public grants) and a three-year financial forecast. The archive contains the presentation and the business plan (in French).
   fr: |
-    Une formation d'une semaine en partenariat avec l'IGR-IAE Rennes dont l'objectif était de créer une startup avec toutes les contraintes de l'entrepreneuriat.
+    Une formation d'une semaine en partenariat avec l'IGR-IAE Rennes, en janvier 2020, dont l'objectif était de créer une startup avec toutes les contraintes de l'entrepreneuriat, en équipe de sept.
 
-    Crowd Choice est une entreprise événementielle basée sur le financement participatif : des soirées à thème (styles musicaux, cultures étrangères) sont conçues à partir de sondages auprès de la communauté, dans les grandes villes de Bretagne, puis soumises à un crowdfunding.
+    Notre point de départ : en province, le public choisit rarement sa programmation, et les artistes internationaux passent peu en Bretagne. Crowd Choice est une entreprise événementielle basée sur le financement participatif : des soirées à thème (styles musicaux, cultures étrangères) sont conçues à partir de sondages auprès de la communauté, dans les grandes villes de Bretagne, puis soumises à un crowdfunding. Nous avons construit l'étude de marché, le modèle économique (crowdfunding, sponsoring, subventions publiques) et un prévisionnel sur trois ans. L'archive contient la présentation et le business plan.
 cover: ../../assets/projects/crowd-choice.webp
 categories: [initiatives]
-stack: [Entrepreneurship]
+stack: [Entrepreneurship, Market study, Business plan]
+year: '2020'
 links:
   download: { url: 'https://github.com/vincentBrth/Workspace/raw/master/Public/Project/Crowd_choice.zip', name: Crowd_choice.zip }

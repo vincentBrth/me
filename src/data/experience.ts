@@ -30,6 +30,7 @@ export const experience: Entry[] = [
     role: { en: 'R&D engineer, OTT & cloud DVR', fr: 'Ingénieur R&D, OTT & cloud DVR' },
     org: 'ATEME',
     url: 'https://www.ateme.com/',
+    project: 'ateme',
     text: {
       en: 'Development of a video delivery product used by France TV, Canal+, Arte, Netflix… Architecture of a microservices solution and quality oversight. Proxy manager: team workflow and onboarding of newcomers.',
       fr: 'Développement d’un produit de diffusion vidéo utilisé par France TV, Canal+, Arte, Netflix… Architecture d’une solution microservices, encadrement de la qualité. Proxy-manager : workflow d’équipe et encadrement des nouveaux arrivants.',

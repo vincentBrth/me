@@ -1,4 +1,5 @@
-order: 7
+order: 8
+featured: true
 title: { en: SolAR at b<>com, fr: SolAR chez b<>com }
 summary:
   en: "One year as an R&D engineer in computer vision, contributing to SolAR, an open-source C++17 framework for augmented reality."
@@ -9,24 +10,24 @@ description:
 
     I contributed to the [SolAR Framework](https://solarframework.github.io/), an open-source C++17 framework for augmented reality. My main work:
 
-    - a **Unity plugin for Android**,
-    - support of the framework's **continuous integration**,
+    - **porting SolAR to Android** through its Unity plugin: cross-compiling the framework and its third-party libraries (Boost, OpenCV, Ceres, g2o, PCL…) with Clang and the Android NDK, Swig bindings, then optimizing the pipelines (multithreading, settings). The first natural image, fiducial marker and SLAM pipelines ran on Android in January, and the port became a flagship feature of SolAR 0.8.0;
+    - **support for Android** in the framework's **continuous integration**, and its documentation;
     - **modules and a sample** to use depth cameras such as the [Intel RealSense](https://www.realsenseai.com/).
 
-    The archive contains my report and the slides of my final presentation.
+    The archive contains my report and the slides of my final presentation (in French).
   fr: |
     J'ai travaillé un an (alternance, 2019–2020) comme ingénieur R&D au sein du laboratoire Immersive Medical Technologies de l'[IRT b<>com](https://b-com.com/), spécialisé en vision par ordinateur et en vidéo.
 
     J'ai contribué au [SolAR Framework](https://solarframework.github.io/), un framework open source C++17 pour la réalité augmentée. Mes principaux travaux :
 
-    - un **plugin Unity pour Android**,
-    - le support de l'**intégration continue** du framework,
+    - le **portage de SolAR sur Android** via son plugin Unity : compilation croisée du framework et de ses librairies tierces (Boost, OpenCV, Ceres, g2o, PCL…) avec Clang et le NDK Android, bindings Swig, puis optimisation des pipelines (multithreading, paramétrage). Les premiers pipelines image naturelle, marqueur fiduciel et SLAM ont tourné sur Android en janvier, et le portage est devenu une fonctionnalité phare de SolAR 0.8.0 ;
+    - le **support d'Android** dans l'**intégration continue** du framework, et sa documentation ;
     - des **modules et un sample** pour utiliser des caméras de profondeur comme les [Intel RealSense](https://www.realsenseai.com/).
 
     L'archive contient mon rapport et les slides de ma soutenance.
 cover: ../../assets/projects/bcom.webp
 categories: [pro, vision, 3d]
-stack: [C++17, Computer vision, Unity, C#, Qt, CI]
+stack: [C++17, Computer vision, Android NDK, Unity, C#, Qt, CI]
 year: 2019 — 2020
 links:
   download: { url: 'https://github.com/vincentBrth/Workspace/raw/master/Public/Report/BERTHET_Vincent_bcom.zip', name: BERTHET_Vincent_bcom.zip }

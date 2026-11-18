@@ -1,11 +1,21 @@
-order: 23
+order: 24
 title: { en: Scogue, fr: Scogue }
 summary:
   en: "A roguelike web game built with the Phaser framework."
   fr: "Un jeu web de type roguelike développé avec le framework Phaser."
+description:
+  en: |
+    Made for the HTML5 & JavaScript Game Programming module at the University of the West of Scotland, whose goal was a small playable browser game with a few real gameplay mechanics.
+
+    Scogue is a dungeon roguelike built with Phaser. Its levels, including a tutorial, are designed with the Tiled map editor, and the game is served from a small landing page.
+  fr: |
+    Réalisé pour le module HTML5 & JavaScript Game Programming de l'University of the West of Scotland, dont le but était un petit jeu jouable dans le navigateur, avec quelques vraies mécaniques de jeu.
+
+    Scogue est un roguelike en donjon développé avec Phaser. Ses niveaux, dont un tutoriel, sont conçus avec l'éditeur de cartes Tiled, et le jeu est servi depuis une petite page d'accueil.
 cover: ../../assets/projects/scogue.webp
 categories: [games, web]
-stack: [JavaScript, Phaser]
+stack: [JavaScript, Phaser, Tiled]
+year: '2017'
 links:
   source: https://github.com/vincentBrth/Scogue
   demo: https://vincentbrth.github.io/Scogue/

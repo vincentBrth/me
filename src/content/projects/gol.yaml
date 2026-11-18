@@ -1,8 +1,17 @@
-order: 18
+order: 19
 title: { en: Game of Life, fr: Jeu de la vie }
 summary:
   en: "A Qt desktop app around Conway's Game of Life, designed to study ergonomics for users of different expertise levels."
   fr: "Une application Qt autour du jeu de la vie de Conway, conçue pour étudier l'ergonomie selon le niveau d'expertise des utilisateurs."
+description:
+  en: |
+    A desktop version of Conway's Game of Life in C++ and Qt, designed around ergonomics: the interface had to suit newcomers as well as experienced users.
+
+    It offers several game modes, ready-made demo patterns, import and export of patterns and display options. A standalone Windows build is available in the repository releases.
+  fr: |
+    Une version bureau du jeu de la vie de Conway en C++ et Qt, pensée autour de l'ergonomie : l'interface devait convenir aussi bien aux débutants qu'aux utilisateurs avertis.
+
+    Elle propose plusieurs modes de jeu, des motifs de démonstration prêts à l'emploi, l'import et l'export de motifs et des options d'affichage. Une version Windows autonome est disponible dans les releases du dépôt.
 cover: ../../assets/projects/gol.webp
 categories: [games]
 stack: [C++, Qt, GUI]
