@@ -1,4 +1,5 @@
-order: 7
+order: 8
+featured: true
 title: { en: SolAR at b<>com, fr: SolAR chez b<>com }
 summary:
   en: "One year as an R&D engineer in computer vision, contributing to SolAR, an open-source C++17 framework for augmented reality."

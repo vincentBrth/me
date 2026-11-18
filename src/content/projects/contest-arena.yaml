@@ -1,5 +1,4 @@
-order: 3
-featured: true
+order: 4
 title: { en: Contest Arena, fr: Contest Arena }
 summary:
   en: "A mobile-first web app to compete with your friends live during TV contests such as Miss France or Eurovision."

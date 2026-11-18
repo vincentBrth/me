@@ -1,4 +1,4 @@
-order: 15
+order: 16
 title: { en: Kubic, fr: Kubic }
 summary:
   en: "A Unity game built to explore NavMesh-based AI navigation."

@@ -9,7 +9,7 @@ export const site = {
   /** Set `show` to false to hide the phone number from the site. */
   phone: { show: true, display: '+33 6 58 65 90 33', href: 'tel:+33658659033' },
   /** Shows the "Open to opportunities" badge in the hero. */
-  available: false,
+  available: true,
   /** Shows the "What drives me" section of the home page and its menu link. */
   showBeyond: true,
   /**

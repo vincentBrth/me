@@ -1,4 +1,4 @@
-order: 6
+order: 7
 title: { en: GitHub API, fr: GitHub API }
 summary:
   en: "Experimenting with the GitHub REST API to generate a portfolio automatically from my public repositories."

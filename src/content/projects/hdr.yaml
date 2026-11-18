@@ -1,4 +1,4 @@
-order: 13
+order: 14
 title: { en: HDR imaging, fr: Imagerie HDR }
 summary:
   en: "Experimenting with High Dynamic Range (HDR) imaging features using OpenCV."

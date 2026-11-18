@@ -1,4 +1,4 @@
-order: 20
+order: 21
 title: { en: Tower Attack, fr: Tower Attack }
 summary:
   en: "A mobile tower game built for an advanced mobile programming course, using queues, stacks and pathfinding."

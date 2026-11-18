@@ -1,4 +1,4 @@
-order: 4
+order: 5
 title: { en: Family tips with Jekyll, fr: Astuces en famille avec Jekyll }
 summary:
   en: "A small Jekyll site, fed with Markdown through the GitHub API, to easily share tips with my family during the lockdown."

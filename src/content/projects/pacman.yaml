@@ -1,4 +1,4 @@
-order: 26
+order: 27
 title: { en: Pac-Man in XNA, fr: Pac-Man en XNA }
 summary:
   en: "A Pac-Man clone written in C# with Microsoft's XNA framework."

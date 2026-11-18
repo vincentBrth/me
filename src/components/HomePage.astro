@@ -48,7 +48,7 @@ const jsonLd = {
         Vincent Berthet<span class="dot">.</span>
       </h1>
       <p class="role">
-        {t('hero.role')} <span class="role-more">{t('hero.more')}&nbsp;<Octopus label="🐙" /></span>
+        {t('hero.role')} <span class="role-more"><Octopus label="🐙" /></span>
       </p>
       <p class="pitch">{t('hero.pitch')}</p>
       {
@@ -140,7 +140,7 @@ const jsonLd = {
       {
         timeline.map((e) => (
           <li class="reveal">
-            <p class="period">{e.period}</p>
+            <p class="period">{e.period.replace('today', t('experience.today'))}</p>
             <div>
               <h3>
                 {e.role[lang]} · {e.url ? <a href={e.url}>{e.org}</a> : e.org}

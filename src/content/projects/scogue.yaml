@@ -1,4 +1,4 @@
-order: 23
+order: 24
 title: { en: Scogue, fr: Scogue }
 summary:
   en: "A roguelike web game built with the Phaser framework."

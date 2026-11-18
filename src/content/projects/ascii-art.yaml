@@ -1,5 +1,4 @@
-order: 5
-featured: true
+order: 6
 title: { en: ASCII Art, fr: ASCII Art }
 summary:
   en: "Turns any image into [ASCII art](https://en.wikipedia.org/wiki/ASCII_art). The portrait on the home page is a nod to it."
