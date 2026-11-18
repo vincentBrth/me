@@ -1,10 +1,11 @@
 ---
+import { Image, getImage } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import AsciiPortrait from './AsciiPortrait.astro';
 import Icon from './Icon.astro';
 import Octopus from './Octopus.astro';
 import ProjectCard from './ProjectCard.astro';
-import { beyond } from '../data/beyond';
+import { beyond, photos } from '../data/beyond';
 import { experience } from '../data/experience';
 import { site } from '../data/site';
 import { skills } from '../data/skills';
@@ -27,6 +28,10 @@ const filters = (Object.keys(categories) as Category[])
   .map((c) => ({ id: c, label: categories[c][lang], count: all.filter((p) => p.data.categories.includes(c)).length }))
   .filter((f) => f.count > 0);
 const timeline = experience.filter((e) => !e.draft);
+// Clicking a photo opens a large, optimised version rather than the source file.
+const photoLinks = await Promise.all(
+  photos.map(async (p) => ({ ...p, full: (await getImage({ src: p.src, width: 1920, format: 'webp' })).src })),
+);
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -223,6 +228,22 @@ const jsonLd = {
                   {b.link.label[lang]} <Icon name="arrow-up-right" />
                 </a>
               )}
+            </li>
+          ))}
+        </ul>
+        <ul class="photos" aria-label={t('beyond.photos')}>
+          {photoLinks.map((p) => (
+            <li class="reveal">
+              <a href={p.full}>
+                <Image
+                  src={p.src}
+                  alt={p.alt[lang]}
+                  widths={[320, 640]}
+                  sizes="(min-width: 1100px) 260px, (min-width: 700px) 25vw, 50vw"
+                  style={p.position ? `object-position:${p.position}` : undefined}
+                />
+                {p.caption[lang] && <span>{p.caption[lang]}</span>}
+              </a>
             </li>
           ))}
         </ul>
@@ -726,6 +747,54 @@ const jsonLd = {
   .beyond a :global(svg) {
     width: 15px;
     height: 15px;
+  }
+
+  .photos {
+    list-style: none;
+    padding: 0;
+    margin: 24px 0 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+  .photos a {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    color: #fff;
+    text-decoration: none;
+  }
+  .photos :global(img) {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  .photos a:hover :global(img),
+  .photos a:focus-visible :global(img) {
+    transform: scale(1.04);
+  }
+  .photos span {
+    position: absolute;
+    inset: auto 0 0;
+    padding: 28px 12px 10px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+  @media (max-width: 700px) {
+    .photos {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .photos :global(img) {
+      transition: none;
+    }
   }
 
   /* Contact */
