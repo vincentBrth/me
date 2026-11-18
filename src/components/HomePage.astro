@@ -21,7 +21,7 @@ const all = await getProjects();
 const projects = all.filter((p) => !p.data.archived);
 const archives = all.filter((p) => p.data.archived);
 const featuredCount = all.filter((p) => p.data.featured).length;
-const cvPage = withBase(site.cv.page);
+const cvPage = withBase(site.cv[lang].page);
 // Counts include the archived projects, which also answer to the filters.
 const filters = (Object.keys(categories) as Category[])
   .map((c) => ({ id: c, label: categories[c][lang], count: all.filter((p) => p.data.categories.includes(c)).length }))
@@ -86,6 +86,12 @@ const jsonLd = {
             </li>
           )
         }
+        <li>
+          <a href={withBase(site.card[lang].page)} title={t('contact.card')}>
+            <Icon name="id-card" />
+            <span class="sr-only">{t('contact.card')}</span>
+          </a>
+        </li>
         <li class="sep" aria-hidden="true" />
         {
           site.socials.map((s) => (
@@ -198,7 +204,7 @@ const jsonLd = {
     }
   </section>
 
-  <!-- Beyond code -->
+  <!-- What drives me -->
   {
     site.showBeyond && (
       <section id="beyond" class="section container">
@@ -257,6 +263,10 @@ const jsonLd = {
             </a>
           )
         }
+        <a class="btn" href={withBase(site.card[lang].page)}>
+          <Icon name="id-card" />
+          {t('contact.card')}
+        </a>
         <a class="btn btn-accent" href={cvPage}>
           <Icon name="file-down" />
           {t('contact.cv')}
@@ -665,7 +675,7 @@ const jsonLd = {
     text-align: right;
   }
 
-  /* Beyond code */
+  /* What drives me */
   .beyond {
     list-style: none;
     padding: 0;

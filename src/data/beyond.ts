@@ -8,53 +8,54 @@ type Item = {
   link?: { href: string; label: Record<Lang, string> };
 };
 
-/** "Beyond code" section of the home page. Taken from the interests listed in the resume. */
+/** "What drives me" section of the home page. Taken from the interests listed in the resume. */
 export const beyond: Item[] = [
   {
-    icon: 'wrench',
-    title: { en: 'DIY & motorbike mechanics', fr: 'DIY & mécanique moto' },
+    icon: 'volleyball',
+    title: { en: 'Sport', fr: 'Sport' },
     text: {
-      en: 'Taking things apart to understand how they work, then (usually) putting them back together.',
-      fr: 'Démonter pour comprendre comment ça marche, puis (en général) tout remonter.',
-    },
-  },
-  {
-    icon: 'guitar',
-    title: { en: 'Electric guitar', fr: 'Guitare électrique' },
-    text: {
-      en: 'Another kind of signal processing.',
-      fr: 'Une autre forme de traitement du signal.',
-    },
-  },
-  {
-    icon: 'waves',
-    title: { en: 'Sailing, canyoning & diving', fr: 'Voile, canyoning & plongée' },
-    text: {
-      en: 'Anything with water, wind or a bit of altitude. Diving is where Ekko started.',
-      fr: 'Tout ce qui se pratique avec de l’eau, du vent ou un peu de dénivelé. C’est sous l’eau qu’est né Ekko.',
+      en: 'Volleyball, motorbike, sailing, canyoning, diving and HIIT. Diving is where Ekko started.',
+      fr: 'Volley, moto, voile, canyoning, plongée et HIIT. C’est sous l’eau qu’est né Ekko.',
     },
   },
   {
     icon: 'dices',
-    title: { en: 'Strategy games', fr: 'Jeux de stratégie' },
+    title: { en: 'Strategy', fr: 'Stratégie' },
     text: {
-      en: 'Board or screen, as long as it takes some planning.',
-      fr: 'Sur plateau ou sur écran, tant qu’il faut réfléchir à plusieurs coups.',
+      en: 'Board games and video games, as long as it takes some planning.',
+      fr: 'Jeux de société et jeux vidéo, tant qu’il faut réfléchir à plusieurs coups.',
     },
   },
   {
-    icon: 'camera',
-    title: { en: 'Photography', fr: 'Photographie' },
-    text: { en: 'A few shots along the way.', fr: 'Quelques images en chemin.' },
-    link: { href: 'https://www.instagram.com/vincent_berthet', label: { en: 'Instagram', fr: 'Instagram' } },
+    icon: 'wrench',
+    title: { en: 'DIY', fr: 'Bricolage' },
+    text: {
+      en: 'Various and miscellaneous.',
+      fr: 'Divers & variés.',
+    },
   },
   {
-    icon: 'clapperboard',
-    title: { en: 'Video', fr: 'Vidéo' },
+    icon: 'film',
+    title: { en: 'Art & culture', fr: 'Art & culture' },
     text: {
-      en: 'Editing and trailers, like the one for the ESIR Game Jam.',
-      fr: 'Montage et trailers, comme celui de la Game Jam de l’ESIR.',
+      en: 'Documentaries, history, sci-fi and animation, with punk and rock in the background.',
+      fr: 'Documentaires, histoire, SF et animation, avec du punk et du rock en fond sonore.',
     },
-    link: { href: 'https://www.youtube.com/channel/UC1zTh8-gfUpfaW8xvRnYHXw', label: { en: 'YouTube', fr: 'YouTube' } },
+  },
+  {
+    icon: 'chef-hat',
+    title: { en: 'Cooking', fr: 'Cuisine' },
+    text: {
+      en: 'Everything. No exceptions.',
+      fr: 'Tout. Sans exception.',
+    },
+  },
+  {
+    icon: 'brain',
+    title: { en: 'Psychology', fr: 'Psychologie' },
+    text: {
+      en: 'Social and positive psychology: understanding how people think, act and work together.',
+      fr: 'Sociale et positive : comprendre comment on pense, agit et interagis ensemble.',
+    },
   },
 ];

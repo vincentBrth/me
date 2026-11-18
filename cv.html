@@ -221,13 +221,10 @@
       grid-column: 1 / -1;
       list-style: none;
       display: flex;
-      justify-content: space-between;
-      gap: 2mm;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      gap: 1.6mm;
       font-size: 8pt;
-      padding: 2mm 3.5mm;
-      background: var(--ink);
-      color: #fff;
-      border-radius: 2mm;
       margin-top: 1mm;
     }
 
@@ -235,22 +232,31 @@
       white-space: nowrap;
       display: flex;
       align-items: center;
-      gap: 1mm;
+      gap: 1.4mm;
+      background: var(--green-soft);
+      color: var(--ink);
+      border: 1px solid #cfe7d9;
+      border-radius: 99px;
+      padding: 1mm 2.8mm 1mm 1.2mm;
+      font-weight: 600;
     }
 
     .contact svg {
-      width: 3mm;
-      height: 3mm;
+      width: 4.4mm;
+      height: 4.4mm;
+      padding: .8mm;
+      background: var(--green);
+      border-radius: 50%;
       fill: none;
-      stroke: var(--amber);
-      stroke-width: 2.2;
+      stroke: #fff;
+      stroke-width: 2.6;
       stroke-linecap: round;
       stroke-linejoin: round;
       flex: none;
     }
 
     .contact a {
-      color: #fff;
+      color: var(--ink);
       text-decoration: none;
     }
 
