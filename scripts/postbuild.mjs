@@ -18,7 +18,9 @@ const LANGS = ['en', 'fr'];
 async function launch() {
   try {
     const { chromium } = await import('playwright');
-    return await chromium.launch();
+    // Without this flag, Chromium on Linux (CI) hints fonts and rounds glyph widths: the text gets wider
+    // than on macOS, reflows, and the bottom of the A4 resume is cut off.
+    return await chromium.launch({ args: ['--font-render-hinting=none'] });
   } catch (error) {
     if (process.env.CI) throw error;
     console.warn(
@@ -30,6 +32,27 @@ async function launch() {
   }
 }
 
+/**
+ * Waits for the embedded Inter font, then makes sure the resume still fits on its A4 page:
+ * `.page { overflow: hidden }` would otherwise silently cut off whatever runs past the bottom.
+ * Fails the build (rather than publishing a truncated PDF) if the font is missing or content overflows.
+ */
+async function assertCvLayout(page, path) {
+  const report = await page.evaluate(async () => {
+    const weights = [400, 600, 700, 800];
+    await Promise.all(weights.map((w) => document.fonts.load(`${w} 12px InterCV`)));
+    await document.fonts.ready;
+    const missing = weights.filter((w) => !document.fonts.check(`${w} 12px InterCV`));
+    const pageBox = document.querySelector('.page').getBoundingClientRect();
+    const overflow = [...document.querySelectorAll('.page header, .page aside > *, .page main > *')]
+      .map((el) => el.getBoundingClientRect().bottom - pageBox.bottom)
+      .filter((d) => d > 2); // a line box may graze the edge by a pixel without clipping any glyph
+    return { missing, overflow: overflow.length ? Math.max(...overflow) : 0 };
+  });
+  if (report.missing.length) throw new Error(`[postbuild] ${path}: InterCV font not loaded (weights ${report.missing.join(', ')})`);
+  if (report.overflow) throw new Error(`[postbuild] ${path}: content overflows the A4 page by ${report.overflow.toFixed(1)}px`);
+}
+
 const browser = await launch();
 if (browser) {
   const { origin, close } = await serve();
@@ -39,6 +62,7 @@ if (browser) {
       const page = await browser.newPage();
       await page.goto(`${origin}${path}`, { waitUntil: 'networkidle' });
       await page.emulateMedia({ media: 'print' });
+      await assertCvLayout(page, path);
       await page.pdf({ path: join(DIST, pdf), printBackground: true, preferCSSPageSize: true });
       console.log(`[postbuild] ${pdf}`);
     }
