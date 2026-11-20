@@ -397,15 +397,24 @@
 
     .job ul {
       padding-left: 4mm;
+      list-style: none;
     }
 
     .job li {
+      position: relative;
       margin-bottom: .1mm;
     }
 
-    .job li::marker {
-      color: var(--amber-dark);
-      content: "▸ ";
+    /* "▸" bullet drawn in CSS: the glyph is missing from the embedded Inter and its fallback font varies between machines */
+    .job li::before {
+      content: "";
+      position: absolute;
+      left: -3mm;
+      top: .42em;
+      width: .45em;
+      height: .5em;
+      background: var(--amber-dark);
+      clip-path: polygon(0 0, 100% 50%, 0 100%);
     }
 
     .job p {
@@ -717,7 +726,7 @@
           <li><b>#sport</b> volleyball, motorbike, sailing, canyoning, diving, HIIT</li>
           <li><b>#strategy</b> board games, video games</li>
           <li><b>#DIY</b> woodwork, mechanics</li>
-          <li><b>#art</b> documentaries, history, sci&#8209;fi, animation, punk, rock</li>
+          <li><b>#art</b> documentaries, history, <span style="white-space:nowrap">sci-fi</span>, animation, punk, rock</li>
           <li><b>#cooking</b> everything.</li>
           <li><b>#psychology</b> social, positive</li>
         </ul>

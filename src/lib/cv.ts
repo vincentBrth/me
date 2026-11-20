@@ -22,6 +22,21 @@ function inlineEmoji(html: string): string {
 }
 
 /**
+ * Embeds JetBrains Mono (the resume's --mono font, weights 500 to 700), like Inter already is in cv.html.
+ * Otherwise each machine falls back to its own monospace font, whose width differs: on the CI
+ * runner the dates got wider, titles wrapped onto an extra line and the A4 page overflowed.
+ */
+function monoFontCss(): string {
+  return [500, 600, 700]
+    .map((weight) => {
+      const file = join(process.cwd(), 'node_modules/@fontsource/jetbrains-mono/files', `jetbrains-mono-latin-${weight}-normal.woff2`);
+      const src = `data:font/woff2;base64,${readFileSync(file).toString('base64')}`;
+      return `@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:${weight};src:url(${src}) format("woff2")}`;
+    })
+    .join('\n');
+}
+
+/**
  * The resume written by hand in `cv.html` or `cv.en.html` (repository root), unchanged except for:
  * - emojis drawn as images (see above);
  * - a `noindex` tag, since it contains personal contact details;
@@ -39,6 +54,7 @@ export function renderCv(lang: Lang): string {
   const head = `<meta name="robots" content="noindex">
 <link rel="icon" href="${base}/favicon.ico" sizes="32x32">
 <style>
+${monoFontCss()}
 ${toolbarCss}
   /* On screens narrower than an A4 page, the page is scaled down to fit (never when printing). */
   @media screen and (max-width:809px){

@@ -39,17 +39,32 @@ async function launch() {
  */
 async function assertCvLayout(page, path) {
   const report = await page.evaluate(async () => {
-    const weights = [400, 600, 700, 800];
-    await Promise.all(weights.map((w) => document.fonts.load(`${w} 12px InterCV`)));
+    const fonts = [400, 600, 700, 800].map((w) => `${w} 12px InterCV`).concat([500, 600, 700].map((w) => `${w} 12px "JetBrains Mono"`));
+    await Promise.all(fonts.map((f) => document.fonts.load(f)));
     await document.fonts.ready;
-    const missing = weights.filter((w) => !document.fonts.check(`${w} 12px InterCV`));
+    const missing = fonts.filter((f) => !document.fonts.check(f));
     const pageBox = document.querySelector('.page').getBoundingClientRect();
     const overflow = [...document.querySelectorAll('.page header, .page aside > *, .page main > *')]
       .map((el) => el.getBoundingClientRect().bottom - pageBox.bottom)
       .filter((d) => d > 2); // a line box may graze the edge by a pixel without clipping any glyph
     return { missing, overflow: overflow.length ? Math.max(...overflow) : 0 };
   });
-  if (report.missing.length) throw new Error(`[postbuild] ${path}: InterCV font not loaded (weights ${report.missing.join(', ')})`);
+  if (report.missing.length) throw new Error(`[postbuild] ${path}: fonts not loaded: ${report.missing.join(', ')}`);
+
+  // Any character missing from the embedded fonts is drawn with a system font, which differs between
+  // machines (and so does the layout): every glyph must come from Inter or JetBrains Mono.
+  const cdp = await page.context().newCDPSession(page);
+  await cdp.send('DOM.enable');
+  await cdp.send('CSS.enable');
+  const { root } = await cdp.send('DOM.getDocument', { depth: -1 });
+  const { nodeIds } = await cdp.send('DOM.querySelectorAll', { nodeId: root.nodeId, selector: '.page, .page *' });
+  const systemFonts = new Set();
+  for (const nodeId of nodeIds) {
+    const { fonts } = await cdp.send('CSS.getPlatformFontsForNode', { nodeId });
+    for (const font of fonts) if (!font.isCustomFont) systemFonts.add(font.familyName);
+  }
+  await cdp.detach();
+  if (systemFonts.size) throw new Error(`[postbuild] ${path}: text drawn with system fonts (${[...systemFonts].join(', ')}), embed the missing glyphs`);
   if (report.overflow) throw new Error(`[postbuild] ${path}: content overflows the A4 page by ${report.overflow.toFixed(1)}px`);
 }
 
