@@ -397,15 +397,24 @@
 
     .job ul {
       padding-left: 4mm;
+      list-style: none;
     }
 
     .job li {
+      position: relative;
       margin-bottom: .1mm;
     }
 
-    .job li::marker {
-      color: var(--amber-dark);
-      content: "▸ ";
+    /* Puce "▸" dessinée en CSS : le caractère n'est pas dans l'Inter embarquée et sa police de secours change d'une machine à l'autre */
+    .job li::before {
+      content: "";
+      position: absolute;
+      left: -3mm;
+      top: .42em;
+      width: .45em;
+      height: .5em;
+      background: var(--amber-dark);
+      clip-path: polygon(0 0, 100% 50%, 0 100%);
     }
 
     .job p {
