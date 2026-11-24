@@ -1,8 +1,8 @@
 order: 6
 title: { en: ASCII Art, fr: ASCII Art }
 summary:
-  en: "Turns any image into [ASCII art](https://en.wikipedia.org/wiki/ASCII_art). The portrait on the home page is a nod to it."
-  fr: "Transforme n'importe quelle image en [ASCII art](https://fr.wikipedia.org/wiki/Art_ASCII). Le portrait de la page d'accueil y fait un clin d'œil."
+  en: "Turns any image into [ASCII art](https://en.wikipedia.org/wiki/ASCII_art)."
+  fr: "Transforme n'importe quelle image en [ASCII art](https://fr.wikipedia.org/wiki/Art_ASCII)."
 description:
   en: |
     Small Python tool that turns an image, a video or the live webcam feed into ASCII art.

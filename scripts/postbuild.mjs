@@ -103,7 +103,8 @@ if (browser) {
       const og = await browser.newPage({ viewport: { width: 1200, height: 630 } });
       await og.emulateMedia({ reducedMotion: 'reduce' });
       await og.goto(`${origin}/og/${lang}/`, { waitUntil: 'networkidle' });
-      await og.waitForSelector('.ascii-ready');
+      // Wait for the ASCII portrait when it is shown (site.showPortrait).
+      if (await og.locator('[data-ascii]').count()) await og.waitForSelector('.ascii-ready');
       await og.waitForTimeout(300);
       await og.screenshot({ path: join(DIST, 'og', `${lang}.png`) });
       console.log(`[postbuild] og/${lang}.png`);
