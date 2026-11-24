@@ -45,7 +45,7 @@ const jsonLd = {
 
 <Layout lang={lang} path="/" jsonLd={jsonLd}>
   <!-- Hero -->
-  <section class="hero container">
+  <section class={`hero container${site.showPortrait ? '' : ' no-visual'}`}>
     <div class="hero-text">
       <p class="eyebrow">hello world</p>
       <h1>
@@ -110,9 +110,13 @@ const jsonLd = {
         }
       </ul>
     </div>
-    <div class="hero-visual">
-      <AsciiPortrait label={t('hero.portrait')} hint={{ hover: t('hero.hint.hover'), touch: t('hero.hint.touch') }} />
-    </div>
+    {
+      site.showPortrait && (
+        <div class="hero-visual">
+          <AsciiPortrait label={t('hero.portrait')} hint={{ hover: t('hero.hint.hover'), touch: t('hero.hint.touch') }} />
+        </div>
+      )
+    }
   </section>
 
   <!-- About + skills -->
@@ -371,6 +375,9 @@ const jsonLd = {
     min-height: min(860px, calc(100svh - var(--header-h)));
     padding-block: 40px 64px;
   }
+  .hero.no-visual {
+    grid-template-columns: 1fr;
+  }
   h1 {
     font-size: clamp(2.75rem, 7.5vw, 5.5rem);
     letter-spacing: -0.035em;
@@ -481,6 +488,15 @@ const jsonLd = {
     }
     .hero-visual {
       max-width: 210px;
+    }
+    /* Smaller icons so the contact row fits on a phone, and wraps on the narrowest ones. */
+    .socials {
+      flex-wrap: wrap;
+      gap: 2px;
+    }
+    .socials a {
+      width: 40px;
+      height: 40px;
     }
   }
 

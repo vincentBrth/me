@@ -53,13 +53,16 @@ try {
   await page.goto(`${origin}/`, { waitUntil: 'domcontentloaded' });
   await page.addStyleTag({ content: 'html{scroll-behavior:auto!important}' });
   await capture(16);
-  const box = await page.locator('.ascii-stage').boundingBox();
-  for (let i = 0; i <= 18; i++) {
-    const t = i / 18;
-    await page.mouse.move(box.x + box.width * (0.25 + 0.4 * t), box.y + box.height * (0.25 + 0.3 * Math.sin(t * Math.PI)));
-    await capture();
+  // The portrait can be hidden (site.showPortrait).
+  const box = (await page.locator('.ascii-stage').count()) ? await page.locator('.ascii-stage').boundingBox() : null;
+  if (box) {
+    for (let i = 0; i <= 18; i++) {
+      const t = i / 18;
+      await page.mouse.move(box.x + box.width * (0.25 + 0.4 * t), box.y + box.height * (0.25 + 0.3 * Math.sin(t * Math.PI)));
+      await capture();
+    }
+    await page.mouse.move(10, 400);
   }
-  await page.mouse.move(10, 400);
   await hold(600);
 
   // 2. About and experience.

@@ -33,8 +33,8 @@ export const ui = {
     'hero.available': 'Open to opportunities',
     'hero.cta.projects': 'See my work',
     'hero.cta.cv': 'My resume',
-    'hero.hint.hover': 'hover me',
-    'hero.hint.touch': 'tap me',
+    'hero.hint.hover': 'hover to reveal',
+    'hero.hint.touch': 'tap to reveal',
     'hero.portrait': 'Portrait of Vincent Berthet rendered as ASCII art. Move the pointer over it to reveal the photo.',
     'about.title': 'About',
     'about.text': [
@@ -119,8 +119,8 @@ export const ui = {
     'hero.available': 'Ouvert aux opportunités',
     'hero.cta.projects': 'Voir mes projets',
     'hero.cta.cv': 'Mon CV',
-    'hero.hint.hover': 'survolez-moi',
-    'hero.hint.touch': 'touchez-moi',
+    'hero.hint.hover': 'survolez pour révéler',
+    'hero.hint.touch': 'touchez pour révéler',
     'hero.portrait': 'Portrait de Vincent Berthet rendu en ASCII art. Survolez-le pour révéler la photo.',
     'about.title': 'À propos',
     'about.text': [

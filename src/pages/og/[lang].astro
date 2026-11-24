@@ -5,6 +5,7 @@
  */
 import '../../styles/global.css';
 import AsciiPortrait from '../../components/AsciiPortrait.astro';
+import { site } from '../../data/site';
 import { useTranslations, type Lang } from '../../i18n/ui';
 
 export function getStaticPaths() {
@@ -23,16 +24,20 @@ const t = useTranslations(lang);
     <title>OG</title>
   </head>
   <body>
-    <div class="og">
+    <div class:list={['og', { 'no-visual': !site.showPortrait }]}>
       <div class="text">
         <p class="eyebrow">hello world</p>
         <h1>Vincent<br />Berthet<span>.</span></h1>
         <p class="role">{t('hero.role')}</p>
         <p class="url">vincentbrth.github.io/me</p>
       </div>
-      <div class="portrait">
-        <AsciiPortrait label="" hint={{ hover: '', touch: '' }} />
-      </div>
+      {
+        site.showPortrait && (
+          <div class="portrait">
+            <AsciiPortrait label="" hint={{ hover: '', touch: '' }} />
+          </div>
+        )
+      }
     </div>
   </body>
 </html>
@@ -54,6 +59,9 @@ const t = useTranslations(lang);
     gap: 56px;
     align-items: center;
     background: radial-gradient(circle at 0% 100%, var(--accent-soft), transparent 55%), var(--bg);
+  }
+  .og.no-visual {
+    grid-template-columns: 1fr;
   }
   .eyebrow {
     font-size: 20px;

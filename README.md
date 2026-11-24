@@ -12,7 +12,7 @@ My portfolio: profile, experience, projects and resume, in English and French.
 
 - **Bilingual** (English at `/me/`, French at `/me/fr/`). French browsers are redirected to the French version on their
   first visit; the language switch is then remembered.
-- **ASCII portrait** drawn live from the photo, with a lens that reveals the photo on hover (or tap).
+- **ASCII portrait** drawn live from the photo, with a lens that reveals the photo on hover (or tap). It can be switched off with `showPortrait` in `src/data/site.ts`.
 - **Projects** in chronological order, with domain filters, a "Selection" filter and badges
   (Selection, Open source, Work in progress). Archived projects are listed below the grid.
 - **Project pages** with video, WebGL game, links, downloads and screenshots.
